@@ -1,6 +1,8 @@
 .DS_Store
 *.class
 *.swp
+*.o
+*.a
 node_modules
 jspm_packages
 typings
