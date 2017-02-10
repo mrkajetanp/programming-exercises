@@ -29,11 +29,9 @@ BIN_LIB = bin/lib
 CPPFLAGS += -isystem $(GTEST_DIR)/include
 
 # Flags passed to the C++ compiler.
-CXXFLAGS += -g -Wall -std=c++17 -Wextra -pthread
+CXXFLAGS += -g -Wall -std=c++14 -Wextra
 
-# All tests produced by this Makefile.  Remember to add new tests you
-# created to the list.
-TESTS = Minesweeper.o Minesweeper
+TARGETS = Minesweeper
 
 # All Google Test headers.  Usually you shouldn't change this
 # definition.
@@ -42,13 +40,19 @@ GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
 
 # House-keeping build targets.
 
-all : $(TESTS)
+all : $(TARGETS)
 
 clean :
-	rm -f $(TESTS) gtest.a gtest_main.a *.o
+	rm -f ./bin/$(TARGETS)
+	rm -f ./bin/*.o
+	rm -f ./bin/lib/gtest/*.o
+	rm -f ./bin/lib/gtest/*.a
 
 run :
 	./bin/Minesweeper
+
+test: Tests
+	./bin/Tests
 
 # Builds gtest.a and gtest_main.a.
 
@@ -70,18 +74,37 @@ gtest_main.o : $(GTEST_SRCS_)
             $(GTEST_DIR)/src/gtest_main.cc -o $(BIN_LIB)/gtest/$@
 
 gtest.a : gtest-all.o
-	$(AR) $(ARFLAGS) $@ -o $(BIN_LIB)/gtest/$@ $^
+	$(AR) $(ARFLAGS)$ (BIN_LIB)/gtest/$@ $(BIN_LIB)/gtest-all.o 
 
-gtest_main.a : gtest-all.o $(BIN_LIB)/gtest/gtest_main.o
-	$(AR) $(ARFLAGS) -o $(BIN_LIB)/gtest/$@ $^
+gtest_main.a : gtest-all.o gtest_main.o
+	$(AR) $(ARFLAGS) $(BIN_LIB)/gtest/$@ $(BIN_LIB)/gtest/gtest-all.o $(BIN_LIB)/gtest/gtest_main.o
 
 # Builds a sample test.  A test should link with either gtest.a or
 # gtest_main.a, depending on whether it defines its own main()
 # function.
 
+
+Tests.o : ./src/sources/Tests.cpp
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/sources/Tests.cpp -o $(BIN_DIR)/$@
+
+TESTS_DEPENDS = $(BIN_DIR)/Tests.o $(BIN_LIB)/gtest/gtest_main.a $(BIN_DIR)/MineField.o
+
+Tests : Tests.o gtest_main.a MineField.o
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $(TESTS_DEPENDS) -o $(BIN_DIR)/$@
+
+# Main Program
+
 Minesweeper.o : $(USER_DIR)/Minesweeper.cpp $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/Minesweeper.cpp -o $(BIN_DIR)/$@
 
-Minesweeper : $(BIN_DIR)/Minesweeper.o $(BIN_LIB)/gtest/gtest_main.a
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $(BIN_DIR)/$@
+MSWEEPER_DEPENDS = $(BIN_DIR)/Minesweeper.o $(BIN_LIB)/gtest/gtest_main.a $(BIN_DIR)/MineField.o
+
+Minesweeper : Minesweeper.o gtest_main.a MineField.o
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $(MSWEEPER_DEPENDS) -o $(BIN_DIR)/$@
+
+MineField.o : ./src/sources/MineField.cpp
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/sources/MineField.cpp -o $(BIN_DIR)/$@
+
+
+
 
