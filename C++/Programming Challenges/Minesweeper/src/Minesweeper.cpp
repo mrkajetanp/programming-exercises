@@ -6,8 +6,12 @@
 
 int main () {
 	auto field = 1, maxFields = 0;
-	std::cout << "Number of fields: ";
-	std::cin >> maxFields;
+	while (std::cout << "Number of field: " && !(std::cin >> maxFields)) {
+		std::cin.clear ();
+		std::cin.ignore (std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cerr << "Invalid input. Please re-enter." << std::endl;
+	}
+
 	for (int i = 0 ; i < maxFields ; ++i) {
 		MineField m (std::cin);
 		m.sweep ();

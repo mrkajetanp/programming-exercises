@@ -23,8 +23,11 @@ std::vector<std::vector<char>> MineField::getData () {
 
 MineField::MineField (std::istream& is) {
 	auto columns = 0, rows = 0;
-	std::cout << "Columns and rows: ";
-	is >> columns >> rows;
+	while (std::cout << "Columns and rows: " && !(is >> columns >> rows)) {
+		is.clear ();
+		is.ignore (std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Invalid input. Please re-enter." << std::endl;
+	}
 
 	char c;
 	for (int i = 0; i < rows; ++i) {
