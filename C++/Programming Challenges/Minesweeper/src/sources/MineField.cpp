@@ -37,7 +37,7 @@ MineField::MineField (std::istream& is) {
 				newRow.push_back (c);
 			}
 			field.push_back (newRow);
-	}
+  }
 }
 
 void MineField::sweep () {
