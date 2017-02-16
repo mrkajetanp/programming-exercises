@@ -4,6 +4,7 @@
 *.o
 *.a
 node_modules
+build
 jspm_packages
 typings
 /C++/NetBeans Projects/TestNetBeansApplication/build/
