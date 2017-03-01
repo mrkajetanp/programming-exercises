@@ -1,36 +1,43 @@
 #include <iostream>
-#include <boost/multiprecision/gmp.hpp>
-#include <boost/math/special_functions/factorials.hpp>
+#include <cassert>
 
 class ColorChoice {
 public:
     static long long checkChoose(long long m, int n);
-    static long long fct (long long n);
-    static long long binCoef (int n, int x);
+    static long long binCoef (long long n, int x);
 };
 
-long long ColorChoice::fct (long long n) {
-    return (n==1) ? n : n*ColorChoice::fct (n-1);
-}
+long long ColorChoice::binCoef (long long n, int x) {
+    long long res = 1;
 
-long long ColorChoice::binCoef (int n, int x) {
-    return (fct(n)/(fct(x)*fct(n-x)));
+    if ( x > n - x )
+        x = n - x;
+
+    for (int i = 0; i < x; ++i) {
+        res *= (n - i);
+        res /= (i + 1);
+    }
+
+    return res;
 }
 
 long long ColorChoice::checkChoose (long long m, int n) {
-
-    for (int i = 0 ; i < n ; ++i) {
-    }
-
+    for (int i = 0 ; i < n ; ++i)
+        if (ColorChoice::binCoef(n, i) == m)
+            return i;
     return -1;
 }
 
-// FIXME
+void tests () {
+    assert(ColorChoice::checkChoose(6, 4) == 2);
+    assert(ColorChoice::checkChoose(4, 4) == 1);
+    assert(ColorChoice::checkChoose(4, 2) == -1);
+    assert(ColorChoice::checkChoose(35, 7) == 3);
+    assert(ColorChoice::checkChoose(155117520, 30) == 15);
+}
 
 int main () {
-    boost::multiprecision::mpz_int myint = 1213348231121212;
-    boost::multiprecision::mpz_int myint2 = 1213348231121212;
-    boost::multiprecision::mpz_int sum = myint+myint2;
-    std::cout << std::fixed << boost::math::factorial<double>(52);
+    tests();
+
     return 0;
 }
