@@ -10,3 +10,7 @@ jspm_packages
 typings
 /C++/NetBeans Projects/TestNetBeansApplication/build/
 /C++/NetBeans Projects/TestNetBeansApplication/dist/
+bin/
+.classpath
+.project
+workbench.xmi
