@@ -11,6 +11,7 @@ typings
 /C++/NetBeans Projects/TestNetBeansApplication/build/
 /C++/NetBeans Projects/TestNetBeansApplication/dist/
 bin/
+target/
 .classpath
 .project
 workbench.xmi
