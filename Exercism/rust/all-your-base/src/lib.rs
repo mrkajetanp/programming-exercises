@@ -31,25 +31,29 @@
 ///
 #[allow(unused_variables)]
 pub fn convert(number: &[u32], from_base: u32, to_base: u32) -> Result<Vec<u32>, ()> {
-    let mut result = vec![];
     let mut res = 0;
+    let mut result = vec![];
 
-    for i in 0..(number.len()) {
-        println!("{}: {}", i, number[number.len()-i-1]);
-        res += number[number.len()-1-i] * from_base.pow(i as u32);
+    if from_base < 2 || to_base < 2 || number.iter().any(|&d| d >= from_base) {
+        return Err(());
     }
 
-    result.push(res);
+    if number.is_empty() {
+        return Ok(result);
+    }
+
+    for i in 0..(number.len()) {
+        res += number[number.len()-1-i] * from_base.pow(i as u32);
+    }
 
     if to_base == 10 {
         Ok(res.to_string().chars().map(|d| d.to_digit(to_base).unwrap()).collect::<Vec<u32>>())
     } else {
-        let mut n = number.iter().map(|&d| d.to_string()).collect::<String>().parse::<u32>().unwrap();
         result.clear();
 
-        while n > 0 {
-            result.push(n % to_base);
-            n = n / to_base;
+        while res > 0 {
+            result.push(res % to_base);
+            res = res / to_base;
         }
 
         result.reverse();

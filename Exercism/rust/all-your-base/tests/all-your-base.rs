@@ -51,7 +51,6 @@ fn decimal_to_binary() {
 }
 
 #[test]
-#[ignore]
 fn trinary_to_hexadecimal() {
     let input_base = 3;
     let input_digits = &[1, 1, 2, 0];
@@ -62,7 +61,6 @@ fn trinary_to_hexadecimal() {
 }
 
 #[test]
-#[ignore]
 fn hexadecimal_to_trinary() {
     let input_base = 16;
     let input_digits = &[2, 10];
@@ -73,7 +71,6 @@ fn hexadecimal_to_trinary() {
 }
 
 #[test]
-#[ignore]
 fn fifteen_bit_integer() {
     let input_base = 97;
     let input_digits = &[3, 46, 60];
@@ -84,7 +81,6 @@ fn fifteen_bit_integer() {
 }
 
 #[test]
-#[ignore]
 fn empty_list() {
     let input_base = 2;
     let input_digits = &[];
@@ -125,7 +121,6 @@ fn leading_zeros() {
 }
 
 #[test]
-#[ignore]
 fn invalid_positive_digit() {
     let input_base = 2;
     let input_digits = &[1, 2, 1, 0, 1, 0];
@@ -134,7 +129,6 @@ fn invalid_positive_digit() {
 }
 
 #[test]
-#[ignore]
 fn input_base_is_one() {
     let input_base = 1;
     let input_digits = &[];
@@ -143,7 +137,6 @@ fn input_base_is_one() {
 }
 
 #[test]
-#[ignore]
 fn output_base_is_one() {
     let input_base = 2;
     let input_digits = &[1, 0, 1, 0, 1, 0];
@@ -152,7 +145,6 @@ fn output_base_is_one() {
 }
 
 #[test]
-#[ignore]
 fn input_base_is_zero() {
     let input_base = 0;
     let input_digits = &[];
@@ -161,7 +153,6 @@ fn input_base_is_zero() {
 }
 
 #[test]
-#[ignore]
 fn output_base_is_zero() {
     let input_base = 10;
     let input_digits = &[7];
