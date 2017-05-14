@@ -7,6 +7,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Bracket Push
 * Robot Simulator
 * Grade School
 * All Your Base
@@ -37,7 +38,7 @@ All of my coding exercises.
 * Gigasecond
 * Hello World
 
-*29*
+**30**
 
 
 #### Java
@@ -55,7 +56,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-*11*
+**11**
 
 ### CodeWars
 

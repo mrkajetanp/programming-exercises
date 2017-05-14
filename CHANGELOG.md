@@ -4,6 +4,10 @@
 
 ---
 
+#### 15.05.2017
+
+* [Rust] Bracket Push (Exercism)
+
 #### 13.05.2017
 
 * [Java] Secret Handshake (Exercism)
