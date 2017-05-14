@@ -6,6 +6,7 @@
 
 #### 15.05.2017
 
+* [Java] Sum of Multiples (Exercism)
 * [Rust] Bracket Push (Exercism)
 
 #### 13.05.2017

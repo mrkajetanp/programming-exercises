@@ -43,7 +43,7 @@ All of my coding exercises.
 
 #### Java
 
-
+* Sum of Multiples
 * Secret Handshake
 * Difference of Squares
 * Scrabble Score
@@ -56,7 +56,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**11**
+**12**
 
 ### CodeWars
 

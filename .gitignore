@@ -16,5 +16,11 @@ target/
 .project
 workbench.xmi
 .gradle
+gradlew
+gradlew.bat
+*.bat
+gradle
 *.iws
 *.xmi
+*.iml
+*.ipr
