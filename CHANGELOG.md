@@ -6,6 +6,10 @@
 
 #### 15.05.2017
 
+* [Rust] Luhn From (Exercism)
+
+#### 14.05.2017
+
 * [Java] Sum of Multiples (Exercism)
 * [Rust] Bracket Push (Exercism)
 

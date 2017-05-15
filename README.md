@@ -7,6 +7,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Luhn From
 * Bracket Push
 * Robot Simulator
 * Grade School
@@ -38,7 +39,7 @@ All of my coding exercises.
 * Gigasecond
 * Hello World
 
-**30**
+**31**
 
 
 #### Java
