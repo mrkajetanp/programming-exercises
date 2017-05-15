@@ -6,6 +6,7 @@
 
 #### 15.05.2017
 
+* [Java] Matrix (Exercism)
 * [Java] Luhn (Exercism)
 * [Rust] Luhn From (Exercism)
 
