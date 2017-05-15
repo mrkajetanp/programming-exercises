@@ -44,6 +44,7 @@ All of my coding exercises.
 
 #### Java
 
+* Luhn
 * Sum of Multiples
 * Secret Handshake
 * Difference of Squares
@@ -57,7 +58,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**12**
+**13**
 
 ### CodeWars
 

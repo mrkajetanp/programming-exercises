@@ -6,6 +6,7 @@
 
 #### 15.05.2017
 
+* [Java] Luhn (Exercism)
 * [Rust] Luhn From (Exercism)
 
 #### 14.05.2017
