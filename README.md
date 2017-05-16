@@ -7,6 +7,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Queen Attack
 * Luhn From
 * Bracket Push
 * Robot Simulator
@@ -39,11 +40,12 @@ All of my coding exercises.
 * Gigasecond
 * Hello World
 
-**31**
+**32**
 
 
 #### Java
 
+* Triangle
 * Matrix
 * Luhn
 * Sum of Multiples
@@ -59,7 +61,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**14**
+**15**
 
 ### CodeWars
 

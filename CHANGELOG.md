@@ -4,6 +4,11 @@
 
 ---
 
+#### 16.05.2017
+
+* [Java] Triangle (Exercism)
+* [Rust] Queen Attack (Exercism)
+
 #### 15.05.2017
 
 * [Java] Matrix (Exercism)
