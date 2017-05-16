@@ -6,6 +6,7 @@
 
 #### 16.05.2017
 
+* [Java] Largest Series Product (Exercism)
 * [Java] Triangle (Exercism)
 * [Rust] Queen Attack (Exercism)
 

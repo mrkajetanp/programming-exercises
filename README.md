@@ -45,6 +45,7 @@ All of my coding exercises.
 
 #### Java
 
+* Largest Series Product
 * Triangle
 * Matrix
 * Luhn
@@ -61,7 +62,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**15**
+**16**
 
 ### CodeWars
 
