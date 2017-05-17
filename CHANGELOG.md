@@ -4,6 +4,11 @@
 
 ---
 
+#### 17.05.2017
+
+* [Java] Sieve (Exercism)
+* [Rust] Bowling [Incomplete] (Exercism)
+
 #### 16.05.2017
 
 * [Java] Largest Series Product (Exercism)

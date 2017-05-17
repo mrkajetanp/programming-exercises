@@ -45,6 +45,7 @@ All of my coding exercises.
 
 #### Java
 
+* Sieve
 * Largest Series Product
 * Triangle
 * Matrix
@@ -62,7 +63,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**16**
+**17**
 
 ### CodeWars
 
