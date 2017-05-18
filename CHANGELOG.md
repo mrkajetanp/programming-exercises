@@ -4,6 +4,13 @@
 
 ---
 
+#### 18.05.2017
+
+* [C] Amicable Numbers
+* [C] Narcissistic Numbers
+* [C] Perfect Numbers
+* Added folder Others
+
 #### 17.05.2017
 
 * [Java] Sieve (Exercism)
