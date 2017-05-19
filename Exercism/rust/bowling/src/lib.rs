@@ -14,6 +14,9 @@ pub struct BowlingGame {
     frame_score: u32,
     state: FrameState,
     outside_frame: bool,
+
+    sum_next: u32,
+    sum_a_next: u32,
 }
 
 impl BowlingGame {
@@ -24,10 +27,61 @@ impl BowlingGame {
             frame_score: 0,
             state: FrameState::None,
             outside_frame: true,
+
+            sum_next: 0,
+            sum_a_next: 0,
         }
     }
 
     pub fn roll(&mut self, pins: u32) -> Result<u32, ()> {
+        if pins > 10 || (self.frames == 10) {
+            return Err(());
+        }
+
+        self.outside_frame = !self.outside_frame;
+        self.frame_score += pins + self.sum_next*pins;
+
+        if self.sum_a_next > 0 {
+            self.sum_a_next -= 1;
+            self.sum_next += 1;
+        }
+
+        if self.outside_frame {
+            self.frames += 1;
+
+            // Open frame
+            if self.frame_score < 10 {
+                self.curr_score += self.frame_score;
+                self.frame_score = 0;
+            }
+
+            // Spare
+            if self.frame_score == 10 {
+                self.curr_score += self.frame_score;
+                self.frame_score = 0;
+
+                self.sum_next += 1;
+            }
+        } else {
+            // Strike
+            if self.frame_score == 10 {
+                self.outside_frame = true;
+                self.frames += 1;
+                self.curr_score += 10;
+                self.frame_score = 0;
+
+                self.sum_next += 1;
+                self.sum_a_next += 1;
+            }
+        }
+
+        println!("frames: {}", self.frames);
+
+
+        Ok(self.curr_score)
+    }
+
+    pub fn rolll(&mut self, pins: u32) -> Result<u32, ()> {
         if pins > 10 || (self.frames == 10 && self.state != FrameState::Spare) {
             return Err(());
         }
