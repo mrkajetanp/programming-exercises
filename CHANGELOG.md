@@ -4,6 +4,10 @@
 
 ---
 
+#### 20.05.2017
+
+* [Rust] Sublist (Exercism)
+
 #### 18.05.2017
 
 * [C] Amicable Numbers

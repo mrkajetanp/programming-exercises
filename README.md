@@ -7,6 +7,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Sublist
 * Queen Attack
 * Luhn From
 * Bracket Push
@@ -40,7 +41,7 @@ All of my coding exercises.
 * Gigasecond
 * Hello World
 
-**32**
+**33**
 
 
 #### Java
