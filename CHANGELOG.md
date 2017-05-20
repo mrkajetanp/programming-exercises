@@ -6,6 +6,7 @@
 
 #### 20.05.2017
 
+* [Java] Twelve Days (Exercism)
 * [Rust] Sublist (Exercism)
 
 #### 18.05.2017

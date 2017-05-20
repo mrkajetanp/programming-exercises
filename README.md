@@ -46,6 +46,7 @@ All of my coding exercises.
 
 #### Java
 
+* Twelve Days
 * Sieve
 * Largest Series Product
 * Triangle
@@ -64,7 +65,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**17**
+**18**
 
 ### CodeWars
 
