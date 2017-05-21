@@ -47,6 +47,7 @@ All of my coding exercises.
 
 #### Java
 
+* Nth Prime
 * Twelve Days
 * Sieve
 * Largest Series Product
@@ -66,7 +67,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**18**
+**19**
 
 ### CodeWars
 

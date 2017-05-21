@@ -6,6 +6,7 @@
 
 #### 21.05.2017
 
+* [Java] Nth Prime (Exercism)
 * [Rust] Space Age (Exercism)
 
 #### 20.05.2017
