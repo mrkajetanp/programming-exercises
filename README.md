@@ -7,6 +7,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Space Age
 * Sublist
 * Queen Attack
 * Luhn From
@@ -41,7 +42,7 @@ All of my coding exercises.
 * Gigasecond
 * Hello World
 
-**33**
+**34**
 
 
 #### Java

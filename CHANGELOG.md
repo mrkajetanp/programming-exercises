@@ -4,6 +4,10 @@
 
 ---
 
+#### 21.05.2017
+
+* [Rust] Space Age (Exercism)
+
 #### 20.05.2017
 
 * [Java] Twelve Days (Exercism)
