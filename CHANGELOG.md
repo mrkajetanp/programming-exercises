@@ -6,6 +6,7 @@
 
 #### 22.05.2017
 
+* [Rust] Luhn Trait (Exercism)
 * [Java] Isogram (Exercism)
 
 #### 21.05.2017
