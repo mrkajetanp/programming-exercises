@@ -47,6 +47,7 @@ All of my coding exercises.
 
 #### Java
 
+* Isogram
 * Diamond
 * Nth Prime
 * Twelve Days
@@ -68,7 +69,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**20**
+**21**
 
 ### CodeWars
 

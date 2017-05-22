@@ -4,6 +4,10 @@
 
 ---
 
+#### 22.05.2017
+
+* [Java] Isogram (Exercism)
+
 #### 21.05.2017
 
 * [Java] Diamond (Exercism)
