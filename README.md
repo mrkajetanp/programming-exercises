@@ -7,6 +7,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Allergies
 * Luhn Trait
 * Space Age
 * Sublist
@@ -43,7 +44,7 @@ All of my coding exercises.
 * Gigasecond
 * Hello World
 
-**35**
+**36**
 
 
 #### Java

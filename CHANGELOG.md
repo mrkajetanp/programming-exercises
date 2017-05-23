@@ -6,6 +6,7 @@
 
 #### 23.05.2017
 
+* [Rust] Allergies (Exercism)
 * [Java] Flatten Array (Exercism)
 
 #### 22.05.2017
