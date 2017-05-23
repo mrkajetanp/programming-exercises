@@ -8,11 +8,14 @@ bool is_narcissistic(int a) {
     while ((temp /= 10) > 0)
         n_digits++;
 
+    if (n_digits == 1)
+        return false;
+
     int sum = 0;
     temp = a;
 
     while (temp > 0) {
-        sum += pow(temp%10, 3);
+        sum += pow(temp%10, n_digits);
         temp /= 10;
     }
 
