@@ -48,6 +48,7 @@ All of my coding exercises.
 
 #### Java
 
+* Flatten Array
 * Isogram
 * Diamond
 * Nth Prime
@@ -70,7 +71,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**21**
+**22**
 
 ### CodeWars
 

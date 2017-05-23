@@ -4,6 +4,10 @@
 
 ---
 
+#### 23.05.2017
+
+* [Java] Flatten Array (Exercism)
+
 #### 22.05.2017
 
 * [Rust] Luhn Trait (Exercism)
