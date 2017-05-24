@@ -4,6 +4,10 @@
 
 ---
 
+#### 24.05.2017
+
+* [Java] Pig Latin (Exercism)
+
 #### 23.05.2017
 
 * [Rust] Allergies (Exercism)

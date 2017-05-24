@@ -49,6 +49,7 @@ All of my coding exercises.
 
 #### Java
 
+* Pig Latin
 * Flatten Array
 * Isogram
 * Diamond
@@ -72,7 +73,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**22**
+**23**
 
 ### CodeWars
 
