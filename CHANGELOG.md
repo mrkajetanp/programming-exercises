@@ -4,6 +4,10 @@
 
 ---
 
+#### 25.05.2017
+
+* [Rust] Variable Length Quantity [Incomplete] (Exercism)
+
 #### 24.05.2017
 
 * [Java] Pig Latin (Exercism)
