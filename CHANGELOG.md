@@ -6,6 +6,7 @@
 
 #### 25.05.2017
 
+* [Java] Phone Number (Exercism)
 * [Rust] Variable Length Quantity [Incomplete] (Exercism)
 
 #### 24.05.2017
