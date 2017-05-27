@@ -4,6 +4,10 @@
 
 ---
 
+#### 27.05.2017
+
+* [Java] Nucleotide Count (Exercism)
+
 #### 25.05.2017
 
 * [Java] Phone Number (Exercism)

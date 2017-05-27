@@ -49,6 +49,7 @@ All of my coding exercises.
 
 #### Java
 
+* Nucleotide Count
 * Phone Number
 * Pig Latin
 * Flatten Array
@@ -74,7 +75,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**24**
+**25**
 
 ### CodeWars
 
