@@ -50,6 +50,7 @@ All of my coding exercises.
 
 #### Java
 
+* Word Count
 * Nucleotide Count
 * Phone Number
 * Pig Latin
@@ -76,7 +77,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**25**
+**26**
 
 ### CodeWars
 

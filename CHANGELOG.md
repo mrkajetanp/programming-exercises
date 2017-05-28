@@ -6,6 +6,7 @@
 
 #### 28.05.2017
 
+* [Java] Word Count (Exercism)
 * [Rust] Phone Number (Exercism)
 
 #### 27.05.2017
