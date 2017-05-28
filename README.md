@@ -50,6 +50,7 @@ All of my coding exercises.
 
 #### Java
 
+* Robot Name
 * Word Count
 * Nucleotide Count
 * Phone Number
@@ -77,7 +78,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**26**
+**27**
 
 ### CodeWars
 

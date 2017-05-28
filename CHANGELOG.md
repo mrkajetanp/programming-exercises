@@ -6,6 +6,7 @@
 
 #### 28.05.2017
 
+* [Java] Robot Name (Exercism)
 * [Java] Word Count (Exercism)
 * [Rust] Phone Number (Exercism)
 
