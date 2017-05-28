@@ -4,6 +4,10 @@
 
 ---
 
+#### 28.05.2017
+
+* [Rust] Phone Number (Exercism)
+
 #### 27.05.2017
 
 * [Java] Nucleotide Count (Exercism)
