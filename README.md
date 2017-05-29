@@ -7,6 +7,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Wordy
 * Phone Number
 * Allergies
 * Luhn Trait
@@ -45,7 +46,7 @@ All of my coding exercises.
 * Gigasecond
 * Hello World
 
-**37**
+**38**
 
 
 #### Java

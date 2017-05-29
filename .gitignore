@@ -18,6 +18,7 @@ workbench.xmi
 .gradle
 gradlew
 gradlew.bat
+.idea
 *.bat
 gradle
 *.iws

@@ -4,6 +4,10 @@
 
 ---
 
+#### 29.05.2017
+
+* [Rust] Wordy (Exercism)
+
 #### 28.05.2017
 
 * [Java] Robot Name (Exercism)
