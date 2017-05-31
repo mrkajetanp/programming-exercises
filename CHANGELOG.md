@@ -6,6 +6,7 @@
 
 #### 31.05.2017
 
+* [Java] Prime Factors (Exercism)
 * [Rust] Tournament (Exercism)
 
 #### 29.05.2017

@@ -52,6 +52,7 @@ All of my coding exercises.
 
 #### Java
 
+* Prime Factors
 * Robot Name
 * Word Count
 * Nucleotide Count
@@ -80,7 +81,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**27**
+**28**
 
 ### CodeWars
 
