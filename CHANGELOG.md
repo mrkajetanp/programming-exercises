@@ -4,6 +4,10 @@
 
 ---
 
+#### 31.05.2017
+
+* [Rust] Tournament (Exercism)
+
 #### 29.05.2017
 
 * [Rust] Wordy (Exercism)

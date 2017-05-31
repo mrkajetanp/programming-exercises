@@ -7,6 +7,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Tournament
 * Wordy
 * Phone Number
 * Allergies
@@ -46,7 +47,7 @@ All of my coding exercises.
 * Gigasecond
 * Hello World
 
-**38**
+**39**
 
 
 #### Java
