@@ -4,6 +4,10 @@
 
 ---
 
+#### 1.06.2017
+
+* [Java] Allergies (Exercism)
+
 #### 31.05.2017
 
 * [Java] Prime Factors (Exercism)

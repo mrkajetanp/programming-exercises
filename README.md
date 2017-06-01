@@ -52,6 +52,7 @@ All of my coding exercises.
 
 #### Java
 
+* Allergies
 * Prime Factors
 * Robot Name
 * Word Count
@@ -81,7 +82,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**28**
+**29**
 
 ### CodeWars
 
