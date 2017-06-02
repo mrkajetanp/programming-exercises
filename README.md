@@ -7,6 +7,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Custom Set
 * Tournament
 * Wordy
 * Phone Number
@@ -47,7 +48,7 @@ All of my coding exercises.
 * Gigasecond
 * Hello World
 
-**39**
+**40**
 
 
 #### Java

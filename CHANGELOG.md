@@ -4,6 +4,10 @@
 
 ---
 
+#### 2.06.2017
+
+* [Rust] Custom Set (Exercism)
+
 #### 1.06.2017
 
 * [Java] Allergies (Exercism)
