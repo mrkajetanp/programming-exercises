@@ -4,6 +4,10 @@
 
 ---
 
+#### 3.06.2017
+
+* [Java] Collatz Conjecture (Exercism)
+
 #### 2.06.2017
 
 * [Rust] Custom Set (Exercism)
