@@ -6,6 +6,7 @@
 
 #### 3.06.2017
 
+* [Java] Bob (Exercism)
 * [Rust] Anagram (Exercism)
 * [Java] Collatz Conjecture (Exercism)
 

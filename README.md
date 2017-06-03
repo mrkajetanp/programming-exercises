@@ -54,6 +54,7 @@ All of my coding exercises.
 
 #### Java
 
+* Bob
 * Collatz Conjecture
 * Allergies
 * Prime Factors
@@ -85,7 +86,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**30**
+**31**
 
 ### CodeWars
 
