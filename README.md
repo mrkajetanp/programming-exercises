@@ -7,6 +7,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Anagram
 * Custom Set
 * Tournament
 * Wordy
@@ -48,7 +49,7 @@ All of my coding exercises.
 * Gigasecond
 * Hello World
 
-**40**
+**41**
 
 
 #### Java

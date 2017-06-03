@@ -6,6 +6,7 @@
 
 #### 3.06.2017
 
+* [Rust] Anagram (Exercism)
 * [Java] Collatz Conjecture (Exercism)
 
 #### 2.06.2017
