@@ -6,6 +6,7 @@
 
 #### 4.06.2017
 
+* [Java] Pascals Triangle (Exercism)
 * [Rust] Protein Translation (Exercism)
 
 #### 3.06.2017

@@ -55,6 +55,7 @@ All of my coding exercises.
 
 #### Java
 
+* Pascals Triangle
 * Bob
 * Collatz Conjecture
 * Allergies
@@ -87,7 +88,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**31**
+**32**
 
 ### CodeWars
 
