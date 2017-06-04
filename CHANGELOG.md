@@ -4,6 +4,10 @@
 
 ---
 
+#### 4.06.2017
+
+* [Rust] Protein Translation (Exercism)
+
 #### 3.06.2017
 
 * [Java] Bob (Exercism)
