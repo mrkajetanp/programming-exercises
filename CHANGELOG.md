@@ -6,6 +6,7 @@
 
 #### 4.06.2017
 
+* [Java] Bracket Push (Exercism)
 * [Java] Pascals Triangle (Exercism)
 * [Rust] Protein Translation (Exercism)
 

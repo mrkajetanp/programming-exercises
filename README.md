@@ -55,6 +55,7 @@ All of my coding exercises.
 
 #### Java
 
+* Bracket Push
 * Pascals Triangle
 * Bob
 * Collatz Conjecture
@@ -88,7 +89,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**32**
+**33**
 
 ### CodeWars
 
