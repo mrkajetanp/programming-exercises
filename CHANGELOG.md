@@ -4,6 +4,10 @@
 
 ---
 
+#### 7.06.2017
+
+* [Java] Perfect Numbers (Exercism)
+
 #### 4.06.2017
 
 * [Java] Bracket Push (Exercism)
