@@ -98,7 +98,6 @@ All of my coding exercises.
 
 * Looking for a Benefactor
 
-
 ### HackerRank
 
 
@@ -109,3 +108,13 @@ All of my coding exercises.
 
 
 ### OI
+
+
+### Others
+
+#### C
+
+* Multiplication Table
+* Perfect Numbers
+* Amicable Numbers
+* Narcissistic Numbers

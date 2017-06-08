@@ -4,6 +4,10 @@
 
 ---
 
+#### 8.06.2017
+
+* [C] Multiplication Table (Others)
+
 #### 7.06.2017
 
 * [Java] Perfect Numbers (Exercism)
