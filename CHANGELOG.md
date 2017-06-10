@@ -4,6 +4,10 @@
 
 ---
 
+#### 10.06.2017
+
+* [Rust] Robot Name (Exercism)
+
 #### 8.06.2017
 
 * [C] Multiplication Table (Others)

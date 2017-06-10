@@ -7,6 +7,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Robot Name
 * Protein Translation
 * Anagram
 * Custom Set
@@ -50,7 +51,7 @@ All of my coding exercises.
 * Gigasecond
 * Hello World
 
-**42**
+**43**
 
 
 #### Java
