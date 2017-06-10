@@ -56,6 +56,7 @@ All of my coding exercises.
 
 #### Java
 
+* Saddle Points
 * Perfect Numbers
 * Bracket Push
 * Pascals Triangle
@@ -91,7 +92,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**34**
+**35**
 
 ### CodeWars
 

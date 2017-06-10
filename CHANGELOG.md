@@ -6,6 +6,7 @@
 
 #### 10.06.2017
 
+* [Java] Saddle Points (Exercism)
 * [Rust] Robot Name (Exercism)
 
 #### 8.06.2017
