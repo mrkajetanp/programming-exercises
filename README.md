@@ -7,6 +7,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Ocr Numbers
 * Robot Name
 * Protein Translation
 * Anagram
@@ -51,7 +52,7 @@ All of my coding exercises.
 * Gigasecond
 * Hello World
 
-**43**
+**44**
 
 
 #### Java

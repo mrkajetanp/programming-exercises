@@ -4,6 +4,10 @@
 
 ---
 
+#### 11.06.2017
+
+* [Rust] Ocr Numbers (Exercism)
+
 #### 10.06.2017
 
 * [Java] Saddle Points (Exercism)
