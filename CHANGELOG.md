@@ -6,6 +6,7 @@
 
 #### 11.06.2017
 
+* [Java] Series (Exercism)
 * [Rust] Ocr Numbers (Exercism)
 
 #### 10.06.2017

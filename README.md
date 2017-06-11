@@ -57,6 +57,7 @@ All of my coding exercises.
 
 #### Java
 
+* Series
 * Saddle Points
 * Perfect Numbers
 * Bracket Push
@@ -93,7 +94,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**35**
+**36**
 
 ### CodeWars
 
