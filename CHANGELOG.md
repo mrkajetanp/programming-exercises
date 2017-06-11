@@ -6,6 +6,7 @@
 
 #### 11.06.2017
 
+* [Java] Atbash Cipher (Exercism)
 * [Java] Series (Exercism)
 * [Rust] Ocr Numbers (Exercism)
 

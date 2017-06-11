@@ -57,6 +57,7 @@ All of my coding exercises.
 
 #### Java
 
+* Atbash Cipher
 * Series
 * Saddle Points
 * Perfect Numbers
@@ -94,7 +95,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**36**
+**37**
 
 ### CodeWars
 
