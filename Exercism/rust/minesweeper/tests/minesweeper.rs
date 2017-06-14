@@ -61,7 +61,6 @@ fn mine_surrounded_by_spaces() {
 }
 
 #[test]
-#[ignore]
 fn space_surrounded_by_mines() {
     run_test(&[
         "***",
@@ -111,7 +110,6 @@ fn vertical_line_mines_at_edges() {
 }
 
 #[test]
-#[ignore]
 fn cross() {
     run_test(&[
         " 2*2 ",

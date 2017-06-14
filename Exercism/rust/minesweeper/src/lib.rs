@@ -1,3 +1,5 @@
+use std::char;
+
 pub fn annotate(board: &[&str]) -> Vec<String> {
     if board.is_empty() {
         return vec![];
@@ -11,10 +13,6 @@ pub fn annotate(board: &[&str]) -> Vec<String> {
         return board.iter().map(|c| c.to_string()).collect::<Vec<String>>();
     }
 
-    let moves: [(i8, i8) ; 8] = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1)];
-
-    println!("moves: {:?}", moves);
-
     let mut field: Vec<Vec<char>> = Vec::new();
 
     for row in board {
@@ -25,29 +23,69 @@ pub fn annotate(board: &[&str]) -> Vec<String> {
 
     let mut bombs = 0;
 
-    for x in 0..2 {
-        for y in 0..2 {
-            for i in 0..8 {
-                let cx = x + moves[i].0;
-                let cy = y + moves[i].1;
+    for y in 0..field.len() {
+        for x in 0..field[0].len() {
+            print!("|{}|", field[y][x]);
 
-                if cx < 0 || cx >= 4 || cy < 0 || cy >= 4 {
-                    continue;
+            if field[x][y] == '*' {
+                continue;
+            }
+
+            if y >= 1 {
+                if x >= 1 {
+                    if field[y-1][x-1] == '*' {
+                        bombs += 1;
+                    }
                 }
-
-                println!("indexing field with ({},{})", cx, cy);
-
-                if field[cx as usize][cy as usize] == '*' {
+                if field[y-1][x] == '*' {
                     bombs += 1;
                 }
 
-                if field[x as usize][y as usize] != '*' {
-                    field[x as usize][y as usize] = ('0' as u8 + bombs) as char;
+                if x+1 < field[0].len() {
+                    if field[y-1][x+1] == '*' {
+                        bombs += 1;
+                    }
                 }
-                bombs = 0;
             }
+
+            if x >= 1 {
+                if field[y][x-1] == '*' {
+                    bombs += 1;
+                }
+            }
+            if x+1 < field[0].len() {
+                if field[y][x+1] == '*' {
+                    bombs += 1;
+                }
+            }
+            if y+1 < field.len() {
+                if x >= 1 {
+                    if field[y+1][x-1] == '*' {
+                        bombs += 1;
+                    }
+                }
+                if field[y+1][x] == '*' {
+                    bombs += 1;
+                }
+                if x+1 < field[0].len() {
+                    if field[y+1][x+1] == '*' {
+                        bombs += 1;
+                    }
+                }
+            }
+
+            if bombs != 0 {
+                field[y][x] = char::from_digit(bombs, 10).unwrap();
+            } else {
+                field[y][x] = ' ';
+            }
+
+            bombs = 0;
         }
+        println!("");
     }
+
+    println!("field: {:?}", field);
 
     field.iter().map(|c| c.iter().collect::<String>()).collect::<Vec<String>>()
 }
