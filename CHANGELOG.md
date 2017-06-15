@@ -4,6 +4,10 @@
 
 ---
 
+#### 15.06.2017
+
+* [Java] Kindergarten Garden (Exercism)
+
 #### 14.06.2017
 
 * [Java] Roman Numerals (Exercism)

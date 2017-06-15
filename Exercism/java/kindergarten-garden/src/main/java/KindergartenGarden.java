@@ -1,14 +1,20 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class KindergartenGarden {
     private char[] rowOne;
     private char[] rowTwo;
+    private HashMap<String, Integer> studentIndexes;
 
     public KindergartenGarden(String garden, String[] students) {
-        String[] temp = garden.split("\\r?\\n");
-        rowOne = temp[0].toCharArray();
-        rowTwo = temp[1].toCharArray();
+        this(garden);
+
+        List<String> tempList = Arrays.asList(students);
+        Collections.sort(tempList);
+        String[] arr = (String[])tempList.toArray();
+
+        this.studentIndexes = new HashMap<>();
+        for (int i = 0 ; i < arr.length ; ++i)
+            studentIndexes.put(arr[i], i);
     }
 
     public KindergartenGarden(String garden) {
@@ -19,8 +25,11 @@ public class KindergartenGarden {
 
     public List<Plant> getPlantsOfStudent(String student) {
         int number = Character.toLowerCase(student.charAt(0)) - 97;
-        List<Plant> result = new ArrayList<>();
 
+        if (this.studentIndexes != null)
+            number = this.studentIndexes.get(student);
+
+        List<Plant> result = new ArrayList<>();
         result.add(choosePlant(rowOne[number*2]));
         result.add(choosePlant(rowOne[number*2+1]));
         result.add(choosePlant(rowTwo[number*2]));

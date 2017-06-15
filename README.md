@@ -57,6 +57,7 @@ All of my coding exercises.
 
 #### Java
 
+* Kindergarten Garden
 * Roman Numerals
 * Atbash Cipher
 * Series
@@ -96,7 +97,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**38**
+**39**
 
 ### CodeWars
 
