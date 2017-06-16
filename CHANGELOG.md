@@ -4,6 +4,10 @@
 
 ---
 
+#### 16.06.2017
+
+* [Java] Run Length Encoding (Exercism)
+
 #### 15.06.2017
 
 * [Java] Kindergarten Garden (Exercism)
