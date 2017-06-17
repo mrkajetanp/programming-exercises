@@ -4,6 +4,10 @@
 
 ---
 
+#### 17.06.2017
+
+* [Java] Beer Song (Exercism)
+
 #### 16.06.2017
 
 * [Java] Run Length Encoding (Exercism)

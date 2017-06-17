@@ -57,6 +57,7 @@ All of my coding exercises.
 
 #### Java
 
+* Beer Song
 * Run Length Encoding
 * Kindergarten Garden
 * Roman Numerals
@@ -98,7 +99,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**40**
+**41**
 
 ### CodeWars
 
