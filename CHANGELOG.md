@@ -4,6 +4,10 @@
 
 ---
 
+#### 18.06.2017
+
+* [Java] Queen Attack (Exercism)
+
 #### 17.06.2017
 
 * [Java] Beer Song (Exercism)

@@ -57,6 +57,7 @@ All of my coding exercises.
 
 #### Java
 
+* Queen Attack
 * Beer Song
 * Run Length Encoding
 * Kindergarten Garden
@@ -99,7 +100,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**41**
+**42**
 
 ### CodeWars
 
