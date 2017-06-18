@@ -6,6 +6,7 @@
 
 #### 18.06.2017
 
+* [Rust] Parallel Letter Frequency [Non-parallel] (Exercism)
 * [Java] Queen Attack (Exercism)
 
 #### 17.06.2017
