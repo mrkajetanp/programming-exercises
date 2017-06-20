@@ -4,6 +4,10 @@
 
 ---
 
+#### 20.06.2017
+
+* [Java] Etl (Exercism)
+
 #### 18.06.2017
 
 * [Rust] Parallel Letter Frequency [Non-parallel] (Exercism)
