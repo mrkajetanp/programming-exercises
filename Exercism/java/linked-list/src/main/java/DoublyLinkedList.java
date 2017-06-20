@@ -36,12 +36,28 @@ public class DoublyLinkedList<E> {
     }
 
     public E shift() {
-        E value = this.tail.getValue();
+        E value = this.head.getValue();
+
+        if (this.head == this.tail) {
+            this.head = this.tail = null;
+        } else {
+            this.head.getNext().setPrev(null);
+            this.head = this.head.getNext();
+        }
 
         return value;
     }
 
     public void unshift(E item) {
+        if (this.head == null) {
+            this.head = new DLNode<>(item);
+            this.tail = this.head;
+        } else {
+            DLNode<E> node = new DLNode<>(item);
 
+            this.head.setPrev(node);
+            node.setNext(this.head);
+            this.head = node;
+        }
     }
 }

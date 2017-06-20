@@ -58,6 +58,7 @@ All of my coding exercises.
 
 #### Java
 
+* Linked List
 * Etl
 * Queen Attack
 * Beer Song
@@ -102,7 +103,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**43**
+**44**
 
 ### CodeWars
 
