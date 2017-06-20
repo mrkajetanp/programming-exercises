@@ -6,6 +6,7 @@
 
 #### 20.06.2017
 
+* [Java] Linked List [Incomplete] (Exercism)
 * [Java] Etl (Exercism)
 
 #### 18.06.2017
