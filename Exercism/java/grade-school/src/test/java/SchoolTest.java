@@ -62,7 +62,6 @@ public class SchoolTest {
     assertTrue(school.grade(1).isEmpty());
   }
 
-  @Ignore("Remove to run test")
   @Test
   public void sortsSchool() {
     school.add("Kyle", 4);
@@ -87,7 +86,6 @@ public class SchoolTest {
     }
   }
 
-  @Ignore("Remove to run test")
   @Test
   public void modifyingFetchedGradeShouldNotModifyInternalDatabase() {
     String shouldNotBeAdded = "Should not be added to school";
@@ -105,7 +103,6 @@ public class SchoolTest {
     assertThat(school.grade(grade), not(hasItem(shouldNotBeAdded)));
   }
 
-  @Ignore("Remove to run test")
   @Test
   public void modifyingSortedStudentsShouldNotModifyInternalDatabase() {
     int grade = 2;

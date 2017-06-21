@@ -58,6 +58,7 @@ All of my coding exercises.
 
 #### Java
 
+* Grade School
 * Linked List
 * Etl
 * Queen Attack
@@ -103,7 +104,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**44**
+**45**
 
 ### CodeWars
 

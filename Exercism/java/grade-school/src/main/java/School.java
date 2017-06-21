@@ -30,7 +30,21 @@ public class School {
     }
 
     public Map<Integer, List<String>> studentsByGradeAlphabetical() {
-        return Collections.singletonMap(0, Collections.singletonList("o"));
+        HashMap<Integer, List<String>> result = new HashMap<>();
+
+        for (int grade : this.studentGrades.values()) {
+            List<String> gradeList = new ArrayList<>();
+
+            this.studentGrades.forEach((k, v) -> {
+                if (v == grade)
+                    gradeList.add(k);
+            });
+
+            result.put(grade, gradeList);
+            Collections.sort(gradeList);
+        }
+
+        return result;
     }
 
 }
