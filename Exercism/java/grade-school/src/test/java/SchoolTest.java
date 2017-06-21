@@ -28,14 +28,12 @@ public class SchoolTest {
     assertThat(school.numberOfStudents(), is(0));
   }
 
-  @Ignore("Remove to run test")
   @Test
   public void addsStudents() {
     school.add("Aimee", 2);
     assertThat(school.grade(2), hasItem("Aimee"));
   }
 
-  @Ignore("Remove to run test")
   @Test
   public void addsMoreStudentsInSameGrade() {
     final int grade = 2;
@@ -47,7 +45,6 @@ public class SchoolTest {
     assertThat(school.grade(grade), allOf(hasItem("James"), hasItem("Blair"), hasItem("Paul")));
   }
 
-  @Ignore("Remove to run test")
   @Test
   public void addsStudentsInMultipleGrades() {
     school.add("Chelsea", 3);
@@ -60,7 +57,6 @@ public class SchoolTest {
     assertThat(school.grade(7), hasItem("Logan"));
   }
 
-  @Ignore("Remove to run test")
   @Test
   public void getsStudentsInEmptyGrade() {
     assertTrue(school.grade(1).isEmpty());
