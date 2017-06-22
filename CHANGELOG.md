@@ -6,6 +6,7 @@
 
 #### 22.06.2017
 
+* [C] Leap (Exercism)
 * [Java] Robot Simulator (Exercism)
 * [C] Anagram (Exercism)
 
