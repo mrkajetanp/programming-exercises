@@ -6,6 +6,7 @@
 
 #### 22.06.2017
 
+* [Java] Robot Simulator (Exercism)
 * [C] Anagram (Exercism)
 
 #### 21.06.2017
