@@ -106,6 +106,13 @@ All of my coding exercises.
 
 **45**
 
+#### C
+
+* Anagram
+* Hello World
+
+**2**
+
 ### CodeWars
 
 #### C

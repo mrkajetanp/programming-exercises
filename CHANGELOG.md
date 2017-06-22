@@ -4,6 +4,10 @@
 
 ---
 
+#### 22.06.2017
+
+* [C] Anagram (Exercism)
+
 #### 21.06.2017
 
 * [Java] Grade School (Exercism)
