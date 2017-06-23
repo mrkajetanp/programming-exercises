@@ -6,6 +6,7 @@
 
 #### 23.06.2017
 
+* [C] Raindrops
 * [C] Hamming
 * [C] Gigasecond (Exercism)
 
