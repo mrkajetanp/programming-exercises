@@ -4,6 +4,10 @@
 
 ---
 
+#### 23.06.2017
+
+* [C] Gigasecond (Exercism)
+
 #### 22.06.2017
 
 * [C] Leap (Exercism)
