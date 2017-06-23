@@ -109,12 +109,13 @@ All of my coding exercises.
 
 #### C
 
+* Hamming
 * Gigasecond
 * Leap
 * Anagram
 * Hello World
 
-**4**
+**5**
 
 ### CodeWars
 
