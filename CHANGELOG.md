@@ -6,6 +6,7 @@
 
 #### 24.06.2017
 
+* [C] Largest Series Product (Exercism)
 * [C] Grains (Exercism)
 * [C] Bob (Exercism)
 

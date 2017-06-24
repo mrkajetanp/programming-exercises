@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Largest Series Product
 * Grains
 * Bob
 * Raindrops
@@ -118,7 +119,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**8**
+**9**
 
 ### CodeWars
 
