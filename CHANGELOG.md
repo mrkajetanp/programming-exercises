@@ -6,6 +6,7 @@
 
 #### 24.06.2017
 
+* [C] Grains (Exercism)
 * [C] Bob (Exercism)
 
 #### 23.06.2017

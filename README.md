@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Grains
 * Bob
 * Raindrops
 * Hamming
@@ -117,7 +118,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**7**
+**8**
 
 ### CodeWars
 
