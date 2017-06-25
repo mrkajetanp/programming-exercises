@@ -6,6 +6,7 @@
 
 #### 25.06.2017
 
+* [C] Beer Song (Exercism)
 * [C] Nth Prime (Exercism)
 * [C] Pangram (Exercism)
 

@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Beer Song
 * Nth Prime
 * Pangram
 * Largest Series Product
@@ -121,7 +122,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**11**
+**12**
 
 ### CodeWars
 
