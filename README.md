@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Pangram
 * Largest Series Product
 * Grains
 * Bob
@@ -119,7 +120,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**9**
+**10**
 
 ### CodeWars
 

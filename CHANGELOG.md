@@ -4,6 +4,10 @@
 
 ---
 
+#### 25.06.2017
+
+* [C] Pangram (Exercism)
+
 #### 24.06.2017
 
 * [C] Largest Series Product (Exercism)
