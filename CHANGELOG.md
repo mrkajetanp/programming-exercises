@@ -6,6 +6,7 @@
 
 #### 25.06.2017
 
+* [C] Nth Prime (Exercism)
 * [C] Pangram (Exercism)
 
 #### 24.06.2017
