@@ -6,6 +6,7 @@
 
 #### 26.06.2017
 
+* [C] Difference of Squares (Exercism)
 * [C] Rna Transcription (Exercism)
 
 #### 25.06.2017

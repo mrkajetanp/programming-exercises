@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Difference of Squares
 * Rna Transcription
 * Beer Song
 * Nth Prime
@@ -123,7 +124,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**13**
+**14**
 
 ### CodeWars
 
