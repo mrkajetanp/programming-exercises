@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Rna Transcription
 * Beer Song
 * Nth Prime
 * Pangram
@@ -122,7 +123,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**12**
+**13**
 
 ### CodeWars
 

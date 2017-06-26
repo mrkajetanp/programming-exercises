@@ -4,6 +4,10 @@
 
 ---
 
+#### 26.06.2017
+
+* [C] Rna Transcription (Exercism)
+
 #### 25.06.2017
 
 * [C] Beer Song (Exercism)
