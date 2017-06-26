@@ -6,6 +6,7 @@
 
 #### 26.06.2017
 
+* [C] Sum of Multiples (Exercism)
 * [C] Difference of Squares (Exercism)
 * [C] Rna Transcription (Exercism)
 

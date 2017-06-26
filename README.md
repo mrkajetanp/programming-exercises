@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Sum of Multiples
 * Difference of Squares
 * Rna Transcription
 * Beer Song
@@ -124,7 +125,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**14**
+**15**
 
 ### CodeWars
 
