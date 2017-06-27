@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Binary Search
 * Sum of Multiples
 * Difference of Squares
 * Rna Transcription
@@ -125,7 +126,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**15**
+**16**
 
 ### CodeWars
 

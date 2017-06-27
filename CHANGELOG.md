@@ -4,6 +4,10 @@
 
 ---
 
+#### 27.06.2017
+
+* [C] Binary Search (Exercism)
+
 #### 26.06.2017
 
 * [C] Sum of Multiples (Exercism)
