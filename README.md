@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Word Count
 * Roman Numerals
 * Binary Search
 * Sum of Multiples
@@ -127,7 +128,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**17**
+**18**
 
 ### CodeWars
 

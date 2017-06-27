@@ -6,6 +6,7 @@
 
 #### 27.06.2017
 
+* [C] Word Count (Exercism)
 * [C] Roman Numerals (Exercism)
 * [C] Binary Search (Exercism)
 
