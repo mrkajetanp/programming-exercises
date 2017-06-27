@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Roman Numerals
 * Binary Search
 * Sum of Multiples
 * Difference of Squares
@@ -126,7 +127,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**16**
+**17**
 
 ### CodeWars
 

@@ -6,6 +6,7 @@
 
 #### 27.06.2017
 
+* [C] Roman Numerals (Exercism)
 * [C] Binary Search (Exercism)
 
 #### 26.06.2017
