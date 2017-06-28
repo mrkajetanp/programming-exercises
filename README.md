@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Allergies
 * Word Count
 * Roman Numerals
 * Binary Search
@@ -128,7 +129,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**18**
+**19**
 
 ### CodeWars
 

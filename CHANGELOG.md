@@ -4,6 +4,10 @@
 
 ---
 
+#### 28.06.2017
+
+* [C] Allergies (Exercism)
+
 #### 27.06.2017
 
 * [C] Word Count (Exercism)
