@@ -6,6 +6,7 @@
 
 #### 28.06.2017
 
+* [C] Atbash Cipher (Exercism)
 * [C] Allergies (Exercism)
 
 #### 27.06.2017

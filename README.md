@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Atbash Cipher
 * Allergies
 * Word Count
 * Roman Numerals
@@ -129,7 +130,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**19**
+**20**
 
 ### CodeWars
 
