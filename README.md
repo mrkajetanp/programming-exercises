@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Phone Number
 * Atbash Cipher
 * Allergies
 * Word Count
@@ -130,7 +131,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**20**
+**21**
 
 ### CodeWars
 

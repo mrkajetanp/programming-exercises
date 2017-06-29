@@ -144,9 +144,9 @@ int main(void)
    RUN_TEST(test_invalid_with_letters);
    RUN_TEST(test_invalid_with_punctuations);
    RUN_TEST(test_invalid_with_right_number_of_digits_but_letters_mixed_in);
-   /* RUN_TEST(test_returns_area_code); */
-   /* RUN_TEST(test_formats_a_number); */
-   /* RUN_TEST(test_cleans_number_before_formatting); */
+   RUN_TEST(test_returns_area_code);
+   RUN_TEST(test_formats_a_number);
+   RUN_TEST(test_cleans_number_before_formatting);
 
    UnityEnd();
    return 0;

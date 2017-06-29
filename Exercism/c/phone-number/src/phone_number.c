@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
@@ -44,15 +45,46 @@ char* phone_number_clean(const char* input) {
 }
 
 char* phone_number_get_area_code(const char* input) {
-    if (input)
-        ;
+    char* result = malloc(5);
 
-    return NULL;
+    int len = strlen(input);
+
+    if (len == 10) {
+        strncpy(result, input, 3);
+        result[3] = '\0';
+    }
+
+    if (len == 11) {
+        strncpy(result, input+1, 4);
+        result[4] = '\0';
+    }
+
+    return result;
 }
 
 char* phone_number_format(const char* input) {
-    if (input)
-        ;
+    char* clean_input = phone_number_clean(input);
+    char* result = malloc(15);
 
-    return NULL;
+    int len = strlen(clean_input);
+    if (len == 10) {
+        strcpy(result, "(");
+        strncat(result, clean_input, 3);
+        strcat(result, ") ");
+        strncat(result, clean_input+3, 3);
+        strcat(result, "-");
+        strcat(result, clean_input+6);
+    }
+
+    if (len == 11) {
+        strcpy(result, "(");
+        strncat(result, clean_input+1, 4);
+        strcat(result, ") ");
+        strncat(result, clean_input+4, 3);
+        strcat(result, "-");
+        strcat(result, clean_input+7);
+    }
+
+    free(clean_input);
+    return result;
 }
