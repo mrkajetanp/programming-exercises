@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Clock
 * Phone Number
 * Atbash Cipher
 * Allergies
@@ -131,13 +132,15 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**21**
+**22**
 
 ### CodeWars
 
 #### C
 
 * Looking for a Benefactor
+
+**1**
 
 ### HackerRank
 
@@ -159,3 +162,5 @@ All of my coding exercises.
 * Perfect Numbers
 * Amicable Numbers
 * Narcissistic Numbers
+
+**4**
