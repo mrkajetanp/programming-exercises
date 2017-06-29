@@ -6,6 +6,7 @@
 
 #### 29.06.2017
 
+* [C] Sieve (Exercism)
 * [C] Clock (Exercism)
 * [C] Phone Number (Exercism)
 

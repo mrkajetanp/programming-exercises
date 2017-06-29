@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Sieve
 * Clock
 * Phone Number
 * Atbash Cipher
@@ -132,7 +133,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**22**
+**23**
 
 ### CodeWars
 
