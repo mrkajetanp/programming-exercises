@@ -4,6 +4,10 @@
 
 ---
 
+#### 30.06.2017
+
+* [C] Series (Exercism)
+
 #### 29.06.2017
 
 * [C] Sieve (Exercism)

@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Series
 * Sieve
 * Clock
 * Phone Number
@@ -133,7 +134,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**23**
+**24**
 
 ### CodeWars
 
