@@ -6,6 +6,7 @@
 
 #### 1.07.2017
 
+* [C] Robot Simulator (Exercism)
 * [C] Nucleotide Count (Exercism)
 
 #### 30.06.2017

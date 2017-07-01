@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Robot Simulator
 * Nucleotide Count
 * Series
 * Sieve
@@ -135,7 +136,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**25**
+**26**
 
 ### CodeWars
 
