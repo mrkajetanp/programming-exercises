@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Nucleotide Count
 * Series
 * Sieve
 * Clock
@@ -134,7 +135,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**24**
+**25**
 
 ### CodeWars
 

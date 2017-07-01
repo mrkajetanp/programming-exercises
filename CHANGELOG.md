@@ -4,6 +4,10 @@
 
 ---
 
+#### 1.07.2017
+
+* [C] Nucleotide Count (Exercism)
+
 #### 30.06.2017
 
 * [C] Series (Exercism)
