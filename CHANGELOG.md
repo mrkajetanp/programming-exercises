@@ -4,6 +4,10 @@
 
 ---
 
+#### 2.07.2017
+
+* [C] Isogram (Exercism)
+
 #### 1.07.2017
 
 * [C] Robot Simulator (Exercism)
