@@ -6,6 +6,7 @@
 
 #### 2.07.2017
 
+* [C] Acronym (Exercism)
 * [C] Isogram (Exercism)
 
 #### 1.07.2017

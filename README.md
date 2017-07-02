@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Acronym
 * Isogram
 * Robot Simulator
 * Nucleotide Count
@@ -137,7 +138,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**27**
+**28**
 
 ### CodeWars
 
