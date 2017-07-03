@@ -6,6 +6,7 @@
 
 #### 3.07.2017
 
+* [C] Pascals Triangle (Exercism)
 * [C] Triangle (Exercism)
 
 #### 2.07.2017
