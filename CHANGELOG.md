@@ -4,6 +4,10 @@
 
 ---
 
+#### 3.07.2017
+
+* [C] Triangle (Exercism)
+
 #### 2.07.2017
 
 * [C] Acronym (Exercism)

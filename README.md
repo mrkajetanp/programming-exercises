@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Triangle
 * Acronym
 * Isogram
 * Robot Simulator
@@ -138,7 +139,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**28**
+**29**
 
 ### CodeWars
 
