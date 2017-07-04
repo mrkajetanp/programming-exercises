@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Perfect Numbers
 * Pascals Triangle
 * Triangle
 * Acronym
@@ -140,7 +141,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**30**
+**31**
 
 ### CodeWars
 

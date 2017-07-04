@@ -4,6 +4,10 @@
 
 ---
 
+#### 4.07.2017
+
+* [C] Perfect Numbers (Exercism)
+
 #### 3.07.2017
 
 * [C] Pascals Triangle (Exercism)
