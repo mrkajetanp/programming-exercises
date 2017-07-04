@@ -6,6 +6,7 @@
 
 #### 4.07.2017
 
+* [C] Binary (Exercism)
 * [C] Perfect Numbers (Exercism)
 
 #### 3.07.2017

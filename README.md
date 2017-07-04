@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Binary
 * Perfect Numbers
 * Pascals Triangle
 * Triangle
@@ -141,7 +142,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**31**
+**32**
 
 ### CodeWars
 
