@@ -6,6 +6,10 @@
 
 #### 4.07.2017
 
+* [C] Palindrome Products (Exercism)
+
+#### 4.07.2017
+
 * [C] Binary (Exercism)
 * [C] Perfect Numbers (Exercism)
 
