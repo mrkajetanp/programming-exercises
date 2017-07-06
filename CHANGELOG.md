@@ -4,6 +4,63 @@
 
 ---
 
+#### 4.07.2017
+
+* [C] Palindrome Products (Exercism)
+
+#### 4.07.2017
+
+* [C] Binary (Exercism)
+* [C] Perfect Numbers (Exercism)
+
+#### 3.07.2017
+
+* [C] Pascals Triangle (Exercism)
+* [C] Triangle (Exercism)
+
+#### 2.07.2017
+
+* [C] Acronym (Exercism)
+* [C] Isogram (Exercism)
+
+#### 1.07.2017
+
+* [C] Robot Simulator (Exercism)
+* [C] Nucleotide Count (Exercism)
+
+#### 30.06.2017
+
+* [C] Series (Exercism)
+
+#### 29.06.2017
+
+* [C] Sieve (Exercism)
+* [C] Clock (Exercism)
+* [C] Phone Number (Exercism)
+
+#### 28.06.2017
+
+* [C] Atbash Cipher (Exercism)
+* [C] Allergies (Exercism)
+
+#### 27.06.2017
+
+* [C] Word Count (Exercism)
+* [C] Roman Numerals (Exercism)
+* [C] Binary Search (Exercism)
+
+#### 26.06.2017
+
+* [C] Sum of Multiples (Exercism)
+* [C] Difference of Squares (Exercism)
+* [C] Rna Transcription (Exercism)
+
+#### 25.06.2017
+
+* [C] Beer Song (Exercism)
+* [C] Nth Prime (Exercism)
+* [C] Pangram (Exercism)
+
 #### 24.06.2017
 
 * [C] Largest Series Product (Exercism)

@@ -109,6 +109,30 @@ All of my coding exercises.
 
 #### C
 
+* Palindrome Products
+* Binary
+* Perfect Numbers
+* Pascals Triangle
+* Triangle
+* Acronym
+* Isogram
+* Robot Simulator
+* Nucleotide Count
+* Series
+* Sieve
+* Clock
+* Phone Number
+* Atbash Cipher
+* Allergies
+* Word Count
+* Roman Numerals
+* Binary Search
+* Sum of Multiples
+* Difference of Squares
+* Rna Transcription
+* Beer Song
+* Nth Prime
+* Pangram
 * Largest Series Product
 * Grains
 * Bob
@@ -119,13 +143,15 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**9**
+**33**
 
 ### CodeWars
 
 #### C
 
 * Looking for a Benefactor
+
+**1**
 
 ### HackerRank
 
@@ -147,3 +173,5 @@ All of my coding exercises.
 * Perfect Numbers
 * Amicable Numbers
 * Narcissistic Numbers
+
+**4**
