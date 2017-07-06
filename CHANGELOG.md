@@ -4,7 +4,11 @@
 
 ---
 
-#### 4.07.2017
+#### 6.07.2017
+
+* [C] Scrabble Score (Exercism)
+
+#### 5.07.2017
 
 * [C] Palindrome Products (Exercism)
 

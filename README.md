@@ -109,6 +109,7 @@ All of my coding exercises.
 
 #### C
 
+* Scrabble Score
 * Palindrome Products
 * Binary
 * Perfect Numbers
@@ -143,7 +144,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**33**
+**34**
 
 ### CodeWars
 
