@@ -4,6 +4,10 @@
 
 ---
 
+#### 7.07.2017
+
+* [C] Space Age (Exercism)
+
 #### 6.07.2017
 
 * [C] Scrabble Score (Exercism)
