@@ -155,6 +155,12 @@ All of my coding exercises.
 
 **1**
 
+#### Rust
+
+* Weight for Weight
+
+**1**
+
 ### HackerRank
 
 

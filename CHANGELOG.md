@@ -4,6 +4,10 @@
 
 ---
 
+#### 8.07.2017
+
+* [Rust] Weight for Weight (CodeWars)
+
 #### 7.07.2017
 
 * [C] Space Age (Exercism)
