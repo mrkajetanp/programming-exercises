@@ -151,9 +151,10 @@ All of my coding exercises.
 
 #### C
 
+* Weight for Weight
 * Looking for a Benefactor
 
-**1**
+**2**
 
 #### Java
 

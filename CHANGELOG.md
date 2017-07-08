@@ -6,6 +6,7 @@
 
 #### 8.07.2017
 
+* [C] Weight for Weight (CodeWars)
 * [Java] Weight for Weight (CodeWars)
 * [Rust] Weight for Weight (CodeWars)
 
