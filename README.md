@@ -151,10 +151,11 @@ All of my coding exercises.
 
 #### C
 
+* Rainfall
 * Weight for Weight
 * Looking for a Benefactor
 
-**2**
+**3**
 
 #### Java
 

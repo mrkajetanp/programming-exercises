@@ -4,6 +4,10 @@
 
 ---
 
+#### 9.07.2017
+
+* [C] Rainfall (CodeWars)
+
 #### 8.07.2017
 
 * [C] Weight for Weight (CodeWars)
