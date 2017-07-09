@@ -159,9 +159,10 @@ All of my coding exercises.
 
 #### Java
 
+* Rainfall
 * Weight for Weight
 
-**1**
+**2**
 
 #### Rust
 

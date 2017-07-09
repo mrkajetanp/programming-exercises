@@ -6,6 +6,7 @@
 
 #### 9.07.2017
 
+* [Java] Rainfall (CodeWars)
 * [C] Rainfall (CodeWars)
 
 #### 8.07.2017
