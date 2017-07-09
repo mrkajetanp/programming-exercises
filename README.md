@@ -154,8 +154,47 @@ All of my coding exercises.
 * Rainfall
 * Weight for Weight
 * Looking for a Benefactor
+* Color Choice
+* How Much?
+* Banker's Plan
+* Bouncing Balls
+* Brick pyramid
+* Sorting on planet Twisted-3-7
+* Don't give me five!
 
-**3**
+**10**
+
+#### C++
+
+* Common Denominators
+* Best travel
+* Sorted Arrays
+* Color Choice
+* Fold an array
+* Irreducible Sum of Rationals
+* Complete The Pattern £12
+* Build Tower
+* Directions Reduction
+* How Much?
+* Constructing a car #1 - Engine and Fuel Tank
+* Banker's Plan
+* Bouncing Balls
+* The Modulo-3 Sequence
+* Tortoise racing
+* Brick pyramid
+* Simple Encryption #1 - Alternating Split
+* First Variation on Caesar Cipher
+* Steps in Primes
+* Compare Strings by Sum of Chars
+* Monkey's MATH 01: How many "ZERO"s?
+* Sum and Length
+* Bubblesort Once
+* Sum of numbers from 0 to N
+* Weight of its Contents
+* Multiply
+
+
+**26**
 
 #### Java
 
@@ -164,11 +203,37 @@ All of my coding exercises.
 
 **2**
 
+#### Python
+
+* Does my number look big in this?
+* Complete The Pattern #2
+* Don't rely on luck
+* Counting Duplicates
+* Find the odd int
+* You're a square!
+* Color Choice
+* Fold an array
+* Complete The Pattern £12
+* Build Tower
+* Directions Reduction
+* How Much?
+* Banker's Plan
+* Bouncing Balls
+* The Modulo-3 Sequence
+* Palindrome chain length
+* Your order, please
+* Take a Number And Sum Its Digits Raised To The Consecutive Powers And..;Eureka!!
+* Remove the minimum
+* Multiply
+
+**20**
+
 #### Rust
 
 * Weight for Weight
+* How Much?
 
-**1**
+**2**
 
 ### HackerRank
 
