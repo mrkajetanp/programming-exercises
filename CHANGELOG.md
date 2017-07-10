@@ -6,6 +6,7 @@
 
 #### 10.07.2017
 
+* [Rust] Color Choice (CodeWars)
 * [C] Equal Sides of an Array (CodeWars)
 * [Java] Equal Sides of an Array (CodeWars)
 

@@ -232,10 +232,11 @@ All of my coding exercises.
 
 #### Rust
 
+* Color Choice
 * Weight for Weight
 * How Much?
 
-**2**
+**3**
 
 ### HackerRank
 
