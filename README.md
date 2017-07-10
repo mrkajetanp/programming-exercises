@@ -161,8 +161,9 @@ All of my coding exercises.
 * Brick pyramid
 * Sorting on planet Twisted-3-7
 * Don't give me five!
+* Equal Sides of an Array
 
-**10**
+**11**
 
 #### C++
 
