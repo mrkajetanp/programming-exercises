@@ -4,6 +4,10 @@
 
 ---
 
+#### 10.07.2017
+
+* [Java] Equal Sides of an Array (CodeWars)
+
 #### 9.07.2017
 
 * [Java] Rainfall (CodeWars)

@@ -198,10 +198,11 @@ All of my coding exercises.
 
 #### Java
 
+* Equal Sides of an Array
 * Rainfall
 * Weight for Weight
 
-**2**
+**3**
 
 #### Python
 
