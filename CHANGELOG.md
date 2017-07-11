@@ -4,6 +4,10 @@
 
 ---
 
+#### 11.07.2017
+
+* [Rust] Weird Prime Generator [Incomplete] (CodeWars)
+
 #### 10.07.2017
 
 * [Rust] Color Choice (CodeWars)
