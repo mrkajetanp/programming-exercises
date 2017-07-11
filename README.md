@@ -199,11 +199,12 @@ All of my coding exercises.
 
 #### Java
 
+* Fold an Array
 * Equal Sides of an Array
 * Rainfall
 * Weight for Weight
 
-**3**
+**4**
 
 #### Python
 

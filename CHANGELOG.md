@@ -6,6 +6,7 @@
 
 #### 11.07.2017
 
+* [Java] Fold an Array (CodeWars)
 * [Rust] Bleatrix Trotter (CodeWars)
 * [Rust] Weird Prime Generator [Incomplete] (CodeWars)
 
