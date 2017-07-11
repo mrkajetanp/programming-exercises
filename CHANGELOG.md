@@ -6,6 +6,7 @@
 
 #### 11.07.2017
 
+* [Rust] Bleatrix Trotter (CodeWars)
 * [Rust] Weird Prime Generator [Incomplete] (CodeWars)
 
 #### 10.07.2017

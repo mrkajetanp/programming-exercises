@@ -232,11 +232,12 @@ All of my coding exercises.
 
 #### Rust
 
+* Bleatrix Trotter
 * Color Choice
 * Weight for Weight
 * How Much?
 
-**3**
+**4**
 
 ### HackerRank
 
