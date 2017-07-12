@@ -6,6 +6,7 @@
 
 #### 12.07.2017
 
+* [Java] Are they the "same"? (CodeWars)
 * [Rust] Are they the "same"? (CodeWars)
 * [C] Are they the "same"? (CodeWars)
 

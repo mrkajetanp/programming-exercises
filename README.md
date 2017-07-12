@@ -204,8 +204,9 @@ All of my coding exercises.
 * Equal Sides of an Array
 * Rainfall
 * Weight for Weight
+* Are they the "same"?
 
-**4**
+**5**
 
 #### Python
 
