@@ -4,6 +4,10 @@
 
 ---
 
+#### 12.07.2017
+
+* [C] Are they the "same"? (CodeWars)
+
 #### 11.07.2017
 
 * [Java] Fold an Array (CodeWars)
