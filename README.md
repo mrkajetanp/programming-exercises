@@ -240,8 +240,9 @@ All of my coding exercises.
 * Weight for Weight
 * How Much?
 * Are they the "same"?
+* Complementary DNA
 
-**5**
+**6**
 
 ### HackerRank
 

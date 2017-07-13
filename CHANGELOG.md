@@ -4,6 +4,10 @@
 
 ---
 
+#### 13.07.2017
+
+* [Rust] Complementary DNA (CodeWars)
+
 #### 12.07.2017
 
 * [Java] Are they the "same"? (CodeWars)
