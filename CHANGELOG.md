@@ -6,6 +6,7 @@
 
 #### 13.07.2017
 
+* [Java] Find the odd int (CodeWars)
 * [Java] Complementary DNA (CodeWars)
 * [Rust] Complementary DNA (CodeWars)
 

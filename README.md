@@ -206,8 +206,9 @@ All of my coding exercises.
 * Weight for Weight
 * Are they the "same"?
 * Complementary DNA
+* Find the odd int
 
-**6**
+**7**
 
 #### Python
 
