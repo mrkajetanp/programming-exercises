@@ -6,6 +6,7 @@
 
 #### 13.07.2017
 
+* [Java] Complementary DNA (CodeWars)
 * [Rust] Complementary DNA (CodeWars)
 
 #### 12.07.2017

@@ -205,8 +205,9 @@ All of my coding exercises.
 * Rainfall
 * Weight for Weight
 * Are they the "same"?
+* Complementary DNA
 
-**5**
+**6**
 
 #### Python
 
