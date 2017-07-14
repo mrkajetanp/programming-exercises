@@ -4,6 +4,10 @@
 
 ---
 
+#### 14.07.2017
+
+* [Java] Stop gninnipS My sdroW! (CodeWars)
+
 #### 13.07.2017
 
 * [Java] Find the odd int (CodeWars)

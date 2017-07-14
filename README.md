@@ -207,8 +207,9 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 * Find the odd int
+* Stop gninnipS My sdroW!
 
-**7**
+**8**
 
 #### Python
 
