@@ -244,8 +244,9 @@ All of my coding exercises.
 * How Much?
 * Are they the "same"?
 * Complementary DNA
+* Braking well
 
-**6**
+**7**
 
 ### HackerRank
 

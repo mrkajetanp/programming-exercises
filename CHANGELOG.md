@@ -6,6 +6,7 @@
 
 #### 14.07.2017
 
+* [Rust] Braking well (CodeWars)
 * [Java] Stop gninnipS My sdroW! (CodeWars)
 
 #### 13.07.2017
