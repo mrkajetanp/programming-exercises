@@ -201,16 +201,17 @@ All of my coding exercises.
 
 #### Java
 
-* Fold an Array
-* Equal Sides of an Array
-* Rainfall
-* Weight for Weight
 * Are they the "same"?
 * Complementary DNA
 * Find the odd int
 * Stop gninnipS My sdroW!
+* Fold an Array
+* Equal Sides of an Array
+* Rainfall
+* Weight for Weight
+* Braking well
 
-**8**
+**9**
 
 #### Python
 
