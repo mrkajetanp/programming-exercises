@@ -6,6 +6,7 @@
 
 #### 15.07.2017
 
+* [Java] Vasya - Clerk (CodeWars)
 * [Java] Find The Parity Outlier (CodeWars)
 * [C] Find The Parity Outlier (CodeWars)
 

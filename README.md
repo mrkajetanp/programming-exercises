@@ -202,6 +202,7 @@ All of my coding exercises.
 
 #### Java
 
+* Vasya - Clerk
 * Find The Parity Outlier
 * Are they the "same"?
 * Complementary DNA
@@ -213,7 +214,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**10**
+**11**
 
 #### Python
 
