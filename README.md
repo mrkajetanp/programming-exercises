@@ -202,6 +202,7 @@ All of my coding exercises.
 
 #### Java
 
+* Find The Parity Outlier
 * Are they the "same"?
 * Complementary DNA
 * Find the odd int
@@ -212,7 +213,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**9**
+**10**
 
 #### Python
 

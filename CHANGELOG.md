@@ -6,6 +6,7 @@
 
 #### 15.07.2017
 
+* [Java] Find The Parity Outlier (CodeWars)
 * [C] Find The Parity Outlier (CodeWars)
 
 #### 14.07.2017
