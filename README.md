@@ -151,6 +151,7 @@ All of my coding exercises.
 
 #### C
 
+* Find The Parity Outlier
 * Rainfall
 * Weight for Weight
 * Looking for a Benefactor
@@ -165,7 +166,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**13**
+**14**
 
 #### C++
 

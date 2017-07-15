@@ -4,6 +4,10 @@
 
 ---
 
+#### 15.07.2017
+
+* [C] Find The Parity Outlier (CodeWars)
+
 #### 14.07.2017
 
 * [Java] Braking well (CodeWars)
