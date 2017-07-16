@@ -6,6 +6,7 @@
 
 #### 16.07.2017
 
+* [C] Reverse a Singly Linked List (CodeWars)
 * [Java] Calculate String Rotation (CodeWars)
 
 #### 15.07.2017

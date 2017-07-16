@@ -151,6 +151,7 @@ All of my coding exercises.
 
 #### C
 
+* Reverse a Singly Linked List
 * Find The Parity Outlier
 * Rainfall
 * Weight for Weight
@@ -166,7 +167,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**14**
+**15**
 
 #### C++
 
