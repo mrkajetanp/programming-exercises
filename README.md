@@ -203,6 +203,7 @@ All of my coding exercises.
 
 #### Java
 
+* How Much?
 * Calculate String Rotation
 * Vasya - Clerk
 * Find The Parity Outlier
@@ -216,7 +217,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**12**
+**13**
 
 #### Python
 
