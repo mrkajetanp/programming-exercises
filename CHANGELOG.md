@@ -4,6 +4,10 @@
 
 ---
 
+#### 16.07.2017
+
+* [Java] Calculate String Rotation (CodeWars)
+
 #### 15.07.2017
 
 * [Java] Vasya - Clerk (CodeWars)
