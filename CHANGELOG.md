@@ -6,6 +6,7 @@
 
 #### 17.07.2017
 
+* [Java] Are we alternate? (CodeWars)
 * [C] Srot the inner ctonnet in dsnnieedcg oredr (CodeWars)
 * [Java] Srot the inner ctonnet in dsnnieedcg oredr (CodeWars)
 

@@ -110,7 +110,6 @@ All of my coding exercises.
 
 #### C
 
-* Srot the inner ctonnet in dsnnieedcg oredr
 * Space Age
 * Scrabble Score
 * Palindrome Products
@@ -153,6 +152,7 @@ All of my coding exercises.
 
 #### C
 
+* Srot the inner ctonnet in dsnnieedcg oredr
 * Reverse a Singly Linked List
 * Find The Parity Outlier
 * Rainfall
@@ -169,7 +169,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**15**
+**16**
 
 #### C++
 
@@ -205,6 +205,7 @@ All of my coding exercises.
 
 #### Java
 
+* Are we alternate?
 * How Much?
 * Calculate String Rotation
 * Vasya - Clerk
@@ -219,7 +220,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**13**
+**14**
 
 #### Python
 
