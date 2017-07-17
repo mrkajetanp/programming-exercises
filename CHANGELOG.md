@@ -4,6 +4,10 @@
 
 ---
 
+#### 17.07.2017
+
+* [Java] Srot the inner ctonnet in dsnnieedcg oredr (CodeWars)
+
 #### 16.07.2017
 
 * [Java] How Much (CodeWars)
