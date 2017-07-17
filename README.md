@@ -110,6 +110,7 @@ All of my coding exercises.
 
 #### C
 
+* Srot the inner ctonnet in dsnnieedcg oredr
 * Space Age
 * Scrabble Score
 * Palindrome Products
@@ -146,7 +147,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**35**
+**36**
 
 ### CodeWars
 

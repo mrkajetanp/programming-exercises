@@ -6,6 +6,7 @@
 
 #### 17.07.2017
 
+* [C] Srot the inner ctonnet in dsnnieedcg oredr (CodeWars)
 * [Java] Srot the inner ctonnet in dsnnieedcg oredr (CodeWars)
 
 #### 16.07.2017
