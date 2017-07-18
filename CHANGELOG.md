@@ -4,6 +4,10 @@
 
 ---
 
+#### 18.07.2017
+
+* [Rust] Product of Consecutive Fibonacci Numbers (CodeWars)
+
 #### 17.07.2017
 
 * [Java] Are we alternate? (CodeWars)
