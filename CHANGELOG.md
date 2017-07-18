@@ -6,6 +6,7 @@
 
 #### 18.07.2017
 
+* [Java] Product of Consecutive Fibonacci Numbers (CodeWars)
 * [C] Product of Consecutive Fibonacci Numbers (CodeWars)
 * [Rust] Product of Consecutive Fibonacci Numbers (CodeWars)
 
