@@ -174,6 +174,7 @@ All of my coding exercises.
 
 #### C++
 
+* Multiples of 3 and 5
 * Common Denominators
 * Best travel
 * Sorted Arrays
@@ -202,7 +203,7 @@ All of my coding exercises.
 * Multiply
 
 
-**26**
+**27**
 
 #### Java
 

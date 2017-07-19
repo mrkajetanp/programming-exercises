@@ -6,6 +6,7 @@
 
 #### 19.07.2017
 
+* [C++] Multiples of 3 and 5 (CodeWars)
 * [Rust] Multiples of 3 and 5 (CodeWars)
 
 #### 18.07.2017
