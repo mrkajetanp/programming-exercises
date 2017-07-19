@@ -251,6 +251,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Multiples of 3 and 5
 * Product of Consecutive Fibonacci Numbers
 * Bleatrix Trotter
 * Color Choice
@@ -260,7 +261,7 @@ All of my coding exercises.
 * Complementary DNA
 * Braking well
 
-**8**
+**9**
 
 ### HackerRank
 
