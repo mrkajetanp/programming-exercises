@@ -202,11 +202,11 @@ All of my coding exercises.
 * Weight of its Contents
 * Multiply
 
-
 **27**
 
 #### Java
 
+* Multiples of 3 and 5
 * Product of Consecutive Fibonacci Numbers
 * Are we alternate?
 * How Much?
@@ -223,7 +223,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**15**
+**16**
 
 #### Python
 
