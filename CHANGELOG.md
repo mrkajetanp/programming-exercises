@@ -4,6 +4,10 @@
 
 ---
 
+#### 20.07.2017
+
+* [Rust] A Rule of Divisibility by 13 (CodeWars)
+
 #### 19.07.2017
 
 * [Java] Multiples of 3 and 5 (CodeWars)

@@ -252,6 +252,7 @@ All of my coding exercises.
 
 #### Rust
 
+* A Rule of Divisibility by 13
 * Multiples of 3 and 5
 * Product of Consecutive Fibonacci Numbers
 * Bleatrix Trotter
@@ -262,7 +263,7 @@ All of my coding exercises.
 * Complementary DNA
 * Braking well
 
-**9**
+**10**
 
 ### HackerRank
 
