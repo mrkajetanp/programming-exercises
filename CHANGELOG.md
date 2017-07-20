@@ -6,6 +6,7 @@
 
 #### 20.07.2017
 
+* [Java] A Rule of Divisibility by 13 (CodeWars)
 * [C] A Rule of Divisibility by 13 (CodeWars)
 * [Rust] A Rule of Divisibility by 13 (CodeWars)
 

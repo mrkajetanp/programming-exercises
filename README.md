@@ -207,6 +207,7 @@ All of my coding exercises.
 
 #### Java
 
+* A Rule of Divisibility by 13
 * Multiples of 3 and 5
 * Product of Consecutive Fibonacci Numbers
 * Are we alternate?
@@ -224,7 +225,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**16**
+**17**
 
 #### Python
 
