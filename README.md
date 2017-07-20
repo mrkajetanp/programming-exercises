@@ -152,6 +152,7 @@ All of my coding exercises.
 
 #### C
 
+* A Rule of Divisibility by 13
 * Product of Consecutive Fibonacci Numbers
 * Srot the inner ctonnet in dsnnieedcg oredr
 * Reverse a Singly Linked List
@@ -170,7 +171,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**17**
+**18**
 
 #### C++
 

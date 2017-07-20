@@ -6,6 +6,7 @@
 
 #### 20.07.2017
 
+* [C] A Rule of Divisibility by 13 (CodeWars)
 * [Rust] A Rule of Divisibility by 13 (CodeWars)
 
 #### 19.07.2017
