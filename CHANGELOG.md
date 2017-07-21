@@ -6,6 +6,7 @@
 
 #### 21.07.2017
 
+* [Rust] Consecutive strings (CodeWars)
 * [Java] Duplicate Encoder (CodeWars)
 * [Rust] Duplicate Encoder (CodeWars)
 

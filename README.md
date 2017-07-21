@@ -255,6 +255,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Consecutive strings
 * Duplicate Encoder
 * A Rule of Divisibility by 13
 * Multiples of 3 and 5
@@ -267,7 +268,7 @@ All of my coding exercises.
 * Complementary DNA
 * Braking well
 
-**11**
+**12**
 
 ### HackerRank
 
