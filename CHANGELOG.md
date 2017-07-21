@@ -4,6 +4,10 @@
 
 ---
 
+#### 21.07.2017
+
+* [Rust] Duplicate Encoder (CodeWars)
+
 #### 20.07.2017
 
 * [Java] A Rule of Divisibility by 13 (CodeWars)

@@ -254,6 +254,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Duplicate Encoder
 * A Rule of Divisibility by 13
 * Multiples of 3 and 5
 * Product of Consecutive Fibonacci Numbers
@@ -265,7 +266,7 @@ All of my coding exercises.
 * Complementary DNA
 * Braking well
 
-**10**
+**11**
 
 ### HackerRank
 
