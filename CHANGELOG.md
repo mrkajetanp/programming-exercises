@@ -6,6 +6,7 @@
 
 #### 21.07.2017
 
+* [Java] Duplicate Encoder (CodeWars)
 * [Rust] Duplicate Encoder (CodeWars)
 
 #### 20.07.2017
