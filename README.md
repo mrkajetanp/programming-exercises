@@ -257,6 +257,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Esolang: MiniBitMove
 * Consecutive strings
 * Duplicate Encoder
 * A Rule of Divisibility by 13
@@ -270,7 +271,7 @@ All of my coding exercises.
 * Complementary DNA
 * Braking well
 
-**12**
+**13**
 
 ### HackerRank
 

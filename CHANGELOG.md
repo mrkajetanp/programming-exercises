@@ -6,6 +6,7 @@
 
 #### 22.07.2017
 
+* [Rust] Esolang: MiniBitMove (CodeWars)
 * [Java] Consecutive strings (CodeWars)
 * [C] Consecutive strings (CodeWars)
 
