@@ -6,6 +6,7 @@
 
 #### 22.07.2017
 
+* [Java] Consecutive strings (CodeWars)
 * [C] Consecutive strings (CodeWars)
 
 #### 21.07.2017

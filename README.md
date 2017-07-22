@@ -208,6 +208,7 @@ All of my coding exercises.
 
 #### Java
 
+* Consecutive strings
 * Duplicate Encoder
 * A Rule of Divisibility by 13
 * Multiples of 3 and 5
@@ -227,7 +228,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**18**
+**19**
 
 #### Python
 
