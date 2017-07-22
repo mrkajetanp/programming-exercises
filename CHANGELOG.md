@@ -4,6 +4,10 @@
 
 ---
 
+#### 22.07.2017
+
+* [C] Consecutive strings (CodeWars)
+
 #### 21.07.2017
 
 * [Rust] Consecutive strings (CodeWars)

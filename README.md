@@ -152,6 +152,7 @@ All of my coding exercises.
 
 #### C
 
+* Consecutive strings
 * A Rule of Divisibility by 13
 * Product of Consecutive Fibonacci Numbers
 * Srot the inner ctonnet in dsnnieedcg oredr
@@ -171,7 +172,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**18**
+**19**
 
 #### C++
 
