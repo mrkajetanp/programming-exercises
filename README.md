@@ -152,6 +152,7 @@ All of my coding exercises.
 
 #### C
 
+* Floating-point Approximation (I)
 * Consecutive strings
 * A Rule of Divisibility by 13
 * Product of Consecutive Fibonacci Numbers
@@ -172,7 +173,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**19**
+**20**
 
 #### C++
 

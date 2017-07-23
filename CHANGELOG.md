@@ -6,6 +6,7 @@
 
 #### 23.07.2017
 
+* [C] Floating-point Approximation (I) (CodeWars)
 * [Rust] Floating-point Approximation (I) (CodeWars)
 
 #### 22.07.2017
