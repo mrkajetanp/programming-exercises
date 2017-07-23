@@ -209,6 +209,7 @@ All of my coding exercises.
 
 #### Java
 
+* Floating-point Approximation (I)
 * Consecutive strings
 * Duplicate Encoder
 * A Rule of Divisibility by 13
@@ -229,7 +230,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**19**
+**20**
 
 #### Python
 

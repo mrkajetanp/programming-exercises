@@ -6,6 +6,7 @@
 
 #### 23.07.2017
 
+* [Java] Floating-point Approximation (I) (CodeWars)
 * [C] Floating-point Approximation (I) (CodeWars)
 * [Rust] Floating-point Approximation (I) (CodeWars)
 
