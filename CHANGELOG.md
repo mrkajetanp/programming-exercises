@@ -4,6 +4,10 @@
 
 ---
 
+#### 23.07.2017
+
+* [Rust] Floating-point Approximation (I) (CodeWars)
+
 #### 22.07.2017
 
 * [Rust] Esolang: MiniBitMove (CodeWars)
