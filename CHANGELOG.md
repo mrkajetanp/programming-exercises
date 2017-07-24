@@ -6,6 +6,7 @@
 
 #### 24.07.2017
 
+* [Java] Ball Upwards (CodeWars)
 * [C] Ball Upwards (CodeWars)
 * [Rust] Ball Upwards (CodeWars)
 

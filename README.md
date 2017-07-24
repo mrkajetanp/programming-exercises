@@ -210,6 +210,7 @@ All of my coding exercises.
 
 #### Java
 
+* Ball Upwards
 * Floating-point Approximation (I)
 * Consecutive strings
 * Duplicate Encoder
@@ -231,7 +232,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**20**
+**21**
 
 #### Python
 
