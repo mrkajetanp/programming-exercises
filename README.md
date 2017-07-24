@@ -152,6 +152,7 @@ All of my coding exercises.
 
 #### C
 
+* Ball Upwards
 * Floating-point Approximation (I)
 * Consecutive strings
 * A Rule of Divisibility by 13
@@ -173,7 +174,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**20**
+**21**
 
 #### C++
 

@@ -6,6 +6,7 @@
 
 #### 24.07.2017
 
+* [C] Ball Upwards (CodeWars)
 * [Rust] Ball Upwards (CodeWars)
 
 #### 23.07.2017
