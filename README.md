@@ -259,6 +259,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Ball Upwards
 * Floating-point Approximation (I)
 * Esolang: MiniBitMove
 * Consecutive strings
@@ -274,7 +275,7 @@ All of my coding exercises.
 * Complementary DNA
 * Braking well
 
-**14**
+**15**
 
 ### HackerRank
 

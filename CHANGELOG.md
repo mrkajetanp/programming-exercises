@@ -4,6 +4,10 @@
 
 ---
 
+#### 24.07.2017
+
+* [Rust] Ball Upwards (CodeWars)
+
 #### 23.07.2017
 
 * [Java] Floating-point Approximation (I) (CodeWars)
