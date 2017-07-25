@@ -152,6 +152,7 @@ All of my coding exercises.
 
 #### C
 
+* up AND down
 * Ball Upwards
 * Floating-point Approximation (I)
 * Consecutive strings
@@ -174,7 +175,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**21**
+**22**
 
 #### C++
 
