@@ -4,6 +4,10 @@
 
 ---
 
+#### 25.07.2017
+
+* [Rust] up AND down (CodeWars)
+
 #### 24.07.2017
 
 * [Java] Ball Upwards (CodeWars)

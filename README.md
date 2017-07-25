@@ -261,6 +261,7 @@ All of my coding exercises.
 
 #### Rust
 
+* up AND down
 * Ball Upwards
 * Floating-point Approximation (I)
 * Esolang: MiniBitMove
@@ -268,6 +269,7 @@ All of my coding exercises.
 * Duplicate Encoder
 * A Rule of Divisibility by 13
 * Multiples of 3 and 5
+* Braking well
 * Product of Consecutive Fibonacci Numbers
 * Bleatrix Trotter
 * Color Choice
@@ -275,9 +277,8 @@ All of my coding exercises.
 * How Much?
 * Are they the "same"?
 * Complementary DNA
-* Braking well
 
-**15**
+**16**
 
 ### HackerRank
 
