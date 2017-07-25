@@ -6,6 +6,7 @@
 
 #### 25.07.2017
 
+* [Java] up AND down (CodeWars)
 * [Rust] up AND down (CodeWars)
 
 #### 24.07.2017
