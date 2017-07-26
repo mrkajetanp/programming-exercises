@@ -6,6 +6,7 @@
 
 #### 26.07.2017
 
+* [Java] Reducing by steps (CodeWars)
 * [C] Reducing by steps (CodeWars)
 * [Rust] Reducing by steps (CodeWars)
 

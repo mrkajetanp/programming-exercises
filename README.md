@@ -212,6 +212,7 @@ All of my coding exercises.
 
 #### Java
 
+* Reducing by steps
 * up AND down
 * Ball Upwards
 * Floating-point Approximation (I)
@@ -235,7 +236,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**22**
+**23**
 
 #### Python
 
