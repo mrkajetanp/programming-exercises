@@ -6,6 +6,7 @@
 
 #### 26.07.2017
 
+* [C] Reducing by steps (CodeWars)
 * [Rust] Reducing by steps (CodeWars)
 
 #### 25.07.2017

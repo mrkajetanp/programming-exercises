@@ -152,6 +152,7 @@ All of my coding exercises.
 
 #### C
 
+* Reducing by steps
 * up AND down
 * Ball Upwards
 * Floating-point Approximation (I)
@@ -175,7 +176,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**22**
+**23**
 
 #### C++
 
