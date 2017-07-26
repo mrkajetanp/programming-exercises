@@ -263,6 +263,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Reducing by steps
 * up AND down
 * Ball Upwards
 * Floating-point Approximation (I)
@@ -280,7 +281,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**16**
+**17**
 
 ### HackerRank
 

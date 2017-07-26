@@ -4,6 +4,10 @@
 
 ---
 
+#### 26.07.2017
+
+* [Rust] Reducing by steps (CodeWars)
+
 #### 25.07.2017
 
 * [C] up AND down (CodeWars)
