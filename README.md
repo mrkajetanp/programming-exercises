@@ -212,6 +212,7 @@ All of my coding exercises.
 
 #### Java
 
+* Integers: Recreation Two
 * Reducing by steps
 * up AND down
 * Ball Upwards
@@ -236,7 +237,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**23**
+**24**
 
 #### Python
 
