@@ -265,6 +265,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Integers: Recreation Two
 * Reducing by steps
 * up AND down
 * Ball Upwards
@@ -283,7 +284,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**17**
+**18**
 
 ### HackerRank
 

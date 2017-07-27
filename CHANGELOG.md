@@ -4,6 +4,10 @@
 
 ---
 
+#### 27.07.2017
+
+* [Rust] Integers: Recreation Two (CodeWars)
+
 #### 26.07.2017
 
 * [Java] Reducing by steps (CodeWars)
