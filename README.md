@@ -152,6 +152,7 @@ All of my coding exercises.
 
 #### C
 
+* Integers: Recreation Two
 * Reducing by steps
 * up AND down
 * Ball Upwards
@@ -176,7 +177,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**23**
+**24**
 
 #### C++
 

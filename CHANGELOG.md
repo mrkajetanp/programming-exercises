@@ -6,6 +6,7 @@
 
 #### 27.07.2017
 
+* [C] Integers: Recreation Two (CodeWars)
 * [Java] Integers: Recreation Two (CodeWars)
 * [Rust] Integers: Recreation Two (CodeWars)
 
