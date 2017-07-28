@@ -6,6 +6,7 @@
 
 #### 28.07.2017
 
+* [Java] Buying a car (CodeWars)
 * [C] Buying a car (CodeWars)
 * [Rust] Buying a car (CodeWars)
 
