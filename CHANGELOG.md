@@ -6,6 +6,7 @@
 
 #### 28.07.2017
 
+* [C] Buying a car (CodeWars)
 * [Rust] Buying a car (CodeWars)
 
 #### 27.07.2017
