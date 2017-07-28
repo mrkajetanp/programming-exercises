@@ -267,6 +267,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Buying a car
 * Integers: Recreation Two
 * Reducing by steps
 * up AND down
@@ -286,7 +287,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**18**
+**19**
 
 ### HackerRank
 

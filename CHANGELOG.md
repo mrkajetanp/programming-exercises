@@ -4,6 +4,10 @@
 
 ---
 
+#### 28.07.2017
+
+* [Rust] Buying a car (CodeWars)
+
 #### 27.07.2017
 
 * [C] Integers: Recreation Two (CodeWars)
