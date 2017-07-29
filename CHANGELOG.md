@@ -6,6 +6,7 @@
 
 #### 29.07.2017
 
+* [C] Build a pile of Cubes (CodeWars)
 * [Rust] Build a pile of Cubes (CodeWars)
 
 #### 28.07.2017

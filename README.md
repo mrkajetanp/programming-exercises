@@ -152,6 +152,7 @@ All of my coding exercises.
 
 #### C
 
+* Build a pile of Cubes
 * Buying a car
 * Integers: Recreation Two
 * Reducing by steps
@@ -178,7 +179,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**25**
+**26**
 
 #### C++
 
