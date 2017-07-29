@@ -215,6 +215,7 @@ All of my coding exercises.
 
 #### Java
 
+* Build a pile of Cubes
 * Buying a car
 * Integers: Recreation Two
 * Reducing by steps
@@ -241,7 +242,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**25**
+**26**
 
 #### Python
 

@@ -6,6 +6,7 @@
 
 #### 29.07.2017
 
+* [Java] Build a pile of Cubes (CodeWars)
 * [C] Build a pile of Cubes (CodeWars)
 * [Rust] Build a pile of Cubes (CodeWars)
 
