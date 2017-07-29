@@ -4,6 +4,10 @@
 
 ---
 
+#### 29.07.2017
+
+* [Rust] Build a pile of Cubes (CodeWars)
+
 #### 28.07.2017
 
 * [Java] Buying a car (CodeWars)
