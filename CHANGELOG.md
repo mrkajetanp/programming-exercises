@@ -6,6 +6,7 @@
 
 #### 30.07.2017
 
+* [Java] Tank Truck (CodeWars)
 * [C] Tank Truck (CodeWars)
 * [Rust] Tank Truck (CodeWars)
 

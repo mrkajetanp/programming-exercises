@@ -216,6 +216,7 @@ All of my coding exercises.
 
 #### Java
 
+* Tank Truck
 * Build a pile of Cubes
 * Buying a car
 * Integers: Recreation Two
@@ -243,7 +244,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**26**
+**27**
 
 #### Python
 
