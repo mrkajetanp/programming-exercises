@@ -6,6 +6,7 @@
 
 #### 30.07.2017
 
+* [C] Tank Truck (CodeWars)
 * [Rust] Tank Truck (CodeWars)
 
 #### 29.07.2017

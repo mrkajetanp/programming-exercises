@@ -152,6 +152,7 @@ All of my coding exercises.
 
 #### C
 
+* Tank Truck
 * Build a pile of Cubes
 * Buying a car
 * Integers: Recreation Two
@@ -179,7 +180,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**26**
+**27**
 
 #### C++
 
