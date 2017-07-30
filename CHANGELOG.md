@@ -4,6 +4,10 @@
 
 ---
 
+#### 30.07.2017
+
+* [Rust] Tank Truck (CodeWars)
+
 #### 29.07.2017
 
 * [Java] Build a pile of Cubes (CodeWars)

@@ -271,6 +271,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Tank Truck
 * Build a pile of Cubes
 * Buying a car
 * Integers: Recreation Two
@@ -292,7 +293,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**20**
+**21**
 
 ### HackerRank
 
