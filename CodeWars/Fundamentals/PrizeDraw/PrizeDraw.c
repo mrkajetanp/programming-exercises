@@ -4,6 +4,11 @@
 #include <string.h>
 #include <assert.h>
 
+typedef struct _pair_st_i {
+    char* name;
+    int number;
+} PairStrInt;
+
 int rank_name(char* name) {
     int result = strlen(name);
 
@@ -13,13 +18,37 @@ int rank_name(char* name) {
     return result;
 }
 
+int cmp_pair_str_int(const void* p_1, const void* p_2) {
+    PairStrInt* p1 = (PairStrInt*)p_1;
+    PairStrInt* p2 = (PairStrInt*)p_2;
+
+    if (p1->number == p2->number) {
+        int res = strcmp(p1->name, p2->name);
+        if (res > 0)
+            return 1;
+        else if (res < 0)
+            return -1;
+        else
+            return 0;
+    } else {
+        if (p1->number > p2->number)
+            return -1;
+        else if (p1->number < p2->number)
+            return 1;
+        else
+            return 0;
+    }
+
+    return 0;
+}
+
 char* array2StringInt(int *array, size_t sz);
 
 char* nthRank(char* st, int* we, int n) {
     if (strlen(st) == 0)
         return "No participants";
 
-    int count = 0;
+    int count = 1;
     for (size_t i = 0 ; i < strlen(st) ; ++i) {
         if (st[i] == ',')
             count++;
@@ -28,18 +57,23 @@ char* nthRank(char* st, int* we, int n) {
     if (n > count)
         return "Not enough participants";
 
-    char *names[count];
+    PairStrInt names[count];
     char buff[strlen(st)+2];
     strcpy(buff, st);
 
     count = 0;
     char* pch = strtok(buff, ",");
     while (pch != NULL) {
-        names[count++] = pch;
+        names[count].number = rank_name(pch) * we[count];
+        names[count++].name = pch;
         pch = strtok(NULL, ",");
     }
 
-    return NULL;
+    qsort(names, count, sizeof(PairStrInt), cmp_pair_str_int);
+
+    char* result = malloc(strlen(names[n-1].name)+2);
+    strcpy(result, names[n-1].name);
+    return result;
 }
 
 char* array2StringInt(int *array, size_t sz) {
