@@ -6,6 +6,7 @@
 
 #### 31.07.2017
 
+* [Java] Prize Draw (CodeWars)
 * [Rust] Prize Draw (CodeWars)
 
 #### 30.07.2017
