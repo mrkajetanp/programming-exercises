@@ -4,6 +4,10 @@
 
 ---
 
+#### 31.07.2017
+
+* [Rust] Prize Draw (CodeWars)
+
 #### 30.07.2017
 
 * [Java] Tank Truck (CodeWars)

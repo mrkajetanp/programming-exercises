@@ -273,6 +273,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Prize Draw
 * Tank Truck
 * Build a pile of Cubes
 * Buying a car
@@ -295,7 +296,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**21**
+**22**
 
 ### HackerRank
 
