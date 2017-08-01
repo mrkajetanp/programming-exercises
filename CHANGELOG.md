@@ -4,6 +4,10 @@
 
 ---
 
+#### 1.08.2017
+
+* [Rust] Playing on a Chessboard (CodeWars)
+
 #### 31.07.2017
 
 * [C] Prize Draw (CodeWars)

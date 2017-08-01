@@ -275,6 +275,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Playing on a Chessboard
 * Prize Draw
 * Tank Truck
 * Build a pile of Cubes
@@ -298,7 +299,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**22**
+**23**
 
 ### HackerRank
 
