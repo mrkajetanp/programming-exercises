@@ -4,6 +4,10 @@
 
 ---
 
+#### 2.08.2017
+
+* [C] Playing on a Chessboard (CodeWars)
+
 #### 1.08.2017
 
 * [Rust] Playing on a Chessboard (CodeWars)

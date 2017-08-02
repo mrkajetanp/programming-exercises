@@ -152,6 +152,7 @@ All of my coding exercises.
 
 #### C
 
+* Playing on a Chessboard
 * Prize Draw
 * Tank Truck
 * Build a pile of Cubes
@@ -181,7 +182,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**27**
+**29**
 
 #### C++
 
