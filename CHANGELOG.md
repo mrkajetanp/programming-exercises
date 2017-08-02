@@ -6,6 +6,7 @@
 
 #### 2.08.2017
 
+* [Rust] Gap in Primes (CodeWars)
 * [Java] Playing on a Chessboard (CodeWars)
 * [C] Playing on a Chessboard (CodeWars)
 

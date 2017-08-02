@@ -277,6 +277,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Gap in Primes
 * Playing on a Chessboard
 * Prize Draw
 * Tank Truck
@@ -301,7 +302,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**23**
+**24**
 
 ### HackerRank
 
