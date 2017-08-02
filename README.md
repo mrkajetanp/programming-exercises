@@ -58,7 +58,6 @@ All of my coding exercises.
 
 #### Java
 
-* Srot the inner ctonnet in dsnnieedcg oredr
 * Robot Simulator
 * Grade School
 * Linked List
@@ -106,7 +105,7 @@ All of my coding exercises.
 * Raindrops
 * Hello World
 
-**47**
+**46**
 
 #### C
 
@@ -146,7 +145,7 @@ All of my coding exercises.
 * Anagram
 * Hello World
 
-**36**
+**35**
 
 ### CodeWars
 
@@ -218,6 +217,7 @@ All of my coding exercises.
 
 #### Java
 
+* Playing on a Chessboard
 * Prize Draw
 * Tank Truck
 * Build a pile of Cubes
@@ -231,6 +231,7 @@ All of my coding exercises.
 * Duplicate Encoder
 * A Rule of Divisibility by 13
 * Multiples of 3 and 5
+* Srot the inner ctonnet in dsnnieedcg oredr
 * Product of Consecutive Fibonacci Numbers
 * Are we alternate?
 * How Much?
@@ -247,7 +248,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**28**
+**30**
 
 #### Python
 

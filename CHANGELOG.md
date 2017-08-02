@@ -6,6 +6,7 @@
 
 #### 2.08.2017
 
+* [Java] Playing on a Chessboard (CodeWars)
 * [C] Playing on a Chessboard (CodeWars)
 
 #### 1.08.2017
