@@ -218,6 +218,7 @@ All of my coding exercises.
 
 #### Java
 
+* Gap in Primes
 * Playing on a Chessboard
 * Prize Draw
 * Tank Truck
@@ -249,7 +250,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**30**
+**31**
 
 #### Python
 
