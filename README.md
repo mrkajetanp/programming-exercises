@@ -279,6 +279,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Perimeter of squares in a rectangle
 * Gap in Primes
 * Playing on a Chessboard
 * Prize Draw
@@ -304,7 +305,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**24**
+**25**
 
 ### HackerRank
 

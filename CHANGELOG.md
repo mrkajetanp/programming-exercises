@@ -6,6 +6,7 @@
 
 #### 3.08.2017
 
+* [Rust] Perimeter of squares in a rectangle (CodeWars)
 * [Java] Gap in Primes (CodeWars)
 * [C] Gap in Primes (CodeWars)
 
