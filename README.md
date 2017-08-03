@@ -151,6 +151,7 @@ All of my coding exercises.
 
 #### C
 
+* Gap in Primes
 * Playing on a Chessboard
 * Prize Draw
 * Tank Truck
@@ -181,7 +182,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**29**
+**30**
 
 #### C++
 

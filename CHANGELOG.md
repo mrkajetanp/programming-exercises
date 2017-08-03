@@ -4,6 +4,10 @@
 
 ---
 
+#### 3.08.2017
+
+* [C] Gap in Primes (CodeWars)
+
 #### 2.08.2017
 
 * [Rust] Gap in Primes (CodeWars)
