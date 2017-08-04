@@ -6,6 +6,7 @@
 
 #### 4.08.2017
 
+* [Java] Perimeter of squares in a rectangle (CodeWars)
 * [C] Perimeter of squares in a rectangle (CodeWars)
 
 #### 3.08.2017

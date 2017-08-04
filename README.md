@@ -219,6 +219,7 @@ All of my coding exercises.
 
 #### Java
 
+* Perimeter of squares in a rectangle
 * Gap in Primes
 * Playing on a Chessboard
 * Prize Draw
@@ -251,7 +252,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**31**
+**32**
 
 #### Python
 
