@@ -281,6 +281,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Is my friend cheating?
 * Perimeter of squares in a rectangle
 * Gap in Primes
 * Playing on a Chessboard
@@ -307,7 +308,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**25**
+**26**
 
 ### HackerRank
 

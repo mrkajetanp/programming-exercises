@@ -6,6 +6,7 @@
 
 #### 4.08.2017
 
+* [Rust] Is my friend cheating? (CodeWars)
 * [Java] Perimeter of squares in a rectangle (CodeWars)
 * [C] Perimeter of squares in a rectangle (CodeWars)
 
