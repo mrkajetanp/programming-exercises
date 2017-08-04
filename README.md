@@ -151,6 +151,7 @@ All of my coding exercises.
 
 #### C
 
+* Perimeter of squares in a rectangle
 * Gap in Primes
 * Playing on a Chessboard
 * Prize Draw
@@ -182,7 +183,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**30**
+**31**
 
 #### C++
 

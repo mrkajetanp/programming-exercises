@@ -4,6 +4,10 @@
 
 ---
 
+#### 4.08.2017
+
+* [C] Perimeter of squares in a rectangle (CodeWars)
+
 #### 3.08.2017
 
 * [Rust] Perimeter of squares in a rectangle (CodeWars)
