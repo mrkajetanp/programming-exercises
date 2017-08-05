@@ -6,6 +6,7 @@
 
 #### 5.08.2017
 
+* [Java] Is my friend cheating? (CodeWars)
 * [C] Is my friend cheating? (CodeWars)
 
 #### 4.08.2017

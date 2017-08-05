@@ -220,6 +220,7 @@ All of my coding exercises.
 
 #### Java
 
+* Is my friend cheating?
 * Perimeter of squares in a rectangle
 * Gap in Primes
 * Playing on a Chessboard
@@ -253,7 +254,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**32**
+**33**
 
 #### Python
 
