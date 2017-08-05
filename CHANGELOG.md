@@ -4,6 +4,10 @@
 
 ---
 
+#### 5.08.2017
+
+* [C] Is my friend cheating? (CodeWars)
+
 #### 4.08.2017
 
 * [Rust] Is my friend cheating? (CodeWars)

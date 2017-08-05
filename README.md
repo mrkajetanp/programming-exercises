@@ -151,6 +151,7 @@ All of my coding exercises.
 
 #### C
 
+* Is my friend cheating?
 * Perimeter of squares in a rectangle
 * Gap in Primes
 * Playing on a Chessboard
@@ -183,7 +184,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**31**
+**32**
 
 #### C++
 
