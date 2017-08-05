@@ -6,6 +6,7 @@
 
 #### 5.08.2017
 
+* [Rust] Diophantine Equation [Incomplete] (CodeWars)
 * [Java] Is my friend cheating? (CodeWars)
 * [C] Is my friend cheating? (CodeWars)
 
