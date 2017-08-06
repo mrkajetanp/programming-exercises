@@ -151,6 +151,7 @@ All of my coding exercises.
 
 #### C
 
+* Diophantine Equation
 * Is my friend cheating?
 * Perimeter of squares in a rectangle
 * Gap in Primes
@@ -184,7 +185,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**32**
+**33**
 
 #### C++
 

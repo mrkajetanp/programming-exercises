@@ -6,6 +6,7 @@
 
 #### 6.08.2017
 
+* [C] Diophantine Equation (CodeWars)
 * [Rust] Diophantine Equation (CodeWars)
 
 #### 5.08.2017
