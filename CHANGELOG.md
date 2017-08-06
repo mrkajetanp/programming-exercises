@@ -4,6 +4,10 @@
 
 ---
 
+#### 6.08.2017
+
+* [Rust] Diophantine Equation (CodeWars)
+
 #### 5.08.2017
 
 * [Rust] Diophantine Equation [Incomplete] (CodeWars)

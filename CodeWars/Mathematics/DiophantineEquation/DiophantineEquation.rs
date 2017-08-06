@@ -1,17 +1,21 @@
 
-
 fn solequa(n: u64) -> Vec<(u64, u64)> {
     let mut result = vec![];
 
-    for x in 0..n as i64 {
-        let y = ((x.pow(2)-n as i64) as f64).sqrt()/2.0;
+    for i in 1..(n as f64).sqrt().floor() as u64 + 1_u64 {
+        // i == x-2y
+        // j == x+2y
+        if n%i == 0  {
+            let j = n/i;
 
-        if y == y.round() {
-            result.push((x as u64, y as u64));
+            if (j-i)%4 == 0 {
+                // j-i == 4y
+                // i+j == 2x
+                result.push(((i+j)/2, (j-i)/4));
+            }
         }
     }
 
-    result.reverse();
     result
 }
 

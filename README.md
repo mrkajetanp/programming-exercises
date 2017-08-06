@@ -283,6 +283,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Diophantine Equation
 * Is my friend cheating?
 * Perimeter of squares in a rectangle
 * Gap in Primes
@@ -310,7 +311,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**26**
+**27**
 
 ### HackerRank
 
