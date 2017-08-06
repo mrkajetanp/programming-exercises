@@ -221,6 +221,7 @@ All of my coding exercises.
 
 #### Java
 
+* Diophantine Equation
 * Is my friend cheating?
 * Perimeter of squares in a rectangle
 * Gap in Primes
@@ -255,7 +256,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**33**
+**34**
 
 #### Python
 

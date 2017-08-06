@@ -6,6 +6,7 @@
 
 #### 6.08.2017
 
+* [Java] Diophantine Equation (CodeWars)
 * [C] Diophantine Equation (CodeWars)
 * [Rust] Diophantine Equation (CodeWars)
 
