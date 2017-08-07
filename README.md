@@ -217,11 +217,7 @@ All of my coding exercises.
 * Weight of its Contents
 * Multiply
 
-<<<<<<< HEAD
-**26**
-=======
 **27**
->>>>>>> baf9f95290df3bbee4cab06d5a422e7c5270b0ea
 
 #### Java
 
@@ -289,6 +285,7 @@ All of my coding exercises.
 
 #### Rust
 
+* k-Primes
 * Diophantine Equation
 * Is my friend cheating?
 * Perimeter of squares in a rectangle
@@ -317,7 +314,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**27**
+**28**
 
 ### HackerRank
 

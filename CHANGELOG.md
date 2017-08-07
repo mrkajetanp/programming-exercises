@@ -4,6 +4,10 @@
 
 ---
 
+#### 7.08.2017
+
+* [Rust] k-Primes (CodeWars)
+
 #### 6.08.2017
 
 * [Java] Diophantine Equation (CodeWars)

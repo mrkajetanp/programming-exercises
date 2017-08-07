@@ -1,16 +1,43 @@
 
-fn is_prime(k: i32) -> bool {
-    
+fn n_prime(mut n: i32) -> i32 {
+    let mut result = 0;
+
+    for i in 2..((n as f64).sqrt() as i32) + 1 {
+        while n%i == 0 {
+            result += 1;
+            n /= i;
+        }
+    }
+
+    if n > 1 {
+        result += 1;
+    }
+
+    result
 }
 
-fn count_kprimes(k: i32, start: i32, nd: i32) -> Vec<i32> {
-    // your code
-    vec![]
+fn count_kprimes(k: i32, start: i32, end: i32) -> Vec<i32> {
+    (start..end+1).filter(|&x| n_prime(x) == k).collect()
 }
 
 fn puzzle(s: i32) -> i32 {
-    // your code
-    0
+    let one_primes = count_kprimes(1, 1, s);
+    let three_primes = count_kprimes(3, 1, s);
+    let seven_primes = count_kprimes(7, 1, s);
+
+    let mut result = 0;
+
+    for i in &one_primes {
+        for j in &three_primes {
+            for k in &seven_primes {
+                if *i + *j + *k == s {
+                    result += 1;
+                }
+            }
+        }
+    }
+
+    result
 }
 
 fn testing_count_kprimes(k: i32, start: i32, nd: i32, exp: Vec<i32>) -> () {
