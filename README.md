@@ -151,6 +151,25 @@ All of my coding exercises.
 
 #### C
 
+* Diophantine Equation
+* Is my friend cheating?
+* Perimeter of squares in a rectangle
+* Gap in Primes
+* Playing on a Chessboard
+* Prize Draw
+* Tank Truck
+* Build a pile of Cubes
+* Buying a car
+* Integers: Recreation Two
+* Reducing by steps
+* up AND down
+* Ball Upwards
+* Floating-point Approximation (I)
+* Consecutive strings
+* A Rule of Divisibility by 13
+* Product of Consecutive Fibonacci Numbers
+* Srot the inner ctonnet in dsnnieedcg oredr
+* Reverse a Singly Linked List
 * Find The Parity Outlier
 * Rainfall
 * Weight for Weight
@@ -166,10 +185,11 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**14**
+**33**
 
 #### C++
 
+* Multiples of 3 and 5
 * Common Denominators
 * Best travel
 * Sorted Arrays
@@ -197,10 +217,37 @@ All of my coding exercises.
 * Weight of its Contents
 * Multiply
 
+<<<<<<< HEAD
 **26**
+=======
+**27**
+>>>>>>> baf9f95290df3bbee4cab06d5a422e7c5270b0ea
 
 #### Java
 
+* Diophantine Equation
+* Is my friend cheating?
+* Perimeter of squares in a rectangle
+* Gap in Primes
+* Playing on a Chessboard
+* Prize Draw
+* Tank Truck
+* Build a pile of Cubes
+* Buying a car
+* Integers: Recreation Two
+* Reducing by steps
+* up AND down
+* Ball Upwards
+* Floating-point Approximation (I)
+* Consecutive strings
+* Duplicate Encoder
+* A Rule of Divisibility by 13
+* Multiples of 3 and 5
+* Srot the inner ctonnet in dsnnieedcg oredr
+* Product of Consecutive Fibonacci Numbers
+* Are we alternate?
+* How Much?
+* Calculate String Rotation
 * Vasya - Clerk
 * Find The Parity Outlier
 * Are they the "same"?
@@ -213,7 +260,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**11**
+**34**
 
 #### Python
 
@@ -242,15 +289,35 @@ All of my coding exercises.
 
 #### Rust
 
+* Diophantine Equation
+* Is my friend cheating?
+* Perimeter of squares in a rectangle
+* Gap in Primes
+* Playing on a Chessboard
+* Prize Draw
+* Tank Truck
+* Build a pile of Cubes
+* Buying a car
+* Integers: Recreation Two
+* Reducing by steps
+* up AND down
+* Ball Upwards
+* Floating-point Approximation (I)
+* Esolang: MiniBitMove
+* Consecutive strings
+* Duplicate Encoder
+* A Rule of Divisibility by 13
+* Multiples of 3 and 5
+* Braking well
+* Product of Consecutive Fibonacci Numbers
 * Bleatrix Trotter
 * Color Choice
 * Weight for Weight
 * How Much?
 * Are they the "same"?
 * Complementary DNA
-* Braking well
 
-**7**
+**27**
 
 ### HackerRank
 

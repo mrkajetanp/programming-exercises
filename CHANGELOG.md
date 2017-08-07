@@ -4,6 +4,136 @@
 
 ---
 
+#### 6.08.2017
+
+* [Java] Diophantine Equation (CodeWars)
+* [C] Diophantine Equation (CodeWars)
+* [Rust] Diophantine Equation (CodeWars)
+
+#### 5.08.2017
+
+* [Rust] Diophantine Equation [Incomplete] (CodeWars)
+* [Java] Is my friend cheating? (CodeWars)
+* [C] Is my friend cheating? (CodeWars)
+
+#### 4.08.2017
+
+* [Rust] Is my friend cheating? (CodeWars)
+* [Java] Perimeter of squares in a rectangle (CodeWars)
+* [C] Perimeter of squares in a rectangle (CodeWars)
+
+#### 3.08.2017
+
+* [Rust] Perimeter of squares in a rectangle (CodeWars)
+* [Java] Gap in Primes (CodeWars)
+* [C] Gap in Primes (CodeWars)
+
+#### 2.08.2017
+
+* [Rust] Gap in Primes (CodeWars)
+* [Java] Playing on a Chessboard (CodeWars)
+* [C] Playing on a Chessboard (CodeWars)
+
+#### 1.08.2017
+
+* [Rust] Playing on a Chessboard (CodeWars)
+
+#### 31.07.2017
+
+* [C] Prize Draw (CodeWars)
+* [Java] Prize Draw (CodeWars)
+* [Rust] Prize Draw (CodeWars)
+
+#### 30.07.2017
+
+* [Java] Tank Truck (CodeWars)
+* [C] Tank Truck (CodeWars)
+* [Rust] Tank Truck (CodeWars)
+
+#### 29.07.2017
+
+* [Java] Build a pile of Cubes (CodeWars)
+* [C] Build a pile of Cubes (CodeWars)
+* [Rust] Build a pile of Cubes (CodeWars)
+
+#### 28.07.2017
+
+* [Java] Buying a car (CodeWars)
+* [C] Buying a car (CodeWars)
+* [Rust] Buying a car (CodeWars)
+
+#### 27.07.2017
+
+* [C] Integers: Recreation Two (CodeWars)
+* [Java] Integers: Recreation Two (CodeWars)
+* [Rust] Integers: Recreation Two (CodeWars)
+
+#### 26.07.2017
+
+* [Java] Reducing by steps (CodeWars)
+* [C] Reducing by steps (CodeWars)
+* [Rust] Reducing by steps (CodeWars)
+
+#### 25.07.2017
+
+* [C] up AND down (CodeWars)
+* [Java] up AND down (CodeWars)
+* [Rust] up AND down (CodeWars)
+
+#### 24.07.2017
+
+* [Java] Ball Upwards (CodeWars)
+* [C] Ball Upwards (CodeWars)
+* [Rust] Ball Upwards (CodeWars)
+
+#### 23.07.2017
+
+* [Java] Floating-point Approximation (I) (CodeWars)
+* [C] Floating-point Approximation (I) (CodeWars)
+* [Rust] Floating-point Approximation (I) (CodeWars)
+
+#### 22.07.2017
+
+* [Rust] Esolang: MiniBitMove (CodeWars)
+* [Java] Consecutive strings (CodeWars)
+* [C] Consecutive strings (CodeWars)
+
+#### 21.07.2017
+
+* [Rust] Consecutive strings (CodeWars)
+* [Java] Duplicate Encoder (CodeWars)
+* [Rust] Duplicate Encoder (CodeWars)
+
+#### 20.07.2017
+
+* [Java] A Rule of Divisibility by 13 (CodeWars)
+* [C] A Rule of Divisibility by 13 (CodeWars)
+* [Rust] A Rule of Divisibility by 13 (CodeWars)
+
+#### 19.07.2017
+
+* [Java] Multiples of 3 and 5 (CodeWars)
+* [C++] Multiples of 3 and 5 (CodeWars)
+* [Rust] Multiples of 3 and 5 (CodeWars)
+
+#### 18.07.2017
+
+* [Java] Product of Consecutive Fibonacci Numbers (CodeWars)
+* [C] Product of Consecutive Fibonacci Numbers (CodeWars)
+* [Rust] Product of Consecutive Fibonacci Numbers (CodeWars)
+
+#### 17.07.2017
+
+* [Java] Are we alternate? (CodeWars)
+* [C] Srot the inner ctonnet in dsnnieedcg oredr (CodeWars)
+* [Java] Srot the inner ctonnet in dsnnieedcg oredr (CodeWars)
+
+#### 16.07.2017
+
+* [Java] How Much (CodeWars)
+* [C] Reverse a Singly Linked List (CodeWars)
+* [Java] Calculate String Rotation (CodeWars)
+
 #### 15.07.2017
 
 * [Java] Vasya - Clerk (CodeWars)
