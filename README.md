@@ -197,7 +197,6 @@ All of my coding exercises.
 * Weight of its Contents
 * Multiply
 
-
 **26**
 
 #### Java
