@@ -151,6 +151,7 @@ All of my coding exercises.
 
 #### C
 
+* k-Primes
 * Diophantine Equation
 * Is my friend cheating?
 * Perimeter of squares in a rectangle

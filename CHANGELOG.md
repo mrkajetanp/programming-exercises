@@ -4,6 +4,10 @@
 
 ---
 
+#### 8.08.2017
+
+* [C] k-Primes (CodeWars)
+
 #### 7.08.2017
 
 * [Rust] k-Primes (CodeWars)

@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-
-
+#include <math.h>
 
 struct node {
     int data;
@@ -41,13 +40,68 @@ void listFree(struct list* l) {
     free(l);
 }
 
-/* struct list* reverse(struct list* l) { */
-/* } */
+int n_prime(int n) {
+    int result = 0;
+
+    for (int i = 2 ; i < sqrt(n)+1 ; ++i) {
+        while (n%i == 0) {
+            result++;
+            n /= i;
+        }
+    }
+
+    if (n > 1)
+        result++;
+
+    return result;
+}
+
+struct list* kPrimes(int k, int start, int end) {
+    struct list* result = createList();
+
+    for (int i = end ; i >= start ; --i) {
+        if (n_prime(i) == k)
+            insertFirst(result, i);
+    }
+
+    return result;
+}
+
+int puzzle(int s) {
+    struct list* one_primes = kPrimes(1, 1, s);
+    struct list* three_primes = kPrimes(3, 1, s);
+    struct list* seven_primes = kPrimes(7, 1, s);
+
+    int result = 0;
+
+    struct node* i = one_primes->head;
+    while (i != NULL) {
+        struct node* j = three_primes->head;
+        while (j != NULL) {
+            struct node* k = seven_primes->head;
+            while (k != NULL) {
+
+                if (i->data + j->data + k->data == s)
+                    result++;
+
+                k = k->next;
+            }
+            j = j->next;
+        }
+        i = i->next;
+    }
+
+    listFree(one_primes);
+    listFree(three_primes);
+    listFree(seven_primes);
+    return result;
+}
 
 char* list2String(struct list* l) {
     char* result = malloc(600);
     strcpy(result, "[ ");
     struct node* node = l->head;
+
     char buff[100];
 
     while (node != NULL) {
@@ -60,21 +114,8 @@ char* list2String(struct list* l) {
     return result;
 }
 
-struct list* kPrimes(int k, int start, int nd) {
-    struct list* result = createList();
-    insertFirst(result, 8);
-    insertFirst(result, 3);
-
-    return result;
-}
-
-int puzzle(int s) {
-    // your code
-    return 0;
-}
-
-void dotest(int k, int start, int nd, char *expr) {
-    struct list* act = kPrimes(k, start, nd);
+void dotest(int k, int start, int end, char *expr) {
+    struct list* act = kPrimes(k, start, end);
     char* sact = list2String(act);
     if(strcmp(sact, expr) != 0)
         printf("kPrimes. Error. Expected \n%s\n but got \n%s\n", expr, sact);
