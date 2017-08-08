@@ -6,6 +6,7 @@
 
 #### 8.08.2017
 
+* [Java] k-Primes (CodeWars)
 * [C] k-Primes (CodeWars)
 
 #### 7.08.2017

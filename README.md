@@ -222,6 +222,7 @@ All of my coding exercises.
 
 #### Java
 
+* k-Primes
 * Diophantine Equation
 * Is my friend cheating?
 * Perimeter of squares in a rectangle
@@ -257,7 +258,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**34**
+**35**
 
 #### Python
 
