@@ -223,6 +223,7 @@ All of my coding exercises.
 
 #### Java
 
+* Integers: Recreation One
 * k-Primes
 * Diophantine Equation
 * Is my friend cheating?
@@ -259,7 +260,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**35**
+**36**
 
 #### Python
 
