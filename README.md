@@ -151,6 +151,7 @@ All of my coding exercises.
 
 #### C
 
+* Integers: Recreation One
 * k-Primes
 * Diophantine Equation
 * Is my friend cheating?
@@ -186,7 +187,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**33**
+**35**
 
 #### C++
 

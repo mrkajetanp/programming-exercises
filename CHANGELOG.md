@@ -6,6 +6,7 @@
 
 #### 9.08.2017
 
+* [C] Integers: Recreation One (CodeWars)
 * [Rust] Integers: Recreation One (CodeWars)
 
 #### 8.08.2017
