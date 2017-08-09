@@ -4,6 +4,10 @@
 
 ---
 
+#### 9.08.2017
+
+* [Rust] Integers: Recreation One (CodeWars)
+
 #### 8.08.2017
 
 * [Java] k-Primes (CodeWars)

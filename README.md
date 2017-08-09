@@ -287,6 +287,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Integers: Recreation One
 * k-Primes
 * Diophantine Equation
 * Is my friend cheating?
@@ -316,7 +317,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**28**
+**29**
 
 ### HackerRank
 
