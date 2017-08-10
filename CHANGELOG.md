@@ -4,6 +4,10 @@
 
 ---
 
+#### 10.08.2017
+
+* [Rust] Valid Braces (CodeWars)
+
 #### 9.08.2017
 
 * [Java] Integers: Recreation One (CodeWars)

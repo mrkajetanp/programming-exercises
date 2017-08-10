@@ -289,6 +289,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Valid Braces
 * Integers: Recreation One
 * k-Primes
 * Diophantine Equation
@@ -319,7 +320,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**29**
+**30**
 
 ### HackerRank
 
