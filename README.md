@@ -151,6 +151,7 @@ All of my coding exercises.
 
 #### C
 
+* Valid Braces
 * Integers: Recreation One
 * k-Primes
 * Diophantine Equation
@@ -187,7 +188,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**35**
+**36**
 
 #### C++
 
