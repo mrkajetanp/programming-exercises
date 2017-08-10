@@ -223,6 +223,7 @@ All of my coding exercises.
 
 #### Java
 
+* Valid Braces
 * Integers: Recreation One
 * k-Primes
 * Diophantine Equation
@@ -260,7 +261,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**36**
+**37**
 
 #### Python
 

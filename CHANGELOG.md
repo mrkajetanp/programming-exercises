@@ -6,6 +6,7 @@
 
 #### 10.08.2017
 
+* [Java] Valid Braces (CodeWars)
 * [Rust] Valid Braces (CodeWars)
 
 #### 9.08.2017
