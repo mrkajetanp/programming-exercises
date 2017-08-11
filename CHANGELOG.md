@@ -4,6 +4,10 @@
 
 ---
 
+#### 11.08.2017
+
+* [Rust] Roman Numerals Encoder (CodeWars)
+
 #### 10.08.2017
 
 * [C] Valid Braces (CodeWars)

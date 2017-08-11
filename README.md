@@ -246,7 +246,7 @@ All of my coding exercises.
 * A Rule of Divisibility by 13
 * Multiples of 3 and 5
 * Srot the inner ctonnet in dsnnieedcg oredr
-* Product of Consecutive Fibonacci Numbers
+ Product of Consecutive Fibonacci Numbers
 * Are we alternate?
 * How Much?
 * Calculate String Rotation
@@ -291,6 +291,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Roman Numerals Encoder
 * Valid Braces
 * Integers: Recreation One
 * k-Primes
@@ -322,7 +323,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**30**
+**31**
 
 ### HackerRank
 
