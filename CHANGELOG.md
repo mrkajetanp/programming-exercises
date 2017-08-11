@@ -6,6 +6,7 @@
 
 #### 11.08.2017
 
+* [C] Roman Numerals Encoder (CodeWars)
 * [Java] Roman Numerals Encoder (CodeWars)
 * [Rust] Roman Numerals Encoder (CodeWars)
 
