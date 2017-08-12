@@ -226,6 +226,7 @@ All of my coding exercises.
 
 #### Java
 
+* Sum by Factors
 * Roman Numerals Encoder
 * Valid Braces
 * Integers: Recreation One
@@ -265,7 +266,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**38**
+**39**
 
 #### Python
 

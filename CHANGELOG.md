@@ -6,6 +6,7 @@
 
 #### 12.08.2017
 
+* [Java] Sum by Factors (CodeWars)
 * [C] Sum by Factors (CodeWars)
 * [Rust] Sum by Factors (CodeWars)
 
