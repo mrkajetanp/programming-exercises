@@ -293,6 +293,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Sum by Factors
 * Roman Numerals Encoder
 * Valid Braces
 * Integers: Recreation One
@@ -325,7 +326,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**31**
+**32**
 
 ### HackerRank
 

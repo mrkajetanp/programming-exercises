@@ -4,6 +4,10 @@
 
 ---
 
+#### 12.08.2017
+
+* [Rust] Sum by Factors (CodeWars)
+
 #### 11.08.2017
 
 * [C] Roman Numerals Encoder (CodeWars)
