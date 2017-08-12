@@ -6,6 +6,7 @@
 
 #### 12.08.2017
 
+* [C] Sum by Factors (CodeWars)
 * [Rust] Sum by Factors (CodeWars)
 
 #### 11.08.2017

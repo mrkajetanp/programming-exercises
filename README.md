@@ -151,6 +151,7 @@ All of my coding exercises.
 
 #### C
 
+* Sum by Factors
 * Roman Numerals Encoder
 * Valid Braces
 * Integers: Recreation One
@@ -189,7 +190,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**37**
+**38**
 
 #### C++
 
