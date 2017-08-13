@@ -24,6 +24,8 @@ bool contains(int* arr, int size, int num) {
 }
 
 void prime_factors(int* dest, int* size, int n) {
+    n = abs(n);
+
     for (int i = 2 ; i < sqrt(n)+1 ; ++i) {
         while (n%i == 0) {
             if (!contains(dest, *size, i))
@@ -42,11 +44,16 @@ char* sumOfDivided(int* lst, int len) {
     int factors[100];
     int idx = 0;
 
+    printf("[ ");
+    for (int i = 0 ; i < len ; ++i)
+        printf("%d ", lst[i]);
+    printf("]\n");
+
     for (int i = 0 ; i < len ; ++i)
         prime_factors(factors, &idx, lst[i]);
     qsort(factors, idx, sizeof(int), compare);
 
-    char* result = malloc(len*15);
+    char* result = malloc(len*20);
     strcpy(result, "");
     char temp[30];
 

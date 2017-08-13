@@ -5,6 +5,7 @@ import java.util.List;
 
 public class SumOfDivided {
     public static void primeFactors(List<Integer> list, int n) {
+        n = Math.abs(n);
 
         for (int i = 2 ; i < Math.sqrt(n)+1 ; ++i) {
             while (n%i == 0) {
