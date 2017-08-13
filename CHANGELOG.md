@@ -6,6 +6,7 @@
 
 #### 13.08.2017
 
+* [C] Square into Squares. Protect trees! [Incomplete] (CodeWars)
 * [Rust] Square into Squares. Protect trees! (CodeWars)
 
 #### 12.08.2017
