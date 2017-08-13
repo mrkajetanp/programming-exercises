@@ -295,6 +295,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Square into Squares. Protect trees!
 * Sum by Factors
 * Roman Numerals Encoder
 * Valid Braces
@@ -328,7 +329,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**32**
+**33**
 
 ### HackerRank
 

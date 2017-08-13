@@ -4,6 +4,10 @@
 
 ---
 
+#### 13.08.2017
+
+* [Rust] Square into Squares. Protect trees! (CodeWars)
+
 #### 12.08.2017
 
 * [Java] Sum by Factors (CodeWars)
