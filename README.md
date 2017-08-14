@@ -295,6 +295,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Getting along with Integer Partitions
 * Square into Squares. Protect trees!
 * Sum by Factors
 * Roman Numerals Encoder
@@ -329,7 +330,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**33**
+**34**
 
 ### HackerRank
 

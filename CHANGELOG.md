@@ -4,6 +4,10 @@
 
 ---
 
+#### 14.08.2017
+
+* [Rust] Getting along with Integer Partitions (CodeWars)
+
 #### 13.08.2017
 
 * [C] Square into Squares. Protect trees! [Incomplete] (CodeWars)
