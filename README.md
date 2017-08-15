@@ -151,6 +151,7 @@ All of my coding exercises.
 
 #### C
 
+* Consecutive k-Primes
 * Sum by Factors
 * Roman Numerals Encoder
 * Valid Braces
@@ -190,7 +191,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**38**
+**39**
 
 #### C++
 

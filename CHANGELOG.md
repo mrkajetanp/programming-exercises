@@ -6,6 +6,7 @@
 
 #### 15.08.2017
 
+* [C] Consecutive k-Primes (CodeWars)
 * [Rust] Consecutive k-Primes (CodeWars)
 
 #### 14.08.2017
