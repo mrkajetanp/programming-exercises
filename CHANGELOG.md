@@ -4,6 +4,10 @@
 
 ---
 
+#### 15.08.2017
+
+* [Rust] Consecutive k-Primes (CodeWars)
+
 #### 14.08.2017
 
 * [Java] Getting along with Integer Partitions [Incomplete] (CodeWars)
