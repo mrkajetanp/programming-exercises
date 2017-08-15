@@ -227,6 +227,7 @@ All of my coding exercises.
 
 #### Java
 
+* Consecutive k-Primes
 * Sum by Factors
 * Roman Numerals Encoder
 * Valid Braces
@@ -267,7 +268,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**39**
+**40**
 
 #### Python
 

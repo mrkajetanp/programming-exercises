@@ -6,6 +6,7 @@
 
 #### 15.08.2017
 
+* [Java] Consecutive k-Primes (CodeWars)
 * [C] Consecutive k-Primes (CodeWars)
 * [Rust] Consecutive k-Primes (CodeWars)
 
