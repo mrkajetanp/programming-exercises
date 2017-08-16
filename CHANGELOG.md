@@ -6,6 +6,7 @@
 
 #### 16.08.2017
 
+* [Java] Help your granny! (CodeWars)
 * [C] Help your granny! (CodeWars)
 * [Rust] Help your granny! (CodeWars)
 
