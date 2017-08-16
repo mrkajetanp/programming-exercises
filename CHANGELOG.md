@@ -6,6 +6,7 @@
 
 #### 16.08.2017
 
+* [C] Help your granny! (CodeWars)
 * [Rust] Help your granny! (CodeWars)
 
 #### 15.08.2017

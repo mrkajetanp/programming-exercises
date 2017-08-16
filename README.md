@@ -151,6 +151,7 @@ All of my coding exercises.
 
 #### C
 
+* Help your granny!
 * Consecutive k-Primes
 * Sum by Factors
 * Roman Numerals Encoder
@@ -191,7 +192,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**39**
+**40**
 
 #### C++
 
