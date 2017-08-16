@@ -297,6 +297,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Help your granny!
 * Consecutive k-Primes
 * Getting along with Integer Partitions
 * Square into Squares. Protect trees!
@@ -333,7 +334,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**35**
+**36**
 
 ### HackerRank
 

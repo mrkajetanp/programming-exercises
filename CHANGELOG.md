@@ -4,6 +4,10 @@
 
 ---
 
+#### 16.08.2017
+
+* [Rust] Help your granny! (CodeWars)
+
 #### 15.08.2017
 
 * [Java] Consecutive k-Primes (CodeWars)
