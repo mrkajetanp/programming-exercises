@@ -6,6 +6,7 @@
 
 #### 17.08.2017
 
+* [Java] John and Ann sign up for Codewars (CodeWars)
 * [C] John and Ann sign up for Codewars (CodeWars)
 * [Rust] John and Ann sign up for Codewars (CodeWars)
 

@@ -151,7 +151,6 @@ All of my coding exercises.
 
 #### C
 
-* John and Ann sign up for Codewars
 * Help your granny!
 * Consecutive k-Primes
 * Sum by Factors
@@ -193,7 +192,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**41**
+**40**
 
 #### C++
 
@@ -229,7 +228,7 @@ All of my coding exercises.
 
 #### Java
 
-* Help your granny!
+* John and Ann sign up for Codewars
 * Consecutive k-Primes
 * Sum by Factors
 * Roman Numerals Encoder
@@ -300,7 +299,6 @@ All of my coding exercises.
 
 #### Rust
 
-* John and Ann sign up for Codewars
 * Help your granny!
 * Consecutive k-Primes
 * Getting along with Integer Partitions
@@ -338,7 +336,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**37**
+**36**
 
 ### HackerRank
 
