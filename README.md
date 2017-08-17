@@ -299,6 +299,7 @@ All of my coding exercises.
 
 #### Rust
 
+* John and Ann sign up for Codewars
 * Help your granny!
 * Consecutive k-Primes
 * Getting along with Integer Partitions
@@ -336,7 +337,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**36**
+**37**
 
 ### HackerRank
 

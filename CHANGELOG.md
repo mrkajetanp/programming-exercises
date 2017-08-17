@@ -4,6 +4,10 @@
 
 ---
 
+#### 17.08.2017
+
+* [Rust] John and Ann sign up for Codewars (CodeWars)
+
 #### 16.08.2017
 
 * [Java] Help your granny! (CodeWars)
