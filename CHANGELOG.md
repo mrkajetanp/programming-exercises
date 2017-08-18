@@ -6,6 +6,7 @@
 
 #### 18.08.2017
 
+* [C] Fibo akin (CodeWars)
 * [Rust] Fibo akin (CodeWars)
 
 #### 17.08.2017

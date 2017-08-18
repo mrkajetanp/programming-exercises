@@ -151,6 +151,7 @@ All of my coding exercises.
 
 #### C
 
+* Fibo akin
 * Help your granny!
 * Consecutive k-Primes
 * Sum by Factors
@@ -192,7 +193,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**40**
+**41**
 
 #### C++
 
