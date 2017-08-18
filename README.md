@@ -229,6 +229,7 @@ All of my coding exercises.
 
 #### Java
 
+* Fibo akin
 * John and Ann sign up for Codewars
 * Consecutive k-Primes
 * Sum by Factors
@@ -271,7 +272,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**41**
+**42**
 
 #### Python
 

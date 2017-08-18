@@ -6,6 +6,7 @@
 
 #### 18.08.2017
 
+* [Java] Fibo akin (CodeWars)
 * [C] Fibo akin (CodeWars)
 * [Rust] Fibo akin (CodeWars)
 
