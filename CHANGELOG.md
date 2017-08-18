@@ -4,6 +4,10 @@
 
 ---
 
+#### 18.08.2017
+
+* [Rust] Fibo akin (CodeWars)
+
 #### 17.08.2017
 
 * [Java] John and Ann sign up for Codewars (CodeWars)
