@@ -230,6 +230,7 @@ All of my coding exercises.
 
 #### Java
 
+* Going to zero or to infinity?
 * Fibo akin
 * John and Ann sign up for Codewars
 * Consecutive k-Primes
@@ -273,7 +274,7 @@ All of my coding exercises.
 * Weight for Weight
 * Braking well
 
-**42**
+**43**
 
 #### Python
 

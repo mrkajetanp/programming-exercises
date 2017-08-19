@@ -6,6 +6,7 @@
 
 #### 19.08.2017
 
+* [Java] Going to zero or to infinity? (CodeWars)
 * [C] Going to zero or to infinity? (CodeWars)
 * [Rust] Going to zero or to infinity? (CodeWars)
 
