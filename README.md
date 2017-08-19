@@ -301,6 +301,7 @@ All of my coding exercises.
 
 #### Rust
 
+* Going to zero or to infinity?
 * Fibo akin
 * Help your granny!
 * Consecutive k-Primes
@@ -339,7 +340,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Complementary DNA
 
-**37**
+**38**
 
 ### HackerRank
 

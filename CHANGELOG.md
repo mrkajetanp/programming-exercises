@@ -4,6 +4,10 @@
 
 ---
 
+#### 19.08.2017
+
+* [Rust] Going to zero or to infinity? (CodeWars)
+
 #### 18.08.2017
 
 * [Java] Fibo akin (CodeWars)
