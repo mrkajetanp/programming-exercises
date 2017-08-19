@@ -151,6 +151,7 @@ All of my coding exercises.
 
 #### C
 
+* Going to zero or to infinity?
 * Fibo akin
 * Help your granny!
 * Consecutive k-Primes
@@ -193,7 +194,7 @@ All of my coding exercises.
 * Are they the "same"?
 * Braking well
 
-**41**
+**42**
 
 #### C++
 
