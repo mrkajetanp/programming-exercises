@@ -1,5 +1,4 @@
 # coding-exercises
-All of my coding exercises.
 
 ### Exercism
 
