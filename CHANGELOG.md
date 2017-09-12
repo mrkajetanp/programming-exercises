@@ -4,6 +4,10 @@
 
 ---
 
+#### 12.09.2017
+
+* [C] Reverse or Rotate (CodeWars)
+
 #### 19.08.2017
 
 * [Java] Going to zero or to infinity? (CodeWars)
