@@ -1,10 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #include <assert.h>
 
+bool if_reverse(char* s) {
+    return s;
+}
+
+char* reverse(char* s) {
+    return s;
+}
+
+char* rotate(char* s) {
+    return s;
+}
+
 char* revrot(char* s, int sz) {
-    return NULL;
+    if (sz <= 0)
+        return "";
+
+    size_t len = strlen(s);
+
+    char* result = malloc(len);
+    strcpy(result, "");
+
+    size_t idx = 0;
+    while (idx <= len) {
+        char* temp = strndup(s+idx, sz);
+
+        printf("%s\n", temp);
+        idx += sz;
+
+        if (idx+sz > len)
+            break;
+    }
+
+    strcat(result, strndup(s+idx, sz));
+    return result;
 }
 
 void dotest(char* s, size_t sz, char *expr)
