@@ -14,8 +14,27 @@ fn reverse(s: &str) -> String {
 }
 
 fn revrot(s: &str, c: usize) -> String {
+    if c <= 0 || c > s.len() {
+        return "".to_string();
+    }
 
-    "".to_string()
+    let mut result = String::new();
+
+    for ch in s.chars().collect::<Vec<char>>().chunks(c) {
+        if ch.len() != c {
+            continue;
+        }
+
+        let temp = ch.into_iter().collect::<String>();
+
+        if if_reverse(temp.as_str()) {
+            result.push_str(reverse(temp.as_str()).as_str());
+        } else {
+            result.push_str(rotate(temp.as_str()).as_str());
+        }
+    }
+
+    result
 }
 
 fn testing(s: &str, c: usize, exp: &str) -> () {

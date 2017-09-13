@@ -4,6 +4,10 @@
 
 ---
 
+#### 13.09.2017
+
+* [Rust] Reverse or Rotate (CodeWars)
+
 #### 12.09.2017
 
 * [C] Reverse or Rotate (CodeWars)
