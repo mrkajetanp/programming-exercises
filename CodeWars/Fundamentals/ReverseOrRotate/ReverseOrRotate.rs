@@ -1,4 +1,18 @@
 
+fn if_reverse(s: &str) -> bool {
+    s.chars().map(|c| (((c as i8)-('0' as i8)) as i64).pow(3)).sum::<i64>()%2 == 0
+}
+
+fn rotate(s: &str) -> String {
+    let mut result = s[1..].to_string();
+    result.push(s.chars().nth(0).unwrap());
+    result
+}
+
+fn reverse(s: &str) -> String {
+    s.chars().rev().collect()
+}
+
 fn revrot(s: &str, c: usize) -> String {
 
     "".to_string()
