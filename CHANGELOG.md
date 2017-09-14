@@ -4,6 +4,10 @@
 
 ---
 
+#### 14.09.2017
+
+* [Java] Reverse or Rotate (CodeWars)
+
 #### 13.09.2017
 
 * [Rust] Reverse or Rotate (CodeWars)
