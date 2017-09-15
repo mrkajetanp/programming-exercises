@@ -4,6 +4,10 @@
 
 ---
 
+#### 15.09.2017
+
+* [C] Which are in? [Basic Setup] (CodeWars)
+
 #### 14.09.2017
 
 * [Java] Reverse or Rotate (CodeWars)
