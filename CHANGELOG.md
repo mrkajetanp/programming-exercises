@@ -6,7 +6,7 @@
 
 #### 15.09.2017
 
-* [C] Which are in? [Basic Setup] (CodeWars)
+* [C] Which are in? [Helper Functions] (CodeWars)
 
 #### 14.09.2017
 
