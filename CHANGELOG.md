@@ -4,6 +4,10 @@
 
 ---
 
+#### 16.09.2017
+
+* [Rust] Which are in? [Initial Setup] (CodeWars)
+
 #### 15.09.2017
 
 * [C] Which are in? (CodeWars)
