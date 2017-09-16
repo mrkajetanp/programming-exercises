@@ -1,6 +1,10 @@
 
 fn in_array(arr1: Vec<&str>, arr2: Vec<&str>) -> Vec<String> {
-    Vec::new()
+    let mut temp: Vec<String> = arr1.iter().filter(|&s| arr2.iter().any(|&t| t.contains(s)))
+        .map(|s| s.to_string()).collect();
+    temp.sort();
+
+    temp
 }
 
 fn dotest(arr1: Vec<&str>, arr2: Vec<&str>, exp: Vec<&str>) {

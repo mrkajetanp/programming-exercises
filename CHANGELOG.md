@@ -6,7 +6,7 @@
 
 #### 16.09.2017
 
-* [Rust] Which are in? [Initial Setup] (CodeWars)
+* [Rust] Which are in? (CodeWars)
 
 #### 15.09.2017
 
