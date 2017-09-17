@@ -6,7 +6,7 @@
 
 #### 17.09.2017
 
-* [Java] Which are in? [Initial Setup] (CodeWars)
+* [Java] Which are in? [Helper Function] (CodeWars)
 
 #### 16.09.2017
 
