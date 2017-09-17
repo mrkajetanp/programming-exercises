@@ -1,16 +1,14 @@
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class WhichAreIn {
 
-    private boolean anySubstring(String[] arr, String str) {
-        for (String s : arr) {
-            if (s.contains(str))
-                return true;
-        }
-        return false;
-    }
-
     public static String[] inArray(String[] array1, String[] array2) {
-        return new String[] { "arp" };
+        return Arrays.stream(array1)
+                .filter(s -> Arrays.stream(array2).anyMatch(st -> st.contains(s)))
+                .sorted()
+                .collect(Collectors.toList())
+                .toArray(new String[0]);
     }
 
 }
