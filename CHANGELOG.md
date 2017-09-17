@@ -4,6 +4,10 @@
 
 ---
 
+#### 17.09.2017
+
+* [Java] Which are in? [Initial Setup] (CodeWars)
+
 #### 16.09.2017
 
 * [Rust] Which are in? (CodeWars)
