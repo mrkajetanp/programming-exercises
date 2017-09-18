@@ -4,6 +4,10 @@
 
 ---
 
+#### 18.09.2017
+
+* [Rust] Backwards Read Primes [Initial Setup] (CodeWars)
+
 #### 17.09.2017
 
 * [Java] Which are in? (CodeWars)
