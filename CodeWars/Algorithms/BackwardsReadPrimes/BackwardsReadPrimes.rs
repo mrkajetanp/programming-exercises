@@ -23,7 +23,12 @@ fn is_prime(n: u64) -> bool {
 }
 
 fn backwards_prime(start: u64, stop: u64) -> Vec<u64> {
-    vec![start, stop]
+(start..stop+1)
+    .filter(|&x| {
+        let x2 = x.to_string().chars().rev().collect::<String>().parse::<u64>().unwrap();
+        x != x2 && is_prime(x) && is_prime(x2)
+    })
+    .collect()
 }
 
 fn testing(start: u64, stop: u64, exp: Vec<u64>) -> () {
