@@ -6,7 +6,7 @@
 
 #### 18.09.2017
 
-* [Rust] Backwards Read Primes [Initial Setup] (CodeWars)
+* [Rust] Backwards Read Primes [Helper Function] (CodeWars)
 
 #### 17.09.2017
 
