@@ -6,7 +6,7 @@
 
 #### 19.09.2017
 
-* [C] Backwards Read Primes [Helper Functions] (CodeWars)
+* [C] Backwards Read Primes (CodeWars)
 
 #### 18.09.2017
 

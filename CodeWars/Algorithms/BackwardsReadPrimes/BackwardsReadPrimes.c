@@ -51,8 +51,12 @@ Data* backwardsPrime(ll start, ll end) {
     result->array = malloc(sizeof(ll) * end/4);
     result->sz = 0;
 
-    result->array[0] = 123;
-    result->sz = 1;
+    for (ll i = start ; i <= end ; ++i) {
+        int i2 = reverse_num(i);
+
+        if (i != i2 && is_prime(i) && is_prime(i2))
+            result->array[result->sz++] = i;
+    }
 
     return result;
 }
