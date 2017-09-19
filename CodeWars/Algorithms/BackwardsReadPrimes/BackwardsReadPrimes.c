@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
+#include <math.h>
 #include <assert.h>
 
 typedef long long ll;
@@ -9,6 +11,40 @@ typedef struct _data {
     ll* array;
     int sz;
 } Data;
+
+bool is_prime(ll n) {
+    if (n <= 3)
+        return true;
+
+    if (n%2 == 0 || n%3 == 0)
+        return false;
+
+    ll i = 5;
+    ll w = 2;
+
+    while (pow(i, 2) <= n) {
+        if (n%i == 0)
+            return false;
+
+        i += w;
+        w = 6-w;
+    }
+
+    return true;
+}
+
+ll reverse_num(ll x) {
+    char buff[20];
+
+    int idx = 0;
+    while (x > 0) {
+        buff[idx++] = '0'+x%10;
+        x /= 10;
+    }
+    buff[idx] = '\0';
+
+    return atoll(buff);
+}
 
 Data* backwardsPrime(ll start, ll end) {
     Data* result = malloc(sizeof *result);
