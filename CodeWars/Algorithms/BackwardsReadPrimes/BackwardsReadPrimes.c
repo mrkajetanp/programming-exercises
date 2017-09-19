@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+
+typedef long long ll;
+
+typedef struct _data {
+    ll* array;
+    int sz;
+} Data;
+
+Data* backwardsPrime(ll start, ll end) {
+    Data* result = malloc(sizeof *result);
+    result->array = malloc(sizeof(ll) * end/4);
+    result->sz = 0;
+
+    result->array[0] = 123;
+    result->sz = 1;
+
+    return result;
+}
+
+char* array2StringLongLong(Data* d) {
+    char* result = malloc(d->sz * 15);
+    strcpy(result, "");
+
+    char temp[50];
+    strcpy(temp, "");
+    for (int i = 0 ; i < d->sz ; ++i) {
+        sprintf(temp, "%lld", d->array[i]);
+        strcat(result, temp);
+        strcat(result, ", ");
+        strcpy(temp, "");
+    }
+    result[strlen(result)-2] = '\0';
+
+    return result;
+}
+
+
+void dotest(ll start, ll end, char* sexpr) {
+    Data* act = backwardsPrime(start, end);
+    char* sact = array2StringLongLong(act);
+    if(strcmp(sact, sexpr) != 0)
+        printf("Error. Expected %s but got %s\n", sexpr, sact);
+    assert(strcmp(sact, sexpr) == 0);
+    if (act->sz != 0) {
+        free(act->array);
+        free(sact); sact = NULL;
+    }
+    free(act); act = NULL;
+}
+
+int main() {
+    dotest(7000, 7100, "7027, 7043, 7057");
+    dotest(70000, 70245, "70001, 70009, 70061, 70079, 70121, 70141, 70163, 70241");
+    dotest(70485, 70600, "70489, 70529, 70573, 70589");
+    dotest(60000, 70000, "");
+}
