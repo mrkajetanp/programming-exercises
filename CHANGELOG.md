@@ -4,6 +4,10 @@
 
 ---
 
+#### 20.09.2017
+
+* [Java] Backwards Read Primes [Initial Setup] (CodeWars)
+
 #### 19.09.2017
 
 * [C] Backwards Read Primes (CodeWars)
