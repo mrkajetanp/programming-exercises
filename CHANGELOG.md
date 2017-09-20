@@ -6,7 +6,7 @@
 
 #### 20.09.2017
 
-* [Java] Backwards Read Primes [Helper Functions] (CodeWars)
+* [Java] Backwards Read Primes (CodeWars)
 
 #### 19.09.2017
 

@@ -4,7 +4,7 @@
 
 public class BackWardsPrime {
 
-    private boolean isPrime(long n) {
+    private static boolean isPrime(long n) {
         if (n <= 3)
             return true;
 
@@ -26,8 +26,21 @@ public class BackWardsPrime {
     }
 
     public static String backwardsPrime(long start, long end) {
+        StringBuilder result = new StringBuilder();
 
-        return "";
+        for (long i = start ; i <= end ; ++i) {
+            long i2 = Long.parseLong(new StringBuilder(String.valueOf(i))
+                    .reverse().toString());
+
+            if (i != i2 && isPrime(i) && isPrime(i2)) {
+                result.append(i);
+                result.append(" ");
+            }
+        }
+
+        if (result.length() > 1)
+            result.setLength(result.length()-1);
+        return result.toString();
     }
 
 }
