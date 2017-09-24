@@ -6,6 +6,7 @@
 
 #### 24.09.2017
 
+* [C] School Tally (School)
 * [C] School Tally [More Helper Functions] (School)
 * [C] School Tally [Helper Functions] (School)
 
