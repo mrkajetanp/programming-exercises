@@ -4,6 +4,10 @@
 
 ---
 
+#### 24.09.2017
+
+* [C] School Tally [Helper Functions] (School)
+
 #### 20.09.2017
 
 * [Java] Backwards Read Primes (CodeWars)
