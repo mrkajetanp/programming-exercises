@@ -39,13 +39,13 @@ typedef struct _student {
 Student* new_student(char* name, char* surname, char* class, double avg) {
     Student* result = malloc(sizeof(Student));
 
-    result->name = malloc(strlen(name+1));
+    result->name = malloc(strlen(name)+1);
     strcpy(result->name, name);
 
-    result->surname = malloc(strlen(surname+1));
+    result->surname = malloc(strlen(surname)+1);
     strcpy(result->surname, surname);
 
-    result->class = malloc(strlen(class+1));
+    result->class = malloc(strlen(class)+1);
     strcpy(result->class, class);
 
     result->avg = avg;
