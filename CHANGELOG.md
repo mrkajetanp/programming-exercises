@@ -4,6 +4,7 @@
 
 #### 11.02.2018
 
+* [Rust] Bookshelf problem (Implemented, not fully tested) [Reddit]
 * [Rust] Bookshelf problem (Data parsing; failure) [Reddit]
 * [Others] Rust stdin template for exercises
 

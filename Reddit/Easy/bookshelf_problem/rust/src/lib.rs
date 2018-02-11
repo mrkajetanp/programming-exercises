@@ -1,4 +1,6 @@
 
+// TODO: test it with more inputs to be sure
+
 pub fn bookshelves(shelves: &str, books: Vec<&str>) -> Option<i32> {
     let mut shelves = shelves.split(' ').map(|s| s.parse::<i32>().unwrap())
         .collect::<Vec<i32>>();
@@ -13,11 +15,19 @@ pub fn bookshelves(shelves: &str, books: Vec<&str>) -> Option<i32> {
         return None;
     }
 
-    println!("shelves: {:?}", shelves);
-    println!("books: {:?}", books);
+    let mut result = 0;
+    while !books.is_empty() {
+        let shelf = shelves.pop().unwrap();
+        let mut space = 0;
 
+        while !books.is_empty() && space+books.last().unwrap() <= shelf {
+            space += books.pop().unwrap();
+        }
 
-    Some(3)
+        result += 1;
+    }
+
+    Some(result)
 }
 
 #[cfg(test)]
