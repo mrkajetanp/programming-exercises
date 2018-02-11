@@ -4,6 +4,7 @@
 
 #### 11.02.2018
 
+* [Rust] Bookshelf problem (Data parsing; failure) [Reddit]
 * [Others] Rust stdin template for exercises
 
 #### 24.09.2017
