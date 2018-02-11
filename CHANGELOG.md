@@ -1,8 +1,10 @@
 # Changelog
 
-### List of completed exercises
-
 ---
+
+#### 11.02.2018
+
+* [Others] Rust stdin template for exercises
 
 #### 24.09.2017
 
