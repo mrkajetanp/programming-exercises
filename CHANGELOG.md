@@ -4,7 +4,8 @@
 
 #### 12.02.2018
 
-* [Rust] Bookshelf problem (Used shelves with books) (Rust)
+* [Rust] Bookshelf problem (Used shelves with titles) (Rust)
+* [Rust] Bookshelf problem (Used shelves with books) (Reddit)
 * [Rust] Bookshelf problem (Binary for challenge data testing) (Reddit)
 
 #### 11.02.2018

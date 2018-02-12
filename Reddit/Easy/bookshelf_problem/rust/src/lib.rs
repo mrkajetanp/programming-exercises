@@ -5,34 +5,31 @@ pub fn bookshelves(shelves: &str, books: &Vec<String>) -> Option<i32> {
         .collect::<Vec<i32>>();
     shelves.sort();
 
-    let mut book_sizes = books.into_iter()
-        .map(|s| s.split(' ').nth(0).unwrap().parse::<i32>().unwrap())
-        .collect::<Vec<i32>>();
-    book_sizes.sort();
+    let mut books = books.into_iter()
+        .map(|s| {
+            (s.split(' ').nth(0).unwrap().parse::<i32>().unwrap(),
+             s.split(' ').skip(1).collect::<Vec<&str>>().join(" "))
+        } )
+        .collect::<Vec<(i32, String)>>();
+    books.sort_by(|a, b| a.0.cmp(&b.0));
 
     // TODO: vec of pairs here
 
-    for book in books {
-        println!("size: {}", book.split(' ').nth(0).unwrap());
-        println!("book: {}", book.split(' ').skip(1).collect::<Vec<&str>>().join(" "));
-
-    }
-
-    if book_sizes.last().unwrap() > shelves.last().unwrap() {
+    if books.last().unwrap().0 > *shelves.last().unwrap() {
         return None;
     }
 
-    let mut used_shelves: HashMap<i32, Vec<i32>> = HashMap::new();
+    let mut used_shelves: HashMap<i32, Vec<(i32, String)>> = HashMap::new();
 
     let mut result = 0;
-    while !book_sizes.is_empty() {
+    while !books.is_empty() {
         let shelf = shelves.pop().unwrap();
         let mut space = 0;
-        let mut books_on_shelf: Vec<i32> = vec![];
+        let mut books_on_shelf: Vec<(i32, String)> = vec![];
 
-        while !book_sizes.is_empty() && space+book_sizes.last().unwrap() <= shelf {
-            books_on_shelf.push(*book_sizes.last().unwrap());
-            space += book_sizes.pop().unwrap();
+        while !books.is_empty() && space+books.last().unwrap().0 <= shelf {
+            books_on_shelf.push(books.last().unwrap().clone());
+            space += books.pop().unwrap().0;
         }
 
         used_shelves.insert(shelf, books_on_shelf);
@@ -41,7 +38,7 @@ pub fn bookshelves(shelves: &str, books: &Vec<String>) -> Option<i32> {
 
     println!("used: {:?}", used_shelves);
 
-    Some(result-1)
+    Some(result)
 }
 
 #[cfg(test)]
