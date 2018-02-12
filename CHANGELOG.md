@@ -2,10 +2,14 @@
 
 ---
 
+#### 12.02.2018
+
+* [Rust] Bookshelf problem (Binary for challenge data testing) (Reddit)
+
 #### 11.02.2018
 
-* [Rust] Bookshelf problem (Implemented, not fully tested) [Reddit]
-* [Rust] Bookshelf problem (Data parsing; failure) [Reddit]
+* [Rust] Bookshelf problem (Reddit)
+* [Rust] Bookshelf problem (Data parsing; failure) (Reddit)
 * [Others] Rust stdin template for exercises
 
 #### 24.09.2017

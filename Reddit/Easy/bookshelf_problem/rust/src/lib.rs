@@ -1,7 +1,8 @@
 
 // TODO: test it with more inputs to be sure
 
-pub fn bookshelves(shelves: &str, books: Vec<&str>) -> Option<i32> {
+pub fn bookshelves(shelves: &str, books: &Vec<String>) -> Option<i32> {
+
     let mut shelves = shelves.split(' ').map(|s| s.parse::<i32>().unwrap())
         .collect::<Vec<i32>>();
     shelves.sort();

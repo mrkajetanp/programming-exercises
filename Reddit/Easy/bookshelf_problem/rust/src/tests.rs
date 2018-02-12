@@ -7,9 +7,10 @@ fn working_example() {
                      "76 A Clash Of Kings",
                      "99 A Storm of Swords",
                      "75 A Feasts for Crows",
-                     "105 A Dance With Dragons"];
+                     "105 A Dance With Dragons"]
+        .into_iter().map(|s| s.to_string()).collect();
 
-    assert_eq!(Some(2), bookshelves(shelves, books));
+    assert_eq!(Some(2), bookshelves(shelves, &books));
 }
 
 #[test]
@@ -17,8 +18,9 @@ fn failure_example() {
     let shelves = "500 500 500";
     let books = vec!["1309 Artamene",
                      "303 A la recherche du temps perdu",
-                     "399 Mission Earth"];
+                     "399 Mission Earth"]
+    .into_iter().map(|s| s.to_string()).collect();
 
-    assert_eq!(None, bookshelves(shelves, books));
+    assert_eq!(None, bookshelves(shelves, &books));
 }
 
