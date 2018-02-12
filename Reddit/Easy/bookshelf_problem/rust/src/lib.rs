@@ -1,34 +1,47 @@
-
-// TODO: test it with more inputs to be sure
+use std::collections::HashMap;
 
 pub fn bookshelves(shelves: &str, books: &Vec<String>) -> Option<i32> {
-
     let mut shelves = shelves.split(' ').map(|s| s.parse::<i32>().unwrap())
         .collect::<Vec<i32>>();
     shelves.sort();
 
-    let mut books = books.into_iter()
+    let mut book_sizes = books.into_iter()
         .map(|s| s.split(' ').nth(0).unwrap().parse::<i32>().unwrap())
         .collect::<Vec<i32>>();
-    books.sort();
+    book_sizes.sort();
 
-    if books.last().unwrap() > shelves.last().unwrap() {
+    // TODO: vec of pairs here
+
+    for book in books {
+        println!("size: {}", book.split(' ').nth(0).unwrap());
+        println!("book: {}", book.split(' ').skip(1).collect::<Vec<&str>>().join(" "));
+
+    }
+
+    if book_sizes.last().unwrap() > shelves.last().unwrap() {
         return None;
     }
 
+    let mut used_shelves: HashMap<i32, Vec<i32>> = HashMap::new();
+
     let mut result = 0;
-    while !books.is_empty() {
+    while !book_sizes.is_empty() {
         let shelf = shelves.pop().unwrap();
         let mut space = 0;
+        let mut books_on_shelf: Vec<i32> = vec![];
 
-        while !books.is_empty() && space+books.last().unwrap() <= shelf {
-            space += books.pop().unwrap();
+        while !book_sizes.is_empty() && space+book_sizes.last().unwrap() <= shelf {
+            books_on_shelf.push(*book_sizes.last().unwrap());
+            space += book_sizes.pop().unwrap();
         }
 
+        used_shelves.insert(shelf, books_on_shelf);
         result += 1;
     }
 
-    Some(result)
+    println!("used: {:?}", used_shelves);
+
+    Some(result-1)
 }
 
 #[cfg(test)]
