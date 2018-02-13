@@ -2,6 +2,10 @@
 
 ---
 
+#### 13.02.2018
+
+* [Rust] Bookshelf problem (Bonus 1 & 2) (Rust)
+
 #### 12.02.2018
 
 * [Rust] Bookshelf problem (Used shelves with titles) (Rust)

@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-pub fn bookshelves(shelves: &str, books: &Vec<String>) -> Option<i32> {
+pub fn bookshelves(shelves: &str, books: &Vec<String>) -> Option<usize> {
     let mut shelves = shelves.split(' ').map(|s| s.parse::<i32>().unwrap())
         .collect::<Vec<i32>>();
     shelves.sort();
@@ -13,15 +13,15 @@ pub fn bookshelves(shelves: &str, books: &Vec<String>) -> Option<i32> {
         .collect::<Vec<(i32, String)>>();
     books.sort_by(|a, b| a.0.cmp(&b.0));
 
-    // TODO: vec of pairs here
-
     if books.last().unwrap().0 > *shelves.last().unwrap() {
+        println!("Impossible! - Cannot fit {} on any shelf!", books.last().unwrap().1);
         return None;
     }
 
+    // TODO: check number of shelves and books
+
     let mut used_shelves: HashMap<i32, Vec<(i32, String)>> = HashMap::new();
 
-    let mut result = 0;
     while !books.is_empty() {
         let shelf = shelves.pop().unwrap();
         let mut space = 0;
@@ -33,12 +33,18 @@ pub fn bookshelves(shelves: &str, books: &Vec<String>) -> Option<i32> {
         }
 
         used_shelves.insert(shelf, books_on_shelf);
-        result += 1;
     }
 
-    println!("used: {:?}", used_shelves);
+    for (sh, bks) in &used_shelves {
+        print!("{}: [{}", sh, bks[0].1);
+        for i in 1..bks.len() {
+            print!(", {}", bks[i].1);
+        }
+        println!("]");
+    }
+    println!("Shelves: {}", used_shelves.len());
 
-    Some(result)
+    Some(used_shelves.len())
 }
 
 #[cfg(test)]
