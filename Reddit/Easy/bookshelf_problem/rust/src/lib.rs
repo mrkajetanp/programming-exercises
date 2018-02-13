@@ -33,7 +33,8 @@ pub fn bookshelves(shelves: &str, books: &Vec<String>) -> Option<usize> {
     }
 
     for &(shelf, ref content) in &used_shelves {
-        print!("{}: [{}", shelf, content[0].1);
+        println!("{} / {}", content.iter().map(|x| x.0).sum::<i32>(), shelf);
+        print!("[{}", content[0].1);
         for i in 1..content.len() {
             print!(", {}", content[i].1);
         }
