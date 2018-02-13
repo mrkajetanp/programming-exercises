@@ -1,4 +1,3 @@
-use std::collections::HashMap;
 
 pub fn bookshelves(shelves: &str, books: &Vec<String>) -> Option<usize> {
     let mut shelves = shelves.split(' ').map(|s| s.parse::<i32>().unwrap())
@@ -18,9 +17,7 @@ pub fn bookshelves(shelves: &str, books: &Vec<String>) -> Option<usize> {
         return None;
     }
 
-    // TODO: check number of shelves and books
-
-    let mut used_shelves: HashMap<i32, Vec<(i32, String)>> = HashMap::new();
+    let mut used_shelves: Vec<(i32, Vec<(i32, String)>)> = Vec::new();
 
     while !books.is_empty() {
         let shelf = shelves.pop().unwrap();
@@ -32,13 +29,13 @@ pub fn bookshelves(shelves: &str, books: &Vec<String>) -> Option<usize> {
             space += books.pop().unwrap().0;
         }
 
-        used_shelves.insert(shelf, books_on_shelf);
+        used_shelves.push((shelf, books_on_shelf));
     }
 
-    for (sh, bks) in &used_shelves {
-        print!("{}: [{}", sh, bks[0].1);
-        for i in 1..bks.len() {
-            print!(", {}", bks[i].1);
+    for &(shelf, ref content) in &used_shelves {
+        print!("{}: [{}", shelf, content[0].1);
+        for i in 1..content.len() {
+            print!(", {}", content[i].1);
         }
         println!("]");
     }

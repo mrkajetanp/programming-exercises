@@ -4,6 +4,7 @@
 
 #### 13.02.2018
 
+* [Rust] Bookshelf problem (Book HashMap to Vec) (Reddit)
 * [Rust] Bookshelf problem (Bonus 1 & 2) (Rust)
 
 #### 12.02.2018
