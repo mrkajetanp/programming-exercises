@@ -4,6 +4,7 @@
 
 #### 21.02.2018
 
+* [Rust] Railways (Cleanup) (Herring)
 * [Rust] Railways (Probably complete) (Herring)
 * [Rust] Railways (Setup & tests) (Herring)
 
