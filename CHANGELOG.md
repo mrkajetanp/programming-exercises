@@ -4,6 +4,10 @@
 
 ---
 
+#### 13.03.2018
+
+* [Rust] Easy Cyclist's Training [Most basic equations] (CodeWars)
+
 #### 24.09.2017
 
 * [C] School Tally (School)
