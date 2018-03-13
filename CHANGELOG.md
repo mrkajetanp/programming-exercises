@@ -1,12 +1,36 @@
 # Changelog
 
-### List of completed exercises
-
 ---
 
+<<<<<<< HEAD
 #### 13.03.2018
 
 * [Rust] Easy Cyclist's Training [Most basic equations] (CodeWars)
+=======
+#### 21.02.2018
+
+* [Rust] Railways (Cleanup) (Herring)
+* [Rust] Railways (Probably complete) (Herring)
+* [Rust] Railways (Setup & tests) (Herring)
+
+#### 13.02.2018
+
+* [Rust] Bookshelf problem (Shelf capacity) (Reddit)
+* [Rust] Bookshelf problem (Book HashMap to Vec) (Reddit)
+* [Rust] Bookshelf problem (Bonus 1 & 2) (Rust)
+
+#### 12.02.2018
+
+* [Rust] Bookshelf problem (Used shelves with titles) (Rust)
+* [Rust] Bookshelf problem (Used shelves with books) (Reddit)
+* [Rust] Bookshelf problem (Binary for challenge data testing) (Reddit)
+
+#### 11.02.2018
+
+* [Rust] Bookshelf problem (Reddit)
+* [Rust] Bookshelf problem (Data parsing; failure) (Reddit)
+* [Others] Rust stdin template for exercises
+>>>>>>> 91737d6525a9752a6117a482da287ca636911429
 
 #### 24.09.2017
 
