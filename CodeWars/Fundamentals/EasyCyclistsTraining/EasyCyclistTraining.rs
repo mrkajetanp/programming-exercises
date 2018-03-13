@@ -1,3 +1,5 @@
+// use std::f64::atan;
+
 const GRAVITY_ACC: f64 = 9.81 * 3.6 * 60.0; // gravity acceleration
 const DRAG: f64 = 60.0 * 0.3 / 3.6; // force applied by air on the cyclist
 const DELTA_T: f64 = 1.0 / 60.0; // in minutes
@@ -6,8 +8,8 @@ const MASS: f64 = 80.0; // biker's mass
 const WATTS0: f64 = 225.0; // initial biker's power
 const D_WATTS: f64 = 0.5; // loss of power at each deltaT
 
-fn slopePercentToAngle(slope: i32) -> f64 {
-    0.0
+fn slope_percent_to_angle(slope: i32) -> f64 {
+    (slope as f64 / 100.0).atan()
 }
 
 fn temps(v0: i32, slope: i32, d_tot: i32) -> i32 {
@@ -17,12 +19,14 @@ fn temps(v0: i32, slope: i32, d_tot: i32) -> i32 {
     let mut d: f64 = 0.0;
     let mut watts: f64 = WATTS0;
 
+    println!("slope: {}", slope_percent_to_angle(43));
+
     // while d.round() != d_tot
 
     // return -1 if v - 3.0 <= 1e-2
 
     // watts -= D_WATTS * DELTA_T;
-    // gamma -= GRAVITY_ACC * slopePercentToAngle(slope);
+    // gamma -= GRAVITY_ACC * slope_percent_to_angle(slope);
     // gamma -= DRAG * v.abs() * v.abs() / MASS;
     // gamma += G_THRUST * watts / (v * MASS);
 

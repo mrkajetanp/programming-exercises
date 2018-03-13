@@ -2,11 +2,11 @@
 
 ---
 
-<<<<<<< HEAD
 #### 13.03.2018
 
+* [Rust] Easy Cyclist's Training [Slope converter] (CodeWars)
 * [Rust] Easy Cyclist's Training [Most basic equations] (CodeWars)
-=======
+
 #### 21.02.2018
 
 * [Rust] Railways (Cleanup) (Herring)
@@ -30,7 +30,6 @@
 * [Rust] Bookshelf problem (Reddit)
 * [Rust] Bookshelf problem (Data parsing; failure) (Reddit)
 * [Others] Rust stdin template for exercises
->>>>>>> 91737d6525a9752a6117a482da287ca636911429
 
 #### 24.09.2017
 
