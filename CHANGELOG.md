@@ -2,6 +2,10 @@
 
 ---
 
+#### 14.03.2018
+
+* [Rust] Easy Cyclist's Training [Something wrong with units] (CodeWars)
+
 #### 13.03.2018
 
 * [Rust] Easy Cyclist's Training [Slope converter] (CodeWars)

@@ -1,4 +1,3 @@
-// use std::f64::atan;
 
 const GRAVITY_ACC: f64 = 9.81 * 3.6 * 60.0; // gravity acceleration
 const DRAG: f64 = 60.0 * 0.3 / 3.6; // force applied by air on the cyclist
@@ -19,27 +18,30 @@ fn temps(v0: i32, slope: i32, d_tot: i32) -> i32 {
     let mut d: f64 = 0.0;
     let mut watts: f64 = WATTS0;
 
-    println!("slope: {}", slope_percent_to_angle(43));
+    while d.round() != d_tot as f64 {
+        v += gamma * DELTA_T;
+        d += v * DELTA_T/60.0;
 
-    // while d.round() != d_tot
+        watts -= D_WATTS * DELTA_T;
+        gamma -= GRAVITY_ACC * slope_percent_to_angle(slope);
+        gamma -= DRAG * v.abs() * v.abs() / MASS;
+        gamma += G_THRUST * watts / (v * MASS);
 
-    // return -1 if v - 3.0 <= 1e-2
+        if gamma <= 1e-5 {
+            gamma = 0.0;
+        }
 
-    // watts -= D_WATTS * DELTA_T;
-    // gamma -= GRAVITY_ACC * slope_percent_to_angle(slope);
-    // gamma -= DRAG * v.abs() * v.abs() / MASS;
-    // gamma += G_THRUST * watts / (v * MASS);
+        if (v - 3.0) <= 1e-2 {
+            return -1;
+        }
 
-    // if gamma <= 1e-5 {
-        // gamma = 0.0;
-    // }
+        t += DELTA_T; // time step
+        println!("t: {}", t);
 
-    // v += gamma * DELTA_T;
-    // d += v * DELTA_T/60.0;
+    }
 
-    // t += DELTA_T; // time step
 
-    t.round() as i32
+   (t * 2.0).round() as i32
 }
 
 fn dotest(v0: i32, slope: i32, d_tot: i32, exp: i32) -> () {
