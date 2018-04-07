@@ -1,7 +1,8 @@
 
-pub fn hamming_distance(one: &str, two: &str) -> u32 {
-    println!("one: {}", one);
-    println!("two: {}", two);
+pub fn hamming_distance(one: &str, two: &str) -> usize {
+    if one.len() != two.len() {
+        panic!("Cannot compute distance between strings of different length!");
+    }
 
-    0
+    one.chars().zip(two.chars()).filter(|&(a, b)| a != b).count()
 }

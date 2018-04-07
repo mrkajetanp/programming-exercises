@@ -4,7 +4,7 @@ use closest_string::*;
 
 fn main() {
     println!("Hello there!");
-    println!("dist: {}", hamming_distance("one", "two"));
+    println!("dist: {}", hamming_distance("aaabsc", "123456"));
 
 }
 

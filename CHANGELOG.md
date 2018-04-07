@@ -4,6 +4,7 @@
 
 #### 7.04.2018
 
+* [Rust] Closest String - Hamming Distance (Reddit)
 * [Rust] Closest String - Project Setup (Reddit)
 
 #### 14.03.2018
