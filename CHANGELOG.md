@@ -2,6 +2,10 @@
 
 ---
 
+#### 7.04.2018
+
+* [Rust] Closest String - Project Setup (Reddit)
+
 #### 14.03.2018
 
 * [Rust] Easy Cyclist's Training [Something wrong with units] (CodeWars)
