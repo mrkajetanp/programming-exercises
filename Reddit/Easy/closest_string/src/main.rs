@@ -13,7 +13,7 @@ fn main() {
     let sequences: Vec<String> = Vec::from_iter(lines.skip(0).map(|l| l.unwrap()));
 
     println!("{}", count);
-    println!("{}", closest_string(sequences));
+    println!("{}", closest_string(&sequences));
 }
 
 #[cfg(test)]

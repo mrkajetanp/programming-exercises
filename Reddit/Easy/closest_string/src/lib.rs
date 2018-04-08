@@ -7,7 +7,7 @@ pub fn hamming_distance(one: &str, two: &str) -> usize {
     one.chars().zip(two.chars()).filter(|&(a, b)| a != b).count()
 }
 
-pub fn closest_string(sequences: Vec<String>) -> String {
+pub fn closest_string(sequences: &Vec<String>) -> String {
     println!("{:?}", sequences);
 
     unimplemented!();
