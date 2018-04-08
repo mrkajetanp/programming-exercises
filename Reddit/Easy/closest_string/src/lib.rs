@@ -8,8 +8,24 @@ pub fn hamming_distance(one: &str, two: &str) -> usize {
 }
 
 pub fn closest_string(sequences: &Vec<String>) -> String {
-    println!("{:?}", sequences);
+    // TODO: make it normal
+    let mut smallest_sum = 99999999;
+    let mut smallest_seq = "";
 
-    unimplemented!();
+    // let mut iter = sequences.iter();
+    // TODO: space for performance improvement
+    for one in sequences.iter() {
+        let sum = sequences.clone().iter()
+            .map(|s| hamming_distance(one, s)).sum();
+
+        if sum < smallest_sum {
+            smallest_sum = sum;
+            smallest_seq = one;
+        }
+
+        // iter.next();
+    }
+
+    smallest_seq.to_string()
 }
 

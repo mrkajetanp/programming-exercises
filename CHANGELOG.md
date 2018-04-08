@@ -4,6 +4,7 @@
 
 #### 8.04.2018
 
+* [Rust] Closest String - Working implementation (Reddit)
 * [Rust] Closest String - Full test setup (Reddit)
 * [Rust] Closest String - Input setup (Reddit)
 
