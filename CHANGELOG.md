@@ -2,6 +2,10 @@
 
 ---
 
+#### 8.04.2018
+
+* [Rust] Closest String - Input setup (Reddit)
+
 #### 7.04.2018
 
 * [Rust] Closest String - Hamming testing (Reddit)

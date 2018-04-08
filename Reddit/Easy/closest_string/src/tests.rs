@@ -18,3 +18,9 @@ fn hamming_panics() {
     hamming_distance("abs", "abso");
 }
 
+// 4
+//     CTCCATCACAC
+//     AATATCTACAT
+//     ACATTCTCCAT
+//     CCTCCCCACTC
+
