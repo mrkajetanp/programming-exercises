@@ -2,6 +2,10 @@
 
 ---
 
+#### 9.04.2018
+
+* [Rust] Closest String - Improved first smallest_sum calculation (Reddit)
+
 #### 8.04.2018
 
 * [Rust] Closest String - Working implementation (Reddit)
