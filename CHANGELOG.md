@@ -4,7 +4,8 @@
 
 #### 9.04.2018
 
-* [Rust] Closest String - Improved first smallest_sum calculation (Reddit)
+* [Rust] Closest String - Cleanup (Reddit)
+* [Rust] Closest String - Improved first smallest_sum (Reddit)
 
 #### 8.04.2018
 
