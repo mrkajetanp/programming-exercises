@@ -26,3 +26,5 @@ pub fn closest_string(sequences: &Vec<String>) -> String {
     smallest_seq.to_string()
 }
 
+#[cfg(test)]
+mod tests;

@@ -4,6 +4,7 @@
 
 #### 9.04.2018
 
+* [Rust] Integer Complexity 1 - Project Setup (Reddit)
 * [Rust] Closest String - Cleanup (Reddit)
 * [Rust] Closest String - Improved first smallest_sum (Reddit)
 

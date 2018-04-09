@@ -1,0 +1,6 @@
+[package]
+name = "integer_complexity_1"
+version = "0.1.0"
+authors = ["Cajetan Puchalski <cajetan.puchalski@gmail.com>"]
+
+[dependencies]

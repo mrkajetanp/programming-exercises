@@ -14,5 +14,3 @@ fn main() {
     println!("{}", closest_string(&sequences));
 }
 
-#[cfg(test)]
-mod tests;
