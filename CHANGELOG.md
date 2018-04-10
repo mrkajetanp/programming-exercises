@@ -2,6 +2,10 @@
 
 ---
 
+#### 10.04.2018
+
+* [Rust] Integer Complexity 1 - Input setup (Reddit)
+
 #### 9.04.2018
 
 * [Rust] Integer Complexity 1 - Project Setup (Reddit)
