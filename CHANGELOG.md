@@ -4,6 +4,7 @@
 
 #### 10.04.2018
 
+* [Rust] Integer Complexity 1 - Prime numbers (Reddit)
 * [Rust] Integer Complexity 1 - Tests setup (Reddit)
 * [Rust] Integer Complexity 1 - Input setup (Reddit)
 
