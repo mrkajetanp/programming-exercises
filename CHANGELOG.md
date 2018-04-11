@@ -4,6 +4,7 @@
 
 #### 11.04.2018
 
+* [Rust] Integer Complexity 1 - General refactoring (Reddit)
 * [Rust] Integer Complexity 1 - Prime factor test (Reddit)
 
 #### 10.04.2018
