@@ -24,22 +24,21 @@ fn is_prime(n: u64) -> bool {
 
 
 pub fn smallest_factor_sum(n: u64) -> u64 {
-    let mut result = n+1;
-
     if is_prime(n) {
         println!("got prime: {}", n);
-        return result;
+        return n+1;
     }
+
+    let mut b = n;
 
     for i in (2..(n as f64).sqrt().ceil() as u64).rev() {
         if n%i == 0 {
-            result = i;
+            b = i;
             break;
         }
     }
 
-    let temp = n/result;
-    result+temp
+    b+(n/b)
 }
 
 #[cfg(test)]

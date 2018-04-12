@@ -4,6 +4,7 @@
 
 #### 12.04.2018
 
+* [Rust] Integer Complexity 1 - Quality code cleanup (Reddit)
 * [Rust] Integer Complexity 1 - Quality performance solution (Reddit)
 * [Rust] Integer Complexity 1 - Slight performance improvement (Reddit)
 
