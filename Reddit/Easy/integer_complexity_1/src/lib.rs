@@ -31,31 +31,15 @@ pub fn smallest_factor_sum(n: u64) -> u64 {
         return result;
     }
 
-    for i in 1..(n as f64 / 2.0).ceil() as u64 {
-        if n%i != 0 {
-            continue;
-        }
-
-        for j in 1..(n as f64 / 2.0).ceil() as u64 {
-            if n%j != 0 {
-                continue;
-            }
-
-            if (i*j == n) && (i+j < result) {
-                result = i+j;
-            }
-
-            if i+j > result {
-                break;
-            }
-        }
-
-        if i > result {
+    for i in (2..(n as f64).sqrt().ceil() as u64).rev() {
+        if n%i == 0 {
+            result = i;
             break;
         }
     }
 
-    result
+    let temp = n/result;
+    result+temp
 }
 
 #[cfg(test)]
