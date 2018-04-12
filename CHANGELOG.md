@@ -2,6 +2,10 @@
 
 ---
 
+#### 12.04.2018
+
+* [Rust] Integer Complexity 1 - Slight performance improvement (Reddit)
+
 #### 11.04.2018
 
 * [Rust] Integer Complexity 1 - Low performance solution (Reddit)

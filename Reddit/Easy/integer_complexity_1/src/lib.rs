@@ -31,12 +31,12 @@ pub fn smallest_factor_sum(n: u64) -> u64 {
         return result;
     }
 
-    for i in 1..n {
+    for i in 1..(n as f64 / 2.0).ceil() as u64 {
         if n%i != 0 {
             continue;
         }
 
-        for j in 1..n {
+        for j in 1..(n as f64 / 2.0).ceil() as u64 {
             if n%j != 0 {
                 continue;
             }
