@@ -1,0 +1,6 @@
+[package]
+name = "alphabet_cipher"
+version = "0.1.0"
+authors = ["Cajetan Puchalski <cajetan.puchalski@gmail.com>"]
+
+[dependencies]

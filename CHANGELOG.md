@@ -2,6 +2,10 @@
 
 ---
 
+#### 13.04.2018
+
+* [Rust] Alphabet Cipher - Project setup (Reddit)
+
 #### 12.04.2018
 
 * [Rust] Integer Complexity 1 - Quality code cleanup (Reddit)

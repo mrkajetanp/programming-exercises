@@ -16,4 +16,3 @@ fn prime_factor() {
     assert_eq!(4568, smallest_factor_sum(4567));
 }
 
-
