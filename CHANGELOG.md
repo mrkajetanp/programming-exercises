@@ -4,6 +4,7 @@
 
 #### 14.04.2018
 
+* [Rust] Alphabet Cipher - Initial encrypt implementation (Reddit)
 * [Rust] Alphabet Cipher - Input setup (Reddit)
 * [Rust] Alphabet Cipher - Testing setup (Reddit)
 
