@@ -3,6 +3,6 @@ extern crate alphabet_cipher;
 use alphabet_cipher as ac;
 
 fn main() {
-    println!("{}", ac::encode("test", "test"));
-
+    println!("{}", ac::encrypt("test", "test"));
 }
+

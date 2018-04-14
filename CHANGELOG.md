@@ -2,6 +2,10 @@
 
 ---
 
+#### 14.04.2018
+
+* [Rust] Alphabet Cipher - Testing setup (Reddit)
+
 #### 13.04.2018
 
 * [Rust] Alphabet Cipher - Project setup (Reddit)
