@@ -2,6 +2,10 @@
 
 ---
 
+#### 15.04.2018
+
+* [Rust] Alphabet Cipher - Dirty but working encrypt (Reddit)
+
 #### 14.04.2018
 
 * [Rust] Alphabet Cipher - Initial encrypt implementation (Reddit)
