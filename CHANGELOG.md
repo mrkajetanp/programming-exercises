@@ -4,6 +4,7 @@
 
 #### 15.04.2018
 
+* [Rust] Alphabet Cipher - Dirty but working decrypt (Reddit)
 * [Rust] Alphabet Cipher - Encrypt implementation (Reddit)
 * [Rust] Alphabet Cipher - Dirty but working encrypt (Reddit)
 

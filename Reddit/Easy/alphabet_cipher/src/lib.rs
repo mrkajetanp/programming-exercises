@@ -10,9 +10,15 @@ pub fn encrypt(message: &str, keyword: &str) -> String {
 }
 
 pub fn decrypt(code: &str, keyword: &str) -> String {
-    println!("decrypt {} with {}", code, keyword);
+    let code: Vec<char> = code.chars().collect();
+    let keyword: Vec<char> = keyword.chars().collect();
 
-    "".to_string()
+    let mut result = String::new();
+    for i in 0..code.len() {
+        result.push((97 + (26 + code[i] as i32 - keyword[i%keyword.len()] as i32)as u8 %26u8) as char);
+    }
+
+    result
 }
 
 #[cfg(test)]
