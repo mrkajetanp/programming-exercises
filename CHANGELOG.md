@@ -2,6 +2,10 @@
 
 ---
 
+#### 16.04.2018
+
+* [Rust] Alphabet Cipher - Decrypt implementation (Reddit)
+
 #### 15.04.2018
 
 * [Rust] Alphabet Cipher - Dirty but working decrypt (Reddit)
