@@ -4,6 +4,7 @@
 
 #### 16.04.2018
 
+* [Rust] Making Links - Testing Setup (Reddit)
 * [Rust] Making Links - Project Setup (Reddit)
 * [Rust] Alphabet Cipher - Decrypt implementation (Reddit)
 

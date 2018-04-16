@@ -4,3 +4,6 @@ pub fn convert(input: &str) -> String {
 
     "".to_string()
 }
+
+#[cfg(test)]
+mod tests;
