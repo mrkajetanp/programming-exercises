@@ -4,6 +4,7 @@
 
 #### 17.04.2018
 
+* [Rust] Making Links - Final solution (Reddit)
 * [Rust] Making Links - Working solution (Reddit)
 * [Rust] Making Links - Input setup (Reddit)
 
