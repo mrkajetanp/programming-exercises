@@ -2,6 +2,10 @@
 
 ---
 
+#### 17.04.2018
+
+* [Rust] Making Links - Input setup (Reddit)
+
 #### 16.04.2018
 
 * [Rust] Making Links - Testing Setup (Reddit)
