@@ -4,3 +4,6 @@ pub fn number_of_pies(pumpkin: i32, apples: i32, eggs: i32,
 
     (pumpkin+apples, eggs+milk+sugar)
 }
+
+#[cfg(test)]
+mod tests;

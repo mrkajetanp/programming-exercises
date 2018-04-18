@@ -4,6 +4,7 @@
 
 #### 18.04.2018
 
+* [Rust] Possible pies - Test setup (Reddit)
 * [Rust] Possible pies - Input setup (Reddit)
 * [Rust] Possible pies - Project setup (Reddit)
 
