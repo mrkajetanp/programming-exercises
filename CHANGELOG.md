@@ -2,6 +2,10 @@
 
 ---
 
+#### 18.04.2018
+
+* [Rust] Possible pies - Project setup (Reddit)
+
 #### 17.04.2018
 
 * [Rust] Making Links - Final solution (Reddit)
