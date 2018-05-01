@@ -4,6 +4,7 @@
 
 #### 1.05.2018
 
+* [Python] Backwards Read Primes (CodeWars)
 * [Python] Backwards Read Primes - is_prime function (CodeWars)
 * [Python] Backwards Read Primes - Test setup (CodeWars)
 

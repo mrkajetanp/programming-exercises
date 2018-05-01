@@ -1,26 +1,33 @@
 import unittest
 
 def is_prime(n):
-    if n <= 3:
-        return True
+    return all([n % i != 0 for i in range(2,int(n**.5)+1)])
 
-    if n%2 == 0 or n%3 == 0:
-        return False
+# def is_prime(n):
+#     if n <= 3:
+#         return True
 
-    i = 5
-    w = 2
+#     if n%2 == 0 or n%3 == 0:
+#         return False
 
-    while i**2 <= n:
-        if n%i == 0:
-            return False
-        i += w
-        w = 6-w
+#     i = 5
+#     w = 2
 
-    return True
+#     while i**2 <= n:
+#         if n%i == 0:
+#             return False
+#         i += w
+#         w = 6-w
+
+#     return True
 
 
 def backwards_prime(start, stop):
-    pass
+    def is_good(x):
+        x2 = int(str(x)[::-1])
+        return x != x2 and is_prime(x) and is_prime(x2)
+
+    return [x for x in range(start, stop+1) if is_good(x)]
 
 class TestExercise(unittest.TestCase):
     def test_basic(self):
