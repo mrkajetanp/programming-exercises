@@ -1,12 +1,12 @@
 import unittest
 
 def in_array(arr1, arr2):
-    return []
+    return list(sorted(set(filter(lambda s: any(s in t for t in arr2), arr1))))
 
 
 class TestExercise(unittest.TestCase):
     def test_in_array(self):
-        a1 = ["live", "arp", "strong"] 
+        a1 = ["live", "arp", "strong"]
         a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
         r = ['arp', 'live', 'strong']
         self.assertEqual(in_array(a1, a2), r)
