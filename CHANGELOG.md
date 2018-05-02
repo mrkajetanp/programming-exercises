@@ -4,6 +4,7 @@
 
 #### 2.05.2018
 
+* [Python] Which Are In (CodeWars)
 * [Python] Which Are In - Working solution (CodeWars)
 * [Python] Which Are In - Test Setup (CodeWars)
 

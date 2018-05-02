@@ -1,7 +1,7 @@
 import unittest
 
 def in_array(arr1, arr2):
-    return list(sorted(set(filter(lambda s: any(s in t for t in arr2), arr1))))
+    return sorted({s for s in arr1 if any(s in t for t in arr2)})
 
 
 class TestExercise(unittest.TestCase):
