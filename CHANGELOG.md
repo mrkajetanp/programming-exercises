@@ -2,6 +2,10 @@
 
 ---
 
+#### 2.05.2018
+
+* [Python] Which Are In - Test Setup (CodeWars)
+
 #### 1.05.2018
 
 * [Python] Backwards Read Primes (CodeWars)
