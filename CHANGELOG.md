@@ -4,6 +4,7 @@
 
 #### 3.05.2018
 
+* [Python] Reverse or Rotate - Helper functions (CodeWars)
 * [Python] Reverse or Rotate - Setup (CodeWars)
 
 #### 2.05.2018

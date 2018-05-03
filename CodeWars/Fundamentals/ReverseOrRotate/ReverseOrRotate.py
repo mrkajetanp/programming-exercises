@@ -1,6 +1,17 @@
 import unittest
 
+def if_reverse(s):
+    return sum([int(c)**3 for c in s])%2 == 0
+
+def rotate(s):
+    return s[1::]+s[0]
+
 def revrot(string, size):
+    if size <= 0 or size > len(string) or not string:
+        return ""
+
+    print([string[i:i+size] for i in range(0, len(string), size)])
+    print("".join(["ab", "cd"]))
     return ""
 
 class TestExercise(unittest.TestCase):
