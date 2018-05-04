@@ -4,6 +4,7 @@
 
 #### 4.05.2018
 
+* [Python] Going to zero or to infinity? - Final solution (CodeWars)
 * [Python] Going to zero or to infinity? - Working solution (CodeWars)
 * [Python] Going to zero or to infinity? - Setup (CodeWars)
 

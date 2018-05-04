@@ -11,6 +11,13 @@ def going(n):
     return float(str(result)[:8])
 
 
+# def going(n):
+#     s = 1.0
+#     for i in range(2, n + 1):
+#         s = s/i + 1
+#     return int(s * 1e6) / 1e6
+
+
 class TestExercise(unittest.TestCase):
     def test_basic(self):
         self.assertEqual(going(5), 1.275)
