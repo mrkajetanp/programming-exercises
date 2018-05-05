@@ -1,34 +1,22 @@
 import unittest
 
 
-def length_sup_u_k(n, k):
+def u_list(n):
     fibos = [1, 1]
-    count = 0
 
     for i in range(3, n+1):
-        curr = fibos[i - fibos[i-1-1] - 1] + fibos[i - fibos[i-2-1] - 1]
+        fibos.append(fibos[i - fibos[i-1-1] - 1] + fibos[i - fibos[i-2-1] - 1])
 
-        if curr >= k:
-            count += 1
+    return fibos
 
-        fibos.append(curr)
 
-    return count
+def length_sup_u_k(n, k):
+    return len([x for x in u_list(n) if x >= k])
 
 
 def comp(n):
-    fibos = [1, 1]
-    sum = 0
-
-    for i in range(3, n+1):
-        curr = fibos[i - fibos[i-1-1] - 1] + fibos[i - fibos[i-2-1] - 1]
-
-        if curr < fibos[len(fibos)-1]:
-            sum += 1
-
-        fibos.append(curr)
-
-    return sum
+    u = u_list(n)
+    return len([i for i in range(3, n-1) if u[i] > u[i+1]])
 
 
 class TestExercise(unittest.TestCase):

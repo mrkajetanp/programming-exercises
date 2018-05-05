@@ -4,6 +4,7 @@
 
 #### 5.05.2018
 
+* [Python] Fibo akin - Final solution (CodeWars)
 * [Python] Fibo akin - Working solution (CodeWars)
 * [Python] Fibo akin - Test setup (CodeWars)
 
