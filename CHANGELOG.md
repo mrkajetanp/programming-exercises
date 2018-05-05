@@ -2,6 +2,10 @@
 
 ---
 
+#### 5.05.2018
+
+* [Python] Fibo akin - Test setup (CodeWars)
+
 #### 4.05.2018
 
 * [Python] Going to zero or to infinity? - Final solution (CodeWars)
