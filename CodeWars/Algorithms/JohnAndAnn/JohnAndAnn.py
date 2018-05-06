@@ -1,10 +1,30 @@
 import unittest
 
 def john(n):
-    pass
+    anns = [1, 1]
+    johns = [0, 0]
+
+    for i in range(2, n):
+        temp = johns[anns[i-1]]
+        anns.append(i-temp)
+
+        temp = anns[johns[i-1]]
+        johns.append(i-temp)
+
+    return johns
 
 def ann(n):
-    pass
+    anns = [1, 1]
+    johns = [0, 0]
+
+    for i in range(2, n):
+        temp = johns[anns[i-1]]
+        anns.append(i-temp)
+
+        temp = anns[johns[i-1]]
+        johns.append(i-temp)
+
+    return anns
 
 def sum_john(n):
     pass
