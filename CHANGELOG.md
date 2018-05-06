@@ -2,11 +2,25 @@
 
 ---
 
+<<<<<<< HEAD
 #### 6.05.2018
 
 * [Python] John and Ann - Final solution (CodeWars)
 * [Python] John and Ann - Basic functions (CodeWars)
 * [Python] John and Ann - Setup (CodeWars)
+=======
+#### 5.05.2018
+
+* [Python] Fibo akin - Final solution (CodeWars)
+* [Python] Fibo akin - Working solution (CodeWars)
+* [Python] Fibo akin - Test setup (CodeWars)
+
+#### 4.05.2018
+
+* [Python] Going to zero or to infinity? - Final solution (CodeWars)
+* [Python] Going to zero or to infinity? - Working solution (CodeWars)
+* [Python] Going to zero or to infinity? - Setup (CodeWars)
+>>>>>>> d80706e5f34e09d30d57aa22e54be4538617491d
 
 #### 3.05.2018
 
