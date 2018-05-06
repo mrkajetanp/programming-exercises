@@ -2,6 +2,10 @@
 
 ---
 
+#### 6.05.2018
+
+* [Python] John and Ann - Setup (CodeWars)
+
 #### 3.05.2018
 
 * [Python] Reverse or Rotate - Final solution (CodeWars)
