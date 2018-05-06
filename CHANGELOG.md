@@ -4,6 +4,7 @@
 
 #### 6.05.2018
 
+* [Python] John and Ann - Final solution (CodeWars)
 * [Python] John and Ann - Basic functions (CodeWars)
 * [Python] John and Ann - Setup (CodeWars)
 

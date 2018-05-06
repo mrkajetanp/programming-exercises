@@ -27,10 +27,10 @@ def ann(n):
     return anns
 
 def sum_john(n):
-    pass
+    return sum(john(n))
 
 def sum_ann(n):
-    pass
+    return sum(ann(n))
 
 class TestExercise(unittest.TestCase):
     def test_john(self):
