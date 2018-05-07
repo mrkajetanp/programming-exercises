@@ -4,6 +4,7 @@
 
 #### 7.05.2018
 
+* [Python] Help your Granny - Most functionality (CodeWars)
 * [Python] Help your Granny - Test setup (CodeWars)
 
 #### 6.05.2018
