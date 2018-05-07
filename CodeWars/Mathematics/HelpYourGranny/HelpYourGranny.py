@@ -17,7 +17,7 @@ def tour(friends, friend_towns, dist):
 
     d_sum += dist[fr_twns[fvec[len(fvec)-1]]]
 
-    return d_sum
+    return math.floor(d_sum)
 
 class TestExercise(unittest.TestCase):
     def test_basic(self):
