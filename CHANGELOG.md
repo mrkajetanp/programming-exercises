@@ -2,6 +2,10 @@
 
 ---
 
+#### 8.05.2018
+
+* [Python] Consecutive k-Primes - Setup (CodeWars)
+
 #### 7.05.2018
 
 * [Python] Help your Granny - Final solution (CodeWars)
