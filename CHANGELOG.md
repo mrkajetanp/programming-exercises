@@ -4,6 +4,7 @@
 
 #### 8.05.2018
 
+* [Python] Consecutive k-Primes - n-Prime function (CodeWars)
 * [Python] Consecutive k-Primes - Setup (CodeWars)
 
 #### 7.05.2018
