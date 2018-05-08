@@ -1,21 +1,20 @@
 import unittest
-import math
+from math import sqrt
 
 def n_prime(n):
     result = 0
 
-    for i in range(2, math.floor(math.sqrt(n))+1):
+    for i in range(2, int(sqrt(n))+1):
         while n%i == 0:
             result += 1
             n /= i
 
-    if n > 1:
-        result += 1
-
-    return result
+    return (result + 1) if n > 1 else result
 
 def consec_kprimes(k, arr):
-    pass
+    return sum([1 for i in range(len(arr)-1)
+                if n_prime(arr[i]) == n_prime(arr[i+1]) == k])
+
 
 class TestExercise(unittest.TestCase):
     def test_basic(self):
