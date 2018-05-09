@@ -4,6 +4,7 @@
 
 #### 9.05.2018
 
+* [Python] Integers: Recreation One - Sum square divisors (CodeWars)
 * [Python] Integers: Recreation One - Test Setup (CodeWars)
 
 #### 8.05.2018
