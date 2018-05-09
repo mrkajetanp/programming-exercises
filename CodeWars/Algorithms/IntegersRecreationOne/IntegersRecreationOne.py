@@ -8,7 +8,8 @@ def sum_square_divisors(n):
                 range(1, int(ceil(sqrt(n)))) if n%i == 0])
 
 def list_squared(m, n):
-    pass
+    return [(i, sum_square_divisors(i)) for i in range(m, n)
+     if sqrt(sum_square_divisors(i)) == round(sqrt(sum_square_divisors(i)))]
 
 class TestExercise(unittest.TestCase):
     def test_basic(self):
