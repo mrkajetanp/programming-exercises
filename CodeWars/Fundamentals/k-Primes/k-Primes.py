@@ -1,8 +1,20 @@
 import unittest
+from math import sqrt
 
 
-def count_kprimes(k, start, nd):
-    pass
+def n_prime(n):
+    result = 0
+
+    for i in range(2, int(sqrt(n))+1):
+        while n % i == 0:
+            result += 1
+            n /= i
+
+    return (result + 1) if n > 1 else result
+
+
+def count_kprimes(k, start, end):
+    return [x for x in range(start, end+1) if n_prime(x) == k]
 
 
 def puzzle(s):

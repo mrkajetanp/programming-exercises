@@ -4,6 +4,7 @@
 
 #### 10.05.2018
 
+* [Python] k-Primes - count_kprimes function (CodeWars)
 * [Python] k-Primes - Test setup (CodeWars)
 * [Python] Integers: Recreation One - Solution adjustment (CodeWars)
 
