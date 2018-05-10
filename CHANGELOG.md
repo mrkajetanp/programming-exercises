@@ -2,6 +2,10 @@
 
 ---
 
+#### 10.05.2018
+
+* [Python] Integers: Recreation One - Solution adjustment (CodeWars)
+
 #### 9.05.2018
 
 * [Python] Integers: Recreation One - Final solution (CodeWars)
