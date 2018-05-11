@@ -4,6 +4,7 @@
 
 #### 11.05.2018
 
+* [Python] Diophantine Equation - Test Setup (CodeWars)
 * [Python] k-Primes - Improved final solution (CodeWars)
 * [Python] k-Primes - Final solution (CodeWars)
 
