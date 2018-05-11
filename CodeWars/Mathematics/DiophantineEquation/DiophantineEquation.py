@@ -1,8 +1,18 @@
 import unittest
+from math import sqrt, floor
 
 
 def sol_equa(n):
-    pass
+    result = []
+
+    for i in range(1, int(floor(sqrt(n)))+1):
+        if n % i == 0:
+            j = n/i
+
+            if (j-i) % 4 == 0:
+                result.append([(i+j)/2, (j-i)/4])
+
+    return result
 
 
 class TestExercise(unittest.TestCase):
