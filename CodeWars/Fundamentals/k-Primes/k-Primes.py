@@ -18,7 +18,12 @@ def count_kprimes(k, start, end):
 
 
 def puzzle(s):
-    pass
+    one_primes = count_kprimes(1, 1, s)
+    three_primes = count_kprimes(3, 1, s)
+    seven_primes = count_kprimes(7, 1, s)
+
+    return sum(1 for i in one_primes for j in three_primes
+               for k in seven_primes if i+j+k == s)
 
 
 class TestExercise(unittest.TestCase):

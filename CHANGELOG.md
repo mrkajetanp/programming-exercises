@@ -2,6 +2,11 @@
 
 ---
 
+#### 11.05.2018
+
+* [Python] k-Primes - Improved final solution (CodeWars)
+* [Python] k-Primes - Final solution (CodeWars)
+
 #### 10.05.2018
 
 * [Python] k-Primes - count_kprimes function (CodeWars)
