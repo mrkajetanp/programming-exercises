@@ -2,6 +2,10 @@
 
 ---
 
+#### 12.05.2018
+
+* [Python] Is my friend cheating? - Test setup (CodeWars)
+
 #### 11.05.2018
 
 * [Python] Diophantine Equation - Final solution (CodeWars)
