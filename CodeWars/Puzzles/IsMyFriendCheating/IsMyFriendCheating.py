@@ -2,7 +2,16 @@ import unittest
 
 
 def removNb(n):
-    return []
+    result = []
+    s = sum(range(1, n+1))
+
+    for a in range(1, n+1):
+        b = (s-a)/(a+1)
+
+        if b == round(b) and b < n:
+            result.append((a, b))
+
+    return result
 
 
 class TestExercise(unittest.TestCase):
