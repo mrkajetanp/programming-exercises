@@ -4,6 +4,7 @@
 
 #### 12.05.2018
 
+* [Python] Is my friend cheating? - Final solution (CodeWars)
 * [Python] Is my friend cheating? - Working solution (CodeWars)
 * [Python] Is my friend cheating? - Test setup (CodeWars)
 
