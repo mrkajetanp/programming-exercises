@@ -1,6 +1,15 @@
 import unittest
 
 
+def fib_list(n):
+    fib = [0, 1]
+
+    for i in range(1, n-1):
+        fib.append(fib[i] + fib[i-1])
+
+    return fib
+
+
 def perimeter(n):
     pass
 

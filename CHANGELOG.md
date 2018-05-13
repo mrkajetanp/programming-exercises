@@ -4,6 +4,7 @@
 
 #### 13.05.2018
 
+* [Python] Perimeter of squares in a rectangle - Fib fn (CodeWars)
 * [Python] Perimeter of squares in a rectangle - Test setup (CodeWars)
 
 #### 12.05.2018
