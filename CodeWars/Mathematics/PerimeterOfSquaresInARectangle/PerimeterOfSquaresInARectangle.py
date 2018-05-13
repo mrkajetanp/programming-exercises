@@ -4,14 +4,15 @@ import unittest
 def fib_list(n):
     fib = [0, 1]
 
-    for i in range(1, n-1):
+    for i in range(1, n):
         fib.append(fib[i] + fib[i-1])
 
+    fib.remove(0)
     return fib
 
 
 def perimeter(n):
-    pass
+    return sum(fib_list(n+1)) * 4
 
 
 class TestExercise(unittest.TestCase):
