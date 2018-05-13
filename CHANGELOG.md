@@ -2,6 +2,10 @@
 
 ---
 
+#### 13.05.2018
+
+* [Python] Perimeter of squares in a rectangle - Test setup (CodeWars)
+
 #### 12.05.2018
 
 * [Python] Is my friend cheating? - Final solution (CodeWars)
