@@ -4,6 +4,7 @@
 
 #### 14.05.2018
 
+* [Python] Perimeter of squares in a rectangle - Full tests (CodeWars)
 * [Python] Perimeter of squares in a rectangle - Iterator (CodeWars)
 * [Python] Perimeter of squares in a rectangle - Generator (CodeWars)
 

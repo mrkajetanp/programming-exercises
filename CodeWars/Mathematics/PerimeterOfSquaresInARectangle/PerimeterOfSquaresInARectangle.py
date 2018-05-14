@@ -45,16 +45,36 @@ class Fibonacci:
         return self.curr
 
 
-def perimeter(n):
+def perimeter_basic(n):
+    return sum(fib_list(n+1)) * 4
+
+
+def perimeter_generator(n):
+    return sum(fib_list_gen(n+1)) * 4
+
+
+def perimeter_iterator(n):
     return sum(Fibonacci(n+1)) * 4
 
 
 class TestExercise(unittest.TestCase):
-    def test_perimeter(self):
-        self.assertEqual(perimeter(5), 80)
-        self.assertEqual(perimeter(7), 216)
-        self.assertEqual(perimeter(20), 114624)
-        self.assertEqual(perimeter(30), 14098308)
+    def test_perimeter_basic(self):
+        self.assertEqual(perimeter_basic(5), 80)
+        self.assertEqual(perimeter_basic(7), 216)
+        self.assertEqual(perimeter_basic(20), 114624)
+        self.assertEqual(perimeter_basic(30), 14098308)
+
+    def test_perimeter_generator(self):
+        self.assertEqual(perimeter_generator(5), 80)
+        self.assertEqual(perimeter_generator(7), 216)
+        self.assertEqual(perimeter_generator(20), 114624)
+        self.assertEqual(perimeter_generator(30), 14098308)
+
+    def test_perimeter_iterator(self):
+        self.assertEqual(perimeter_iterator(5), 80)
+        self.assertEqual(perimeter_iterator(7), 216)
+        self.assertEqual(perimeter_iterator(20), 114624)
+        self.assertEqual(perimeter_iterator(30), 14098308)
 
 
 if __name__ == '__main__':
