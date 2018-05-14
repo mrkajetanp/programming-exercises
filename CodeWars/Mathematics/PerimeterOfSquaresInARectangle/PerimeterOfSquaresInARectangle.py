@@ -1,6 +1,7 @@
 import unittest
 
 
+# Basic
 def fib_list(n):
     fib = [0, 1]
 
@@ -11,8 +12,18 @@ def fib_list(n):
     return fib
 
 
+# Generator
+def fib_list_gen(n):
+    a, b = 0, 1
+
+    yield b
+    for i in range(1, n):
+        a, b = b, a+b
+        yield b
+
+
 def perimeter(n):
-    return sum(fib_list(n+1)) * 4
+    return sum(fib_list_gen(n+1)) * 4
 
 
 class TestExercise(unittest.TestCase):

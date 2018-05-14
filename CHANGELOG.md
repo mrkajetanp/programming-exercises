@@ -2,6 +2,10 @@
 
 ---
 
+#### 14.05.2018
+
+* [Python] Perimeter of squares in a rectangle - Generator (CodeWars)
+
 #### 13.05.2018
 
 * [Python] Perimeter of squares in a rectangle - Final (CodeWars)
