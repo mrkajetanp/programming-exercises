@@ -2,22 +2,17 @@ import unittest
 
 
 def validBraces(string):
-    brackets = []
+    stack = []
+    braces = {"(": ")", "[": "]", "{": "}"}
 
     for c in string:
-        if c == '(' or c == '{' or c == '[':
-            brackets.append(c)
-        if c == ')':
-            if brackets.pop() != '(':
-                return False
-        if c == '}':
-            if brackets.pop() != '{':
-                return False
-        if c == ']':
-            if brackets.pop() != '[':
+        if c in braces.keys():
+            stack.append(c)
+        else:
+            if not stack or braces[stack.pop()] != c:
                 return False
 
-    return not len(brackets)
+    return not len(stack)
 
 
 class TestExercise(unittest.TestCase):

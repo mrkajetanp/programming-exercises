@@ -4,6 +4,7 @@
 
 #### 15.05.2018
 
+* [Python] Valid Braces - Final solution (CodeWars)
 * [Python] Valid Braces - Working solution (CodeWars)
 * [Python] Valid Braces - Test setup (CodeWars)
 
