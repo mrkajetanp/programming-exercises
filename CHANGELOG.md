@@ -2,6 +2,10 @@
 
 ---
 
+#### 15.05.2018
+
+* [Python] Valid Braces - Test setup (CodeWars)
+
 #### 14.05.2018
 
 * [Python] Perimeter of squares in a rectangle - Full tests (CodeWars)
