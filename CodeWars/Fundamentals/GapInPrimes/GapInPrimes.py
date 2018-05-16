@@ -7,7 +7,16 @@ def is_prime(n):
 
 
 def gap(g, m, n):
-    pass
+    last_prime = 0
+
+    for i in range(m, n+1):
+        if is_prime(i):
+            if i-last_prime == g:
+                return [last_prime, i]
+            else:
+                last_prime = i
+
+    return None
 
 
 class TestExercise(unittest.TestCase):

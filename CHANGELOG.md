@@ -4,6 +4,7 @@
 
 #### 16.05.2018
 
+* [Python] Gap in Primes - Working solution (CodeWars)
 * [Python] Gap in Primes - is_prime function (CodeWars)
 * [Python] Gap in Primes - Test setup (CodeWars)
 
