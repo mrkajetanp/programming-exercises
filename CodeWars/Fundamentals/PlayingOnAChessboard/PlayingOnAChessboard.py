@@ -2,7 +2,10 @@ import unittest
 
 
 def game(n):
-    pass
+    if n % 2 == 0:
+        return [n/2*n]
+    else:
+        return [n**2, 2]
 
 
 class TestExercise(unittest.TestCase):

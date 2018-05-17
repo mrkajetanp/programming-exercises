@@ -4,6 +4,7 @@
 
 #### 17.05.2018
 
+* [Python] Playing on a Chessboard - Working solution (CodeWars)
 * [Python] Playing on a Chessboard - Test setup (CodeWars)
 
 #### 16.05.2018
