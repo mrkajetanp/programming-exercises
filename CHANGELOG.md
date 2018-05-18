@@ -4,6 +4,7 @@
 
 #### 18.05.2018
 
+* [Python] Prize Draw - Working solution (CodeWars)
 * [Python] Prize Draw - Rank name function (CodeWars)
 * [Python] Prize Draw - Test setup (CodeWars)
 
