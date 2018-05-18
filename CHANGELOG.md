@@ -2,6 +2,10 @@
 
 ---
 
+#### 18.05.2018
+
+* [Python] Prize Draw - Test setup (CodeWars)
+
 #### 17.05.2018
 
 * [Python] Playing on a Chessboard - Final solution (CodeWars)
