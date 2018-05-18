@@ -1,6 +1,10 @@
 import unittest
 
 
+def rank_name(name):
+    len(name) + sum(ord('c') - ord('a') + 1 for c in name.lower())
+
+
 def rank(st, we, n):
     pass
 
