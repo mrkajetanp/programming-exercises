@@ -4,6 +4,7 @@
 
 #### 19.05.2018
 
+* [Python] Prize Draw - Reduced functions (CodeWars)
 * [Python] Prize Draw - Key cmp to lambda (CodeWars)
 * [Python] Prize Draw - Refactored key_cmp (CodeWars)
 
