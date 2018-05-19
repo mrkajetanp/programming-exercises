@@ -2,6 +2,10 @@
 
 ---
 
+#### 19.05.2018
+
+* [Python] Prize Draw - Refactored key_cmp (CodeWars)
+
 #### 18.05.2018
 
 * [Python] Prize Draw - Working solution (CodeWars)

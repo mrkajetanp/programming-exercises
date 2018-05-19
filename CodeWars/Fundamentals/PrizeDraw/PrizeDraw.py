@@ -11,10 +11,7 @@ def cmp(x, y):
 
 
 def key_cmp(p1, p2):
-    if p1[1] == p2[1]:
-        return cmp(p1[0], p2[0])
-    else:
-        return cmp(p2[1], p1[1])
+    return cmp(p1[0], p2[0]) if p1[1] == p2[1] else cmp(p2[1], p1[1])
 
 
 def rank(st, we, n):
