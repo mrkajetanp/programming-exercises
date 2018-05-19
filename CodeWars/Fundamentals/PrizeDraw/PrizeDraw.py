@@ -10,10 +10,6 @@ def cmp(x, y):
     return (x > y) - (x < y)
 
 
-def key_cmp(p1, p2):
-    return cmp(p1[0], p2[0]) if p1[1] == p2[1] else cmp(p2[1], p1[1])
-
-
 def rank(st, we, n):
     if not st:
         return "No participants"
@@ -22,7 +18,9 @@ def rank(st, we, n):
         return "Not enough participants"
 
     names = [(s, rank_name(s)*i) for s, i in zip(st.split(','), we)]
-    names.sort(key=cmp_to_key(key_cmp))
+    names.sort(key=cmp_to_key(
+        lambda a, b: cmp(a[0], b[0]) if a[1] == b[1] else cmp(b[1], a[1])
+    ))
     return names[n-1][0]
 
 
