@@ -4,6 +4,7 @@
 
 #### 20.05.2018
 
+* [Python] Tank Truck - Final solution (CodeWars)
 * [Python] Tank Truck - Working solution (CodeWars)
 * [Python] Tank Truck - Test setup (CodeWars)
 

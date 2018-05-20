@@ -6,8 +6,8 @@ def tankvol(h, d, vt):
     r = d/2
 
     sector_angle = 2.0 * acos(1.0-(h/r))
-    segment_area = (r*r * (sector_angle - sin(sector_angle)))/2
-    cylinder_length = vt / (r*r * pi)
+    segment_area = (r**2 * (sector_angle - sin(sector_angle)))/2
+    cylinder_length = vt / (r**2 * pi)
 
     return floor(segment_area * cylinder_length)
 
