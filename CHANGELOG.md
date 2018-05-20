@@ -2,6 +2,10 @@
 
 ---
 
+#### 20.05.2018
+
+* [Python] Tank Truck - Test setup (CodeWars)
+
 #### 19.05.2018
 
 * [Python] Prize Draw - Reduced functions (CodeWars)
