@@ -1,16 +1,10 @@
 import unittest
+from math import floor, sqrt
 
 
 def find_nb(m):
-    n = 1
-
-    while (n*(n+1)//2)**2 < m:
-        n += 1
-
-    if (n*(n+1)//2)**2 == m:
-        return n
-    else:
-        return -1
+    n = int(floor(sqrt(2 * sqrt(m))))
+    return n if (n*(n+1)//2)**2 == m else -1
 
 
 class TestExercise(unittest.TestCase):

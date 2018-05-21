@@ -4,6 +4,7 @@
 
 #### 21.05.2018
 
+* [Python] Build a pile of Cubes - Final solution (CodeWars)
 * [Python] Build a pile of Cubes - Working solution (CodeWars)
 * [Python] Build a pile of Cubes - Test setup (CodeWars)
 
