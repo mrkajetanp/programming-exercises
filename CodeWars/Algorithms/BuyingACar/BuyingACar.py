@@ -2,7 +2,26 @@ import unittest
 
 
 def nb_months(old, new, saving, perc):
-    pass
+    if old >= new:
+        return [0, old-new]
+
+    month = 1
+    account = 0.0
+
+    while True:
+        if month%2 == 0:
+            perc += 0.5
+
+        old -= old * (perc/100.0)
+        new -= new * (perc/100.0)
+        account += saving
+
+        if account + old >= new:
+            break
+
+        month += 1
+
+    return [month, round(account+old-new)]
 
 
 class TestExercise(unittest.TestCase):

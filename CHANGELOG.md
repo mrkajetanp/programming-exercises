@@ -4,6 +4,7 @@
 
 #### 22.05.2018
 
+* [Python] Buying a car - Working solution (CodeWars)
 * [Python] Buying a car - Test setup (CodeWars)
 
 #### 21.05.2018
