@@ -6,14 +6,14 @@ def nb_months(old, new, saving, perc):
         return [0, old-new]
 
     month = 1
-    account = 0.0
+    account = 0
 
     while True:
         if month%2 == 0:
-            perc += 0.5
+            perc += .5
 
-        old -= old * (perc/100.0)
-        new -= new * (perc/100.0)
+        old -= old * (perc/100)
+        new -= new * (perc/100)
         account += saving
 
         if account + old >= new:
