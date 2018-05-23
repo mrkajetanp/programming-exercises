@@ -2,6 +2,10 @@
 
 ---
 
+#### 23.05.2018
+
+* [Python] Integers Recreation Two - Test setup (CodeWars)
+
 #### 22.05.2018
 
 * [Python] Buying a car - Final solution (CodeWars)
