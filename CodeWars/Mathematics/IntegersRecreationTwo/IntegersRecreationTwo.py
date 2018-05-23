@@ -3,13 +3,13 @@ import unittest
 
 def prod2sum(a, b, c, d):
     result = []
-    n = (a*a + b*b) * (c*c + d*d)
+    n = (a**2 + b**2) * (c**2 + d**2)
     sums = [abs(a*c+b*d), abs(a*d+b*c), abs(a*c-b*d), abs(a*d-b*c)]
 
-    for i in range(0, len(sums)):
-        for j in range(0, len(sums)):
-            if sums[i]**2 + sums[j]**2 == n:
-                pair = [min(sums[i], sums[j]), max(sums[i], sums[j])]
+    for i in sums:
+        for j in sums:
+            if i**2 + j**2 == n:
+                pair = [min(i, j), max(i, j)]
 
                 if pair not in result:
                     result.append(pair)

@@ -4,6 +4,7 @@
 
 #### 23.05.2018
 
+* [Python] Integers Recreation Two - Final solution (CodeWars)
 * [Python] Integers Recreation Two - Working solution (CodeWars)
 * [Python] Integers Recreation Two - Test setup (CodeWars)
 
