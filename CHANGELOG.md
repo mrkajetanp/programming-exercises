@@ -4,6 +4,7 @@
 
 #### 24.05.2018
 
+* [Python] Reducing by Steps - Test setup (CodeWars)
 * [Python] Reducing by Steps - Initial setup (CodeWars)
 
 #### 23.05.2018
