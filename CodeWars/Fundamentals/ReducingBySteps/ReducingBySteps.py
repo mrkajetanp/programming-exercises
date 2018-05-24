@@ -10,7 +10,7 @@ def lcmu(a, b):
 
 
 def som(a, b):
-    pass
+    return a+b
 
 
 def maxi(a, b):
@@ -22,7 +22,13 @@ def mini(a, b):
 
 
 def oper_array(fct, arr, init):
-    pass
+    result = []
+
+    result.append(fct(init, arr[0]))
+    for i in range(len(arr)-1):
+        result.append(fct(result[i], arr[i+1]))
+
+    return result
 
 
 class TestExercise(unittest.TestCase):
