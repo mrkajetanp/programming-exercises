@@ -2,6 +2,10 @@
 
 ---
 
+#### 24.05.2018
+
+* [Python] Reducing by Steps - Initial setup (CodeWars)
+
 #### 23.05.2018
 
 * [Python] Integers Recreation Two - Final solution (CodeWars)
