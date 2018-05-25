@@ -4,6 +4,7 @@
 
 #### 25.05.2018
 
+* [Python] Reducing by Steps - gcdi (CodeWars)
 * [Python] Reducing by Steps - MinMax (CodeWars)
 
 #### 24.05.2018

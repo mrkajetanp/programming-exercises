@@ -2,7 +2,7 @@ import unittest
 
 
 def gcdi(a, b):
-    pass
+    return abs(a) if b == 0 else gcdi(abs(b), abs(a) % abs(b))
 
 
 def lcmu(a, b):
