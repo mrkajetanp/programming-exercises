@@ -2,6 +2,10 @@
 
 ---
 
+#### 25.05.2018
+
+* [Python] Reducing by Steps - MinMax (CodeWars)
+
 #### 24.05.2018
 
 * [Python] Reducing by Steps - Working oper & sum (CodeWars)

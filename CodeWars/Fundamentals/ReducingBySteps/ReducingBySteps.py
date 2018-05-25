@@ -10,15 +10,15 @@ def lcmu(a, b):
 
 
 def som(a, b):
-    return a+b
+    return a + b
 
 
 def maxi(a, b):
-    pass
+    return max(a, b)
 
 
 def mini(a, b):
-    pass
+    return min(a, b)
 
 
 def oper_array(fct, arr, init):
