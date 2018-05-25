@@ -6,7 +6,7 @@ def gcdi(a, b):
 
 
 def lcmu(a, b):
-    pass
+    return abs(a) * abs(b) / gcdi(a, b)
 
 
 def som(a, b):
