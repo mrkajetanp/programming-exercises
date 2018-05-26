@@ -2,7 +2,24 @@ import unittest
 
 
 def arrange(string):
-    pass
+    words = [s for s in string.split()]
+
+    if len(words) == 0 or len(words) == 1:
+        return " ".join(words)
+
+    ln = len(words)
+    for i in range(len(words)-1):
+        if i % 2 == 0:
+            if not (len(words[i]) <= len(words[i+1])):
+                words[i], words[i+1] = words[i+1], words[i]
+            words[i] = words[i].lower()
+        else:
+            if not (len(words[i]) >= len(words[i+1])):
+                words[i], words[i+1] = words[i+1], words[i]
+            words[i] = words[i].upper()
+
+    words[ln-1] = words[ln-1].upper() if ln % 2 == 0 else words[ln-1].lower()
+    return " ".join(words)
 
 
 class TestExercise(unittest.TestCase):

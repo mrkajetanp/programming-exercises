@@ -4,6 +4,7 @@
 
 #### 26.05.2018
 
+* [Python] up AND down - Working solution (CodeWars)
 * [Python] up AND down - Test Setup (CodeWars)
 
 #### 25.05.2018
