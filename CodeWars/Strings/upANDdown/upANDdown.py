@@ -10,11 +10,11 @@ def arrange(string):
     ln = len(words)
     for i in range(len(words)-1):
         if i % 2 == 0:
-            if not (len(words[i]) <= len(words[i+1])):
+            if len(words[i]) > len(words[i+1]):
                 words[i], words[i+1] = words[i+1], words[i]
             words[i] = words[i].lower()
         else:
-            if not (len(words[i]) >= len(words[i+1])):
+            if len(words[i]) < len(words[i+1]):
                 words[i], words[i+1] = words[i+1], words[i]
             words[i] = words[i].upper()
 
