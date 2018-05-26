@@ -2,6 +2,10 @@
 
 ---
 
+#### 26.05.2018
+
+* [Python] up AND down - Test Setup (CodeWars)
+
 #### 25.05.2018
 
 * [Python] Reducing by Steps - Final solution (CodeWars)
