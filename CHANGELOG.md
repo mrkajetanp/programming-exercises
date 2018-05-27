@@ -4,6 +4,7 @@
 
 #### 27.05.2018
 
+* [Python] Ball Upwards - Final solution (CodeWars)
 * [Python] Ball Upwards - Working solution (CodeWars)
 * [Python] Ball Upwards - Test Setup (CodeWars)
 
