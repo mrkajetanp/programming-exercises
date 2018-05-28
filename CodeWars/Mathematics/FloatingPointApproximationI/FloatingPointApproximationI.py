@@ -4,7 +4,7 @@ from math import sqrt, fabs
 
 
 def f(x):
-    return x / (sqrt(x+1.0) + 1.0)
+    return x / (sqrt(x+1) + 1)
 
 
 def assertFuzzyEquals(actual, expected, msg=""):
