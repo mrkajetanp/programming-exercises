@@ -2,6 +2,10 @@
 
 ---
 
+#### 28.05.2018
+
+* [Python] Floating-point Approximation (I) - Test Setup (CodeWars)
+
 #### 27.05.2018
 
 * [Python] Ball Upwards - Final solution (CodeWars)
