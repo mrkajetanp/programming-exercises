@@ -4,6 +4,7 @@
 
 #### 28.05.2018
 
+* [Python] Floating-point Approximation (I) - Working solution (CodeWars)
 * [Python] Floating-point Approximation (I) - Test Setup (CodeWars)
 
 #### 27.05.2018
