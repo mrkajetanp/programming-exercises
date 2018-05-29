@@ -1,4 +1,5 @@
 use std::io;
+use std::collections::HashMap;
 
 macro_rules! parse_input {
     ($x:expr, $t:ident) => ($x.trim().parse::<$t>().unwrap())
@@ -11,29 +12,65 @@ macro_rules! parse_input {
 
 #[derive(Debug)]
 struct Site {
-    id: i32,
     x: i32,
     y: i32,
-    radius: i32
+    radius: i32,
+    structure_type: i32,
+    owner: i32,
+    cooldown: i32,
+    unit: i32
 }
 
 impl Site {
-    fn new(id: i32, x: i32, y: i32, radius: i32) -> Site {
+    fn new(x: i32, y: i32, radius: i32) -> Site {
         Site {
-            id,
             x,
             y,
-            radius
+            radius,
+            structure_type: -1,
+            owner: -1,
+            cooldown: -1,
+            unit: -1
+        }
+    }
+
+    pub fn update(&mut self, struct_type: i32, owner: i32, cooldown: i32, unit: i32) {
+        self.structure_type = struct_type;
+        self.owner = owner;
+        self.cooldown = cooldown;
+        self.unit = unit;
+    }
+}
+
+#[derive(Debug)]
+struct Unit {
+    x: i32,
+    y: i32,
+    owner: i32,
+    unit: i32,
+    health: i32
+}
+
+impl Unit {
+    fn new(x: i32, y: i32, owner: i32, unit: i32, health: i32) -> Unit {
+        Unit {
+            x,
+            y,
+            owner,
+            unit,
+            health
         }
     }
 }
 
+ 
 fn main() {
     let mut input_line = String::new();
     io::stdin().read_line(&mut input_line).unwrap();
     let num_sites = parse_input!(input_line, i32);
 
     let mut sites: Vec<Site> = vec![];
+    let mut sites: HashMap<i32, Site> = HashMap::new();
 
     for i in 0..num_sites as usize {
         let mut input_line = String::new();
@@ -44,7 +81,7 @@ fn main() {
         let y = parse_input!(inputs[2], i32);
         let radius = parse_input!(inputs[3], i32);
 
-        sites.push(Site::new(site_id, x, y, radius));
+        sites.insert(site_id, Site::new(x, y, radius));
     }
 
     // game loop
@@ -54,6 +91,7 @@ fn main() {
         let inputs = input_line.split(" ").collect::<Vec<_>>();
         let gold = parse_input!(inputs[0], i32);
         let touched_site = parse_input!(inputs[1], i32); // -1 if none
+
         for i in 0..num_sites as usize {
             let mut input_line = String::new();
             io::stdin().read_line(&mut input_line).unwrap();
@@ -65,10 +103,17 @@ fn main() {
             let owner = parse_input!(inputs[4], i32); // -1 = No structure, 0 = Friendly, 1 = Enemy
             let param_1 = parse_input!(inputs[5], i32);
             let param_2 = parse_input!(inputs[6], i32);
+
+            sites.get_mut(&site_id).unwrap().
+                update(structure_type, owner, param_1, param_2);
         }
+
         let mut input_line = String::new();
         io::stdin().read_line(&mut input_line).unwrap();
         let num_units = parse_input!(input_line, i32);
+        
+        let mut units = vec![];
+        
         for i in 0..num_units as usize {
             let mut input_line = String::new();
             io::stdin().read_line(&mut input_line).unwrap();
@@ -78,15 +123,26 @@ fn main() {
             let owner = parse_input!(inputs[2], i32);
             let unit_type = parse_input!(inputs[3], i32); // -1 = QUEEN, 0 = KNIGHT, 1 = ARCHER
             let health = parse_input!(inputs[4], i32);
+            
+            units.push(Unit::new(x, y, owner, unit_type, health));
         }
 
         // Write an action using println!("message...");
         // To debug: eprintln!("Debug message...");
 
+        eprintln!("Gold: {}", gold);
+        eprintln!("Touched site: {}", touched_site);
+        
+        eprintln!("Structures:");
         for s in &sites {
             eprintln!("{:?}", s);
         }
-
+        
+        eprintln!("Num units: {}", num_units);
+        for u in &units {
+            eprintln!("{:?}", u);
+        }
+ 
         // First line: A valid queen action
         // Second line: A set of training instructions
         println!("WAIT");
