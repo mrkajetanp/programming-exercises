@@ -2,6 +2,10 @@
 
 ---
 
+#### 29.05.2018
+
+* [Rust] Code Royale - Basic Site (CodinGame)
+
 #### 28.05.2018
 
 * [Python] Floating-point Approximation (I) - Final solution (CodeWars)
