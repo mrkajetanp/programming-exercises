@@ -41,6 +41,12 @@ impl Site {
         self.cooldown = cooldown;
         self.unit = unit;
     }
+
+    // TODO: site distance
+
+    pub fn distance(&self, other: &Site) -> f64 {
+        (((self.x - other.x).pow(2) + (self.y - other.y).pow(2)) as f64).sqrt()
+    }
 }
 
 #[derive(Debug)]
@@ -81,6 +87,9 @@ fn queen_location(units: &Vec<Unit>) -> (i32, i32) {
 
     (-1, -1)
 }
+
+// fn closest_site(sites: HashMap<i32, Site>, coord: (i32, i32)) -> Site {
+// }
 
 fn main() {
     let mut input_line = String::new();
