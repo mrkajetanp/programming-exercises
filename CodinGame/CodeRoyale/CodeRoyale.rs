@@ -44,8 +44,12 @@ impl Site {
 
     // TODO: site distance
 
-    pub fn distance(&self, other: &Site) -> f64 {
+    fn site_distance(&self, other: &Site) -> f64 {
         (((self.x - other.x).pow(2) + (self.y - other.y).pow(2)) as f64).sqrt()
+    }
+
+    fn distance(&self, x: i32, y: i32) -> f64 {
+        (((self.x - x).pow(2) + (self.y - y).pow(2)) as f64).sqrt()
     }
 }
 
@@ -88,8 +92,24 @@ fn queen_location(units: &Vec<Unit>) -> (i32, i32) {
     (-1, -1)
 }
 
-// fn closest_site(sites: HashMap<i32, Site>, coord: (i32, i32)) -> Site {
-// }
+// TODO: change to closest free site
+
+fn closest_site(sites: &HashMap<i32, Site>, coord: (i32, i32)) -> i32 {
+    // TODO: normalise omg
+    let mut min_dist = 9999.0;
+    let mut min_id = -1;
+
+    for (i, s) in sites {
+        let dist = s.distance(coord.0, coord.1);
+
+        if dist < min_dist {
+            min_dist = dist;
+            min_id = *i;
+        }
+    }
+
+    min_id
+}
 
 fn main() {
     let mut input_line = String::new();
@@ -169,6 +189,8 @@ fn main() {
             eprintln!("{:?}", u);
         }
         eprintln!("Queen on: {:?}", queen_location(&units));
+        eprintln!("Closest site: {:?}",
+                  closest_site(&sites, queen_location(&units)));
 
 
         // First line: A valid queen action

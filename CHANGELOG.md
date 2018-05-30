@@ -4,6 +4,7 @@
 
 #### 30.05.2018
 
+* [Rust] Code Royale - Closest site (CodinGame)
 * [Rust] Code Royale - Site distance (CodinGame)
 * [Rust] Code Royale - Queen related functions (CodinGame)
 
