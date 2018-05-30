@@ -2,6 +2,10 @@
 
 ---
 
+#### 30.05.2018
+
+* [Rust] Code Royale - Queen related functions (CodinGame)
+
 #### 29.05.2018
 
 * [Rust] Code Royale - Full input setup (CodinGame)
