@@ -5,11 +5,6 @@ macro_rules! parse_input {
     ($x:expr, $t:ident) => ($x.trim().parse::<$t>().unwrap())
 }
 
-/**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
- **/
-
 #[derive(Debug)]
 struct Site {
     x: i32,
@@ -42,14 +37,18 @@ impl Site {
         self.unit = unit;
     }
 
-    // TODO: site distance
-
-    fn site_distance(&self, other: &Site) -> f64 {
-        (((self.x - other.x).pow(2) + (self.y - other.y).pow(2)) as f64).sqrt()
-    }
+    // TODO: get location
 
     fn distance(&self, x: i32, y: i32) -> f64 {
         (((self.x - x).pow(2) + (self.y - y).pow(2)) as f64).sqrt()
+    }
+
+    fn is_free(&self) -> bool {
+        self.structure_type == -1
+    }
+
+    fn get_location(&self) -> (i32, i32) {
+        (self.x, self.y)
     }
 }
 
@@ -92,14 +91,16 @@ fn queen_location(units: &Vec<Unit>) -> (i32, i32) {
     (-1, -1)
 }
 
-// TODO: change to closest free site
-
-fn closest_site(sites: &HashMap<i32, Site>, coord: (i32, i32)) -> i32 {
+fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32)) -> i32 {
     // TODO: normalise omg
     let mut min_dist = 9999.0;
     let mut min_id = -1;
 
     for (i, s) in sites {
+        if !s.is_free() {
+            continue;
+        }
+
         let dist = s.distance(coord.0, coord.1);
 
         if dist < min_dist {
@@ -188,13 +189,13 @@ fn main() {
         for u in &units {
             eprintln!("{:?}", u);
         }
-        eprintln!("Queen on: {:?}", queen_location(&units));
-        eprintln!("Closest site: {:?}",
-                  closest_site(&sites, queen_location(&units)));
 
+        let queen_loc = queen_location(&units);
+        let closest = closest_free_site(&sites, queen_loc);
 
-        // First line: A valid queen action
-        // Second line: A set of training instructions
+        eprintln!("Queen on: {:?}", queen_loc);
+        eprintln!("Closest site: {:?}", closest);
+
         println!("WAIT");
         println!("TRAIN");
     }
