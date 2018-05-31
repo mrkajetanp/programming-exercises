@@ -4,6 +4,7 @@
 
 #### 31.05.2018
 
+* [Rust] Error fix (CodinGame)
 * [Rust] Buliding barracks on a closest site (CodinGame)
 * [Rust] Closest free site & Site's get location (CodinGame)
 

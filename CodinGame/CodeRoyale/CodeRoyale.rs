@@ -133,7 +133,6 @@ fn main() {
         sites.insert(site_id, Site::new(x, y, radius));
     }
 
-    let mut barracks = "".to_string();
 
     // game loop
     loop {
@@ -143,6 +142,8 @@ fn main() {
         let gold = parse_input!(inputs[0], i32);
         let touched_site = parse_input!(inputs[1], i32); // -1 if none
 
+        let mut barracks = "".to_string();
+        
         for i in 0..num_sites as usize {
             let mut input_line = String::new();
             io::stdin().read_line(&mut input_line).unwrap();
@@ -155,8 +156,8 @@ fn main() {
             let param_1 = parse_input!(inputs[5], i32);
             let param_2 = parse_input!(inputs[6], i32);
 
-            if structure_type == 2 {
-                barracks.push_str(&format!("{} ", site_id));
+            if structure_type == 2 && owner == 0 && param_1 == 0 {
+                barracks.push_str(&format!(" {}", site_id));
             }
 
             sites.get_mut(&site_id).unwrap().
@@ -210,6 +211,11 @@ fn main() {
             println!("MOVE {} {}", cl_xy.0, cl_xy.1);
         }
 
-        println!("TRAIN {}", barracks);
+        eprintln!("TRAIN{}", barracks);
+        if !barracks.is_empty() {
+            println!("TRAIN{}", barracks);
+        } else {
+            println!("TRAIN");
+        }
     }
 }
