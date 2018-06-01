@@ -142,14 +142,37 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32) {
     let closest = closest_free_site(&sites, queen_loc);
     let cl_xy = sites.get(&closest).unwrap().get_location();
 
-    eprintln!("Queen on: {:?}", queen_loc);
-    eprintln!("Closest site: {:?} on {},{}", closest, cl_xy.0, cl_xy.1);
+    if get_barracks(sites, 0).len() < 1 {
+        if touched == closest {
+            println!("BUILD {} BARRACKS-KNIGHT", closest);
+        } else {
+            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+        }
 
-    if touched == closest {
-        println!("BUILD {} BARRACKS-KNIGHT", closest);
-    } else {
-        println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+        return;
     }
+
+    if get_barracks(sites, 1).len() < 1 {
+        if touched == closest {
+            println!("BUILD {} BARRACKS-ARCHER", closest);
+        } else {
+            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+        }
+
+        return;
+    }
+
+    if get_barracks(sites, 2).len() < 1 {
+        if touched == closest {
+            println!("BUILD {} BARRACKS-GIANT", closest);
+        } else {
+            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+        }
+
+        return;
+    }
+
+    println!("MOVE {} {}", 0, 0);
 }
 
 fn main() {

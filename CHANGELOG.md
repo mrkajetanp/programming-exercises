@@ -4,6 +4,7 @@
 
 #### 1.06.2018
 
+* [Rust] Code Royale - Queen 1-1-1 building (CodinGame)
 * [Rust] Code Royale - Basic handle queen (CodinGame)
 * [Rust] Code Royale - Get barracks (CodinGame)
 
