@@ -133,6 +133,23 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>) {
     eprintln!("Knights: {:?}", get_barracks(sites, 0));
     eprintln!("Archers: {:?}", get_barracks(sites, 1));
     eprintln!("Giants: {:?}", get_barracks(sites, 2));
+
+    println!("TRAIN");
+}
+
+fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32) {
+    let queen_loc = queen_location(&units);
+    let closest = closest_free_site(&sites, queen_loc);
+    let cl_xy = sites.get(&closest).unwrap().get_location();
+
+    eprintln!("Queen on: {:?}", queen_loc);
+    eprintln!("Closest site: {:?} on {},{}", closest, cl_xy.0, cl_xy.1);
+
+    if touched == closest {
+        println!("BUILD {} BARRACKS-KNIGHT", closest);
+    } else {
+        println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+    }
 }
 
 fn main() {
@@ -142,7 +159,7 @@ fn main() {
 
     let mut sites: HashMap<i32, Site> = HashMap::new();
 
-    for i in 0..num_sites as usize {
+    for _ in 0..num_sites as usize {
         let mut input_line = String::new();
         io::stdin().read_line(&mut input_line).unwrap();
         let inputs = input_line.split(" ").collect::<Vec<_>>();
@@ -163,23 +180,17 @@ fn main() {
         let gold = parse_input!(inputs[0], i32);
         let touched_site = parse_input!(inputs[1], i32); // -1 if none
 
-        let mut barracks = "".to_string();
-        
-        for i in 0..num_sites as usize {
+        for _ in 0..num_sites as usize {
             let mut input_line = String::new();
             io::stdin().read_line(&mut input_line).unwrap();
             let inputs = input_line.split(" ").collect::<Vec<_>>();
             let site_id = parse_input!(inputs[0], i32);
-            let ignore_1 = parse_input!(inputs[1], i32); // used in future leagues
-            let ignore_2 = parse_input!(inputs[2], i32); // used in future leagues
+            // let ignore_1 = parse_input!(inputs[1], i32); // used in future leagues
+            // let ignore_2 = parse_input!(inputs[2], i32); // used in future leagues
             let structure_type = parse_input!(inputs[3], i32); // -1 = No structure, 2 = Barracks
             let owner = parse_input!(inputs[4], i32); // -1 = No structure, 0 = Friendly, 1 = Enemy
             let param_1 = parse_input!(inputs[5], i32);
             let param_2 = parse_input!(inputs[6], i32);
-
-            if structure_type == 2 && owner == 0 && param_1 == 0 {
-                barracks.push_str(&format!(" {}", site_id));
-            }
 
             sites.get_mut(&site_id).unwrap().
                 update(structure_type, owner, param_1, param_2);
@@ -190,7 +201,7 @@ fn main() {
         let num_units = parse_input!(input_line, i32);
 
         let mut units = vec![];
-        for i in 0..num_units as usize {
+        for _ in 0..num_units as usize {
             let mut input_line = String::new();
             io::stdin().read_line(&mut input_line).unwrap();
             let inputs = input_line.split(" ").collect::<Vec<_>>();
@@ -219,26 +230,7 @@ fn main() {
             eprintln!("{:?}", u);
         }
 
-        let queen_loc = queen_location(&units);
-        let closest = closest_free_site(&sites, queen_loc);
-        let cl_xy = sites.get(&closest).unwrap().get_location();
-
-        eprintln!("Queen on: {:?}", queen_loc);
-        eprintln!("Closest site: {:?} on {},{}", closest, cl_xy.0, cl_xy.1);
-
-        if touched_site == closest {
-            println!("BUILD {} BARRACKS-KNIGHT", closest);
-        } else {
-            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
-        }
-
+        handle_queen(&units, &sites, touched_site);
         train_units(gold, &sites);
-
-        eprintln!("TRAIN{}", barracks);
-        if !barracks.is_empty() {
-            println!("TRAIN{}", barracks);
-        } else {
-            println!("TRAIN");
-        }
     }
 }
