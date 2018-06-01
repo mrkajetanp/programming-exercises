@@ -2,11 +2,15 @@
 
 ---
 
+#### 1.06.2018
+
+* [Rust] Code Royale - Get barracks (CodinGame)
+
 #### 31.05.2018
 
-* [Rust] Error fix (CodinGame)
-* [Rust] Buliding barracks on a closest site (CodinGame)
-* [Rust] Closest free site & Site's get location (CodinGame)
+* [Rust] Code Royale - Error fix (CodinGame)
+* [Rust] Code Royale - Buliding barracks on a closest site (CodinGame)
+* [Rust] Code Royale - Closest free site & Site's get location (CodinGame)
 
 #### 30.05.2018
 

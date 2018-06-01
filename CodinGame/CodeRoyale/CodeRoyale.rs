@@ -5,7 +5,7 @@ macro_rules! parse_input {
     ($x:expr, $t:ident) => ($x.trim().parse::<$t>().unwrap())
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 struct Site {
     x: i32,
     y: i32,
@@ -37,8 +37,6 @@ impl Site {
         self.unit = unit;
     }
 
-    // TODO: get location
-
     fn distance(&self, x: i32, y: i32) -> f64 {
         (((self.x - x).pow(2) + (self.y - y).pow(2)) as f64).sqrt()
     }
@@ -49,6 +47,18 @@ impl Site {
 
     fn get_location(&self) -> (i32, i32) {
         (self.x, self.y)
+    }
+
+    fn get_owner(&self) -> i32 {
+        self.owner
+    }
+
+    fn get_type(&self) -> i32 {
+        self.structure_type
+    }
+
+    fn get_unit(&self) -> i32 {
+        self.unit
     }
 }
 
@@ -112,7 +122,18 @@ fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32)) -> i32 {
     min_id
 }
 
-// TODO: unit-training function returning a string based on gold
+fn get_barracks(sites: &HashMap<i32, Site>, unit: i32) -> Vec<i32> {
+    sites.iter()
+        .filter(|&(_, s)| s.get_owner() == 0 && s.get_type() == 2
+                && s.get_unit() == unit)
+        .map(|(i, _)| *i).collect::<Vec<i32>>()
+}
+
+fn train_units(gold: i32, sites: &HashMap<i32, Site>) {
+    eprintln!("Knights: {:?}", get_barracks(sites, 0));
+    eprintln!("Archers: {:?}", get_barracks(sites, 1));
+    eprintln!("Giants: {:?}", get_barracks(sites, 2));
+}
 
 fn main() {
     let mut input_line = String::new();
@@ -210,6 +231,8 @@ fn main() {
         } else {
             println!("MOVE {} {}", cl_xy.0, cl_xy.1);
         }
+
+        train_units(gold, &sites);
 
         eprintln!("TRAIN{}", barracks);
         if !barracks.is_empty() {
