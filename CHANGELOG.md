@@ -2,6 +2,10 @@
 
 ---
 
+#### 2.06.2018
+
+* [Rust] Code Royale - 1-1-1 training (CodinGame)
+
 #### 1.06.2018
 
 * [Rust] Code Royale - Queen 1-1-1 building (CodinGame)

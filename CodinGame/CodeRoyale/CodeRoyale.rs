@@ -130,11 +130,19 @@ fn get_barracks(sites: &HashMap<i32, Site>, unit: i32) -> Vec<i32> {
 }
 
 fn train_units(gold: i32, sites: &HashMap<i32, Site>) {
-    eprintln!("Knights: {:?}", get_barracks(sites, 0));
-    eprintln!("Archers: {:?}", get_barracks(sites, 1));
-    eprintln!("Giants: {:?}", get_barracks(sites, 2));
+    let knights = get_barracks(sites, 0);
+    let archers = get_barracks(sites, 1);
+    let giants = get_barracks(sites, 2);
 
-    println!("TRAIN");
+    if knights.is_empty() {
+        println!("TRAIN")
+    } else if archers.is_empty() {
+        println!("TRAIN {}", knights[0])
+    } else if giants.is_empty() {
+        println!("TRAIN {} {}", knights[0], archers[0])
+    } else {
+        println!("TRAIN {} {} {}", knights[0], archers[0], giants[0])
+    }
 }
 
 fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32) {
