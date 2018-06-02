@@ -60,6 +60,10 @@ impl Site {
     fn get_unit(&self) -> i32 {
         self.unit
     }
+
+    fn is_ready(&self) -> bool {
+        self.cooldown == 0
+    }
 }
 
 #[derive(Debug)]
@@ -129,19 +133,28 @@ fn get_barracks(sites: &HashMap<i32, Site>, unit: i32) -> Vec<i32> {
         .map(|(i, _)| *i).collect::<Vec<i32>>()
 }
 
-fn train_units(gold: i32, sites: &HashMap<i32, Site>) {
+fn train_units(gold: i32, sites: &HashMap<i32, Site>, last_trained: &mut i32) {
     let knights = get_barracks(sites, 0);
     let archers = get_barracks(sites, 1);
     let giants = get_barracks(sites, 2);
 
-    if knights.is_empty() {
-        println!("TRAIN")
-    } else if archers.is_empty() {
-        println!("TRAIN {}", knights[0])
-    } else if giants.is_empty() {
-        println!("TRAIN {} {}", knights[0], archers[0])
+    if (*last_trained == -1 || *last_trained == 2) && !knights.is_empty() &&
+        sites.get(&knights[0]).unwrap().is_ready() && gold >= 80 {
+
+        println!("TRAIN {}", knights[0]);
+        *last_trained = 0;
+    } else if *last_trained == 0 && !archers.is_empty() &&
+            sites.get(&archers[0]).unwrap().is_ready() && gold >= 100 {
+
+        println!("TRAIN {}", archers[0]);
+        *last_trained = 1;
+    } else if *last_trained == 1 && !giants.is_empty() &&
+                sites.get(&giants[0]).unwrap().is_ready() && gold >= 140 {
+
+        println!("TRAIN {}", giants[0]);
+        *last_trained = 2;
     } else {
-        println!("TRAIN {} {} {}", knights[0], archers[0], giants[0])
+        println!("TRAIN")
     }
 }
 
@@ -202,6 +215,7 @@ fn main() {
         sites.insert(site_id, Site::new(x, y, radius));
     }
 
+    let mut last_trained: i32 = -1;
 
     // game loop
     loop {
@@ -262,6 +276,6 @@ fn main() {
         }
 
         handle_queen(&units, &sites, touched_site);
-        train_units(gold, &sites);
+        train_units(gold, &sites, &mut last_trained);
     }
 }

@@ -4,6 +4,7 @@
 
 #### 2.06.2018
 
+* [Rust] Code Royale - Training in turns (CodinGame)
 * [Rust] Code Royale - 1-1-1 training (CodinGame)
 
 #### 1.06.2018
