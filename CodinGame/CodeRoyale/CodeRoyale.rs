@@ -158,6 +158,9 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>, last_trained: &mut i32) {
     }
 }
 
+// TODO: queen should watch out at her own hp
+// TODO: queen should build only on her own half of the map
+
 fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32) {
     let queen_loc = queen_location(&units);
     let closest = closest_free_site(&sites, queen_loc);
@@ -193,7 +196,11 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32) {
         return;
     }
 
-    println!("MOVE {} {}", 0, 0);
+    if touched == closest {
+        println!("BUILD {} TOWER", closest);
+    } else {
+        println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+    }
 }
 
 fn main() {
