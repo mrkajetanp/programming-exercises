@@ -67,6 +67,10 @@ impl Site {
     fn is_ready(&self) -> bool {
         self.cooldown == 0
     }
+
+    fn is_own(&self) -> bool {
+        self.own
+    }
 }
 
 #[derive(Debug)]
@@ -114,7 +118,7 @@ fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32)) -> i32 {
     let mut min_id = -1;
 
     for (i, s) in sites {
-        if !s.is_free() {
+        if !s.is_free() || !s.is_own() {
             continue;
         }
 
@@ -281,6 +285,11 @@ fn main() {
             }
 
             units.push(Unit::new(x, y, owner, unit_type, health));
+        }
+
+        for i in &sites {
+            println!("s: {:?}", i);
+
         }
 
         // Write an action using println!("message...");

@@ -4,6 +4,7 @@
 
 #### 3.06.2018
 
+* [Rust] Code Royale - Queen building mostly on her own half (CodinGame)
 * [Rust] Code Royale - Marking sites as own (CodinGame)
 * [Rust] Code Royale - Queen starting postition (CodinGame)
 
