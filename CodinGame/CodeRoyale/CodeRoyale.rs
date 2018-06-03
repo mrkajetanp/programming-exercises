@@ -223,6 +223,8 @@ fn main() {
     }
 
     let mut last_trained: i32 = -1;
+    // Maybe option here
+    let mut queen_start: (i32, i32) = (0, 0);
 
     // game loop
     loop {
@@ -263,6 +265,10 @@ fn main() {
             let unit_type = parse_input!(inputs[3], i32); // -1 = QUEEN, 0 = KNIGHT, 1 = ARCHER
             let health = parse_input!(inputs[4], i32);
 
+            if unit_type == -1 && queen_start == (0, 0) {
+                queen_start = (x, y);
+            }
+
             units.push(Unit::new(x, y, owner, unit_type, health));
         }
 
@@ -270,17 +276,8 @@ fn main() {
         // To debug: eprintln!("Debug message...");
 
         eprintln!("Gold: {}", gold);
+        eprintln!("Queen start: {:?}", queen_start);
         eprintln!("Touched site: {}", touched_site);
-
-        eprintln!("Structures:");
-        for s in &sites {
-            eprintln!("{:?}", s);
-        }
-
-        eprintln!("Num units: {}", num_units);
-        for u in &units {
-            eprintln!("{:?}", u);
-        }
 
         handle_queen(&units, &sites, touched_site);
         train_units(gold, &sites, &mut last_trained);

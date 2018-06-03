@@ -2,6 +2,10 @@
 
 ---
 
+#### 3.06.2018
+
+* [Rust] Code Royale - Queen starting postition (CodinGame)
+
 #### 2.06.2018
 
 * [Rust] Code Royale - Queen building towers (CodinGame)
