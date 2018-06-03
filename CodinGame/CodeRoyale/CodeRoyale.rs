@@ -13,7 +13,8 @@ struct Site {
     structure_type: i32,
     owner: i32,
     cooldown: i32,
-    unit: i32
+    unit: i32,
+    own: bool
 }
 
 impl Site {
@@ -25,16 +26,18 @@ impl Site {
             structure_type: -1,
             owner: -1,
             cooldown: -1,
-            unit: -1
+            unit: -1,
+            own: false
         }
     }
 
     pub fn update(&mut self, struct_type: i32, owner: i32,
-                  cooldown: i32, unit: i32) {
+                  cooldown: i32, unit: i32, own: bool) {
         self.structure_type = struct_type;
         self.owner = owner;
         self.cooldown = cooldown;
         self.unit = unit;
+        self.own = own;
     }
 
     fn distance(&self, x: i32, y: i32) -> f64 {
@@ -224,7 +227,7 @@ fn main() {
 
     let mut last_trained: i32 = -1;
     // Maybe option here
-    let mut queen_start: (i32, i32) = (0, 0);
+    let mut queen_start: (i32, i32) = (-1, -1);
 
     // game loop
     loop {
@@ -246,8 +249,16 @@ fn main() {
             let param_1 = parse_input!(inputs[5], i32);
             let param_2 = parse_input!(inputs[6], i32);
 
+            let is_own = if queen_start != (-1, -1) {
+                let loc = sites.get(&site_id).unwrap().get_location();
+
+                (queen_start.0 - loc.0).abs() <= 960
+            } else {
+                false
+            };
+
             sites.get_mut(&site_id).unwrap().
-                update(structure_type, owner, param_1, param_2);
+                update(structure_type, owner, param_1, param_2, is_own);
         }
 
         let mut input_line = String::new();
@@ -265,7 +276,7 @@ fn main() {
             let unit_type = parse_input!(inputs[3], i32); // -1 = QUEEN, 0 = KNIGHT, 1 = ARCHER
             let health = parse_input!(inputs[4], i32);
 
-            if unit_type == -1 && queen_start == (0, 0) {
+            if unit_type == -1 && queen_start == (-1, -1) {
                 queen_start = (x, y);
             }
 

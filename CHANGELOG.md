@@ -4,6 +4,7 @@
 
 #### 3.06.2018
 
+* [Rust] Code Royale - Marking sites as own (CodinGame)
 * [Rust] Code Royale - Queen starting postition (CodinGame)
 
 #### 2.06.2018
