@@ -2,6 +2,10 @@
 
 ---
 
+#### 4.06.2018
+
+* [Rust] Code Royale - Proper Queen half map lock (CodinGame)
+
 #### 3.06.2018
 
 * [Rust] Code Royale - Queen building mostly on her own half (CodinGame)

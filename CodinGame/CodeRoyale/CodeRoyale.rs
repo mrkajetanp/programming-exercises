@@ -112,13 +112,20 @@ fn queen_location(units: &Vec<Unit>) -> (i32, i32) {
     (-1, -1)
 }
 
-fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32)) -> i32 {
+fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
+                     queen_start: (i32, i32)) -> i32 {
     // TODO: normalise omg
     let mut min_dist = 9999.0;
     let mut min_id = -1;
 
     for (i, s) in sites {
-        if !s.is_free() || !s.is_own() {
+        let is_own = if queen_start != (-1, -1) {
+            (queen_start.0 - s.get_location().0).abs() <= (960 - queen_start.0)
+        } else {
+            true
+        };
+
+        if !s.is_free() || !is_own {
             continue;
         }
 
@@ -168,9 +175,11 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>, last_trained: &mut i32) {
 // TODO: queen should watch out at her own hp
 // TODO: queen should build only on her own half of the map
 
-fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32) {
+fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, queen_start: (i32, i32)) {
     let queen_loc = queen_location(&units);
-    let closest = closest_free_site(&sites, queen_loc);
+    let closest = closest_free_site(&sites, queen_loc, queen_start);
+
+    eprintln!("Unwrapping closest..");
     let cl_xy = sites.get(&closest).unwrap().get_location();
 
     if get_barracks(sites, 0).len() < 1 {
@@ -287,11 +296,6 @@ fn main() {
             units.push(Unit::new(x, y, owner, unit_type, health));
         }
 
-        for i in &sites {
-            println!("s: {:?}", i);
-
-        }
-
         // Write an action using println!("message...");
         // To debug: eprintln!("Debug message...");
 
@@ -299,7 +303,7 @@ fn main() {
         eprintln!("Queen start: {:?}", queen_start);
         eprintln!("Touched site: {}", touched_site);
 
-        handle_queen(&units, &sites, touched_site);
+        handle_queen(&units, &sites, touched_site, queen_start);
         train_units(gold, &sites, &mut last_trained);
     }
 }
