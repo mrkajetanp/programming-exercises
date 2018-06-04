@@ -178,10 +178,19 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>, last_trained: &mut i32) {
 fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, queen_start: (i32, i32)) {
     let queen_loc = queen_location(&units);
     let closest = closest_free_site(&sites, queen_loc, queen_start);
+    let cl_xy = sites.get(&closest);
 
-    eprintln!("Unwrapping closest..");
-    let cl_xy = sites.get(&closest).unwrap().get_location();
+    if cl_xy.is_none() {
+        if queen_start.0 < 960 {
+            println!("MOVE 0 0");
+        } else {
+            println!("MOVE 1920 1000");
+        }
 
+        return;
+    }
+
+    let cl_xy = cl_xy.unwrap().get_location();
     if get_barracks(sites, 0).len() < 1 {
         if touched == closest {
             println!("BUILD {} BARRACKS-KNIGHT", closest);

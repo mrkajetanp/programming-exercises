@@ -4,6 +4,7 @@
 
 #### 4.06.2018
 
+* [Rust] Code Royale - Queen out of sites auto retreat (CodinGame)
 * [Rust] Code Royale - Proper Queen half map lock (CodinGame)
 
 #### 3.06.2018
