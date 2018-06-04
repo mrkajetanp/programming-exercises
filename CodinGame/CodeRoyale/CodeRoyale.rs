@@ -14,7 +14,6 @@ struct Site {
     owner: i32,
     cooldown: i32,
     unit: i32,
-    own: bool
 }
 
 impl Site {
@@ -27,17 +26,14 @@ impl Site {
             owner: -1,
             cooldown: -1,
             unit: -1,
-            own: false
         }
     }
 
-    pub fn update(&mut self, struct_type: i32, owner: i32,
-                  cooldown: i32, unit: i32, own: bool) {
+    pub fn update(&mut self, struct_type: i32, owner: i32, cooldown: i32, unit: i32) {
         self.structure_type = struct_type;
         self.owner = owner;
         self.cooldown = cooldown;
         self.unit = unit;
-        self.own = own;
     }
 
     fn distance(&self, x: i32, y: i32) -> f64 {
@@ -66,10 +62,6 @@ impl Site {
 
     fn is_ready(&self) -> bool {
         self.cooldown == 0
-    }
-
-    fn is_own(&self) -> bool {
-        self.own
     }
 }
 
@@ -271,16 +263,8 @@ fn main() {
             let param_1 = parse_input!(inputs[5], i32);
             let param_2 = parse_input!(inputs[6], i32);
 
-            let is_own = if queen_start != (-1, -1) {
-                let loc = sites.get(&site_id).unwrap().get_location();
-
-                (queen_start.0 - loc.0).abs() <= 960
-            } else {
-                false
-            };
-
             sites.get_mut(&site_id).unwrap().
-                update(structure_type, owner, param_1, param_2, is_own);
+                update(structure_type, owner, param_1, param_2);
         }
 
         let mut input_line = String::new();
