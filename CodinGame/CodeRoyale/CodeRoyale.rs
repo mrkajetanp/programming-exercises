@@ -112,7 +112,8 @@ fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
 
     for (i, s) in sites {
         let is_own = if queen_start != (-1, -1) {
-            (queen_start.0 - s.get_location().0).abs() <= (960 - queen_start.0)
+            (queen_start.0 - s.get_location().0).abs() <=
+                (960 - queen_start.0).abs()
         } else {
             true
         };
