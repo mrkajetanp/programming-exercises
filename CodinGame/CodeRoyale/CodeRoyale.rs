@@ -92,11 +92,15 @@ impl Unit {
     pub fn get_location(&self) -> (i32, i32) {
         (self.x, self.y)
     }
+
+    pub fn is_own(&self) -> bool {
+        self.owner == 0
+    }
 }
 
 fn queen_location(units: &Vec<Unit>) -> (i32, i32) {
     for u in units {
-        if u.is_queen() {
+        if u.is_queen() && u.is_own() {
             return u.get_location()
         }
     }

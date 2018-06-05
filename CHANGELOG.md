@@ -4,6 +4,7 @@
 
 #### 5.06.2018
 
+* [Rust] Code Royale - Fixed queen location (CodinGame)
 * [Rust] Code Royale - Fixed queen on the other map half (CodinGame)
 * [Rust] Code Royale - Fixed enemy queen as queen start bug (CodinGame)
 
