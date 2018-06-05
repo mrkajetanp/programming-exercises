@@ -176,7 +176,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, que
         if queen_start.0 < 960 {
             println!("MOVE 0 0");
         } else {
-            println!("MOVE 1920 1000");
+            println!("MOVE 1920 900");
         }
 
         return;
@@ -282,7 +282,7 @@ fn main() {
             let unit_type = parse_input!(inputs[3], i32); // -1 = QUEEN, 0 = KNIGHT, 1 = ARCHER
             let health = parse_input!(inputs[4], i32);
 
-            if unit_type == -1 && queen_start == (-1, -1) {
+            if unit_type == -1 && owner == 0 && queen_start == (-1, -1) {
                 queen_start = (x, y);
             }
 

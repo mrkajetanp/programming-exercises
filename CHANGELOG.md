@@ -2,6 +2,10 @@
 
 ---
 
+#### 5.06.2018
+
+* [Rust] Code Royale - Fixed enemy queen as queen start bug (CodinGame)
+
 #### 4.06.2018
 
 * [Rust] Code Royale - Leftover code cleanup (CodinGame)
