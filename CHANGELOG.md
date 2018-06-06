@@ -4,6 +4,7 @@
 
 #### 6.06.2018
 
+* [Rust] Code Royale - Simple mine upgrade (CodinGame)
 * [Rust] Code Royale - Queen building mines (CodinGame)
 * [Rust] Code Royale - queen location into get queen (CodinGame)
 

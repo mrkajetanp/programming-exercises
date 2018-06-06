@@ -60,8 +60,13 @@ impl Site {
         self.unit
     }
 
+    // remove as superficial
     fn is_ready(&self) -> bool {
         self.cooldown == 0
+    }
+
+    fn get_cooldown(&self) -> i32 {
+        self.cooldown
     }
 }
 
@@ -206,7 +211,8 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, que
         return;
     }
 
-    if get_mines(sites).len() < 3 {
+    // Building mines
+    if get_mines(sites).len() < 4 {
         if touched == closest {
             println!("BUILD {} MINE", closest);
         } else {
@@ -235,6 +241,21 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, que
 
         return;
     }
+
+    // for i in get_mines(sites) {
+    //     let site = sites.get(&i).unwrap();
+    //     let loc = site.get_location();
+
+    //     if site.get_cooldown() < 3 {
+    //         if touched == i {
+    //             println!("BUILD {} MINE", i);
+    //         } else {
+    //             println!("MOVE {} {}", loc.0, loc.1);
+    //         }
+
+    //         return;
+    //     }
+    // }
 
     if touched == closest {
         println!("BUILD {} TOWER", closest);
