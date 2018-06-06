@@ -108,6 +108,8 @@ fn get_queen(units: &Vec<Unit>) -> &Unit {
     panic!("No queen found!");
 }
 
+// prioritise in vertical columns to build in lines
+
 fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
                      queen_start: (i32, i32)) -> i32 {
     // TODO: normalise omg
@@ -141,6 +143,12 @@ fn get_barracks(sites: &HashMap<i32, Site>, unit: i32) -> Vec<i32> {
     sites.iter()
         .filter(|&(_, s)| s.get_owner() == 0 && s.get_type() == 2
                 && s.get_unit() == unit)
+        .map(|(i, _)| *i).collect::<Vec<i32>>()
+}
+
+fn get_mines(sites: &HashMap<i32, Site>) -> Vec<i32> {
+    sites.iter()
+        .filter(|&(_, s)| s.get_owner() == 0 && s.get_type() == 0)
         .map(|(i, _)| *i).collect::<Vec<i32>>()
 }
 
@@ -191,6 +199,16 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, que
     if get_barracks(sites, 0).len() < 1 {
         if touched == closest {
             println!("BUILD {} BARRACKS-KNIGHT", closest);
+        } else {
+            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+        }
+
+        return;
+    }
+
+    if get_mines(sites).len() < 3 {
+        if touched == closest {
+            println!("BUILD {} MINE", closest);
         } else {
             println!("MOVE {} {}", cl_xy.0, cl_xy.1);
         }
