@@ -98,14 +98,14 @@ impl Unit {
     }
 }
 
-fn queen_location(units: &Vec<Unit>) -> (i32, i32) {
+fn get_queen(units: &Vec<Unit>) -> &Unit {
     for u in units {
         if u.is_queen() && u.is_own() {
-            return u.get_location()
+            return u;
         }
     }
 
-    (-1, -1)
+    panic!("No queen found!");
 }
 
 fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
@@ -173,7 +173,7 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>, last_trained: &mut i32) {
 // TODO: queen should build only on her own half of the map
 
 fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, queen_start: (i32, i32)) {
-    let queen_loc = queen_location(&units);
+    let queen_loc = get_queen(&units).get_location();
     let closest = closest_free_site(&sites, queen_loc, queen_start);
     let cl_xy = sites.get(&closest);
 

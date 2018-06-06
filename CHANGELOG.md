@@ -2,6 +2,10 @@
 
 ---
 
+#### 6.06.2018
+
+* [Rust] Code Royale - queen location into get queen (CodinGame)
+
 #### 5.06.2018
 
 * [Rust] Code Royale - Fixed queen location (CodinGame)
