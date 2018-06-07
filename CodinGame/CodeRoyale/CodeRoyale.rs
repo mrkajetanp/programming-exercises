@@ -60,11 +60,6 @@ impl Site {
         self.unit
     }
 
-    // remove as superficial
-    fn is_ready(&self) -> bool {
-        self.cooldown == 0
-    }
-
     fn get_cooldown(&self) -> i32 {
         self.cooldown
     }
@@ -172,17 +167,17 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>, last_trained: &mut i32) {
     let giants = get_barracks(sites, 2);
 
     if (*last_trained == -1 || *last_trained == 2) && !knights.is_empty() &&
-        sites.get(&knights[0]).unwrap().is_ready() && gold >= 80 {
+        sites.get(&knights[0]).unwrap().get_cooldown() == 0 && gold >= 80 {
 
         println!("TRAIN {}", knights[0]);
         *last_trained = 0;
     } else if *last_trained == 0 && !archers.is_empty() &&
-            sites.get(&archers[0]).unwrap().is_ready() && gold >= 100 {
+            sites.get(&archers[0]).unwrap().get_cooldown() == 0 && gold >= 100 {
 
         println!("TRAIN {}", archers[0]);
         *last_trained = 1;
     } else if *last_trained == 1 && !giants.is_empty() &&
-                sites.get(&giants[0]).unwrap().is_ready() && gold >= 140 {
+                sites.get(&giants[0]).unwrap().get_cooldown() == 0 && gold >= 140 {
 
         println!("TRAIN {}", giants[0]);
         *last_trained = 2;
