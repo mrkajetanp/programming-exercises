@@ -2,6 +2,10 @@
 
 ---
 
+#### 7.06.2018
+
+* [Rust] Code Royale - Queen building in lines (CodinGame)
+
 #### 6.06.2018
 
 * [Rust] Code Royale - Simple mine upgrade (CodinGame)

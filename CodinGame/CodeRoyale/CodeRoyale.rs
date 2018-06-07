@@ -133,11 +133,20 @@ fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
             continue;
         }
 
-        let dist = s.distance(coord.0, coord.1);
+        if queen_start == (-1, -1) {
+            let dist = s.distance(coord.0, coord.1);
 
-        if dist < min_dist {
-            min_dist = dist;
-            min_id = *i;
+            if dist < min_dist {
+                min_dist = dist;
+                min_id = *i;
+            }
+        } else {
+            let dist = (queen_start.0 - s.get_location().0).abs() as f64;
+
+            if dist < min_dist {
+                min_dist = dist;
+                min_id = *i;
+            }
         }
     }
 
@@ -183,7 +192,6 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>, last_trained: &mut i32) {
 }
 
 // TODO: queen should watch out at her own hp
-// TODO: queen should build only on her own half of the map
 
 fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, queen_start: (i32, i32)) {
     let queen_loc = get_queen(&units).get_location();
