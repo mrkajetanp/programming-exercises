@@ -96,6 +96,10 @@ impl Unit {
     pub fn is_own(&self) -> bool {
         self.owner == 0
     }
+
+    pub fn get_type(&self) -> i32 {
+        self.utype
+    }
 }
 
 fn get_queen(units: &Vec<Unit>) -> &Unit {
@@ -108,7 +112,11 @@ fn get_queen(units: &Vec<Unit>) -> &Unit {
     panic!("No queen found!");
 }
 
-// prioritise in vertical columns to build in lines
+fn count_units(units: &Vec<Unit>, unit: i32) -> usize {
+    units.iter()
+        .filter(|u| u.is_own() && u.get_type() == unit)
+        .collect::<Vec<&Unit>>().len()
+}
 
 fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
                      queen_start: (i32, i32)) -> i32 {
