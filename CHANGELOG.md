@@ -2,6 +2,10 @@
 
 ---
 
+#### 8.06.2018
+
+* [Rust] Code Royale - Prioritised building mines (CodinGame)
+
 #### 7.06.2018
 
 * [Rust] Code Royale - Removed is_ready as superficial (CodinGame)

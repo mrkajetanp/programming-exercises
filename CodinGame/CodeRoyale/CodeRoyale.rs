@@ -204,9 +204,10 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, que
     }
 
     let cl_xy = cl_xy.unwrap().get_location();
-    if get_barracks(sites, 0).len() < 1 {
+    // Building mines
+    if get_mines(sites).len() < 4 {
         if touched == closest {
-            println!("BUILD {} BARRACKS-KNIGHT", closest);
+            println!("BUILD {} MINE", closest);
         } else {
             println!("MOVE {} {}", cl_xy.0, cl_xy.1);
         }
@@ -214,10 +215,9 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, que
         return;
     }
 
-    // Building mines
-    if get_mines(sites).len() < 4 {
+    if get_barracks(sites, 0).len() < 1 {
         if touched == closest {
-            println!("BUILD {} MINE", closest);
+            println!("BUILD {} BARRACKS-KNIGHT", closest);
         } else {
             println!("MOVE {} {}", cl_xy.0, cl_xy.1);
         }
