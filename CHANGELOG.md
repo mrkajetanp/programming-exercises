@@ -4,6 +4,7 @@
 
 #### 9.06.2018
 
+* [Rust] Code Royale - Closest free site with relation to queen start (CodinGame)
 * [Rust] Code Royale - Queen low hp retreat (CodinGame)
 
 #### 8.06.2018
