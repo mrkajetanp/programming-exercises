@@ -201,13 +201,11 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>, last_trained: &mut i32) {
 // TODO: queen should watch out at her own hp
 
 fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, queen_start: (i32, i32)) {
-    // TODO: some refactoring here
-    let queen_loc = get_queen(&units).get_location();
-    let queen_health = get_queen(&units).get_health();
-    let closest = closest_free_site(&sites, queen_loc, queen_start);
+    let queen = get_queen(&units);
+    let closest = closest_free_site(&sites, queen.get_location(), queen_start);
     let cl_xy = sites.get(&closest);
 
-    if cl_xy.is_none() || queen_health < 20 {
+    if cl_xy.is_none() || queen.get_health() < 20 {
         if queen_start.0 < 960 {
             println!("MOVE 0 0");
         } else {

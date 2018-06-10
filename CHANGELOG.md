@@ -2,6 +2,10 @@
 
 ---
 
+#### 10.06.2018
+
+* [Rust] Code Royale - Refactoring (CodinGame)
+
 #### 9.06.2018
 
 * [Rust] Code Royale - Closest free site with relation to queen start (CodinGame)
