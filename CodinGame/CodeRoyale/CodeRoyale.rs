@@ -122,6 +122,11 @@ fn count_units(units: &Vec<Unit>, unit: i32) -> usize {
         .collect::<Vec<&Unit>>().len()
 }
 
+// TODO: build giant barracks & giants only if enemy builds towers
+// -- count enemy towers fn
+// TODO: maybe general count buildings function
+// TODO: word constants instead of numbers for various options
+
 fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
                      queen_start: (i32, i32)) -> i32 {
     // TODO: normalise omg
@@ -173,7 +178,7 @@ fn get_mines(sites: &HashMap<i32, Site>) -> Vec<i32> {
         .map(|(i, _)| *i).collect::<Vec<i32>>()
 }
 
-fn train_units(gold: i32, sites: &HashMap<i32, Site>, last_trained: &mut i32) {
+fn train_units(gold: i32, sites: &HashMap<i32, Site>, units: &Vec<Unit>, last_trained: &mut i32) {
     let knights = get_barracks(sites, 0);
     let archers = get_barracks(sites, 1);
     let giants = get_barracks(sites, 2);
@@ -181,21 +186,27 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>, last_trained: &mut i32) {
     if (*last_trained == -1 || *last_trained == 2) && !knights.is_empty() &&
         sites.get(&knights[0]).unwrap().get_cooldown() == 0 && gold >= 80 {
 
-        println!("TRAIN {}", knights[0]);
-        *last_trained = 0;
-    } else if *last_trained == 0 && !archers.is_empty() &&
-            sites.get(&archers[0]).unwrap().get_cooldown() == 0 && gold >= 100 {
+            println!("TRAIN {}", knights[0]);
+            *last_trained = 0;
 
-        println!("TRAIN {}", archers[0]);
-        *last_trained = 1;
-    } else if *last_trained == 1 && !giants.is_empty() &&
-                sites.get(&giants[0]).unwrap().get_cooldown() == 0 && gold >= 140 {
+        } else if *last_trained == 0 && !archers.is_empty() &&
+        sites.get(&archers[0]).unwrap().get_cooldown() == 0 && gold >= 100 {
 
-        println!("TRAIN {}", giants[0]);
-        *last_trained = 2;
-    } else {
-        println!("TRAIN")
-    }
+            println!("TRAIN {}", archers[0]);
+            if count_units(units, 2) > 1 {
+                *last_trained = -1;
+            } else {
+                *last_trained = 1;
+            }
+
+        } else if *last_trained == 1 && !giants.is_empty() &&
+        sites.get(&giants[0]).unwrap().get_cooldown() == 0 && gold >= 140 {
+
+            println!("TRAIN {}", giants[0]);
+            *last_trained = 2;
+        } else {
+            println!("TRAIN")
+        }
 }
 
 // TODO: queen should watch out at her own hp
@@ -356,6 +367,6 @@ fn main() {
         eprintln!("Touched site: {}", touched_site);
 
         handle_queen(&units, &sites, touched_site, queen_start);
-        train_units(gold, &sites, &mut last_trained);
+        train_units(gold, &sites, &units, &mut last_trained);
     }
 }
