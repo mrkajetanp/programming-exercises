@@ -4,6 +4,7 @@
 
 #### 11.06.2018
 
+* [Rust] Code Royale - Single get structures fn (CodinGame)
 * [Rust] Code Royale - Word constants (CodinGame)
 
 #### 10.06.2018

@@ -139,7 +139,6 @@ fn count_units(units: &Vec<Unit>, unit: i32) -> usize {
 
 // TODO: build giant barracks & giants only if enemy builds towers
 // -- count enemy towers fn
-// TODO: maybe general count buildings function
 
 fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
                      queen_start: (i32, i32)) -> i32 {
@@ -179,23 +178,21 @@ fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
     min_id
 }
 
-fn get_barracks(sites: &HashMap<i32, Site>, unit: i32) -> Vec<i32> {
+fn get_structures(sites: &HashMap<i32, Site>, struct_type: i32, unit: i32) -> Vec<i32> {
+    if struct_type != STRUCT_BARRACKS && unit != NONE {
+        panic!("If structure is other than barracks, unit should be set to NONE (-1)");
+    }
+
     sites.iter()
-        .filter(|&(_, s)| s.get_owner() == ALLY && s.get_type() == STRUCT_BARRACKS
+        .filter(|&(_, s)| s.get_owner() == ALLY && s.get_type() == struct_type
                 && s.get_unit() == unit)
         .map(|(i, _)| *i).collect::<Vec<i32>>()
 }
 
-fn get_mines(sites: &HashMap<i32, Site>) -> Vec<i32> {
-    sites.iter()
-        .filter(|&(_, s)| s.get_owner() == ALLY && s.get_type() == STRUCT_MINE)
-        .map(|(i, _)| *i).collect::<Vec<i32>>()
-}
-
 fn train_units(gold: i32, sites: &HashMap<i32, Site>, units: &Vec<Unit>, last_trained: &mut i32) {
-    let knights = get_barracks(sites, UNIT_KNIGHT);
-    let archers = get_barracks(sites, UNIT_ARCHER);
-    let giants = get_barracks(sites, UNIT_GIANT);
+    let knights = get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT);
+    let archers = get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER);
+    let giants = get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT);
 
     if (*last_trained == NONE || *last_trained == UNIT_GIANT) && !knights.is_empty() &&
         sites.get(&knights[0]).unwrap().get_cooldown() == 0 && gold >= 80 {
@@ -223,6 +220,8 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>, units: &Vec<Unit>, last_tr
         }
 }
 
+// TODO: building mines should have higher priority than queen health
+
 fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, queen_start: (i32, i32)) {
     let queen = get_queen(&units);
     let closest = closest_free_site(&sites, queen.get_location(), queen_start);
@@ -240,7 +239,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, que
 
     let cl_xy = cl_xy.unwrap().get_location();
     // Building mines
-    if get_mines(sites).len() < 4 {
+    if get_structures(sites, STRUCT_MINE, NONE).len() < 4 {
         if touched == closest {
             println!("BUILD {} MINE", closest);
         } else {
@@ -250,7 +249,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, que
         return;
     }
 
-    if get_barracks(sites, UNIT_KNIGHT).len() < 1 {
+    if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT).len() < 1 {
         if touched == closest {
             println!("BUILD {} BARRACKS-KNIGHT", closest);
         } else {
@@ -260,7 +259,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, que
         return;
     }
 
-    if get_barracks(sites, UNIT_ARCHER).len() < 1 {
+    if get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER).len() < 1 {
         if touched == closest {
             println!("BUILD {} BARRACKS-ARCHER", closest);
         } else {
@@ -270,7 +269,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, que
         return;
     }
 
-    if get_barracks(sites, UNIT_GIANT).len() < 1 {
+    if get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT).len() < 1 {
         if touched == closest {
             println!("BUILD {} BARRACKS-GIANT", closest);
         } else {
