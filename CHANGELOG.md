@@ -2,6 +2,10 @@
 
 ---
 
+#### 11.06.2018
+
+* [Rust] Code Royale - Word constants (CodinGame)
+
 #### 10.06.2018
 
 * [Rust] Code Royale - Building only one giant (CodinGame)

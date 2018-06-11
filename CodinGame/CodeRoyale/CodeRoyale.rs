@@ -5,6 +5,21 @@ macro_rules! parse_input {
     ($x:expr, $t:ident) => ($x.trim().parse::<$t>().unwrap())
 }
 
+const NONE: i32 = -1;
+
+const STRUCT_MINE: i32 = 0;
+// const STRUCT_TOWER: i32 = 1;
+const STRUCT_BARRACKS: i32 = 2;
+
+const ALLY: i32 = 0;
+// const ENEMY: i32 = 1;
+
+// const UNIT_QUEEN: i32 = -1;
+const UNIT_KNIGHT: i32 = 0;
+const UNIT_ARCHER: i32 = 1;
+const UNIT_GIANT: i32 = 2;
+
+
 #[derive(Debug, Clone)]
 struct Site {
     x: i32,
@@ -22,10 +37,10 @@ impl Site {
             x,
             y,
             radius,
-            structure_type: -1,
-            owner: -1,
-            cooldown: -1,
-            unit: -1,
+            structure_type: NONE,
+            owner: NONE,
+            cooldown: NONE,
+            unit: NONE,
         }
     }
 
@@ -41,7 +56,7 @@ impl Site {
     }
 
     fn is_free(&self) -> bool {
-        self.structure_type == -1
+        self.structure_type == NONE
     }
 
     fn get_location(&self) -> (i32, i32) {
@@ -86,7 +101,7 @@ impl Unit {
     }
 
     pub fn is_queen(&self) -> bool {
-        self.utype == -1
+        self.utype == NONE
     }
 
     pub fn get_location(&self) -> (i32, i32) {
@@ -94,7 +109,7 @@ impl Unit {
     }
 
     pub fn is_own(&self) -> bool {
-        self.owner == 0
+        self.owner == ALLY
     }
 
     pub fn get_type(&self) -> i32 {
@@ -125,7 +140,6 @@ fn count_units(units: &Vec<Unit>, unit: i32) -> usize {
 // TODO: build giant barracks & giants only if enemy builds towers
 // -- count enemy towers fn
 // TODO: maybe general count buildings function
-// TODO: word constants instead of numbers for various options
 
 fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
                      queen_start: (i32, i32)) -> i32 {
@@ -167,49 +181,47 @@ fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
 
 fn get_barracks(sites: &HashMap<i32, Site>, unit: i32) -> Vec<i32> {
     sites.iter()
-        .filter(|&(_, s)| s.get_owner() == 0 && s.get_type() == 2
+        .filter(|&(_, s)| s.get_owner() == ALLY && s.get_type() == STRUCT_BARRACKS
                 && s.get_unit() == unit)
         .map(|(i, _)| *i).collect::<Vec<i32>>()
 }
 
 fn get_mines(sites: &HashMap<i32, Site>) -> Vec<i32> {
     sites.iter()
-        .filter(|&(_, s)| s.get_owner() == 0 && s.get_type() == 0)
+        .filter(|&(_, s)| s.get_owner() == ALLY && s.get_type() == STRUCT_MINE)
         .map(|(i, _)| *i).collect::<Vec<i32>>()
 }
 
 fn train_units(gold: i32, sites: &HashMap<i32, Site>, units: &Vec<Unit>, last_trained: &mut i32) {
-    let knights = get_barracks(sites, 0);
-    let archers = get_barracks(sites, 1);
-    let giants = get_barracks(sites, 2);
+    let knights = get_barracks(sites, UNIT_KNIGHT);
+    let archers = get_barracks(sites, UNIT_ARCHER);
+    let giants = get_barracks(sites, UNIT_GIANT);
 
-    if (*last_trained == -1 || *last_trained == 2) && !knights.is_empty() &&
+    if (*last_trained == NONE || *last_trained == UNIT_GIANT) && !knights.is_empty() &&
         sites.get(&knights[0]).unwrap().get_cooldown() == 0 && gold >= 80 {
 
             println!("TRAIN {}", knights[0]);
-            *last_trained = 0;
+            *last_trained = UNIT_KNIGHT;
 
-        } else if *last_trained == 0 && !archers.is_empty() &&
+        } else if *last_trained == UNIT_KNIGHT && !archers.is_empty() &&
         sites.get(&archers[0]).unwrap().get_cooldown() == 0 && gold >= 100 {
 
             println!("TRAIN {}", archers[0]);
-            if count_units(units, 2) > 1 {
-                *last_trained = -1;
+            if count_units(units, UNIT_GIANT) > 1 {
+                *last_trained = NONE;
             } else {
-                *last_trained = 1;
+                *last_trained = UNIT_ARCHER;
             }
 
-        } else if *last_trained == 1 && !giants.is_empty() &&
+        } else if *last_trained == UNIT_ARCHER && !giants.is_empty() &&
         sites.get(&giants[0]).unwrap().get_cooldown() == 0 && gold >= 140 {
 
             println!("TRAIN {}", giants[0]);
-            *last_trained = 2;
+            *last_trained = UNIT_GIANT;
         } else {
             println!("TRAIN")
         }
 }
-
-// TODO: queen should watch out at her own hp
 
 fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, queen_start: (i32, i32)) {
     let queen = get_queen(&units);
@@ -238,7 +250,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, que
         return;
     }
 
-    if get_barracks(sites, 0).len() < 1 {
+    if get_barracks(sites, UNIT_KNIGHT).len() < 1 {
         if touched == closest {
             println!("BUILD {} BARRACKS-KNIGHT", closest);
         } else {
@@ -248,7 +260,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, que
         return;
     }
 
-    if get_barracks(sites, 1).len() < 1 {
+    if get_barracks(sites, UNIT_ARCHER).len() < 1 {
         if touched == closest {
             println!("BUILD {} BARRACKS-ARCHER", closest);
         } else {
@@ -258,7 +270,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, que
         return;
     }
 
-    if get_barracks(sites, 2).len() < 1 {
+    if get_barracks(sites, UNIT_GIANT).len() < 1 {
         if touched == closest {
             println!("BUILD {} BARRACKS-GIANT", closest);
         } else {
@@ -309,7 +321,7 @@ fn main() {
         sites.insert(site_id, Site::new(x, y, radius));
     }
 
-    let mut last_trained: i32 = -1;
+    let mut last_trained: i32 = NONE;
     // Maybe option here
     let mut queen_start: (i32, i32) = (-1, -1);
 
@@ -352,7 +364,7 @@ fn main() {
             let unit_type = parse_input!(inputs[3], i32); // -1 = QUEEN, 0 = KNIGHT, 1 = ARCHER
             let health = parse_input!(inputs[4], i32);
 
-            if unit_type == -1 && owner == 0 && queen_start == (-1, -1) {
+            if unit_type == NONE && owner == ALLY && queen_start == (-1, -1) {
                 queen_start = (x, y);
             }
 
