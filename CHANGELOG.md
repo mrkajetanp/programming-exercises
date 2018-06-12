@@ -4,6 +4,7 @@
 
 #### 12.06.2018
 
+* [Rust] Code Royale - 2 upgraded mines (CodinGame)
 * [Rust] Code Royale - Mines have priority over Queen's health (CodinGame)
 
 #### 11.06.2018

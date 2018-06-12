@@ -240,7 +240,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
 
     let cl_xy = cl_xy.unwrap().get_location();
     // Building mines
-    if get_structures(sites, STRUCT_MINE, NONE).len() < 4 {
+    if get_structures(sites, STRUCT_MINE, NONE).len() < 2 {
         if touched == closest {
             println!("BUILD {} MINE", closest);
         } else {
@@ -290,20 +290,20 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         return;
     }
 
-    // for i in get_mines(sites) {
-    //     let site = sites.get(&i).unwrap();
-    //     let loc = site.get_location();
+    for i in get_structures(sites, STRUCT_MINE, NONE) {
+        let site = sites.get(&i).unwrap();
+        let loc = site.get_location();
 
-    //     if site.get_cooldown() < 3 {
-    //         if touched == i {
-    //             println!("BUILD {} MINE", i);
-    //         } else {
-    //             println!("MOVE {} {}", loc.0, loc.1);
-    //         }
+        if site.get_cooldown() < 2 {
+            if touched == i {
+                println!("BUILD {} MINE", i);
+            } else {
+                println!("MOVE {} {}", loc.0, loc.1);
+            }
 
-    //         return;
-    //     }
-    // }
+            return;
+        }
+    }
 
     if touched == closest {
         println!("BUILD {} TOWER", closest);
