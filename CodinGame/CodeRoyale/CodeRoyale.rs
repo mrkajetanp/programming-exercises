@@ -220,14 +220,15 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>, units: &Vec<Unit>, last_tr
         }
 }
 
-// TODO: building mines should have higher priority than queen health
+// TODO: build two upgraded mines instead of four, upgrade at the end
 
-fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, queen_start: (i32, i32)) {
+fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
+                touched: i32, queen_start: (i32, i32)) {
     let queen = get_queen(&units);
     let closest = closest_free_site(&sites, queen.get_location(), queen_start);
     let cl_xy = sites.get(&closest);
 
-    if cl_xy.is_none() || queen.get_health() < 20 {
+    if cl_xy.is_none() {
         if queen_start.0 < 960 {
             println!("MOVE 0 0");
         } else {
@@ -244,6 +245,16 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>, touched: i32, que
             println!("BUILD {} MINE", closest);
         } else {
             println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+        }
+
+        return;
+    }
+
+    if queen.get_health() < 20 {
+        if queen_start.0 < 960 {
+            println!("MOVE 0 0");
+        } else {
+            println!("MOVE 1920 900");
         }
 
         return;
