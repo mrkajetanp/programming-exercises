@@ -2,6 +2,10 @@
 
 ---
 
+#### 13.06.2018
+
+* [Rust] Code Royale - Additional site info (CodinGame)
+
 #### 12.06.2018
 
 * [Rust] Code Royale - 2 upgraded mines (CodinGame)

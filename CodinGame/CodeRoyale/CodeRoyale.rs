@@ -27,6 +27,8 @@ struct Site {
     radius: i32,
     structure_type: i32,
     owner: i32,
+    gold: i32,
+    max_mine_size: i32,
     cooldown: i32,
     unit: i32,
 }
@@ -39,14 +41,20 @@ impl Site {
             radius,
             structure_type: NONE,
             owner: NONE,
+            gold: NONE,
+            max_mine_size: NONE,
             cooldown: NONE,
             unit: NONE,
         }
     }
 
-    pub fn update(&mut self, struct_type: i32, owner: i32, cooldown: i32, unit: i32) {
+    pub fn update(&mut self, struct_type: i32, owner: i32,
+                  gold: i32, max_mine_size: i32,
+                  cooldown: i32, unit: i32) {
         self.structure_type = struct_type;
         self.owner = owner;
+        self.gold = gold;
+        self.max_mine_size = max_mine_size;
         self.cooldown = cooldown;
         self.unit = unit;
     }
@@ -220,8 +228,6 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>, units: &Vec<Unit>, last_tr
         }
 }
 
-// TODO: build two upgraded mines instead of four, upgrade at the end
-
 fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
                 touched: i32, queen_start: (i32, i32)) {
     let queen = get_queen(&units);
@@ -348,15 +354,16 @@ fn main() {
             io::stdin().read_line(&mut input_line).unwrap();
             let inputs = input_line.split(" ").collect::<Vec<_>>();
             let site_id = parse_input!(inputs[0], i32);
-            // let ignore_1 = parse_input!(inputs[1], i32); // used in future leagues
-            // let ignore_2 = parse_input!(inputs[2], i32); // used in future leagues
+            let gold = parse_input!(inputs[1], i32);
+            let max_mine_size = parse_input!(inputs[2], i32);
             let structure_type = parse_input!(inputs[3], i32); // -1 = No structure, 2 = Barracks
             let owner = parse_input!(inputs[4], i32); // -1 = No structure, 0 = Friendly, 1 = Enemy
             let param_1 = parse_input!(inputs[5], i32);
             let param_2 = parse_input!(inputs[6], i32);
 
             sites.get_mut(&site_id).unwrap().
-                update(structure_type, owner, param_1, param_2);
+                update(structure_type, owner, gold,
+                       max_mine_size, param_1, param_2);
         }
 
         let mut input_line = String::new();
