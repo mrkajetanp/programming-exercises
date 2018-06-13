@@ -86,6 +86,10 @@ impl Site {
     fn get_cooldown(&self) -> i32 {
         self.cooldown
     }
+
+    fn can_upgrade(&self) -> bool {
+        self.max_mine_size == -1 || (self.cooldown < self.max_mine_size)
+    }
 }
 
 #[derive(Debug)]
@@ -300,7 +304,8 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         let site = sites.get(&i).unwrap();
         let loc = site.get_location();
 
-        if site.get_cooldown() < 2 {
+        // TODO: optimalise for appropriate distance
+        if site.get_cooldown() < 2 && site.can_upgrade() {
             if touched == i {
                 println!("BUILD {} MINE", i);
             } else {
