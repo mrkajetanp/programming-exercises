@@ -2,6 +2,10 @@
 
 ---
 
+#### 14.06.2018
+
+* [Rust] Code Royale - Maximum mine upgrades (CodinGame)
+
 #### 13.06.2018
 
 * [Rust] Code Royale - Upgrading only if available (CodinGame)

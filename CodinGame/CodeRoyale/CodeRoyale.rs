@@ -250,6 +250,8 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
 
     let cl_xy = cl_xy.unwrap().get_location();
     // Building mines
+
+    // TODO: check if there's gold remaining
     if get_structures(sites, STRUCT_MINE, NONE).len() < 2 {
         if touched == closest {
             println!("BUILD {} MINE", closest);
@@ -304,8 +306,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         let site = sites.get(&i).unwrap();
         let loc = site.get_location();
 
-        // TODO: optimalise for appropriate distance
-        if site.get_cooldown() < 2 && site.can_upgrade() {
+        if site.can_upgrade() {
             if touched == i {
                 println!("BUILD {} MINE", i);
             } else {
