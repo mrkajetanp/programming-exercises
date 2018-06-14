@@ -90,6 +90,10 @@ impl Site {
     fn can_upgrade(&self) -> bool {
         self.max_mine_size == -1 || (self.cooldown < self.max_mine_size)
     }
+
+    fn remaining_gold(&self) -> i32 {
+        self.gold
+    }
 }
 
 #[derive(Debug)]
@@ -190,6 +194,7 @@ fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
     min_id
 }
 
+
 fn get_structures(sites: &HashMap<i32, Site>, struct_type: i32, unit: i32) -> Vec<i32> {
     if struct_type != STRUCT_BARRACKS && unit != NONE {
         panic!("If structure is other than barracks, unit should be set to NONE (-1)");
@@ -254,7 +259,11 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     // TODO: check if there's gold remaining
     if get_structures(sites, STRUCT_MINE, NONE).len() < 2 {
         if touched == closest {
-            println!("BUILD {} MINE", closest);
+            if sites.get(&closest).unwrap().remaining_gold() != 0 {
+                println!("BUILD {} MINE", closest);
+            } else {
+                println!("BUILD {} TOWER", closest);
+            }
         } else {
             println!("MOVE {} {}", cl_xy.0, cl_xy.1);
         }

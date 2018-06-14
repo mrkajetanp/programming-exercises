@@ -4,6 +4,7 @@
 
 #### 14.06.2018
 
+* [Rust] Code Royale - Basic remaining gold checking (CodinGame)
 * [Rust] Code Royale - Maximum mine upgrades (CodinGame)
 
 #### 13.06.2018
