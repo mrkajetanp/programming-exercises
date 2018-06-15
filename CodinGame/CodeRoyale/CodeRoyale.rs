@@ -257,7 +257,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     // Building mines
 
     // TODO: check if there's gold remaining
-    if get_structures(sites, STRUCT_MINE, NONE).len() < 2 {
+    if get_structures(sites, STRUCT_MINE, NONE).len() < 3 {
         if touched == closest {
             if sites.get(&closest).unwrap().remaining_gold() != 0 {
                 println!("BUILD {} MINE", closest);
@@ -271,15 +271,14 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         return;
     }
 
-    if queen.get_health() < 20 {
-        if queen_start.0 < 960 {
-            println!("MOVE 0 0");
-        } else {
-            println!("MOVE 1920 900");
-        }
-
-        return;
-    }
+    // if queen.get_health() < 20 {
+    //     if queen_start.0 < 960 {
+    //         println!("MOVE 0 0");
+    //     } else {
+    //         println!("MOVE 1920 900");
+    //     }
+    //     return;
+    // }
 
     if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT).len() < 1 {
         if touched == closest {
