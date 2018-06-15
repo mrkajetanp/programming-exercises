@@ -8,11 +8,11 @@ macro_rules! parse_input {
 const NONE: i32 = -1;
 
 const STRUCT_MINE: i32 = 0;
-// const STRUCT_TOWER: i32 = 1;
+const STRUCT_TOWER: i32 = 1;
 const STRUCT_BARRACKS: i32 = 2;
 
 const ALLY: i32 = 0;
-// const ENEMY: i32 = 1;
+const ENEMY: i32 = 1;
 
 // const UNIT_QUEEN: i32 = -1;
 const UNIT_KNIGHT: i32 = 0;
@@ -32,6 +32,8 @@ struct Site {
     cooldown: i32,
     unit: i32,
 }
+
+// TODO: archers first
 
 impl Site {
     fn new(x: i32, y: i32, radius: i32) -> Site {
@@ -132,9 +134,9 @@ impl Unit {
         self.utype
     }
 
-    pub fn get_health(&self) -> i32 {
-        self.health
-    }
+    // pub fn get_health(&self) -> i32 {
+    //     self.health
+    // }
 }
 
 fn get_queen(units: &Vec<Unit>) -> &Unit {
@@ -195,21 +197,21 @@ fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
 }
 
 
-fn get_structures(sites: &HashMap<i32, Site>, struct_type: i32, unit: i32) -> Vec<i32> {
+fn get_structures(sites: &HashMap<i32, Site>, struct_type: i32, unit: i32, owner: i32) -> Vec<i32> {
     if struct_type != STRUCT_BARRACKS && unit != NONE {
         panic!("If structure is other than barracks, unit should be set to NONE (-1)");
     }
 
     sites.iter()
         .filter(|&(_, s)| s.get_owner() == ALLY && s.get_type() == struct_type
-                && s.get_unit() == unit)
+                && s.get_unit() == unit && s.get_owner() == owner)
         .map(|(i, _)| *i).collect::<Vec<i32>>()
 }
 
 fn train_units(gold: i32, sites: &HashMap<i32, Site>, units: &Vec<Unit>, last_trained: &mut i32) {
-    let knights = get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT);
-    let archers = get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER);
-    let giants = get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT);
+    let knights = get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY);
+    let archers = get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY);
+    let giants = get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT, ALLY);
 
     if (*last_trained == NONE || *last_trained == UNIT_GIANT) && !knights.is_empty() &&
         sites.get(&knights[0]).unwrap().get_cooldown() == 0 && gold >= 80 {
@@ -221,7 +223,9 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>, units: &Vec<Unit>, last_tr
         sites.get(&archers[0]).unwrap().get_cooldown() == 0 && gold >= 100 {
 
             println!("TRAIN {}", archers[0]);
-            if count_units(units, UNIT_GIANT) > 1 {
+            if get_structures(sites, STRUCT_TOWER, NONE, ENEMY).len() == 0 ||
+                count_units(units, UNIT_GIANT) > 1 {
+
                 *last_trained = NONE;
             } else {
                 *last_trained = UNIT_ARCHER;
@@ -257,7 +261,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     // Building mines
 
     // TODO: check if there's gold remaining
-    if get_structures(sites, STRUCT_MINE, NONE).len() < 3 {
+    if get_structures(sites, STRUCT_MINE, NONE, ALLY).len() < 3 {
         if touched == closest {
             if sites.get(&closest).unwrap().remaining_gold() != 0 {
                 println!("BUILD {} MINE", closest);
@@ -280,7 +284,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     //     return;
     // }
 
-    if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT).len() < 1 {
+    if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
         if touched == closest {
             println!("BUILD {} BARRACKS-KNIGHT", closest);
         } else {
@@ -290,7 +294,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         return;
     }
 
-    if get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER).len() < 1 {
+    if get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY).len() < 1 {
         if touched == closest {
             println!("BUILD {} BARRACKS-ARCHER", closest);
         } else {
@@ -300,7 +304,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         return;
     }
 
-    if get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT).len() < 1 {
+    if get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT, ALLY).len() < 1 {
         if touched == closest {
             println!("BUILD {} BARRACKS-GIANT", closest);
         } else {
@@ -310,7 +314,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         return;
     }
 
-    for i in get_structures(sites, STRUCT_MINE, NONE) {
+    for i in get_structures(sites, STRUCT_MINE, NONE, ALLY) {
         let site = sites.get(&i).unwrap();
         let loc = site.get_location();
 

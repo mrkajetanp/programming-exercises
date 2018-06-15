@@ -4,6 +4,7 @@
 
 #### 15.06.2018
 
+* [Rust] Code Royale - Giants only if enemy builds towers (CodinGame)
 * [Rust] Code Royale - 3 mines and no health retreat (CodinGame)
 
 #### 14.06.2018
