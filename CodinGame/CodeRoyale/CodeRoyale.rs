@@ -155,7 +155,6 @@ fn count_units(units: &Vec<Unit>, unit: i32) -> usize {
         .collect::<Vec<&Unit>>().len()
 }
 
-// TODO: build giant barracks & giants only if enemy builds towers
 // -- count enemy towers fn
 
 fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
@@ -213,25 +212,28 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>, units: &Vec<Unit>, last_tr
     let archers = get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY);
     let giants = get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT, ALLY);
 
-    if (*last_trained == NONE || *last_trained == UNIT_GIANT) && !knights.is_empty() &&
-        sites.get(&knights[0]).unwrap().get_cooldown() == 0 && gold >= 80 {
-
-            println!("TRAIN {}", knights[0]);
-            *last_trained = UNIT_KNIGHT;
-
-        } else if *last_trained == UNIT_KNIGHT && !archers.is_empty() &&
+    if (*last_trained == NONE || *last_trained == UNIT_GIANT) && !archers.is_empty() &&
         sites.get(&archers[0]).unwrap().get_cooldown() == 0 && gold >= 100 {
 
             println!("TRAIN {}", archers[0]);
+            *last_trained = UNIT_ARCHER;
+
+        } else if *last_trained == UNIT_ARCHER && !knights.is_empty() &&
+        sites.get(&knights[0]).unwrap().get_cooldown() == 0 && gold >= 80 {
+
+            println!("TRAIN {}", knights[0]);
+            eprintln!("Enemy towers: {:?}", get_structures(sites, STRUCT_TOWER, NONE, ENEMY).len());
+            eprintln!("Giants: {:?}", count_units(units, UNIT_GIANT));
+
             if get_structures(sites, STRUCT_TOWER, NONE, ENEMY).len() == 0 ||
                 count_units(units, UNIT_GIANT) > 1 {
 
                 *last_trained = NONE;
             } else {
-                *last_trained = UNIT_ARCHER;
+                *last_trained = UNIT_KNIGHT;
             }
 
-        } else if *last_trained == UNIT_ARCHER && !giants.is_empty() &&
+        } else if *last_trained == UNIT_KNIGHT && !giants.is_empty() &&
         sites.get(&giants[0]).unwrap().get_cooldown() == 0 && gold >= 140 {
 
             println!("TRAIN {}", giants[0]);
@@ -260,7 +262,6 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     let cl_xy = cl_xy.unwrap().get_location();
     // Building mines
 
-    // TODO: check if there's gold remaining
     if get_structures(sites, STRUCT_MINE, NONE, ALLY).len() < 3 {
         if touched == closest {
             if sites.get(&closest).unwrap().remaining_gold() != 0 {
@@ -284,9 +285,9 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     //     return;
     // }
 
-    if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
+    if get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY).len() < 1 {
         if touched == closest {
-            println!("BUILD {} BARRACKS-KNIGHT", closest);
+            println!("BUILD {} BARRACKS-ARCHER", closest);
         } else {
             println!("MOVE {} {}", cl_xy.0, cl_xy.1);
         }
@@ -294,9 +295,9 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         return;
     }
 
-    if get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY).len() < 1 {
+    if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
         if touched == closest {
-            println!("BUILD {} BARRACKS-ARCHER", closest);
+            println!("BUILD {} BARRACKS-KNIGHT", closest);
         } else {
             println!("MOVE {} {}", cl_xy.0, cl_xy.1);
         }

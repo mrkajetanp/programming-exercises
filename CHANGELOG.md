@@ -2,6 +2,10 @@
 
 ---
 
+#### 16.06.2018
+
+* [Rust] Code Royale - Training archers first (CodinGame)
+
 #### 15.06.2018
 
 * [Rust] Code Royale - Giants only if enemy builds towers (CodinGame)
