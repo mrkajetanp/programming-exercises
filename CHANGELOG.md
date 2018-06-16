@@ -4,6 +4,7 @@
 
 #### 16.06.2018
 
+* [Rust] Code Royale - Fixed and blocked spawning giants (CodinGame)
 * [Rust] Code Royale - Training archers first (CodinGame)
 
 #### 15.06.2018

@@ -33,8 +33,6 @@ struct Site {
     unit: i32,
 }
 
-// TODO: archers first
-
 impl Site {
     fn new(x: i32, y: i32, radius: i32) -> Site {
         Site {
@@ -202,8 +200,14 @@ fn get_structures(sites: &HashMap<i32, Site>, struct_type: i32, unit: i32, owner
     }
 
     sites.iter()
-        .filter(|&(_, s)| s.get_owner() == ALLY && s.get_type() == struct_type
-                && s.get_unit() == unit && s.get_owner() == owner)
+        .filter(|&(_, s)| s.get_owner() == owner && s.get_type() == struct_type
+                && s.get_unit() == unit)
+        .map(|(i, _)| *i).collect::<Vec<i32>>()
+}
+
+fn get_towers(sites: &HashMap<i32, Site>, owner: i32) -> Vec<i32> {
+    sites.iter()
+        .filter(|&(_, s)| s.get_owner() == owner && s.get_type() == STRUCT_TOWER)
         .map(|(i, _)| *i).collect::<Vec<i32>>()
 }
 
@@ -222,16 +226,17 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>, units: &Vec<Unit>, last_tr
         sites.get(&knights[0]).unwrap().get_cooldown() == 0 && gold >= 80 {
 
             println!("TRAIN {}", knights[0]);
-            eprintln!("Enemy towers: {:?}", get_structures(sites, STRUCT_TOWER, NONE, ENEMY).len());
-            eprintln!("Giants: {:?}", count_units(units, UNIT_GIANT));
 
-            if get_structures(sites, STRUCT_TOWER, NONE, ENEMY).len() == 0 ||
-                count_units(units, UNIT_GIANT) > 1 {
+            if get_towers(sites, ENEMY).len() == 0 ||
+                count_units(units, UNIT_GIANT) >= 1 {
 
-                *last_trained = NONE;
-            } else {
-                *last_trained = UNIT_KNIGHT;
-            }
+                    *last_trained = NONE;
+                } else {
+                    *last_trained = UNIT_KNIGHT;
+                }
+
+            // Block training giants
+            *last_trained = NONE;
 
         } else if *last_trained == UNIT_KNIGHT && !giants.is_empty() &&
         sites.get(&giants[0]).unwrap().get_cooldown() == 0 && gold >= 140 {
