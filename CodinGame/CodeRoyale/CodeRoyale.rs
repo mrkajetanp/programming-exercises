@@ -194,9 +194,10 @@ fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
 }
 
 
-fn get_structures(sites: &HashMap<i32, Site>, struct_type: i32, unit: i32, owner: i32) -> Vec<i32> {
+fn get_structures(sites: &HashMap<i32, Site>, struct_type: i32,
+                  unit: i32, owner: i32) -> Vec<i32> {
     if struct_type != STRUCT_BARRACKS && unit != NONE {
-        panic!("If structure is other than barracks, unit should be set to NONE (-1)");
+        panic!("If structure is not barracks, unit should be set to NONE (-1)");
     }
 
     sites.iter()
@@ -211,12 +212,14 @@ fn get_towers(sites: &HashMap<i32, Site>, owner: i32) -> Vec<i32> {
         .map(|(i, _)| *i).collect::<Vec<i32>>()
 }
 
-fn train_units(gold: i32, sites: &HashMap<i32, Site>, units: &Vec<Unit>, last_trained: &mut i32) {
+fn train_units(gold: i32, sites: &HashMap<i32, Site>,
+               units: &Vec<Unit>, last_trained: &mut i32) {
     let knights = get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY);
     let archers = get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY);
     let giants = get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT, ALLY);
 
-    if (*last_trained == NONE || *last_trained == UNIT_GIANT) && !archers.is_empty() &&
+    if (*last_trained == NONE || *last_trained == UNIT_GIANT) &&
+        !archers.is_empty() &&
         sites.get(&archers[0]).unwrap().get_cooldown() == 0 && gold >= 100 {
 
             println!("TRAIN {}", archers[0]);
@@ -281,6 +284,21 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         return;
     }
 
+    for i in get_structures(sites, STRUCT_MINE, NONE, ALLY) {
+        let site = sites.get(&i).unwrap();
+        let loc = site.get_location();
+
+        if site.can_upgrade() {
+            if touched == i {
+                println!("BUILD {} MINE", i);
+            } else {
+                println!("MOVE {} {}", loc.0, loc.1);
+            }
+
+            return;
+        }
+    }
+
     // if queen.get_health() < 20 {
     //     if queen_start.0 < 960 {
     //         println!("MOVE 0 0");
@@ -318,21 +336,6 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         }
 
         return;
-    }
-
-    for i in get_structures(sites, STRUCT_MINE, NONE, ALLY) {
-        let site = sites.get(&i).unwrap();
-        let loc = site.get_location();
-
-        if site.can_upgrade() {
-            if touched == i {
-                println!("BUILD {} MINE", i);
-            } else {
-                println!("MOVE {} {}", loc.0, loc.1);
-            }
-
-            return;
-        }
     }
 
     if touched == closest {
