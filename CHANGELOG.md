@@ -4,6 +4,7 @@
 
 #### 17.06.2018
 
+* [Rust] CodeRoyale - Essential barracks priority (CodinGame)
 * [Rust] CodeRoyale - Upgrade priority (CodinGame)
 
 #### 16.06.2018

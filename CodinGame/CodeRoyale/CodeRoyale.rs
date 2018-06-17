@@ -270,6 +270,26 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     let cl_xy = cl_xy.unwrap().get_location();
     // Building mines
 
+    if get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY).len() < 1 {
+        if touched == closest {
+            println!("BUILD {} BARRACKS-ARCHER", closest);
+        } else {
+            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+        }
+
+        return;
+    }
+
+    if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
+        if touched == closest {
+            println!("BUILD {} BARRACKS-KNIGHT", closest);
+        } else {
+            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+        }
+
+        return;
+    }
+
     if get_structures(sites, STRUCT_MINE, NONE, ALLY).len() < 3 {
         if touched == closest {
             if sites.get(&closest).unwrap().remaining_gold() != 0 {
@@ -307,26 +327,6 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     //     }
     //     return;
     // }
-
-    if get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY).len() < 1 {
-        if touched == closest {
-            println!("BUILD {} BARRACKS-ARCHER", closest);
-        } else {
-            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
-        }
-
-        return;
-    }
-
-    if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
-        if touched == closest {
-            println!("BUILD {} BARRACKS-KNIGHT", closest);
-        } else {
-            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
-        }
-
-        return;
-    }
 
     if get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT, ALLY).len() < 1 {
         if touched == closest {
