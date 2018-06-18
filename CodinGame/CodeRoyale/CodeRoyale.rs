@@ -219,10 +219,17 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>,
     let giants = get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT, ALLY);
 
     if (*last_trained == NONE || *last_trained == UNIT_GIANT) &&
-        !archers.is_empty() &&
-        sites.get(&archers[0]).unwrap().get_cooldown() == 0 && gold >= 100 {
+        !archers.is_empty() && gold >= 100 {
 
-            println!("TRAIN {}", archers[0]);
+            if sites.get(&archers[0]).unwrap().get_cooldown() == 0 {
+                println!("TRAIN {}", archers[0]);
+            } else if archers.len() > 1 &&
+                sites.get(&archers[1]).unwrap().get_cooldown() == 0 {
+                    println!("TRAIN {}", archers[1]);
+                }
+
+            // TODO: loop collecting ready barracks
+
             *last_trained = UNIT_ARCHER;
 
         } else if *last_trained == UNIT_ARCHER && !knights.is_empty() &&

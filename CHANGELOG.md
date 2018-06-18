@@ -4,6 +4,7 @@
 
 #### 18.06.2018
 
+* [Rust] CodeRoyale - Possible double archer training (CodinGame)
 * [Rust] CodeRoyale - Mine upgrade right away (CodinGame)
 
 #### 17.06.2018
