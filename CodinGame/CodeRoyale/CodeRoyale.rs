@@ -290,20 +290,6 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         return;
     }
 
-    if get_structures(sites, STRUCT_MINE, NONE, ALLY).len() < 3 {
-        if touched == closest {
-            if sites.get(&closest).unwrap().remaining_gold() != 0 {
-                println!("BUILD {} MINE", closest);
-            } else {
-                println!("BUILD {} TOWER", closest);
-            }
-        } else {
-            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
-        }
-
-        return;
-    }
-
     for i in get_structures(sites, STRUCT_MINE, NONE, ALLY) {
         let site = sites.get(&i).unwrap();
         let loc = site.get_location();
@@ -317,6 +303,20 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
 
             return;
         }
+    }
+
+    if get_structures(sites, STRUCT_MINE, NONE, ALLY).len() < 3 {
+        if touched == closest {
+            if sites.get(&closest).unwrap().remaining_gold() != 0 {
+                println!("BUILD {} MINE", closest);
+            } else {
+                println!("BUILD {} TOWER", closest);
+            }
+        } else {
+            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+        }
+
+        return;
     }
 
     // if queen.get_health() < 20 {

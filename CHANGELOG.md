@@ -2,6 +2,10 @@
 
 ---
 
+#### 18.06.2018
+
+* [Rust] CodeRoyale - Mine upgrade right away (CodinGame)
+
 #### 17.06.2018
 
 * [Rust] CodeRoyale - Essential barracks priority (CodinGame)
