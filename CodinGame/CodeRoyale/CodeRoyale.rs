@@ -233,7 +233,14 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>,
         } else if *last_trained == UNIT_ARCHER && !knights.is_empty() &&
         sites.get(&knights[0]).unwrap().get_cooldown() == 0 && gold >= 80 {
 
-            println!("TRAIN {}", knights[0]);
+            let ready = knights.into_iter()
+                .filter(|i| sites.get(i).unwrap().get_cooldown() == 0)
+                .map(|i| i.to_string())
+                .collect::<Vec<String>>()
+                .join(" ");
+
+
+            println!("TRAIN {}", ready);
 
             if get_towers(sites, ENEMY).len() == 0 ||
                 count_units(units, UNIT_GIANT) >= 1 {
@@ -243,7 +250,7 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>,
                     *last_trained = UNIT_KNIGHT;
                 }
 
-            // Block training giants
+            // Block training giants for now
             *last_trained = NONE;
 
         } else if *last_trained == UNIT_KNIGHT && !giants.is_empty() &&
