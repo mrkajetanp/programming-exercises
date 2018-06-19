@@ -2,6 +2,10 @@
 
 ---
 
+#### 19.06.2018
+
+* [Rust] CodeRoyale - Loop for ready archer barracks (CodinGame)
+
 #### 18.06.2018
 
 * [Rust] CodeRoyale - Possible double archer training (CodinGame)

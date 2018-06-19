@@ -221,15 +221,13 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>,
     if (*last_trained == NONE || *last_trained == UNIT_GIANT) &&
         !archers.is_empty() && gold >= 100 {
 
-            if sites.get(&archers[0]).unwrap().get_cooldown() == 0 {
-                println!("TRAIN {}", archers[0]);
-            } else if archers.len() > 1 &&
-                sites.get(&archers[1]).unwrap().get_cooldown() == 0 {
-                    println!("TRAIN {}", archers[1]);
-                }
+            let ready = archers.into_iter()
+                .filter(|i| sites.get(i).unwrap().get_cooldown() == 0)
+                .map(|i| i.to_string())
+                .collect::<Vec<String>>()
+                .join(" ");
 
-            // TODO: loop collecting ready barracks
-
+            println!("TRAIN {}", ready);
             *last_trained = UNIT_ARCHER;
 
         } else if *last_trained == UNIT_ARCHER && !knights.is_empty() &&
@@ -290,6 +288,16 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
         if touched == closest {
             println!("BUILD {} BARRACKS-KNIGHT", closest);
+        } else {
+            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+        }
+
+        return;
+    }
+
+    if get_towers(sites, ALLY).len() < 3 {
+        if touched == closest {
+            println!("BUILD {} TOWER", closest);
         } else {
             println!("MOVE {} {}", cl_xy.0, cl_xy.1);
         }
