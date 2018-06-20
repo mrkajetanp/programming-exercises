@@ -239,7 +239,6 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>,
                 .collect::<Vec<String>>()
                 .join(" ");
 
-
             println!("TRAIN {}", ready);
 
             if get_towers(sites, ENEMY).len() == 0 ||
@@ -256,7 +255,15 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>,
         } else if *last_trained == UNIT_KNIGHT && !giants.is_empty() &&
         sites.get(&giants[0]).unwrap().get_cooldown() == 0 && gold >= 140 {
 
-            println!("TRAIN {}", giants[0]);
+            let ready = giants.into_iter()
+                .filter(|i| sites.get(i).unwrap().get_cooldown() == 0)
+                .map(|i| i.to_string())
+                .collect::<Vec<String>>()
+                .join(" ");
+
+            println!("TRAIN {}", ready);
+
+
             *last_trained = UNIT_GIANT;
         } else {
             println!("TRAIN")

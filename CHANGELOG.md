@@ -2,6 +2,10 @@
 
 ---
 
+#### 20.06.2018
+
+* [Rust] CodeRoyale - Loop for ready giant barracks (CodinGame)
+
 #### 19.06.2018
 
 * [Rust] CodeRoyale - Loop for ready knight barracks (CodinGame)
