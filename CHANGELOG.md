@@ -4,6 +4,7 @@
 
 #### 20.06.2018
 
+* [Rust] CodeRoyale - Mines first & earlier towers (CodinGame)
 * [Rust] CodeRoyale - Loop for ready giant barracks (CodinGame)
 
 #### 19.06.2018

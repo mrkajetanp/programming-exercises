@@ -289,36 +289,6 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     let cl_xy = cl_xy.unwrap().get_location();
     // Building mines
 
-    if get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY).len() < 1 {
-        if touched == closest {
-            println!("BUILD {} BARRACKS-ARCHER", closest);
-        } else {
-            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
-        }
-
-        return;
-    }
-
-    if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
-        if touched == closest {
-            println!("BUILD {} BARRACKS-KNIGHT", closest);
-        } else {
-            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
-        }
-
-        return;
-    }
-
-    if get_towers(sites, ALLY).len() < 3 {
-        if touched == closest {
-            println!("BUILD {} TOWER", closest);
-        } else {
-            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
-        }
-
-        return;
-    }
-
     for i in get_structures(sites, STRUCT_MINE, NONE, ALLY) {
         let site = sites.get(&i).unwrap();
         let loc = site.get_location();
@@ -348,6 +318,26 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         return;
     }
 
+    if get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY).len() < 1 {
+        if touched == closest {
+            println!("BUILD {} BARRACKS-ARCHER", closest);
+        } else {
+            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+        }
+
+        return;
+    }
+
+    if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
+        if touched == closest {
+            println!("BUILD {} BARRACKS-KNIGHT", closest);
+        } else {
+            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+        }
+
+        return;
+    }
+
     // if queen.get_health() < 20 {
     //     if queen_start.0 < 960 {
     //         println!("MOVE 0 0");
@@ -356,6 +346,16 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     //     }
     //     return;
     // }
+
+    if get_towers(sites, ALLY).len() < 2 {
+        if touched == closest {
+            println!("BUILD {} TOWER", closest);
+        } else {
+            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+        }
+
+        return;
+    }
 
     if get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT, ALLY).len() < 1 {
         if touched == closest {
