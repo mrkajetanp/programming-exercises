@@ -2,6 +2,10 @@
 
 ---
 
+#### 21.06.2018
+
+* [Rust] Code Royales - Closest enemy knight fn (CodinGame)
+
 #### 20.06.2018
 
 * [Rust] CodeRoyale - Mines first & earlier towers (CodinGame)

@@ -132,6 +132,10 @@ impl Unit {
         self.utype
     }
 
+    pub fn distance(&self, other: (i32, i32)) -> f64 {
+        (((self.x - other.0).pow(2) + (self.y - other.1).pow(2)) as f64).sqrt()
+    }
+
     // pub fn get_health(&self) -> i32 {
     //     self.health
     // }
@@ -212,6 +216,27 @@ fn get_towers(sites: &HashMap<i32, Site>, owner: i32) -> Vec<i32> {
         .map(|(i, _)| *i).collect::<Vec<i32>>()
 }
 
+fn queen_closest_enemy_knight(units: &Vec<Unit>, queen: &Unit) -> (i32, i32) {
+    // TODO: normalise omg
+    let mut min_dist = 9999.0;
+    let mut location = (0, 0);
+
+    for u in units {
+        if u.is_own() {
+            continue;
+        }
+
+        let dist = u.distance(queen.get_location());
+
+        if dist < min_dist {
+            min_dist = dist;
+            location = u.get_location();
+        }
+    }
+
+    location
+}
+
 fn train_units(gold: i32, sites: &HashMap<i32, Site>,
                units: &Vec<Unit>, last_trained: &mut i32) {
     let knights = get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY);
@@ -275,6 +300,9 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     let queen = get_queen(&units);
     let closest = closest_free_site(&sites, queen.get_location(), queen_start);
     let cl_xy = sites.get(&closest);
+
+    let closest_enemy_knight = queen_closest_enemy_knight(units, &queen);
+    eprintln!("closest enemy knight: {:?}", closest_enemy_knight);
 
     if cl_xy.is_none() {
         if queen_start.0 < 960 {
