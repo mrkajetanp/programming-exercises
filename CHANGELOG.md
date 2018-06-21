@@ -4,6 +4,7 @@
 
 #### 21.06.2018
 
+* [Rust] Code Royales - Simple Queen run away (CodinGame)
 * [Rust] Code Royales - Closest enemy knight fn (CodinGame)
 
 #### 20.06.2018

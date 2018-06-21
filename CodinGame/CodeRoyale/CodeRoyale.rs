@@ -296,7 +296,7 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>,
 }
 
 fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
-                touched: i32, queen_start: (i32, i32)) {
+                touched: i32, queen_start: (i32, i32), corner_y: &mut i32) {
     let queen = get_queen(&units);
     let closest = closest_free_site(&sites, queen.get_location(), queen_start);
     let cl_xy = sites.get(&closest);
@@ -316,6 +316,27 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
 
     let cl_xy = cl_xy.unwrap().get_location();
     // Building mines
+
+    let queen_loc = queen.get_location();
+    if queen.distance(closest_enemy_knight) < 200 as f64 {
+        if queen_start.0 < 960 {
+            if queen_loc.0 < 50 && queen_loc.1 < 50 {
+                *corner_y = 900;
+            } else if queen_loc.0 < 50 && queen_loc.1 > 850 {
+                *corner_y = 0;
+            }
+            // TODO: make it more normal wtf
+
+            println!("MOVE 0 {}", *corner_y);
+        } else {
+            if queen.get_location() == (1920, 900) {
+                println!("MOVE 1920 0");
+            } else {
+                println!("MOVE 1920 900");
+            }
+        }
+        return;
+    }
 
     for i in get_structures(sites, STRUCT_MINE, NONE, ALLY) {
         let site = sites.get(&i).unwrap();
@@ -424,6 +445,7 @@ fn main() {
     let mut last_trained: i32 = NONE;
     // Maybe option here
     let mut queen_start: (i32, i32) = (-1, -1);
+    let mut corner_y = 0;
 
     // game loop
     loop {
@@ -479,7 +501,7 @@ fn main() {
         eprintln!("Queen start: {:?}", queen_start);
         eprintln!("Touched site: {}", touched_site);
 
-        handle_queen(&units, &sites, touched_site, queen_start);
+        handle_queen(&units, &sites, touched_site, queen_start, &mut corner_y);
         train_units(gold, &sites, &units, &mut last_trained);
     }
 }
