@@ -2,6 +2,10 @@
 
 ---
 
+#### 22.06.2018
+
+* [Rust] Code Royale - Loop training knights (CodinGame)
+
 #### 21.06.2018
 
 * [Rust] Code Royales - Simple Queen run away (CodinGame)

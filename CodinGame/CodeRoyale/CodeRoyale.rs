@@ -243,6 +243,9 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>,
     let archers = get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY);
     let giants = get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT, ALLY);
 
+    // loop knights
+    *last_trained = UNIT_ARCHER;
+
     if (*last_trained == NONE || *last_trained == UNIT_GIANT) &&
         !archers.is_empty() && gold >= 100 {
 
@@ -274,8 +277,8 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>,
                     *last_trained = UNIT_KNIGHT;
                 }
 
-            // Block training giants for now
-            *last_trained = NONE;
+            // Train knights in a loop
+            *last_trained = UNIT_ARCHER;
 
         } else if *last_trained == UNIT_KNIGHT && !giants.is_empty() &&
         sites.get(&giants[0]).unwrap().get_cooldown() == 0 && gold >= 140 {
@@ -367,15 +370,15 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         return;
     }
 
-    if get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY).len() < 1 {
-        if touched == closest {
-            println!("BUILD {} BARRACKS-ARCHER", closest);
-        } else {
-            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
-        }
+    // if get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY).len() < 1 {
+    //     if touched == closest {
+    //         println!("BUILD {} BARRACKS-ARCHER", closest);
+    //     } else {
+    //         println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+    //     }
 
-        return;
-    }
+    //     return;
+    // }
 
     if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
         if touched == closest {
@@ -396,25 +399,25 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     //     return;
     // }
 
-    if get_towers(sites, ALLY).len() < 2 {
-        if touched == closest {
-            println!("BUILD {} TOWER", closest);
-        } else {
-            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
-        }
+    // if get_towers(sites, ALLY).len() < 2 {
+    //     if touched == closest {
+    //         println!("BUILD {} TOWER", closest);
+    //     } else {
+    //         println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+    //     }
 
-        return;
-    }
+    //     return;
+    // }
 
-    if get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT, ALLY).len() < 1 {
-        if touched == closest {
-            println!("BUILD {} BARRACKS-GIANT", closest);
-        } else {
-            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
-        }
+    // if get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT, ALLY).len() < 1 {
+    //     if touched == closest {
+    //         println!("BUILD {} BARRACKS-GIANT", closest);
+    //     } else {
+    //         println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+    //     }
 
-        return;
-    }
+    //     return;
+    // }
 
     if touched == closest {
         println!("BUILD {} TOWER", closest);
