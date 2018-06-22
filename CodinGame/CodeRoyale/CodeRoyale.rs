@@ -320,27 +320,6 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     let cl_xy = cl_xy.unwrap().get_location();
     // Building mines
 
-    let queen_loc = queen.get_location();
-    if queen.distance(closest_enemy_knight) < 200 as f64 {
-        if queen_start.0 < 960 {
-            if queen_loc.0 < 50 && queen_loc.1 < 50 {
-                *corner_y = 900;
-            } else if queen_loc.0 < 50 && queen_loc.1 > 850 {
-                *corner_y = 0;
-            }
-            // TODO: make it more normal wtf
-
-            println!("MOVE 0 {}", *corner_y);
-        } else {
-            if queen.get_location() == (1920, 900) {
-                println!("MOVE 1920 0");
-            } else {
-                println!("MOVE 1920 900");
-            }
-        }
-        return;
-    }
-
     for i in get_structures(sites, STRUCT_MINE, NONE, ALLY) {
         let site = sites.get(&i).unwrap();
         let loc = site.get_location();
@@ -367,6 +346,27 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
             println!("MOVE {} {}", cl_xy.0, cl_xy.1);
         }
 
+        return;
+    }
+
+    let queen_loc = queen.get_location();
+    if queen.distance(closest_enemy_knight) < 200 as f64 {
+        if queen_start.0 < 960 {
+            if queen_loc.0 < 50 && queen_loc.1 < 50 {
+                *corner_y = 900;
+            } else if queen_loc.0 < 50 && queen_loc.1 > 850 {
+                *corner_y = 0;
+            }
+            // TODO: make it more normal wtf
+
+            println!("MOVE 0 {}", *corner_y);
+        } else {
+            if queen.get_location() == (1920, 900) {
+                println!("MOVE 1920 0");
+            } else {
+                println!("MOVE 1920 900");
+            }
+        }
         return;
     }
 

@@ -4,6 +4,7 @@
 
 #### 22.06.2018
 
+* [Rust] Code Royale - Queen run away after mines (CodinGame)
 * [Rust] Code Royale - Loop training knights (CodinGame)
 
 #### 21.06.2018
