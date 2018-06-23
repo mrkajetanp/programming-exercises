@@ -157,8 +157,6 @@ fn count_units(units: &Vec<Unit>, unit: i32) -> usize {
         .collect::<Vec<&Unit>>().len()
 }
 
-// -- count enemy towers fn
-
 fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
                      queen_start: (i32, i32)) -> i32 {
     // TODO: normalise omg
@@ -197,6 +195,43 @@ fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
     min_id
 }
 
+fn farthest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
+                     queen_start: (i32, i32)) -> i32 {
+    // TODO: normalise omg
+    let mut max_dist = 0.0;
+    let mut max_id = -1;
+
+    for (i, s) in sites {
+        let is_own = if queen_start != (-1, -1) {
+            (queen_start.0 - s.get_location().0).abs() <=
+                (960 - queen_start.0).abs()
+        } else {
+            true
+        };
+
+        if !s.is_free() || !is_own {
+            continue;
+        }
+
+        if queen_start == (-1, -1) {
+            let dist = s.distance(coord.0, coord.1);
+
+            if dist < max_dist {
+                max_dist = dist;
+                max_id = *i;
+            }
+        } else {
+            let dist = s.distance(queen_start.0, queen_start.1);
+
+            if dist < max_dist {
+                max_dist = dist;
+                max_id = *i;
+            }
+        }
+    }
+
+    max_id
+}
 
 fn get_structures(sites: &HashMap<i32, Site>, struct_type: i32,
                   unit: i32, owner: i32) -> Vec<i32> {

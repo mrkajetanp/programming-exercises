@@ -2,6 +2,10 @@
 
 ---
 
+#### 23.06.2018
+
+* [Rust] Code Royale - Farthest free site (CodinGame)
+
 #### 22.06.2018
 
 * [Rust] Code Royale - Queen run away after mines (CodinGame)
