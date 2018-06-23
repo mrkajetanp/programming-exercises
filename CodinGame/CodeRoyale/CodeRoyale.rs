@@ -136,9 +136,9 @@ impl Unit {
         (((self.x - other.0).pow(2) + (self.y - other.1).pow(2)) as f64).sqrt()
     }
 
-    // pub fn get_health(&self) -> i32 {
-    //     self.health
-    // }
+    pub fn get_health(&self) -> i32 {
+        self.health
+    }
 }
 
 fn get_queen(units: &Vec<Unit>) -> &Unit {
@@ -213,20 +213,11 @@ fn farthest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
             continue;
         }
 
-        if queen_start == (-1, -1) {
-            let dist = s.distance(coord.0, coord.1);
+        let dist = s.distance(coord.0, coord.1);
 
-            if dist < max_dist {
-                max_dist = dist;
-                max_id = *i;
-            }
-        } else {
-            let dist = s.distance(queen_start.0, queen_start.1);
-
-            if dist < max_dist {
-                max_dist = dist;
-                max_id = *i;
-            }
+        if dist < max_dist {
+            max_dist = dist;
+            max_id = *i;
         }
     }
 
@@ -336,13 +327,21 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>,
 fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
                 touched: i32, queen_start: (i32, i32), corner_y: &mut i32) {
     let queen = get_queen(&units);
-    let closest = closest_free_site(&sites, queen.get_location(), queen_start);
-    let cl_xy = sites.get(&closest);
+
+    let build_site;
+
+    if queen.get_health() < 20 {
+        build_site = farthest_free_site(&sites, queen.get_location(), queen_start);
+    } else {
+        build_site = closest_free_site(&sites, queen.get_location(), queen_start);
+    }
+
+    let bl_xy = sites.get(&build_site);
 
     let closest_enemy_knight = queen_closest_enemy_knight(units, &queen);
     eprintln!("closest enemy knight: {:?}", closest_enemy_knight);
 
-    if cl_xy.is_none() {
+    if bl_xy.is_none() {
         if queen_start.0 < 960 {
             println!("MOVE 0 0");
         } else {
@@ -352,7 +351,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         return;
     }
 
-    let cl_xy = cl_xy.unwrap().get_location();
+    let bl_xy = bl_xy.unwrap().get_location();
     // Building mines
 
     for i in get_structures(sites, STRUCT_MINE, NONE, ALLY) {
@@ -371,14 +370,14 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     }
 
     if get_structures(sites, STRUCT_MINE, NONE, ALLY).len() < 3 {
-        if touched == closest {
-            if sites.get(&closest).unwrap().remaining_gold() != 0 {
-                println!("BUILD {} MINE", closest);
+        if touched == build_site {
+            if sites.get(&build_site).unwrap().remaining_gold() != 0 {
+                println!("BUILD {} MINE", build_site);
             } else {
-                println!("BUILD {} TOWER", closest);
+                println!("BUILD {} TOWER", build_site);
             }
         } else {
-            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+            println!("MOVE {} {}", bl_xy.0, bl_xy.1);
         }
 
         return;
@@ -416,23 +415,14 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     // }
 
     if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
-        if touched == closest {
-            println!("BUILD {} BARRACKS-KNIGHT", closest);
+        if touched == build_site {
+            println!("BUILD {} BARRACKS-KNIGHT", build_site);
         } else {
-            println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+            println!("MOVE {} {}", bl_xy.0, bl_xy.1);
         }
 
         return;
     }
-
-    // if queen.get_health() < 20 {
-    //     if queen_start.0 < 960 {
-    //         println!("MOVE 0 0");
-    //     } else {
-    //         println!("MOVE 1920 900");
-    //     }
-    //     return;
-    // }
 
     // if get_towers(sites, ALLY).len() < 2 {
     //     if touched == closest {
@@ -454,10 +444,10 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
     //     return;
     // }
 
-    if touched == closest {
-        println!("BUILD {} TOWER", closest);
+    if touched == build_site {
+        println!("BUILD {} TOWER", build_site);
     } else {
-        println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+        println!("MOVE {} {}", bl_xy.0, bl_xy.1);
     }
 }
 

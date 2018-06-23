@@ -4,6 +4,7 @@
 
 #### 23.06.2018
 
+* [Rust] Code Royale - Queen on low health builds farther (CodinGame)
 * [Rust] Code Royale - Farthest free site (CodinGame)
 
 #### 22.06.2018
