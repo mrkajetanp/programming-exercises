@@ -159,11 +159,8 @@ fn count_units(units: &Vec<Unit>, unit: i32) -> usize {
 
 fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
                      queen_start: (i32, i32)) -> i32 {
-    // TODO: normalise omg
-    let mut min_dist = 9999.0;
-    let mut min_id = -1;
+    let mut records = sites.iter().filter(|&(_, s)| {
 
-    for (i, s) in sites {
         let is_own = if queen_start != (-1, -1) {
             (queen_start.0 - s.get_location().0).abs() <=
                 (960 - queen_start.0).abs()
@@ -171,28 +168,22 @@ fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
             true
         };
 
-        if !s.is_free() || !is_own {
-            continue;
-        }
-
-        if queen_start == (-1, -1) {
-            let dist = s.distance(coord.0, coord.1);
-
-            if dist < min_dist {
-                min_dist = dist;
-                min_id = *i;
-            }
+        s.is_free() && is_own
+    }).map(|(&i, s)| {
+        let dist = if queen_start == (-1, -1) {
+            s.distance(coord.0, coord.1)
         } else {
-            let dist = s.distance(queen_start.0, queen_start.1);
+            s.distance(queen_start.0, queen_start.1)
+        };
 
-            if dist < min_dist {
-                min_dist = dist;
-                min_id = *i;
-            }
-        }
-    }
+        (i, dist)
+    }).collect::<Vec<(i32, f64)>>();
 
-    min_id
+    records.sort_by(|a, b| {
+        (a.1 as f64).partial_cmp(&b.1).unwrap()
+    });
+
+    records[0].0
 }
 
 fn farthest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),

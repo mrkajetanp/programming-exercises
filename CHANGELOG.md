@@ -2,6 +2,10 @@
 
 ---
 
+#### 24.06.2018
+
+* [Rust] Code Royale - Normalised closest free site (CodinGame)
+
 #### 23.06.2018
 
 * [Rust] Code Royale - Queen on low health builds farther (CodinGame)
