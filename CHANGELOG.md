@@ -4,6 +4,7 @@
 
 #### 24.06.2018
 
+* [Rust] Code Royale - Normalised farthest free site (CodinGame)
 * [Rust] Code Royale - Normalised closest free site (CodinGame)
 
 #### 23.06.2018
