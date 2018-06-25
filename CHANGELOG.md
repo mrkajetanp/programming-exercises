@@ -2,6 +2,10 @@
 
 ---
 
+#### 25.06.2018
+
+* [Rust] Code Royale - Normalised closest enemy knight (CodinGame)
+
 #### 24.06.2018
 
 * [Rust] Code Royale - Normalised farthest free site (CodinGame)
