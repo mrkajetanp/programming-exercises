@@ -4,6 +4,7 @@
 
 #### 25.06.2018
 
+* [Rust] Code Royale - Closest free site fully on iterator (CodinGame)
 * [Rust] Code Royale - Normalised closest enemy knight (CodinGame)
 
 #### 24.06.2018

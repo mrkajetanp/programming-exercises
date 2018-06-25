@@ -159,8 +159,7 @@ fn count_units(units: &Vec<Unit>, unit: i32) -> usize {
 
 fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
                      queen_start: (i32, i32)) -> i32 {
-    let mut records = sites.iter().filter(|&(_, s)| {
-
+    sites.iter().filter(|&(_, s)| {
         let is_own = if queen_start != (-1, -1) {
             (queen_start.0 - s.get_location().0).abs() <=
                 (960 - queen_start.0).abs()
@@ -177,13 +176,7 @@ fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
         };
 
         (i, dist)
-    }).collect::<Vec<(i32, f64)>>();
-
-    records.sort_by(|a, b| {
-        (a.1 as f64).partial_cmp(&b.1).unwrap()
-    });
-
-    records[0].0
+    }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
 }
 
 fn farthest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
