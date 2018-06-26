@@ -180,9 +180,8 @@ fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
 }
 
 fn farthest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
-                     queen_start: (i32, i32)) -> i32 {
-    let mut records = sites.iter().filter(|&(_, s)| {
-
+                      queen_start: (i32, i32)) -> i32 {
+    sites.iter().filter(|&(_, s)| {
         let is_own = if queen_start != (-1, -1) {
             (queen_start.0 - s.get_location().0).abs() <=
                 (960 - queen_start.0).abs()
@@ -199,13 +198,7 @@ fn farthest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
         };
 
         (i, dist)
-    }).collect::<Vec<(i32, f64)>>();
-
-    records.sort_by(|a, b| {
-        (a.1 as f64).partial_cmp(&b.1).unwrap()
-    });
-
-    records[records.len()-1].0
+    }).max_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
 }
 
 fn get_structures(sites: &HashMap<i32, Site>, struct_type: i32,

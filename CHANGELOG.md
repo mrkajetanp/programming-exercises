@@ -2,6 +2,10 @@
 
 ---
 
+#### 26.06.2018
+
+* [Rust] Code Royale - Farthest free site fully on iterator (CodinGame)
+
 #### 25.06.2018
 
 * [Rust] Code Royale - Closest free site fully on iterator (CodinGame)
