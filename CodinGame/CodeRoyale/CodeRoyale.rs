@@ -220,13 +220,9 @@ fn get_towers(sites: &HashMap<i32, Site>, owner: i32) -> Vec<i32> {
 }
 
 fn queen_closest_enemy_knight(units: &Vec<Unit>, queen: &Unit) -> (i32, i32) {
-    let mut records = units.iter().filter(|u| !u.is_own())
+    units.iter().filter(|u| !u.is_own())
         .map(|u| (u.distance(queen.get_location()), u.get_location()))
-        .collect::<Vec<(f64, (i32, i32))>>();
-
-    records.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap());
-
-    records[0].1
+        .min_by(|a, b| a.0.partial_cmp(&b.0).unwrap()).unwrap().1
 }
 
 fn train_units(gold: i32, sites: &HashMap<i32, Site>,

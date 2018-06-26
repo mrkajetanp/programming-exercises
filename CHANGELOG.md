@@ -4,6 +4,7 @@
 
 #### 26.06.2018
 
+* [Rust] Code Royale - Closest enemy knight on iterator (CodinGame)
 * [Rust] Code Royale - Farthest free site fully on iterator (CodinGame)
 
 #### 25.06.2018
