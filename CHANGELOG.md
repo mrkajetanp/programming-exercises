@@ -4,6 +4,7 @@
 
 #### 27.06.2018
 
+* [Rust] Code Royale - Moved train units to Game struct (CodinGame)
 * [Rust] Code Royale - Game struct with site update methods (CodinGame)
 
 #### 26.06.2018

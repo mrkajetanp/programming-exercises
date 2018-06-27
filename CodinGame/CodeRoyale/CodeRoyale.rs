@@ -41,19 +41,78 @@ impl Game {
         self.sites = sites;
     }
 
-    fn update(&mut self, units: Vec<Unit>, gold: i32, last_trained: i32) {
+    fn update(&mut self, units: Vec<Unit>, gold: i32) {
         self.units = units;
         self.gold = gold;
-        self.last_trained = last_trained;
     }
 
     fn update_site(&mut self, site_id: i32, struct_type: i32, owner: i32,
-                  gold: i32, max_mine_size: i32,
-                  cooldown: i32, unit: i32) {
+                   gold: i32, max_mine_size: i32,
+                   cooldown: i32, unit: i32) {
 
         self.sites.get_mut(&site_id).unwrap().
             update(struct_type, owner, gold,
                    max_mine_size, cooldown, unit);
+    }
+
+    fn train_units(&mut self) {
+        let knights = get_structures(&self.sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY);
+        let archers = get_structures(&self.sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY);
+        let giants = get_structures(&self.sites, STRUCT_BARRACKS, UNIT_GIANT, ALLY);
+
+        // loop knights
+        self.last_trained = UNIT_ARCHER;
+
+        if (self.last_trained == NONE || self.last_trained == UNIT_GIANT) &&
+            !archers.is_empty() && self.gold >= 100 {
+
+                let ready = archers.into_iter()
+                    .filter(|i| self.sites.get(i).unwrap().get_cooldown() == 0)
+                    .map(|i| i.to_string())
+                    .collect::<Vec<String>>()
+                    .join(" ");
+
+                println!("TRAIN {}", ready);
+                self.last_trained = UNIT_ARCHER;
+
+            } else if self.last_trained == UNIT_ARCHER && !knights.is_empty() &&
+            self.sites.get(&knights[0]).unwrap().get_cooldown() == 0 && self.gold >= 80 {
+
+                let ready = knights.into_iter()
+                    .filter(|i| self.sites.get(i).unwrap().get_cooldown() == 0)
+                    .map(|i| i.to_string())
+                    .collect::<Vec<String>>()
+                    .join(" ");
+
+                println!("TRAIN {}", ready);
+
+                if get_towers(&self.sites, ENEMY).len() == 0 ||
+                    count_units(&self.units, UNIT_GIANT) >= 1 {
+
+                        self.last_trained = NONE;
+                    } else {
+                        self.last_trained = UNIT_KNIGHT;
+                    }
+
+                // Train knights in a loop
+                self.last_trained = UNIT_ARCHER;
+
+            } else if self.last_trained == UNIT_KNIGHT && !giants.is_empty() &&
+            self.sites.get(&giants[0]).unwrap().get_cooldown() == 0 && self.gold >= 140 {
+
+                let ready = giants.into_iter()
+                    .filter(|i| self.sites.get(i).unwrap().get_cooldown() == 0)
+                    .map(|i| i.to_string())
+                    .collect::<Vec<String>>()
+                    .join(" ");
+
+                println!("TRAIN {}", ready);
+
+
+                self.last_trained = UNIT_GIANT;
+            } else {
+                println!("TRAIN")
+            }
     }
 }
 
@@ -262,67 +321,6 @@ fn queen_closest_enemy_knight(units: &Vec<Unit>, queen: &Unit) -> (i32, i32) {
         .min_by(|a, b| a.0.partial_cmp(&b.0).unwrap()).unwrap().1
 }
 
-fn train_units(gold: i32, sites: &HashMap<i32, Site>,
-               units: &Vec<Unit>, last_trained: &mut i32) {
-    let knights = get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY);
-    let archers = get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY);
-    let giants = get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT, ALLY);
-
-    // loop knights
-    *last_trained = UNIT_ARCHER;
-
-    if (*last_trained == NONE || *last_trained == UNIT_GIANT) &&
-        !archers.is_empty() && gold >= 100 {
-
-            let ready = archers.into_iter()
-                .filter(|i| sites.get(i).unwrap().get_cooldown() == 0)
-                .map(|i| i.to_string())
-                .collect::<Vec<String>>()
-                .join(" ");
-
-            println!("TRAIN {}", ready);
-            *last_trained = UNIT_ARCHER;
-
-        } else if *last_trained == UNIT_ARCHER && !knights.is_empty() &&
-        sites.get(&knights[0]).unwrap().get_cooldown() == 0 && gold >= 80 {
-
-            let ready = knights.into_iter()
-                .filter(|i| sites.get(i).unwrap().get_cooldown() == 0)
-                .map(|i| i.to_string())
-                .collect::<Vec<String>>()
-                .join(" ");
-
-            println!("TRAIN {}", ready);
-
-            if get_towers(sites, ENEMY).len() == 0 ||
-                count_units(units, UNIT_GIANT) >= 1 {
-
-                    *last_trained = NONE;
-                } else {
-                    *last_trained = UNIT_KNIGHT;
-                }
-
-            // Train knights in a loop
-            *last_trained = UNIT_ARCHER;
-
-        } else if *last_trained == UNIT_KNIGHT && !giants.is_empty() &&
-        sites.get(&giants[0]).unwrap().get_cooldown() == 0 && gold >= 140 {
-
-            let ready = giants.into_iter()
-                .filter(|i| sites.get(i).unwrap().get_cooldown() == 0)
-                .map(|i| i.to_string())
-                .collect::<Vec<String>>()
-                .join(" ");
-
-            println!("TRAIN {}", ready);
-
-
-            *last_trained = UNIT_GIANT;
-        } else {
-            println!("TRAIN")
-        }
-}
-
 fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
                 touched: i32, queen_start: (i32, i32), corner_y: &mut i32) {
     let queen = get_queen(&units);
@@ -471,7 +469,6 @@ fn main() {
         sites.insert(site_id, Site::new(x, y, radius));
     }
 
-    let mut last_trained: i32 = NONE;
     // Maybe option here
     let mut queen_start: (i32, i32) = (-1, -1);
     let mut corner_y = 0;
@@ -524,6 +521,8 @@ fn main() {
             units.push(Unit::new(x, y, owner, unit_type, health));
         }
 
+        game.update(units, gold);
+
         // Write an action using println!("message...");
         // To debug: eprintln!("Debug message...");
 
@@ -532,6 +531,6 @@ fn main() {
         eprintln!("Touched site: {}", touched_site);
 
         handle_queen(&units, &sites, touched_site, queen_start, &mut corner_y);
-        train_units(gold, &sites, &units, &mut last_trained);
+        game.train_units();
     }
 }
