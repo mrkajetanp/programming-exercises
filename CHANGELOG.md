@@ -2,6 +2,10 @@
 
 ---
 
+#### 27.06.2018
+
+* [Rust] Code Royale - Game struct with site update methods (CodinGame)
+
 #### 26.06.2018
 
 * [Rust] Code Royale - Closest enemy knight on iterator (CodinGame)

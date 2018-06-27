@@ -19,6 +19,43 @@ const UNIT_KNIGHT: i32 = 0;
 const UNIT_ARCHER: i32 = 1;
 const UNIT_GIANT: i32 = 2;
 
+#[derive(Debug)]
+struct Game {
+    sites: HashMap<i32, Site>,
+    units: Vec<Unit>,
+    gold: i32,
+    last_trained: i32
+}
+
+impl Game {
+    fn new() -> Game {
+        Game {
+            sites: HashMap::new(),
+            units: vec![],
+            gold: 0,
+            last_trained: 0,
+        }
+    }
+
+    fn update_sites(&mut self, sites: HashMap<i32, Site>) {
+        self.sites = sites;
+    }
+
+    fn update(&mut self, units: Vec<Unit>, gold: i32, last_trained: i32) {
+        self.units = units;
+        self.gold = gold;
+        self.last_trained = last_trained;
+    }
+
+    fn update_site(&mut self, site_id: i32, struct_type: i32, owner: i32,
+                  gold: i32, max_mine_size: i32,
+                  cooldown: i32, unit: i32) {
+
+        self.sites.get_mut(&site_id).unwrap().
+            update(struct_type, owner, gold,
+                   max_mine_size, cooldown, unit);
+    }
+}
 
 #[derive(Debug, Clone)]
 struct Site {
@@ -418,6 +455,8 @@ fn main() {
     io::stdin().read_line(&mut input_line).unwrap();
     let num_sites = parse_input!(input_line, i32);
 
+    let mut game = Game::new();
+
     let mut sites: HashMap<i32, Site> = HashMap::new();
 
     for _ in 0..num_sites as usize {
@@ -436,6 +475,8 @@ fn main() {
     // Maybe option here
     let mut queen_start: (i32, i32) = (-1, -1);
     let mut corner_y = 0;
+
+    game.update_sites(sites);
 
     // game loop
     loop {
@@ -457,8 +498,7 @@ fn main() {
             let param_1 = parse_input!(inputs[5], i32);
             let param_2 = parse_input!(inputs[6], i32);
 
-            sites.get_mut(&site_id).unwrap().
-                update(structure_type, owner, gold,
+            game.update_site(site_id, structure_type, owner, gold,
                        max_mine_size, param_1, param_2);
         }
 
