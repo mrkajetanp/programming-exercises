@@ -117,6 +117,45 @@ impl Game {
 }
 
 #[derive(Debug, Clone)]
+struct Queen<'a> {
+    unit: Option<&'a Unit>,
+    touched: i32,
+    start: (i32, i32),
+    corner_y: i32
+}
+
+impl<'a> Queen<'a> {
+    fn new(start: (i32, i32), touched: i32, corner_y: i32) -> Queen<'a> {
+        Queen {
+            unit: None,
+            touched,
+            start,
+            corner_y
+        }
+    }
+
+    fn set_unit(&mut self, unit: &'a Unit) {
+        self.unit = Some(unit);
+    }
+
+    fn set_touched(&mut self, touched: i32) {
+        self.touched = touched;
+    }
+
+    fn set_start(&mut self, start: (i32, i32)) {
+        self.start = start;
+    }
+
+    fn set_corner(&mut self, corner_y: i32) {
+        self.corner_y = corner_y;
+    }
+
+    fn get_start(&self) -> (i32, i32) {
+        self.start
+    }
+}
+
+#[derive(Debug, Clone)]
 struct Site {
     x: i32,
     y: i32,
@@ -469,9 +508,8 @@ fn main() {
         sites.insert(site_id, Site::new(x, y, radius));
     }
 
-    // Maybe option here
-    let mut queen_start: (i32, i32) = (-1, -1);
-    let mut corner_y = 0;
+    // option for queen start
+    let mut queen = Queen::new((-1, -1), 0, 0);
 
     game.update_sites(sites);
 
@@ -514,11 +552,12 @@ fn main() {
             let unit_type = parse_input!(inputs[3], i32); // -1 = QUEEN, 0 = KNIGHT, 1 = ARCHER
             let health = parse_input!(inputs[4], i32);
 
-            if unit_type == NONE && owner == ALLY && queen_start == (-1, -1) {
-                queen_start = (x, y);
+            if unit_type == NONE && owner == ALLY && queen.get_start() == (-1, -1) {
+                queen.set_start((x, y));
             }
 
-            units.push(Unit::new(x, y, owner, unit_type, health));
+            let unit = Unit::new(x, y, owner, unit_type, health);
+            units.push(unit);
         }
 
         game.update(units, gold);

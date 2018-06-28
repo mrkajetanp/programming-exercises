@@ -2,6 +2,10 @@
 
 ---
 
+#### 28.06.2018
+
+* [Rust] Code Royale - Implementing Queen struct (CodinGame)
+
 #### 27.06.2018
 
 * [Rust] Code Royale - Moved train units to Game struct (CodinGame)
