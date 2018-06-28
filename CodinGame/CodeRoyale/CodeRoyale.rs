@@ -14,7 +14,7 @@ const STRUCT_BARRACKS: i32 = 2;
 const ALLY: i32 = 0;
 const ENEMY: i32 = 1;
 
-// const UNIT_QUEEN: i32 = -1;
+const UNIT_QUEEN: i32 = -1;
 const UNIT_KNIGHT: i32 = 0;
 const UNIT_ARCHER: i32 = 1;
 const UNIT_GIANT: i32 = 2;
@@ -117,15 +117,15 @@ impl Game {
 }
 
 #[derive(Debug, Clone)]
-struct Queen<'a> {
-    unit: Option<&'a Unit>,
+struct Queen {
+    unit: Option<Unit>,
     touched: i32,
     start: (i32, i32),
     corner_y: i32
 }
 
-impl<'a> Queen<'a> {
-    fn new(start: (i32, i32), touched: i32, corner_y: i32) -> Queen<'a> {
+impl Queen {
+    fn new(start: (i32, i32), touched: i32, corner_y: i32) -> Queen {
         Queen {
             unit: None,
             touched,
@@ -134,7 +134,7 @@ impl<'a> Queen<'a> {
         }
     }
 
-    fn set_unit(&mut self, unit: &'a Unit) {
+    fn set_unit(&mut self, unit: Unit) {
         self.unit = Some(unit);
     }
 
@@ -152,6 +152,18 @@ impl<'a> Queen<'a> {
 
     fn get_start(&self) -> (i32, i32) {
         self.start
+    }
+
+    fn get_unit(&self) -> &Option<Unit> {
+        &self.unit
+    }
+
+    fn get_touched(&self) -> i32 {
+        self.touched
+    }
+
+    fn get_corner(&self) -> i32 {
+        self.corner_y
     }
 }
 
@@ -231,7 +243,7 @@ impl Site {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 struct Unit {
     x: i32,
     y: i32,
@@ -520,6 +532,7 @@ fn main() {
         let inputs = input_line.split(" ").collect::<Vec<_>>();
         let gold = parse_input!(inputs[0], i32);
         let touched_site = parse_input!(inputs[1], i32); // -1 if none
+        queen.set_touched(touched_site);
 
         for _ in 0..num_sites as usize {
             let mut input_line = String::new();
@@ -552,12 +565,15 @@ fn main() {
             let unit_type = parse_input!(inputs[3], i32); // -1 = QUEEN, 0 = KNIGHT, 1 = ARCHER
             let health = parse_input!(inputs[4], i32);
 
-            if unit_type == NONE && owner == ALLY && queen.get_start() == (-1, -1) {
+            if unit_type == UNIT_QUEEN && owner == ALLY && queen.get_start() == (-1, -1) {
                 queen.set_start((x, y));
             }
 
-            let unit = Unit::new(x, y, owner, unit_type, health);
-            units.push(unit);
+            units.push(Unit::new(x, y, owner, unit_type, health));
+
+            if unit_type == UNIT_QUEEN && owner == ALLY {
+                queen.set_unit(units[units.len()].clone());
+            }
         }
 
         game.update(units, gold);
@@ -566,10 +582,10 @@ fn main() {
         // To debug: eprintln!("Debug message...");
 
         eprintln!("Gold: {}", gold);
-        eprintln!("Queen start: {:?}", queen_start);
+        eprintln!("Queen start: {:?}", queen.get_start());
         eprintln!("Touched site: {}", touched_site);
 
-        handle_queen(&units, &sites, touched_site, queen_start, &mut corner_y);
+        // handle_queen(&units, &sites, touched_site, queen.get_start(), &mut corner_y);
         game.train_units();
     }
 }

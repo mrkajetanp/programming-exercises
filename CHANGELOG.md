@@ -4,6 +4,7 @@
 
 #### 28.06.2018
 
+* [Rust] Code Royale - Queen struct functionality (CodinGame)
 * [Rust] Code Royale - Implementing Queen struct (CodinGame)
 
 #### 27.06.2018
