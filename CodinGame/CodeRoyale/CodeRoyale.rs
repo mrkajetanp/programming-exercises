@@ -37,7 +37,7 @@ impl Game {
         }
     }
 
-    fn update_sites(&mut self, sites: HashMap<i32, Site>) {
+    fn set_sites(&mut self, sites: HashMap<i32, Site>) {
         self.sites = sites;
     }
 
@@ -113,6 +113,10 @@ impl Game {
             } else {
                 println!("TRAIN")
             }
+    }
+
+    fn get_gold(&self) -> i32 {
+        self.gold
     }
 }
 
@@ -522,8 +526,7 @@ fn main() {
 
     // option for queen start
     let mut queen = Queen::new((-1, -1), 0, 0);
-
-    game.update_sites(sites);
+    game.set_sites(sites);
 
     // game loop
     loop {
@@ -572,7 +575,7 @@ fn main() {
             units.push(Unit::new(x, y, owner, unit_type, health));
 
             if unit_type == UNIT_QUEEN && owner == ALLY {
-                queen.set_unit(units[units.len()].clone());
+                queen.set_unit(units[units.len()-1].clone());
             }
         }
 
@@ -581,9 +584,9 @@ fn main() {
         // Write an action using println!("message...");
         // To debug: eprintln!("Debug message...");
 
-        eprintln!("Gold: {}", gold);
+        eprintln!("Gold: {}", game.get_gold());
         eprintln!("Queen start: {:?}", queen.get_start());
-        eprintln!("Touched site: {}", touched_site);
+        eprintln!("Touched site: {}", queen.get_touched());
 
         // handle_queen(&units, &sites, touched_site, queen.get_start(), &mut corner_y);
         game.train_units();
