@@ -4,6 +4,7 @@
 
 #### 29.06.2018
 
+* [Rust] Code Royale - Handle queen as a Queen method (CodinGame)
 * [Rust] Code Royale - Struct setters and getters (CodinGame)
 
 #### 28.06.2018
