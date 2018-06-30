@@ -23,14 +23,16 @@ const UNIT_GIANT: i32 = 2;
 struct Game {
     sites: HashMap<i32, Site>,
     units: Vec<Unit>,
+    queen: Queen,
     gold: i32,
     last_trained: i32
 }
 
 impl Game {
-    fn new() -> Game {
+    fn new(sites: HashMap<i32, Site>, queen: Queen) -> Game {
         Game {
-            sites: HashMap::new(),
+            sites: sites,
+            queen: queen,
             units: vec![],
             gold: 0,
             last_trained: 0,
@@ -53,6 +55,11 @@ impl Game {
         self.sites.get_mut(&site_id).unwrap().
             update(struct_type, owner, gold,
                    max_mine_size, cooldown, unit);
+    }
+
+    fn handle_tour(&mut self) {
+        self.queen.handle_tour(&self.units, &self.sites);
+        self.train_units();
     }
 
     fn train_units(&mut self) {
@@ -125,6 +132,10 @@ impl Game {
 
     fn get_sites(&self) -> &HashMap<i32, Site> {
         &self.sites
+    }
+
+    fn get_queen(&mut self) -> &mut Queen {
+        &mut self.queen
     }
 }
 
@@ -517,8 +528,6 @@ fn main() {
     io::stdin().read_line(&mut input_line).unwrap();
     let num_sites = parse_input!(input_line, i32);
 
-    let mut game = Game::new();
-
     let mut sites: HashMap<i32, Site> = HashMap::new();
 
     for _ in 0..num_sites as usize {
@@ -533,9 +542,7 @@ fn main() {
         sites.insert(site_id, Site::new(x, y, radius));
     }
 
-    // option for queen start
-    let mut queen = Queen::new((-1, -1), 0, 0);
-    game.set_sites(sites);
+    let mut game = Game::new(sites, Queen::new((-1, -1), 0, 0));
 
     // game loop
     loop {
@@ -544,7 +551,7 @@ fn main() {
         let inputs = input_line.split(" ").collect::<Vec<_>>();
         let gold = parse_input!(inputs[0], i32);
         let touched_site = parse_input!(inputs[1], i32); // -1 if none
-        queen.set_touched(touched_site);
+        game.get_queen().set_touched(touched_site);
 
         for _ in 0..num_sites as usize {
             let mut input_line = String::new();
@@ -577,14 +584,14 @@ fn main() {
             let unit_type = parse_input!(inputs[3], i32); // -1 = QUEEN, 0 = KNIGHT, 1 = ARCHER
             let health = parse_input!(inputs[4], i32);
 
-            if unit_type == UNIT_QUEEN && owner == ALLY && queen.get_start() == (-1, -1) {
-                queen.set_start((x, y));
+            if unit_type == UNIT_QUEEN && owner == ALLY && game.get_queen().get_start() == (-1, -1) {
+                game.get_queen().set_start((x, y));
             }
 
             units.push(Unit::new(x, y, owner, unit_type, health));
 
             if unit_type == UNIT_QUEEN && owner == ALLY {
-                queen.set_unit(units[units.len()-1].clone());
+                game.get_queen().set_unit(units[units.len()-1].clone());
             }
         }
 
@@ -594,10 +601,9 @@ fn main() {
         // To debug: eprintln!("Debug message...");
 
         eprintln!("Gold: {}", game.get_gold());
-        eprintln!("Queen start: {:?}", queen.get_start());
-        eprintln!("Touched site: {}", queen.get_touched());
+        eprintln!("Queen start: {:?}", game.get_queen().get_start());
+        eprintln!("Touched site: {}", game.get_queen().get_touched());
 
-        queen.handle_tour(game.get_units(), game.get_sites());
-        game.train_units();
+        game.handle_tour();
     }
 }

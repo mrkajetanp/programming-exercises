@@ -2,6 +2,10 @@
 
 ---
 
+#### 30.06.2018
+
+* [Rust] Code Royale - Queen as a Game field (CodinGame)
+
 #### 29.06.2018
 
 * [Rust] Code Royale - Handle queen as a Queen method (CodinGame)
