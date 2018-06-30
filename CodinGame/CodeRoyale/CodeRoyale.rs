@@ -39,10 +39,6 @@ impl Game {
         }
     }
 
-    fn set_sites(&mut self, sites: HashMap<i32, Site>) {
-        self.sites = sites;
-    }
-
     fn update(&mut self, units: Vec<Unit>, gold: i32) {
         self.units = units;
         self.gold = gold;
@@ -124,14 +120,6 @@ impl Game {
 
     fn get_gold(&self) -> i32 {
         self.gold
-    }
-
-    fn get_units(&self) -> &Vec<Unit> {
-        &self.units
-    }
-
-    fn get_sites(&self) -> &HashMap<i32, Site> {
-        &self.sites
     }
 
     fn get_queen(&mut self) -> &mut Queen {
@@ -295,24 +283,12 @@ impl Queen {
         self.start = start;
     }
 
-    fn set_corner(&mut self, corner_y: i32) {
-        self.corner_y = corner_y;
-    }
-
     fn get_start(&self) -> (i32, i32) {
         self.start
     }
 
-    fn get_unit(&self) -> &Option<Unit> {
-        &self.unit
-    }
-
     fn get_touched(&self) -> i32 {
         self.touched
-    }
-
-    fn get_corner(&self) -> i32 {
-        self.corner_y
     }
 }
 
@@ -412,10 +388,6 @@ impl Unit {
         }
     }
 
-    pub fn is_queen(&self) -> bool {
-        self.utype == NONE
-    }
-
     pub fn get_location(&self) -> (i32, i32) {
         (self.x, self.y)
     }
@@ -435,16 +407,6 @@ impl Unit {
     pub fn get_health(&self) -> i32 {
         self.health
     }
-}
-
-fn get_queen(units: &Vec<Unit>) -> &Unit {
-    for u in units {
-        if u.is_queen() && u.is_own() {
-            return u;
-        }
-    }
-
-    panic!("No queen found!");
 }
 
 fn count_units(units: &Vec<Unit>, unit: i32) -> usize {
@@ -584,9 +546,10 @@ fn main() {
             let unit_type = parse_input!(inputs[3], i32); // -1 = QUEEN, 0 = KNIGHT, 1 = ARCHER
             let health = parse_input!(inputs[4], i32);
 
-            if unit_type == UNIT_QUEEN && owner == ALLY && game.get_queen().get_start() == (-1, -1) {
-                game.get_queen().set_start((x, y));
-            }
+            if unit_type == UNIT_QUEEN && owner == ALLY &&
+                game.get_queen().get_start() == (-1, -1) {
+                    game.get_queen().set_start((x, y));
+                }
 
             units.push(Unit::new(x, y, owner, unit_type, health));
 
@@ -596,9 +559,6 @@ fn main() {
         }
 
         game.update(units, gold);
-
-        // Write an action using println!("message...");
-        // To debug: eprintln!("Debug message...");
 
         eprintln!("Gold: {}", game.get_gold());
         eprintln!("Queen start: {:?}", game.get_queen().get_start());
