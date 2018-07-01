@@ -49,8 +49,7 @@ impl Game {
                    cooldown: i32, unit: i32) {
 
         self.sites.get_mut(&site_id).unwrap().
-            update(struct_type, owner, gold,
-                   max_mine_size, cooldown, unit);
+            update(struct_type, owner, gold, max_mine_size, cooldown, unit);
     }
 
     fn handle_tour(&mut self) {
@@ -159,9 +158,7 @@ impl Queen {
         }
 
         let bl_xy = sites.get(&build_site);
-
         let closest_enemy_knight = queen_closest_enemy_knight(units, &queen);
-        eprintln!("closest enemy knight: {:?}", closest_enemy_knight);
 
         if bl_xy.is_none() {
             if self.start.0 < 960 {
@@ -451,17 +448,7 @@ fn farthest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
     }).max_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
 }
 
-fn get_structures(sites: &HashMap<i32, Site>, struct_type: i32,
-                  unit: i32, owner: i32) -> Vec<i32> {
-    if struct_type != STRUCT_BARRACKS && unit != NONE {
-        panic!("If structure is not barracks, unit should be set to NONE (-1)");
-    }
-
-    sites.iter()
-        .filter(|&(_, s)| s.get_owner() == owner && s.get_type() == struct_type
-                && s.get_unit() == unit)
-        .map(|(i, _)| *i).collect::<Vec<i32>>()
-}
+// TODO: I think Queen will have to be integrated into game
 
 fn get_towers(sites: &HashMap<i32, Site>, owner: i32) -> Vec<i32> {
     sites.iter()
@@ -473,6 +460,18 @@ fn queen_closest_enemy_knight(units: &Vec<Unit>, queen: &Unit) -> (i32, i32) {
     units.iter().filter(|u| !u.is_own())
         .map(|u| (u.distance(queen.get_location()), u.get_location()))
         .min_by(|a, b| a.0.partial_cmp(&b.0).unwrap()).unwrap().1
+}
+
+fn get_structures(sites: &HashMap<i32, Site>, struct_type: i32,
+                  unit: i32, owner: i32) -> Vec<i32> {
+    if struct_type != STRUCT_BARRACKS && unit != NONE {
+        panic!("If structure is not barracks, unit should be set to NONE (-1)");
+    }
+
+    sites.iter()
+        .filter(|&(_, s)| s.get_owner() == owner && s.get_type() == struct_type
+                && s.get_unit() == unit)
+        .map(|(i, _)| *i).collect::<Vec<i32>>()
 }
 
 

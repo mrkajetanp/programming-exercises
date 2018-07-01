@@ -4,6 +4,7 @@
 
 #### 1.07.2018
 
+* [Rust] Code Royale - Minor changes (CodinGame)
 * [Rust] Code Royale - Count units as a Game method (CodinGame)
 
 #### 30.06.2018
