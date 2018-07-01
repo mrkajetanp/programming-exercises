@@ -90,7 +90,7 @@ impl Game {
                 println!("TRAIN {}", ready);
 
                 if get_towers(&self.sites, ENEMY).len() == 0 ||
-                    count_units(&self.units, UNIT_GIANT) >= 1 {
+                    self.count_units(UNIT_GIANT) >= 1 {
 
                         self.last_trained = NONE;
                     } else {
@@ -118,12 +118,14 @@ impl Game {
             }
     }
 
-    fn get_gold(&self) -> i32 {
-        self.gold
-    }
-
     fn get_queen(&mut self) -> &mut Queen {
         &mut self.queen
+    }
+
+    fn count_units(&self, unit: i32) -> usize {
+        self.units.iter()
+            .filter(|u| u.is_own() && u.get_type() == unit)
+            .collect::<Vec<&Unit>>().len()
     }
 }
 
@@ -286,10 +288,6 @@ impl Queen {
     fn get_start(&self) -> (i32, i32) {
         self.start
     }
-
-    fn get_touched(&self) -> i32 {
-        self.touched
-    }
 }
 
 #[derive(Debug, Clone)]
@@ -407,12 +405,6 @@ impl Unit {
     pub fn get_health(&self) -> i32 {
         self.health
     }
-}
-
-fn count_units(units: &Vec<Unit>, unit: i32) -> usize {
-    units.iter()
-        .filter(|u| u.is_own() && u.get_type() == unit)
-        .collect::<Vec<&Unit>>().len()
 }
 
 fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
@@ -559,10 +551,6 @@ fn main() {
         }
 
         game.update(units, gold);
-
-        eprintln!("Gold: {}", game.get_gold());
-        eprintln!("Queen start: {:?}", game.get_queen().get_start());
-        eprintln!("Touched site: {}", game.get_queen().get_touched());
 
         game.handle_tour();
     }

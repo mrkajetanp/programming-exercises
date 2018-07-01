@@ -2,6 +2,10 @@
 
 ---
 
+#### 1.07.2018
+
+* [Rust] Code Royale - Count units as a Game method (CodinGame)
+
 #### 30.06.2018
 
 * [Rust] Code Royale - One handle tour and code cleanup (CodinGame)
