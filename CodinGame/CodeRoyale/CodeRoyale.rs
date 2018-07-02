@@ -83,7 +83,7 @@ impl Game {
         let bl_xy = bl_xy.unwrap().get_location();
         // Building mines
 
-        for i in get_structures(&self.sites, STRUCT_MINE, NONE, ALLY) {
+        for i in self.get_structures(STRUCT_MINE, NONE, ALLY) {
             let site = self.sites.get(&i).unwrap();
             let loc = site.get_location();
 
@@ -98,7 +98,7 @@ impl Game {
             }
         }
 
-        if get_structures(&self.sites, STRUCT_MINE, NONE, ALLY).len() < 3 {
+        if self.get_structures(STRUCT_MINE, NONE, ALLY).len() < 3 {
             if self.queen.touched == build_site {
                 if self.sites.get(&build_site).unwrap().remaining_gold() != 0 {
                     println!("BUILD {} MINE", build_site);
@@ -143,7 +143,7 @@ impl Game {
         //     return;
         // }
 
-        if get_structures(&self.sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
+        if self.get_structures(STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
             if self.queen.touched == build_site {
                 println!("BUILD {} BARRACKS-KNIGHT", build_site);
             } else {
@@ -181,9 +181,9 @@ impl Game {
     }
 
     fn train_units(&mut self) {
-        let knights = get_structures(&self.sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY);
-        let archers = get_structures(&self.sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY);
-        let giants = get_structures(&self.sites, STRUCT_BARRACKS, UNIT_GIANT, ALLY);
+        let knights = self.get_structures(STRUCT_BARRACKS, UNIT_KNIGHT, ALLY);
+        let archers = self.get_structures(STRUCT_BARRACKS, UNIT_ARCHER, ALLY);
+        let giants = self.get_structures(STRUCT_BARRACKS, UNIT_GIANT, ALLY);
 
         // loop knights
         self.last_trained = UNIT_ARCHER;
@@ -239,14 +239,25 @@ impl Game {
             }
     }
 
-    fn get_queen(&mut self) -> &mut Queen {
-        &mut self.queen
-    }
-
     fn count_units(&self, unit: i32) -> usize {
         self.units.iter()
             .filter(|u| u.is_own() && u.get_type() == unit)
             .collect::<Vec<&Unit>>().len()
+    }
+
+    fn get_structures(&self, struct_type: i32, unit: i32, owner: i32) -> Vec<i32> {
+        if struct_type != STRUCT_BARRACKS && unit != NONE {
+            panic!("If structure is not barracks, unit should be set to NONE (-1)");
+        }
+
+        self.sites.iter()
+            .filter(|&(_, s)| s.get_owner() == owner && s.get_type() == struct_type
+                    && s.get_unit() == unit)
+            .map(|(i, _)| *i).collect::<Vec<i32>>()
+    }
+
+    fn get_queen(&mut self) -> &mut Queen {
+        &mut self.queen
     }
 }
 
@@ -443,20 +454,6 @@ fn queen_closest_enemy_knight(units: &Vec<Unit>, queen: &Unit) -> (i32, i32) {
         .map(|u| (u.distance(queen.get_location()), u.get_location()))
         .min_by(|a, b| a.0.partial_cmp(&b.0).unwrap()).unwrap().1
 }
-
-fn get_structures(sites: &HashMap<i32, Site>, struct_type: i32,
-                  unit: i32, owner: i32) -> Vec<i32> {
-    if struct_type != STRUCT_BARRACKS && unit != NONE {
-        panic!("If structure is not barracks, unit should be set to NONE (-1)");
-    }
-
-    sites.iter()
-        .filter(|&(_, s)| s.get_owner() == owner && s.get_type() == struct_type
-                && s.get_unit() == unit)
-        .map(|(i, _)| *i).collect::<Vec<i32>>()
-}
-
-
 
 fn main() {
     let mut input_line = String::new();
