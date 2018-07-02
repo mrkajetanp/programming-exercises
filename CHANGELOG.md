@@ -2,6 +2,10 @@
 
 ---
 
+#### 2.07.2018
+
+* [Rust] Code Royale - Handle queen as a game method (CodinGame)
+
 #### 1.07.2018
 
 * [Rust] Code Royale - Minor changes (CodinGame)
