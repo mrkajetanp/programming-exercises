@@ -211,7 +211,7 @@ impl Game {
 
                 println!("TRAIN {}", ready);
 
-                if get_towers(&self.sites, ENEMY).len() == 0 ||
+                if self.get_towers(ENEMY).len() == 0 ||
                     self.count_units(UNIT_GIANT) >= 1 {
 
                         self.last_trained = NONE;
@@ -253,6 +253,12 @@ impl Game {
         self.sites.iter()
             .filter(|&(_, s)| s.get_owner() == owner && s.get_type() == struct_type
                     && s.get_unit() == unit)
+            .map(|(i, _)| *i).collect::<Vec<i32>>()
+    }
+
+    fn get_towers(&self, owner: i32) -> Vec<i32> {
+        self.sites.iter()
+            .filter(|&(_, s)| s.get_owner() == owner && s.get_type() == STRUCT_TOWER)
             .map(|(i, _)| *i).collect::<Vec<i32>>()
     }
 
@@ -439,14 +445,6 @@ fn farthest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
 
         (i, dist)
     }).max_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
-}
-
-// TODO: I think Queen will have to be integrated into game
-
-fn get_towers(sites: &HashMap<i32, Site>, owner: i32) -> Vec<i32> {
-    sites.iter()
-        .filter(|&(_, s)| s.get_owner() == owner && s.get_type() == STRUCT_TOWER)
-        .map(|(i, _)| *i).collect::<Vec<i32>>()
 }
 
 fn queen_closest_enemy_knight(units: &Vec<Unit>, queen: &Unit) -> (i32, i32) {

@@ -2,6 +2,10 @@
 
 ---
 
+#### 3.07.2018
+
+* [Rust] Code Royale - Get towers in game struct (CodinGame)
+
 #### 2.07.2018
 
 * [Rust] Code Royale - Get structures as a game method (CodinGame)
