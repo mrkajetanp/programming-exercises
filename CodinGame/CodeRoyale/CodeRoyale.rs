@@ -58,7 +58,7 @@ impl Game {
     }
 
     fn handle_queen(&mut self) {
-        let queen = self.queen.unit.clone().unwrap();
+        let queen = &self.queen.unit;
         let build_site;
 
         if queen.get_health() < 20 {
@@ -68,7 +68,7 @@ impl Game {
         }
 
         let bl_xy = self.sites.get(&build_site);
-        let closest_enemy_knight = queen_closest_enemy_knight(&self.units, &queen);
+        let closest_enemy_knight = self.queen_closest_enemy_knight();
 
         if bl_xy.is_none() {
             if self.queen.start.0 < 960 {
@@ -262,6 +262,12 @@ impl Game {
             .map(|(i, _)| *i).collect::<Vec<i32>>()
     }
 
+    fn queen_closest_enemy_knight(&self) -> (i32, i32) {
+        self.units.iter().filter(|u| !u.is_own())
+            .map(|u| (u.distance(self.queen.unit.get_location()), u.get_location()))
+            .min_by(|a, b| a.0.partial_cmp(&b.0).unwrap()).unwrap().1
+    }
+
     fn get_queen(&mut self) -> &mut Queen {
         &mut self.queen
     }
@@ -269,7 +275,7 @@ impl Game {
 
 #[derive(Debug, Clone)]
 struct Queen {
-    pub unit: Option<Unit>,
+    pub unit: Unit,
     pub touched: i32,
     pub start: (i32, i32),
     pub corner_y: i32
@@ -278,7 +284,8 @@ struct Queen {
 impl Queen {
     fn new(start: (i32, i32), touched: i32, corner_y: i32) -> Queen {
         Queen {
-            unit: None,
+            // TODO: kind of weird
+            unit: Unit::new(0, 0, 0, 0, 0),
             touched,
             start,
             corner_y
@@ -447,12 +454,6 @@ fn farthest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
     }).max_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
 }
 
-fn queen_closest_enemy_knight(units: &Vec<Unit>, queen: &Unit) -> (i32, i32) {
-    units.iter().filter(|u| !u.is_own())
-        .map(|u| (u.distance(queen.get_location()), u.get_location()))
-        .min_by(|a, b| a.0.partial_cmp(&b.0).unwrap()).unwrap().1
-}
-
 fn main() {
     let mut input_line = String::new();
     io::stdin().read_line(&mut input_line).unwrap();
@@ -522,7 +523,7 @@ fn main() {
             units.push(Unit::new(x, y, owner, unit_type, health));
 
             if unit_type == UNIT_QUEEN && owner == ALLY {
-                game.get_queen().unit = Some(units[units.len()-1].clone());
+                game.get_queen().unit = units[units.len()-1].clone();
             }
         }
 

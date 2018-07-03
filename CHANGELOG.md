@@ -4,6 +4,7 @@
 
 #### 3.07.2018
 
+* [Rust] Code Royale - Closest enemy knight in game struct (CodinGame)
 * [Rust] Code Royale - Get towers in game struct (CodinGame)
 
 #### 2.07.2018
