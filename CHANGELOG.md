@@ -4,6 +4,7 @@
 
 #### 4.07.2018
 
+* [Rust] Code Royale - Closest free site in Game struct (CodinGame)
 * [Rust] Code Royale - Farthest free site in Game struct (CodinGame)
 
 #### 3.07.2018
