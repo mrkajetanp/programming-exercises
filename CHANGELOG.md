@@ -2,6 +2,10 @@
 
 ---
 
+#### 4.07.2018
+
+* [Rust] Code Royale - Farthest free site in Game struct (CodinGame)
+
 #### 3.07.2018
 
 * [Rust] Code Royale - Closest enemy knight in game struct (CodinGame)

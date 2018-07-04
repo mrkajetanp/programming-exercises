@@ -62,7 +62,7 @@ impl Game {
         let build_site;
 
         if queen.get_health() < 20 {
-            build_site = farthest_free_site(&self.sites, queen.get_location(), self.queen.start);
+            build_site = self.farthest_free_site(queen.get_location());
         } else {
             build_site = closest_free_site(&self.sites, queen.get_location(), self.queen.start);
         }
@@ -268,6 +268,27 @@ impl Game {
             .min_by(|a, b| a.0.partial_cmp(&b.0).unwrap()).unwrap().1
     }
 
+    fn farthest_free_site(&self, coord: (i32, i32)) -> i32 {
+        self.sites.iter().filter(|&(_, s)| {
+            let is_own = if self.queen.start != (-1, -1) {
+                (self.queen.start.0 - s.get_location().0).abs() <=
+                    (960 - self.queen.start.0).abs()
+            } else {
+                true
+            };
+
+            s.is_free() && is_own
+        }).map(|(&i, s)| {
+            let dist = if self.queen.start == (-1, -1) {
+                s.distance(coord.0, coord.1)
+            } else {
+                s.distance(self.queen.start.0, self.queen.start.1)
+            };
+
+            (i, dist)
+        }).max_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
+    }
+
     fn get_queen(&mut self) -> &mut Queen {
         &mut self.queen
     }
@@ -430,28 +451,6 @@ fn closest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
 
         (i, dist)
     }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
-}
-
-fn farthest_free_site(sites: &HashMap<i32, Site>, coord: (i32, i32),
-                      queen_start: (i32, i32)) -> i32 {
-    sites.iter().filter(|&(_, s)| {
-        let is_own = if queen_start != (-1, -1) {
-            (queen_start.0 - s.get_location().0).abs() <=
-                (960 - queen_start.0).abs()
-        } else {
-            true
-        };
-
-        s.is_free() && is_own
-    }).map(|(&i, s)| {
-        let dist = if queen_start == (-1, -1) {
-            s.distance(coord.0, coord.1)
-        } else {
-            s.distance(queen_start.0, queen_start.1)
-        };
-
-        (i, dist)
-    }).max_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
 }
 
 fn main() {
