@@ -4,6 +4,7 @@
 
 #### 5.07.2018
 
+* [Rust] Code Royale - Reverted last change (CodinGame)
 * [Rust] Code Royale - Double knight barracks (CodinGame)
 
 #### 4.07.2018
