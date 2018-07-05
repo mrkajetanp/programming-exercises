@@ -2,6 +2,10 @@
 
 ---
 
+#### 5.07.2018
+
+* [Rust] Code Royale - Double knight barracks (CodinGame)
+
 #### 4.07.2018
 
 * [Rust] Code Royale - Closest free site in Game struct (CodinGame)

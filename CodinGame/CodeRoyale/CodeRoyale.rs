@@ -143,7 +143,7 @@ impl Game {
         //     return;
         // }
 
-        if self.get_structures(STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
+        if self.get_structures(STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 2 {
             if self.queen.touched == build_site {
                 println!("BUILD {} BARRACKS-KNIGHT", build_site);
             } else {
