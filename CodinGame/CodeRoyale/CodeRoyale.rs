@@ -120,7 +120,6 @@ impl Game {
                 } else if queen_loc.0 < 50 && queen_loc.1 > 850 {
                     self.queen.corner_y = 0;
                 }
-                // TODO: make it more normal wtf
 
                 println!("MOVE 0 {}", self.queen.corner_y);
             } else {
@@ -133,15 +132,15 @@ impl Game {
             return;
         }
 
-        // if get_structures(sites, STRUCT_BARRACKS, UNIT_ARCHER, ALLY).len() < 1 {
-        //     if touched == closest {
-        //         println!("BUILD {} BARRACKS-ARCHER", closest);
-        //     } else {
-        //         println!("MOVE {} {}", cl_xy.0, cl_xy.1);
-        //     }
+        if self.get_structures(STRUCT_BARRACKS, UNIT_ARCHER, ALLY).len() < 1 {
+            if self.queen.touched == build_site {
+                println!("BUILD {} BARRACKS-ARCHER", closest);
+            } else {
+                println!("MOVE {} {}", bl_xy.0, bl_xy.1);
+            }
 
-        //     return;
-        // }
+            return;
+        }
 
         if self.get_structures(STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
             if self.queen.touched == build_site {
@@ -153,25 +152,25 @@ impl Game {
             return;
         }
 
-        // if get_towers(sites, ALLY).len() < 2 {
-        //     if touched == closest {
-        //         println!("BUILD {} TOWER", closest);
-        //     } else {
-        //         println!("MOVE {} {}", cl_xy.0, cl_xy.1);
-        //     }
+        if self.get_towers(ALLY).len() < 2 {
+            if self.queen.touched == build_site {
+                println!("BUILD {} TOWER", build_site);
+            } else {
+                println!("MOVE {} {}", bl_xy.0, bl_xy.1);
+            }
 
-        //     return;
-        // }
+            return;
+        }
 
-        // if get_structures(sites, STRUCT_BARRACKS, UNIT_GIANT, ALLY).len() < 1 {
-        //     if touched == closest {
-        //         println!("BUILD {} BARRACKS-GIANT", closest);
-        //     } else {
-        //         println!("MOVE {} {}", cl_xy.0, cl_xy.1);
-        //     }
+        if self.get_structures(STRUCT_BARRACKS, UNIT_GIANT, ALLY).len() < 1 {
+            if self.queen.touched == build_site {
+                println!("BUILD {} BARRACKS-GIANT", build_site);
+            } else {
+                println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+            }
 
-        //     return;
-        // }
+            return;
+        }
 
         if self.queen.touched == build_site {
             println!("BUILD {} TOWER", build_site);
@@ -186,7 +185,7 @@ impl Game {
         let giants = self.get_structures(STRUCT_BARRACKS, UNIT_GIANT, ALLY);
 
         // loop knights
-        self.last_trained = UNIT_ARCHER;
+        // self.last_trained = UNIT_ARCHER;
 
         if (self.last_trained == NONE || self.last_trained == UNIT_GIANT) &&
             !archers.is_empty() && self.gold >= 100 {
@@ -220,7 +219,7 @@ impl Game {
                     }
 
                 // Train knights in a loop
-                self.last_trained = UNIT_ARCHER;
+                // self.last_trained = UNIT_ARCHER;
 
             } else if self.last_trained == UNIT_KNIGHT && !giants.is_empty() &&
             self.sites.get(&giants[0]).unwrap().get_cooldown() == 0 && self.gold >= 140 {

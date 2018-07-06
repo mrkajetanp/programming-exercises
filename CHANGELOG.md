@@ -2,6 +2,10 @@
 
 ---
 
+#### 6.07.2018
+
+* [Rust] Code Royale - Back to normal unit training (CodinGame)
+
 #### 5.07.2018
 
 * [Rust] Code Royale - Reverted last change (CodinGame)
