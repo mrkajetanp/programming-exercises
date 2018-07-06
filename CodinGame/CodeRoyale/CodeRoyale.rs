@@ -134,7 +134,7 @@ impl Game {
 
         if self.get_structures(STRUCT_BARRACKS, UNIT_ARCHER, ALLY).len() < 1 {
             if self.queen.touched == build_site {
-                println!("BUILD {} BARRACKS-ARCHER", closest);
+                println!("BUILD {} BARRACKS-ARCHER", build_site);
             } else {
                 println!("MOVE {} {}", bl_xy.0, bl_xy.1);
             }
@@ -166,7 +166,7 @@ impl Game {
             if self.queen.touched == build_site {
                 println!("BUILD {} BARRACKS-GIANT", build_site);
             } else {
-                println!("MOVE {} {}", cl_xy.0, cl_xy.1);
+                println!("MOVE {} {}", bl_xy.0, bl_xy.1);
             }
 
             return;

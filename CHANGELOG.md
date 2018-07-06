@@ -4,6 +4,7 @@
 
 #### 6.07.2018
 
+* [Rust] Code Royale - Code cleanup & improvements (CodinGame)
 * [Rust] Code Royale - Back to normal unit training (CodinGame)
 
 #### 5.07.2018
