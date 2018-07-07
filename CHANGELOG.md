@@ -6,6 +6,86 @@
 
 * [Rust] CodeRoyale - Removed knight cooldown condition (CodinGame)
 
+#### 6.07.2018
+
+* [Rust] Code Royale - Code cleanup & improvements (CodinGame)
+* [Rust] Code Royale - Back to normal unit training (CodinGame)
+
+#### 5.07.2018
+
+* [Rust] Code Royale - Reverted last change (CodinGame)
+* [Rust] Code Royale - Double knight barracks (CodinGame)
+
+#### 4.07.2018
+
+* [Rust] Code Royale - Closest free site in Game struct (CodinGame)
+* [Rust] Code Royale - Farthest free site in Game struct (CodinGame)
+
+#### 3.07.2018
+
+* [Rust] Code Royale - Closest enemy knight in game struct (CodinGame)
+* [Rust] Code Royale - Get towers in game struct (CodinGame)
+
+#### 2.07.2018
+
+* [Rust] Code Royale - Get structures as a game method (CodinGame)
+* [Rust] Code Royale - Handle queen as a game method (CodinGame)
+
+#### 1.07.2018
+
+* [Rust] Code Royale - Minor changes (CodinGame)
+* [Rust] Code Royale - Count units as a Game method (CodinGame)
+
+#### 30.06.2018
+
+* [Rust] Code Royale - One handle tour and code cleanup (CodinGame)
+* [Rust] Code Royale - Queen as a Game field (CodinGame)
+
+#### 29.06.2018
+
+* [Rust] Code Royale - Handle queen as a Queen method (CodinGame)
+* [Rust] Code Royale - Struct setters and getters (CodinGame)
+
+#### 28.06.2018
+
+* [Rust] Code Royale - Queen struct functionality (CodinGame)
+* [Rust] Code Royale - Implementing Queen struct (CodinGame)
+
+#### 27.06.2018
+
+* [Rust] Code Royale - Moved train units to Game struct (CodinGame)
+* [Rust] Code Royale - Game struct with site update methods (CodinGame)
+
+#### 26.06.2018
+
+* [Rust] Code Royale - Closest enemy knight on iterator (CodinGame)
+* [Rust] Code Royale - Farthest free site fully on iterator (CodinGame)
+
+#### 25.06.2018
+
+* [Rust] Code Royale - Closest free site fully on iterator (CodinGame)
+* [Rust] Code Royale - Normalised closest enemy knight (CodinGame)
+
+#### 24.06.2018
+
+* [Rust] Code Royale - Normalised farthest free site (CodinGame)
+* [Rust] Code Royale - Normalised closest free site (CodinGame)
+
+#### 23.06.2018
+
+* [Rust] Code Royale - Queen on low health builds farther (CodinGame)
+* [Rust] Code Royale - Farthest free site (CodinGame)
+
+#### 22.06.2018
+
+* [Rust] Code Royale - Queen run away after mines (CodinGame)
+* [Rust] Code Royale - Loop training knights (CodinGame)
+
+#### 21.06.2018
+
+* [Rust] Code Royales - Simple Queen run away (CodinGame)
+* [Rust] Code Royales - Closest enemy knight fn (CodinGame)
+
 #### 20.06.2018
 
 * [Rust] CodeRoyale - Mines first & earlier towers (CodinGame)
