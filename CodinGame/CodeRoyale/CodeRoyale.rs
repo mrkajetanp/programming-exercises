@@ -142,7 +142,7 @@ impl Game {
             return;
         }
 
-        if self.get_structures(STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
+        if self.get_structures(STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 2 {
             if self.queen.touched == build_site {
                 println!("BUILD {} BARRACKS-KNIGHT", build_site);
             } else {
@@ -172,67 +172,67 @@ impl Game {
             return;
         }
 
-                                                                          if self.queen.touched == build_site {
-                                                                              println!("BUILD {} TOWER", build_site);
-                                                                          } else {
-                                                                              println!("MOVE {} {}", bl_xy.0, bl_xy.1);
-                                                                          }
+        if self.queen.touched == build_site {
+            println!("BUILD {} TOWER", build_site);
+        } else {
+            println!("MOVE {} {}", bl_xy.0, bl_xy.1);
         }
-
-        fn train_units(&mut self) {
-            let knights = self.get_structures(STRUCT_BARRACKS, UNIT_KNIGHT, ALLY);
-            let archers = self.get_structures(STRUCT_BARRACKS, UNIT_ARCHER, ALLY);
-            let giants = self.get_structures(STRUCT_BARRACKS, UNIT_GIANT, ALLY);
-
-            // loop knights
-            // self.last_trained = UNIT_ARCHER;
-
-            if (self.last_trained == NONE || self.last_trained == UNIT_GIANT) &&
-                !archers.is_empty() && self.gold >= 100 {
-
-            let ready = archers.into_iter()
-                .filter(|i| self.sites.get(i).unwrap().get_cooldown() == 0)
-                .map(|i| i.to_string())
-                .collect::<Vec<String>>()
-                .join(" ");
-
-            println!("TRAIN {}", ready);
-            self.last_trained = UNIT_ARCHER;
-
-        } else if self.last_trained == UNIT_ARCHER && !knights.is_empty() &&
-            self.sites.get(&knights[0]).unwrap().get_cooldown() == 0 && self.gold >= 80 {
-
-        let ready = knights.into_iter()
-            .filter(|i| self.sites.get(i).unwrap().get_cooldown() == 0)
-            .map(|i| i.to_string())
-            .collect::<Vec<String>>()
-            .join(" ");
-
-        println!("TRAIN {}", ready);
-
-        if self.get_towers(ENEMY).len() == 0 ||
-            self.count_units(UNIT_GIANT) >= 1 {
-
-        self.last_trained = NONE;
-    } else {
-        self.last_trained = UNIT_KNIGHT;
     }
 
-    // Train knights in a loop
-    // self.last_trained = UNIT_ARCHER;
+    fn train_units(&mut self) {
+        let knights = self.get_structures(STRUCT_BARRACKS, UNIT_KNIGHT, ALLY);
+        let archers = self.get_structures(STRUCT_BARRACKS, UNIT_ARCHER, ALLY);
+        let giants = self.get_structures(STRUCT_BARRACKS, UNIT_GIANT, ALLY);
 
-} else if self.last_trained == UNIT_KNIGHT && !giants.is_empty() &&
-    self.sites.get(&giants[0]).unwrap().get_cooldown() == 0 && self.gold >= 140 {
+        // loop knights
+        // self.last_trained = UNIT_ARCHER;
 
-let ready = giants.into_iter()
-    .filter(|i| self.sites.get(i).unwrap().get_cooldown() == 0)
-    .map(|i| i.to_string())
-    .collect::<Vec<String>>()
-    .join(" ");
+        if (self.last_trained == NONE || self.last_trained == UNIT_GIANT) &&
+            !archers.is_empty() && self.gold >= 100 {
 
-println!("TRAIN {}", ready);
+                let ready = archers.into_iter()
+                    .filter(|i| self.sites.get(i).unwrap().get_cooldown() == 0)
+                    .map(|i| i.to_string())
+                    .collect::<Vec<String>>()
+                    .join(" ");
 
-self.last_trained = UNIT_GIANT;
+                println!("TRAIN {}", ready);
+                self.last_trained = UNIT_ARCHER;
+
+            } else if self.last_trained == UNIT_ARCHER && !knights.is_empty() &&
+            self.gold >= 80 {
+
+                let ready = knights.into_iter()
+                    .filter(|i| self.sites.get(i).unwrap().get_cooldown() == 0)
+                    .map(|i| i.to_string())
+                    .collect::<Vec<String>>()
+                    .join(" ");
+
+                println!("TRAIN {}", ready);
+
+                if self.get_towers(ENEMY).len() == 0 ||
+                    self.count_units(UNIT_GIANT) >= 1 {
+
+                        self.last_trained = NONE;
+                    } else {
+                        self.last_trained = UNIT_KNIGHT;
+                    }
+
+                // Train knights in a loop
+                // self.last_trained = UNIT_ARCHER;
+
+            } else if self.last_trained == UNIT_KNIGHT && !giants.is_empty() &&
+            self.sites.get(&giants[0]).unwrap().get_cooldown() == 0 && self.gold >= 140 {
+
+                let ready = giants.into_iter()
+                    .filter(|i| self.sites.get(i).unwrap().get_cooldown() == 0)
+                    .map(|i| i.to_string())
+                    .collect::<Vec<String>>()
+                    .join(" ");
+
+                println!("TRAIN {}", ready);
+
+                self.last_trained = UNIT_GIANT;
             } else {
                 println!("TRAIN")
             }

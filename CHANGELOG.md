@@ -4,6 +4,7 @@
 
 #### 7.07.2018
 
+* [Rust] CodeRoyale - Re-removed cooldown cond. after the fix (CodinGame)
 * [Rust] CodeRoyale - Fixed merge issues (CodinGame)
 * [Rust] CodeRoyale - Removed knight cooldown condition (CodinGame)
 
