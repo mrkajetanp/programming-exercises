@@ -2,6 +2,10 @@
 
 ---
 
+#### 7.07.2018
+
+* [Rust] CodeRoyale - Removed knight cooldown condition (CodinGame)
+
 #### 20.06.2018
 
 * [Rust] CodeRoyale - Mines first & earlier towers (CodinGame)

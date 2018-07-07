@@ -230,8 +230,8 @@ fn train_units(gold: i32, sites: &HashMap<i32, Site>,
             println!("TRAIN {}", ready);
             *last_trained = UNIT_ARCHER;
 
-        } else if *last_trained == UNIT_ARCHER && !knights.is_empty() &&
-        sites.get(&knights[0]).unwrap().get_cooldown() == 0 && gold >= 80 {
+        } else if *last_trained == UNIT_ARCHER &&
+        !knights.is_empty() && gold >= 80 {
 
             let ready = knights.into_iter()
                 .filter(|i| sites.get(i).unwrap().get_cooldown() == 0)
@@ -328,7 +328,7 @@ fn handle_queen(units: &Vec<Unit>, sites: &HashMap<i32, Site>,
         return;
     }
 
-    if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
+    if get_structures(sites, STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 2 {
         if touched == closest {
             println!("BUILD {} BARRACKS-KNIGHT", closest);
         } else {
