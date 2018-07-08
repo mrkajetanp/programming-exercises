@@ -2,6 +2,10 @@
 
 ---
 
+#### 8.07.2018
+
+* [Rust] CodeRoyale - Fixed training units (CodinGame)
+
 #### 7.07.2018
 
 * [Rust] CodeRoyale - Re-removed cooldown cond. after the fix (CodinGame)

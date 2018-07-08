@@ -35,7 +35,7 @@ impl Game {
             queen: queen,
             units: vec![],
             gold: 0,
-            last_trained: 0,
+            last_trained: -1,
         }
     }
 
@@ -142,7 +142,7 @@ impl Game {
             return;
         }
 
-        if self.get_structures(STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 2 {
+        if self.get_structures(STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
             if self.queen.touched == build_site {
                 println!("BUILD {} BARRACKS-KNIGHT", build_site);
             } else {
@@ -179,6 +179,8 @@ impl Game {
         }
     }
 
+    // TODO: find out why no units are being trained
+
     fn train_units(&mut self) {
         let knights = self.get_structures(STRUCT_BARRACKS, UNIT_KNIGHT, ALLY);
         let archers = self.get_structures(STRUCT_BARRACKS, UNIT_ARCHER, ALLY);
@@ -200,7 +202,7 @@ impl Game {
                 self.last_trained = UNIT_ARCHER;
 
             } else if self.last_trained == UNIT_ARCHER && !knights.is_empty() &&
-            self.gold >= 80 {
+            self.sites.get(&knights[0]).unwrap().get_cooldown() == 0 && self.gold >= 80 {
 
                 let ready = knights.into_iter()
                     .filter(|i| self.sites.get(i).unwrap().get_cooldown() == 0)
