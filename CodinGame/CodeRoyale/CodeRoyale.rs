@@ -35,7 +35,7 @@ impl Game {
             queen: queen,
             units: vec![],
             gold: 0,
-            last_trained: -1,
+            last_trained: NONE,
         }
     }
 
