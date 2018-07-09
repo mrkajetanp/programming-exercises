@@ -2,6 +2,10 @@
 
 ---
 
+#### 9.07.2018
+
+* [Rust] Code Royale - Queen escape Game method (CodinGame)
+
 #### 8.07.2018
 
 * [Rust] CodeRoyale - Minor aesthetic improvement (CodinGame)

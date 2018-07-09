@@ -58,29 +58,35 @@ impl Game {
     }
 
     fn handle_queen(&mut self) {
-        let queen = &self.queen.unit;
         let build_site;
 
-        if queen.get_health() < 20 {
-            build_site = self.farthest_free_site(queen.get_location());
+        if self.queen.unit.get_health() < 20 {
+            build_site = self.farthest_free_site(self.queen.unit.get_location());
         } else {
-            build_site = self.closest_free_site(queen.get_location());
+            build_site = self.closest_free_site(self.queen.unit.get_location());
         }
 
-        let bl_xy = self.sites.get(&build_site);
-        let closest_enemy_knight = self.queen_closest_enemy_knight();
+        let bl_xy: (i32, i32);
 
-        if bl_xy.is_none() {
-            if self.queen.start.0 < 960 {
-                println!("MOVE 0 0");
-            } else {
-                println!("MOVE 1920 900");
+        {
+            // TODO: rename
+            let temp_bl_xy = self.sites.get(&build_site);
+
+            if temp_bl_xy.is_none() {
+                if self.queen.start.0 < 960 {
+                    println!("MOVE 0 0");
+                } else {
+                    println!("MOVE 1920 900");
+                }
+
+                return;
             }
 
-            return;
+            bl_xy = temp_bl_xy.unwrap().get_location();
         }
 
-        let bl_xy = bl_xy.unwrap().get_location();
+        let closest_enemy_knight = self.queen_closest_enemy_knight();
+
         // Building mines
 
         for i in self.get_structures(STRUCT_MINE, NONE, ALLY) {
@@ -112,24 +118,8 @@ impl Game {
             return;
         }
 
-        let queen_loc = queen.get_location();
-        if queen.distance(closest_enemy_knight) < 200 as f64 {
-            if self.queen.start.0 < 960 {
-                if queen_loc.0 < 50 && queen_loc.1 < 50 {
-                    self.queen.corner_y = 900;
-                } else if queen_loc.0 < 50 && queen_loc.1 > 850 {
-                    self.queen.corner_y = 0;
-                }
-
-                println!("MOVE 0 {}", self.queen.corner_y);
-            } else {
-                if queen.get_location() == (1920, 900) {
-                    println!("MOVE 1920 0");
-                } else {
-                    println!("MOVE 1920 900");
-                }
-            }
-            return;
+        if self.queen.unit.distance(closest_enemy_knight) < 200 as f64 {
+            self.queen_escape();
         }
 
         if self.get_structures(STRUCT_BARRACKS, UNIT_ARCHER, ALLY).len() < 1 {
@@ -176,6 +166,27 @@ impl Game {
             println!("BUILD {} TOWER", build_site);
         } else {
             println!("MOVE {} {}", bl_xy.0, bl_xy.1);
+        }
+    }
+
+    fn queen_escape(&mut self) {
+        let queen = &self.queen.unit;
+        let queen_loc = queen.get_location();
+
+        if self.queen.start.0 < 960 {
+            if queen_loc.0 < 50 && queen_loc.1 < 50 {
+                self.queen.corner_y = 900;
+            } else if queen_loc.0 < 50 && queen_loc.1 > 850 {
+                self.queen.corner_y = 0;
+            }
+
+            println!("MOVE 0 {}", self.queen.corner_y);
+        } else {
+            if queen.get_location() == (1920, 900) {
+                println!("MOVE 1920 0");
+            } else {
+                println!("MOVE 1920 900");
+            }
         }
     }
 
