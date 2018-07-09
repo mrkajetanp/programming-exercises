@@ -58,21 +58,20 @@ impl Game {
     }
 
     fn handle_queen(&mut self) {
-        let build_site;
+        let build_site_id;
 
         if self.queen.unit.get_health() < 20 {
-            build_site = self.farthest_free_site(self.queen.unit.get_location());
+            build_site_id = self.farthest_free_site(self.queen.unit.get_location());
         } else {
-            build_site = self.closest_free_site(self.queen.unit.get_location());
+            build_site_id = self.closest_free_site(self.queen.unit.get_location());
         }
 
-        let bl_xy: (i32, i32);
+        let bs_xy: (i32, i32);
 
         {
-            // TODO: rename
-            let temp_bl_xy = self.sites.get(&build_site);
+            let build_site = self.sites.get(&build_site_id);
 
-            if temp_bl_xy.is_none() {
+            if build_site.is_none() {
                 if self.queen.start.0 < 960 {
                     println!("MOVE 0 0");
                 } else {
@@ -82,7 +81,7 @@ impl Game {
                 return;
             }
 
-            bl_xy = temp_bl_xy.unwrap().get_location();
+            bs_xy = build_site.unwrap().get_location();
         }
 
         let closest_enemy_knight = self.queen_closest_enemy_knight();
@@ -105,14 +104,14 @@ impl Game {
         }
 
         if self.get_structures(STRUCT_MINE, NONE, ALLY).len() < 3 {
-            if self.queen.touched == build_site {
-                if self.sites.get(&build_site).unwrap().remaining_gold() != 0 {
-                    println!("BUILD {} MINE", build_site);
+            if self.queen.touched == build_site_id {
+                if self.sites.get(&build_site_id).unwrap().remaining_gold() != 0 {
+                    println!("BUILD {} MINE", build_site_id);
                 } else {
-                    println!("BUILD {} TOWER", build_site);
+                    println!("BUILD {} TOWER", build_site_id);
                 }
             } else {
-                println!("MOVE {} {}", bl_xy.0, bl_xy.1);
+                println!("MOVE {} {}", bs_xy.0, bs_xy.1);
             }
 
             return;
@@ -123,49 +122,49 @@ impl Game {
         }
 
         if self.get_structures(STRUCT_BARRACKS, UNIT_ARCHER, ALLY).len() < 1 {
-            if self.queen.touched == build_site {
-                println!("BUILD {} BARRACKS-ARCHER", build_site);
+            if self.queen.touched == build_site_id {
+                println!("BUILD {} BARRACKS-ARCHER", build_site_id);
             } else {
-                println!("MOVE {} {}", bl_xy.0, bl_xy.1);
+                println!("MOVE {} {}", bs_xy.0, bs_xy.1);
             }
 
             return;
         }
 
         if self.get_structures(STRUCT_BARRACKS, UNIT_KNIGHT, ALLY).len() < 1 {
-            if self.queen.touched == build_site {
-                println!("BUILD {} BARRACKS-KNIGHT", build_site);
+            if self.queen.touched == build_site_id {
+                println!("BUILD {} BARRACKS-KNIGHT", build_site_id);
             } else {
-                println!("MOVE {} {}", bl_xy.0, bl_xy.1);
+                println!("MOVE {} {}", bs_xy.0, bs_xy.1);
             }
 
             return;
         }
 
         if self.get_towers(ALLY).len() < 2 {
-            if self.queen.touched == build_site {
-                println!("BUILD {} TOWER", build_site);
+            if self.queen.touched == build_site_id {
+                println!("BUILD {} TOWER", build_site_id);
             } else {
-                println!("MOVE {} {}", bl_xy.0, bl_xy.1);
+                println!("MOVE {} {}", bs_xy.0, bs_xy.1);
             }
 
             return;
         }
 
         if self.get_structures(STRUCT_BARRACKS, UNIT_GIANT, ALLY).len() < 1 {
-            if self.queen.touched == build_site {
-                println!("BUILD {} BARRACKS-GIANT", build_site);
+            if self.queen.touched == build_site_id {
+                println!("BUILD {} BARRACKS-GIANT", build_site_id);
             } else {
-                println!("MOVE {} {}", bl_xy.0, bl_xy.1);
+                println!("MOVE {} {}", bs_xy.0, bs_xy.1);
             }
 
             return;
         }
 
-        if self.queen.touched == build_site {
-            println!("BUILD {} TOWER", build_site);
+        if self.queen.touched == build_site_id {
+            println!("BUILD {} TOWER", build_site_id);
         } else {
-            println!("MOVE {} {}", bl_xy.0, bl_xy.1);
+            println!("MOVE {} {}", bs_xy.0, bs_xy.1);
         }
     }
 
@@ -189,8 +188,6 @@ impl Game {
             }
         }
     }
-
-    // TODO: find out why no units are being trained
 
     fn train_units(&mut self) {
         let knights = self.get_structures(STRUCT_BARRACKS, UNIT_KNIGHT, ALLY);
