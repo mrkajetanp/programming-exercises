@@ -4,6 +4,7 @@
 
 #### 10.07.2018
 
+* [Rust] Code Royale - Refactoring, renaming and planning (CodinGame)
 * [Rust] Code Royale - Small handle queen refactoring (CodinGame)
 
 #### 9.07.2018

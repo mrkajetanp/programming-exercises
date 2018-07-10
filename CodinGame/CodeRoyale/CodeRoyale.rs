@@ -64,7 +64,7 @@ impl Game {
             self.closest_free_site(self.queen.unit.get_location())
         };
 
-        let bs_xy: (i32, i32);
+        let build_site_coord: (i32, i32);
 
         {
             let build_site = self.sites.get(&build_site_id);
@@ -79,20 +79,20 @@ impl Game {
                 return;
             }
 
-            bs_xy = build_site.unwrap().get_location();
+            build_site_coord = build_site.unwrap().get_location();
         }
 
         let closest_enemy_knight = self.queen_closest_enemy_knight();
 
         // Building mines
 
-        for i in self.get_structures(STRUCT_MINE, NONE, ALLY) {
-            let site = self.sites.get(&i).unwrap();
+        for id in self.get_structures(STRUCT_MINE, NONE, ALLY) {
+            let site = self.sites.get(&id).unwrap();
             let loc = site.get_location();
 
             if site.can_upgrade() {
-                if self.queen.touched == i {
-                    println!("BUILD {} MINE", i);
+                if self.queen.touched == id {
+                    println!("BUILD {} MINE", id);
                 } else {
                     println!("MOVE {} {}", loc.0, loc.1);
                 }
@@ -100,6 +100,8 @@ impl Game {
                 return;
             }
         }
+
+        // TODO: build structure method given site id and structure type
 
         if self.get_structures(STRUCT_MINE, NONE, ALLY).len() < 3 {
             if self.queen.touched == build_site_id {
@@ -109,7 +111,7 @@ impl Game {
                     println!("BUILD {} TOWER", build_site_id);
                 }
             } else {
-                println!("MOVE {} {}", bs_xy.0, bs_xy.1);
+                println!("MOVE {} {}", build_site_coord.0, build_site_coord.1);
             }
 
             return;
@@ -123,7 +125,7 @@ impl Game {
             if self.queen.touched == build_site_id {
                 println!("BUILD {} BARRACKS-ARCHER", build_site_id);
             } else {
-                println!("MOVE {} {}", bs_xy.0, bs_xy.1);
+                println!("MOVE {} {}", build_site_coord.0, build_site_coord.1);
             }
 
             return;
@@ -133,7 +135,7 @@ impl Game {
             if self.queen.touched == build_site_id {
                 println!("BUILD {} BARRACKS-KNIGHT", build_site_id);
             } else {
-                println!("MOVE {} {}", bs_xy.0, bs_xy.1);
+                println!("MOVE {} {}", build_site_coord.0, build_site_coord.1);
             }
 
             return;
@@ -143,7 +145,7 @@ impl Game {
             if self.queen.touched == build_site_id {
                 println!("BUILD {} TOWER", build_site_id);
             } else {
-                println!("MOVE {} {}", bs_xy.0, bs_xy.1);
+                println!("MOVE {} {}", build_site_coord.0, build_site_coord.1);
             }
 
             return;
@@ -153,7 +155,7 @@ impl Game {
             if self.queen.touched == build_site_id {
                 println!("BUILD {} BARRACKS-GIANT", build_site_id);
             } else {
-                println!("MOVE {} {}", bs_xy.0, bs_xy.1);
+                println!("MOVE {} {}", build_site_coord.0, build_site_coord.1);
             }
 
             return;
@@ -162,7 +164,7 @@ impl Game {
         if self.queen.touched == build_site_id {
             println!("BUILD {} TOWER", build_site_id);
         } else {
-            println!("MOVE {} {}", bs_xy.0, bs_xy.1);
+            println!("MOVE {} {}", build_site_coord.0, build_site_coord.1);
         }
     }
 
