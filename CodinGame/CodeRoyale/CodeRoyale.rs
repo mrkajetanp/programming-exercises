@@ -58,13 +58,11 @@ impl Game {
     }
 
     fn handle_queen(&mut self) {
-        let build_site_id;
-
-        if self.queen.unit.get_health() < 20 {
-            build_site_id = self.farthest_free_site(self.queen.unit.get_location());
+        let build_site_id = if self.queen.unit.get_health() < 20 {
+            self.farthest_free_site(self.queen.unit.get_location())
         } else {
-            build_site_id = self.closest_free_site(self.queen.unit.get_location());
-        }
+            self.closest_free_site(self.queen.unit.get_location())
+        };
 
         let bs_xy: (i32, i32);
 

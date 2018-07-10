@@ -2,6 +2,10 @@
 
 ---
 
+#### 10.07.2018
+
+* [Rust] Code Royale - Small handle queen refactoring (CodinGame)
+
 #### 9.07.2018
 
 * [Rust] Code Royale - Handle queen refactoring (CodinGame)
