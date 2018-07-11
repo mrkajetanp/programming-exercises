@@ -4,6 +4,7 @@
 
 #### 11.07.2018
 
+* [Rust] Code Royale - Changed build structure to build barracks (CodinGame)
 * [Rust] Code Royale - Basic build structure function (CodinGame)
 
 #### 10.07.2018
