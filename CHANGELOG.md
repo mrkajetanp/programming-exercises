@@ -2,6 +2,10 @@
 
 ---
 
+#### 11.07.2018
+
+* [Rust] Code Royale - Basic build structure function (CodinGame)
+
 #### 10.07.2018
 
 * [Rust] Code Royale - Refactoring, renaming and planning (CodinGame)
