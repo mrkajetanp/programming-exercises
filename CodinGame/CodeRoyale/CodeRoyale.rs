@@ -75,6 +75,23 @@ impl Game {
         }
     }
 
+    fn build_structure(&mut self, site_id: i32, structure: i32) {
+        let site = self.sites.get(&site_id);
+        let site_coord = site.unwrap().get_location();
+
+        let struct_name = match structure {
+            STRUCT_MINE => "MINE",
+            STRUCT_TOWER => "TOWER",
+            _ => panic!("Structure {} not found!", structure),
+        };
+
+        if self.queen.touched == site_id {
+            println!("BUILD {} {}", site_id, struct_name);
+        } else {
+            println!("MOVE {} {}", site_coord.0, site_coord.1);
+        }
+    }
+
     fn handle_queen(&mut self) {
         let build_site_id = if self.queen.unit.get_health() < 20 {
             self.farthest_free_site(self.queen.unit.get_location())
