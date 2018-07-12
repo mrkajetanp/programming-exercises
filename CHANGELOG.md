@@ -4,6 +4,7 @@
 
 #### 12.07.2018
 
+* [Rust] Code Royale - Build structure in use (CodinGame)
 * [Rust] Code Royale - Build structure function (CodinGame)
 
 #### 11.07.2018

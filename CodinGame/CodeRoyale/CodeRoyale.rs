@@ -119,18 +119,9 @@ impl Game {
 
         let closest_enemy_knight = self.queen_closest_enemy_knight();
 
-        // Building mines
-
         for id in self.get_structures(STRUCT_MINE, NONE, ALLY) {
-            let site = self.sites.get(&id).unwrap();
-            let loc = site.get_location();
-
-            if site.can_upgrade() {
-                if self.queen.touched == id {
-                    println!("BUILD {} MINE", id);
-                } else {
-                    println!("MOVE {} {}", loc.0, loc.1);
-                }
+            if self.sites.get(&id).unwrap().can_upgrade() {
+                self.build_structure(id, STRUCT_MINE);
 
                 return;
             }
@@ -168,12 +159,7 @@ impl Game {
         }
 
         if self.get_towers(ALLY).len() < 2 {
-            if self.queen.touched == build_site_id {
-                println!("BUILD {} TOWER", build_site_id);
-            } else {
-                println!("MOVE {} {}", build_site_coord.0, build_site_coord.1);
-            }
-
+            self.build_structure(build_site_id, STRUCT_TOWER);
             return;
         }
 
@@ -182,11 +168,7 @@ impl Game {
             return;
         }
 
-        if self.queen.touched == build_site_id {
-            println!("BUILD {} TOWER", build_site_id);
-        } else {
-            println!("MOVE {} {}", build_site_coord.0, build_site_coord.1);
-        }
+        self.build_structure(build_site_id, STRUCT_TOWER);
     }
 
     fn queen_escape(&mut self) {
