@@ -104,7 +104,9 @@ impl Game {
         {
             let build_site = self.sites.get(&build_site_id);
 
-            if build_site.is_none() {
+            if let Some(s) = build_site {
+                build_site_coord = s.get_location();
+            } else {
                 if self.queen.start.0 < 960 {
                     println!("MOVE 0 0");
                 } else {
@@ -113,8 +115,6 @@ impl Game {
 
                 return;
             }
-
-            build_site_coord = build_site.unwrap().get_location();
         }
 
         let closest_enemy_knight = self.queen_closest_enemy_knight();

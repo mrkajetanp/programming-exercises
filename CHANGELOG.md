@@ -2,6 +2,10 @@
 
 ---
 
+#### 13.07.2018
+
+* [Rust] CodeRoyale - Changed is none to if let (CodinGame)
+
 #### 12.07.2018
 
 * [Rust] Code Royale - Build structure in use (CodinGame)
