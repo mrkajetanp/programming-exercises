@@ -102,9 +102,7 @@ impl Game {
         let build_site_coord: (i32, i32);
 
         {
-            let build_site = self.sites.get(&build_site_id);
-
-            if let Some(s) = build_site {
+            if let Some(s) = self.sites.get(&build_site_id) {
                 build_site_coord = s.get_location();
             } else {
                 if self.queen.start.0 < 960 {
@@ -126,8 +124,6 @@ impl Game {
                 return;
             }
         }
-
-        // TODO: build structure method given site id and structure type
 
         if self.get_structures(STRUCT_MINE, NONE, ALLY).len() < 3 {
             if self.queen.touched == build_site_id {
@@ -213,7 +209,8 @@ impl Game {
                 self.last_trained = UNIT_ARCHER;
 
             } else if self.last_trained == UNIT_ARCHER && !knights.is_empty() &&
-            self.sites.get(&knights[0]).unwrap().get_cooldown() == 0 && self.gold >= 80 {
+            self.sites.get(&knights[0]).unwrap().get_cooldown() == 0 &&
+            self.gold >= 80 {
 
                 let ready = knights.into_iter()
                     .filter(|i| self.sites.get(i).unwrap().get_cooldown() == 0)
@@ -235,7 +232,8 @@ impl Game {
                 // self.last_trained = UNIT_ARCHER;
 
             } else if self.last_trained == UNIT_KNIGHT && !giants.is_empty() &&
-            self.sites.get(&giants[0]).unwrap().get_cooldown() == 0 && self.gold >= 140 {
+            self.sites.get(&giants[0]).unwrap().get_cooldown() == 0 &&
+            self.gold >= 140 {
 
                 let ready = giants.into_iter()
                     .filter(|i| self.sites.get(i).unwrap().get_cooldown() == 0)
@@ -259,24 +257,26 @@ impl Game {
 
     fn get_structures(&self, struct_type: i32, unit: i32, owner: i32) -> Vec<i32> {
         if struct_type != STRUCT_BARRACKS && unit != NONE {
-            panic!("If structure is not barracks, unit should be set to NONE (-1)");
+            panic!("If struct is not barracks, unit should be set to NONE (-1)");
         }
 
         self.sites.iter()
-            .filter(|&(_, s)| s.get_owner() == owner && s.get_type() == struct_type
-                    && s.get_unit() == unit)
+            .filter(|&(_, s)| s.get_owner() == owner &&
+                    s.get_type() == struct_type && s.get_unit() == unit)
             .map(|(i, _)| *i).collect::<Vec<i32>>()
     }
 
     fn get_towers(&self, owner: i32) -> Vec<i32> {
         self.sites.iter()
-            .filter(|&(_, s)| s.get_owner() == owner && s.get_type() == STRUCT_TOWER)
+            .filter(|&(_, s)| s.get_owner() == owner &&
+                    s.get_type() == STRUCT_TOWER)
             .map(|(i, _)| *i).collect::<Vec<i32>>()
     }
 
     fn queen_closest_enemy_knight(&self) -> (i32, i32) {
         self.units.iter().filter(|u| !u.is_own())
-            .map(|u| (u.distance(self.queen.unit.get_location()), u.get_location()))
+            .map(|u| (u.distance(self.queen.unit.get_location()),
+                      u.get_location()))
             .min_by(|a, b| a.0.partial_cmp(&b.0).unwrap()).unwrap().1
     }
 

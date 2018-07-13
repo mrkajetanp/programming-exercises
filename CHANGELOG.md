@@ -4,6 +4,7 @@
 
 #### 13.07.2018
 
+* [Rust] CodeRoyale - General refactoring adujustments (CodinGame)
 * [Rust] CodeRoyale - Changed is none to if let (CodinGame)
 
 #### 12.07.2018
