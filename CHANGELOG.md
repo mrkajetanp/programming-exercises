@@ -4,6 +4,7 @@
 
 #### 14.07.2018
 
+* [Rust] Code of Kutulu - Map vector (CodinGame)
 * [Rust] Code of Kutulu - Initial file (CodinGame)
 
 #### 13.07.2018
