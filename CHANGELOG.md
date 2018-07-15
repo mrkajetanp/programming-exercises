@@ -4,6 +4,7 @@
 
 #### 15.07.2018
 
+* [Rust] Code of Kutulu - Collecting units into a vec (CodinGame)
 * [Rust] Code of Kutulu - Unit struct and basic impl (CodinGame)
 
 #### 14.07.2018

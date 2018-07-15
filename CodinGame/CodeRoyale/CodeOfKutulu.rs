@@ -21,6 +21,7 @@ struct Unit {
 }
 
 // TODO: possibly split Unit into Explorer and Wanderer at some point
+
 impl Unit {
     fn new(u_type: UnitType, id: i32, coord: (i32, i32),
            health: i32, state: i32, target: i32) -> Unit {
@@ -77,11 +78,15 @@ fn main() {
 
     // game loop
     loop {
+
         let mut input_line = String::new();
         io::stdin().read_line(&mut input_line).unwrap();
         // the first given entity corresponds to your explorer
         let entity_count = parse_input!(input_line, i32);
-        for i in 0..entity_count as usize {
+
+        let mut units: Vec<Unit> = Vec::with_capacity(entity_count as usize);
+
+        for _ in 0..entity_count as usize {
             let mut input_line = String::new();
             io::stdin().read_line(&mut input_line).unwrap();
             let inputs = input_line.split(" ").collect::<Vec<_>>();
@@ -92,14 +97,19 @@ fn main() {
             let param_0 = parse_input!(inputs[4], i32);
             let param_1 = parse_input!(inputs[5], i32);
             let param_2 = parse_input!(inputs[6], i32);
+
+            let u_type = match entity_type.as_ref() {
+                "EXPLORER" => UnitType::EXPLORER,
+                "WANDERER" => UnitType::WANDERER,
+                _ => panic!("Incorrect unit type"),
+            };
+
+            units.push(Unit::new(u_type, id, (x, y), param_0, param_1, param_2));
         }
 
-        for l in &map {
+        for l in &units {
             eprintln!("{:?}", l);
         }
-
-        // Write an action using println!("message...");
-        // To debug: eprintln!("Debug message...");
 
         println!("WAIT"); // MOVE <x> <y> | WAIT
     }
