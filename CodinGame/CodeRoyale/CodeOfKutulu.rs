@@ -4,6 +4,37 @@ macro_rules! parse_input {
     ($x:expr, $t:ident) => ($x.trim().parse::<$t>().unwrap())
 }
 
+#[derive(Debug)]
+enum UnitType {
+    EXPLORER,
+    WANDERER
+}
+
+#[derive(Debug)]
+struct Unit {
+    u_type: UnitType,
+    id: i32,
+    coord: (i32, i32),
+    health: i32,
+    state: i32,
+    target: i32
+}
+
+// TODO: possibly split Unit into Explorer and Wanderer at some point
+impl Unit {
+    fn new(u_type: UnitType, id: i32, coord: (i32, i32),
+           health: i32, state: i32, target: i32) -> Unit {
+        Unit {
+            u_type,
+            id,
+            coord,
+            health,
+            state,
+            target
+        }
+    }
+}
+
 /**
  * Survive the wrath of Kutulu
  * Coded fearlessly by JohnnyYuge & nmahoude
