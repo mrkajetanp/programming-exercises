@@ -4,6 +4,7 @@
 
 #### 16.07.2018
 
+* [Rust] Code of Kutulu - Units in a HashMap (CodinGame)
 * [Rust] Code of Kutulu - Get closest explorer (CodinGame)
 
 #### 15.07.2018

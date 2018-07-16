@@ -1,19 +1,19 @@
 use std::io;
+use std::collections::HashMap;
 
 macro_rules! parse_input {
     ($x:expr, $t:ident) => ($x.trim().parse::<$t>().unwrap())
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 enum UnitType {
     EXPLORER,
     WANDERER
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 struct Unit {
     u_type: UnitType,
-    id: i32,
     coord: (i32, i32),
     health: i32,
     state: i32,
@@ -23,11 +23,10 @@ struct Unit {
 // TODO: possibly split Unit into Explorer and Wanderer at some point
 
 impl Unit {
-    fn new(u_type: UnitType, id: i32, coord: (i32, i32),
+    fn new(u_type: UnitType, coord: (i32, i32),
            health: i32, state: i32, target: i32) -> Unit {
         Unit {
             u_type,
-            id,
             coord,
             health,
             state,
@@ -38,23 +37,19 @@ impl Unit {
     fn get_coord(&self) -> (i32, i32) {
         self.coord
     }
-
-    fn get_id(&self) -> i32 {
-        self.id
-    }
 }
 
-fn manhattan_distance(a: (i32, i32), b: (i32, i32)) -> i32 {
-    (b.0 - a.0).abs() + (b.1 - a.1).abs()
-}
+// fn manhattan_distance(a: (i32, i32), b: (i32, i32)) -> i32 {
+//     (b.0 - a.0).abs() + (b.1 - a.1).abs()
+// }
 
 
-fn get_closest_explorer(units: &Vec<Unit>) -> i32 {
-    // TODO: seems a bit weird
-    units.iter().skip(1).map(|u| {
-        (u, manhattan_distance(units[0].get_coord(), u.get_coord()))
-    }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0.get_id()
-}
+// fn get_closest_explorer(units: &Vec<Unit>) -> i32 {
+//     // TODO: seems a bit weird
+//     units.iter().skip(1).map(|u| {
+//         (u, manhattan_distance(units[0].get_coord(), u.get_coord()))
+//     }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0.get_id()
+// }
 
 
 /**
@@ -105,9 +100,12 @@ fn main() {
         // the first given entity corresponds to your explorer
         let entity_count = parse_input!(input_line, i32);
 
-        let mut units: Vec<Unit> = Vec::with_capacity(entity_count as usize);
+        // let mut units: Vec<Unit> = Vec::with_capacity(entity_count as usize);
+        let mut units: HashMap<i32, Unit> = HashMap::new();
 
-        for _ in 0..entity_count as usize {
+        let mut player_id = -1;
+
+        for i in 0..entity_count as usize {
             let mut input_line = String::new();
             io::stdin().read_line(&mut input_line).unwrap();
             let inputs = input_line.split(" ").collect::<Vec<_>>();
@@ -125,13 +123,26 @@ fn main() {
                 _ => panic!("Incorrect unit type"),
             };
 
-            units.push(Unit::new(u_type, id, (x, y), param_0, param_1, param_2));
+            if i == 0 {
+                player_id = id;
+            }
+
+            units.insert(id,
+                         Unit::new(u_type, (x, y), param_0, param_1, param_2));
         }
 
-        for l in &units {
-            eprintln!("{:?}", l);
+
+        let player = units.get(&player_id).unwrap().clone();
+        units.remove(&player_id);
+
+        eprintln!("Player: {:?}", player);
+
+        for (i, u) in &units {
+            eprintln!("{} -> {:?}", i, u);
         }
 
-        println!("WAIT"); // MOVE <x> <y> | WAIT
+        // let closest_coord = get_closest_explorer(&units).get_coord();
+        // println!("MOVE {} {}", closest_coord.0, closest_coord.1);
+        println!("WAIT");
     }
 }
