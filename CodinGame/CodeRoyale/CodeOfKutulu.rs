@@ -34,7 +34,28 @@ impl Unit {
             target
         }
     }
+
+    fn get_coord(&self) -> (i32, i32) {
+        self.coord
+    }
+
+    fn get_id(&self) -> i32 {
+        self.id
+    }
 }
+
+fn manhattan_distance(a: (i32, i32), b: (i32, i32)) -> i32 {
+    (b.0 - a.0).abs() + (b.1 - a.1).abs()
+}
+
+
+fn get_closest_explorer(units: &Vec<Unit>) -> i32 {
+    // TODO: seems a bit weird
+    units.iter().skip(1).map(|u| {
+        (u, manhattan_distance(units[0].get_coord(), u.get_coord()))
+    }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0.get_id()
+}
+
 
 /**
  * Survive the wrath of Kutulu
