@@ -5,7 +5,7 @@ macro_rules! parse_input {
     ($x:expr, $t:ident) => ($x.trim().parse::<$t>().unwrap())
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq)]
 enum UnitType {
     EXPLORER,
     WANDERER
@@ -37,20 +37,24 @@ impl Unit {
     fn get_coord(&self) -> (i32, i32) {
         self.coord
     }
+
+    fn is_explorer(&self) -> bool {
+        self.u_type == UnitType::EXPLORER
+    }
 }
 
-// fn manhattan_distance(a: (i32, i32), b: (i32, i32)) -> i32 {
-//     (b.0 - a.0).abs() + (b.1 - a.1).abs()
-// }
+fn manhattan_distance(a: (i32, i32), b: (i32, i32)) -> i32 {
+    (b.0 - a.0).abs() + (b.1 - a.1).abs()
+}
 
 
-// fn get_closest_explorer(units: &Vec<Unit>) -> i32 {
-//     // TODO: seems a bit weird
-//     units.iter().skip(1).map(|u| {
-//         (u, manhattan_distance(units[0].get_coord(), u.get_coord()))
-//     }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0.get_id()
-// }
-
+fn get_closest_explorer(units: &HashMap<i32, Unit>, explorer: Unit) -> i32 {
+    units.iter().filter(|&(_, u)| {
+        u.is_explorer()
+    }).map(|(&i, u)| {
+        (i, manhattan_distance(explorer.get_coord(), u.get_coord()))
+    }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
+}
 
 /**
  * Survive the wrath of Kutulu
@@ -141,7 +145,9 @@ fn main() {
             eprintln!("{} -> {:?}", i, u);
         }
 
-        // let closest_coord = get_closest_explorer(&units).get_coord();
+        let closest_coord = get_closest_explorer(&units, player);
+        eprintln!("Closest: {}", closest_coord);
+
         // println!("MOVE {} {}", closest_coord.0, closest_coord.1);
         println!("WAIT");
     }
