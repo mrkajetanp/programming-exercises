@@ -145,10 +145,9 @@ fn main() {
             eprintln!("{} -> {:?}", i, u);
         }
 
-        let closest_coord = get_closest_explorer(&units, player);
-        eprintln!("Closest: {}", closest_coord);
+        let closest_coord = units.get(&get_closest_explorer(&units, player)).
+            unwrap().get_coord();
 
-        // println!("MOVE {} {}", closest_coord.0, closest_coord.1);
-        println!("WAIT");
+        println!("MOVE {} {}", closest_coord.0, closest_coord.1);
     }
 }
