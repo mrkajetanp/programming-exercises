@@ -47,8 +47,7 @@ fn manhattan_distance(a: (i32, i32), b: (i32, i32)) -> i32 {
     (b.0 - a.0).abs() + (b.1 - a.1).abs()
 }
 
-
-fn get_closest_explorer(units: &HashMap<i32, Unit>, explorer: Unit) -> i32 {
+fn get_closest_explorer(units: &HashMap<i32, Unit>, explorer: &Unit) -> i32 {
     units.iter().filter(|&(_, u)| {
         u.is_explorer()
     }).map(|(&i, u)| {
@@ -56,12 +55,25 @@ fn get_closest_explorer(units: &HashMap<i32, Unit>, explorer: Unit) -> i32 {
     }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
 }
 
-fn get_closest_wanderer(units: &HashMap<i32, Unit>, explorer: Unit) -> i32 {
+fn get_closest_wanderer(units: &HashMap<i32, Unit>, explorer: &Unit) -> i32 {
     units.iter().filter(|&(_, u)| {
         !u.is_explorer()
     }).map(|(&i, u)| {
         (i, manhattan_distance(explorer.get_coord(), u.get_coord()))
     }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
+}
+
+fn handle_explorer(units: &HashMap<i32, Unit>, explorer: Unit) {
+    let closest_w_coord = units.get(&get_closest_wanderer(&units, &explorer)).
+        unwrap().get_coord();
+
+    eprintln!("Distance: {}", manhattan_distance(closest_w_coord,
+                                                 explorer.get_coord()));
+
+    let closest_ex_coord = units.get(&get_closest_explorer(&units, &explorer)).
+        unwrap().get_coord();
+
+    println!("MOVE {} {}", closest_ex_coord.0, closest_ex_coord.1);
 }
 
 /**
@@ -158,9 +170,6 @@ fn main() {
             eprintln!("{} -> {:?}", i, u);
         }
 
-        let closest_coord = units.get(&get_closest_explorer(&units, player)).
-            unwrap().get_coord();
-
-        println!("MOVE {} {}", closest_coord.0, closest_coord.1);
+        handle_explorer(&units, player);
     }
 }
