@@ -56,6 +56,14 @@ fn get_closest_explorer(units: &HashMap<i32, Unit>, explorer: Unit) -> i32 {
     }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
 }
 
+fn get_closest_wanderer(units: &HashMap<i32, Unit>, explorer: Unit) -> i32 {
+    units.iter().filter(|&(_, u)| {
+        !u.is_explorer()
+    }).map(|(&i, u)| {
+        (i, manhattan_distance(explorer.get_coord(), u.get_coord()))
+    }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
+}
+
 /**
  * Survive the wrath of Kutulu
  * Coded fearlessly by JohnnyYuge & nmahoude
@@ -65,6 +73,7 @@ fn main() {
     let mut input_line = String::new();
     io::stdin().read_line(&mut input_line).unwrap();
 
+    #[allow(unused_variables)]
     let width = parse_input!(input_line, i32);
 
     let mut input_line = String::new();
@@ -85,13 +94,17 @@ fn main() {
     let mut input_line = String::new();
     io::stdin().read_line(&mut input_line).unwrap();
     let inputs = input_line.split(" ").collect::<Vec<_>>();
+    #[allow(unused_variables)]
     // how much sanity you lose every turn when alone, always 3 until wood 1
     let sanity_loss_lonely = parse_input!(inputs[0], i32);
+    #[allow(unused_variables)]
     // how much sanity you lose every turn when near another player
     // always 1 until wood 1
     let sanity_loss_group = parse_input!(inputs[1], i32);
+    #[allow(unused_variables)]
     // how many turns the wanderer take to spawn, always 3 until wood 1
     let wanderer_spawn_time = parse_input!(inputs[2], i32);
+    #[allow(unused_variables)]
     // how many turns the wanderer is on map after spawning
     // always 40 until wood 1
     let wanderer_life_time = parse_input!(inputs[3], i32);

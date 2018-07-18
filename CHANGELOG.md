@@ -2,6 +2,10 @@
 
 ---
 
+#### 18.07.2018
+
+* [Rust] Code of Kutulu - Get closest wanderer (CodinGame)
+
 #### 17.07.2018
 
 * [Rust] Code of Kutulu - Moving to the closest explorer (CodinGame)
