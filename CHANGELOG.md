@@ -4,6 +4,7 @@
 
 #### 19.07.2018
 
+* [Rust] Code of Kutulu - Fixed distance unwrap (CodinGame)
 * [Rust] Code of Kutulu - If let in closest wanderer (CodinGame)
 
 #### 18.07.2018
