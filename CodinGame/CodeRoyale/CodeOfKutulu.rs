@@ -56,14 +56,19 @@ fn get_closest_explorer(units: &HashMap<i32, Unit>, explorer: &Unit) -> i32 {
 }
 
 fn get_closest_wanderer(units: &HashMap<i32, Unit>, explorer: &Unit) -> i32 {
-    units.iter().filter(|&(_, u)| {
+    if let Some(w) = units.iter().filter(|&(_, u)| {
         !u.is_explorer()
     }).map(|(&i, u)| {
         (i, manhattan_distance(explorer.get_coord(), u.get_coord()))
-    }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
+    }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()) {
+        w.0
+    } else {
+        -1
+    }
 }
 
 fn handle_explorer(units: &HashMap<i32, Unit>, explorer: Unit) {
+    // TODO: fix the unwrap
     let closest_w_coord = units.get(&get_closest_wanderer(&units, &explorer)).
         unwrap().get_coord();
 
