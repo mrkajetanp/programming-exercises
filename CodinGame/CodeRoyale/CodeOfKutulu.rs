@@ -55,7 +55,6 @@ fn get_closest_explorer(units: &HashMap<i32, Unit>, explorer: &Unit) -> i32 {
     }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
 }
 
-// TODO: option return
 fn get_closest_wanderer(units: &HashMap<i32, Unit>,
                         explorer: &Unit) -> Option<i32> {
     if let Some(w) = units.iter().filter(|&(_, u)| {
@@ -70,17 +69,37 @@ fn get_closest_wanderer(units: &HashMap<i32, Unit>,
 }
 
 fn handle_explorer(units: &HashMap<i32, Unit>, explorer: Unit) {
-    if let Some(i) = get_closest_wanderer(&units, &explorer) {
-        let wanderer = units.get(&i).unwrap();
-        let dist = manhattan_distance(wanderer.get_coord(), explorer.get_coord());
-
-        eprintln!("Distance: {}", dist);
-    }
-
-    let closest_ex_coord = units.get(&get_closest_explorer(&units, &explorer)).
+    // TODO: handle unwrap here
+    let mut move_coord = units.get(&get_closest_explorer(&units, &explorer)).
         unwrap().get_coord();
 
-    println!("MOVE {} {}", closest_ex_coord.0, closest_ex_coord.1);
+    if let Some(i) = get_closest_wanderer(&units, &explorer) {
+        let wanderer_c = units.get(&i).unwrap().get_coord();
+        let explorer_c = explorer.get_coord();
+
+        let dist = manhattan_distance(wanderer_c, explorer_c);
+
+        if dist > 3 {
+            println!("MOVE {} {}", move_coord.0, move_coord.1);
+            return;
+        }
+
+        if wanderer_c.0 == explorer_c.0 {
+            if explorer_c.0 > wanderer_c.0 {
+                move_coord.0 += 1;
+            } else {
+                move_coord.0 -= 1;
+            }
+        } else {
+            if explorer_c.1 > wanderer_c.1 {
+                move_coord.1 += 1;
+            } else {
+                move_coord.1 -= 1;
+            }
+        }
+    }
+
+    println!("MOVE {} {}", move_coord.0, move_coord.1);
 }
 
 /**
