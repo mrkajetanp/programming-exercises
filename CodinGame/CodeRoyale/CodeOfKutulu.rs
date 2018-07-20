@@ -56,28 +56,26 @@ fn get_closest_explorer(units: &HashMap<i32, Unit>, explorer: &Unit) -> i32 {
 }
 
 // TODO: option return
-fn get_closest_wanderer(units: &HashMap<i32, Unit>, explorer: &Unit) -> i32 {
+fn get_closest_wanderer(units: &HashMap<i32, Unit>,
+                        explorer: &Unit) -> Option<i32> {
     if let Some(w) = units.iter().filter(|&(_, u)| {
         !u.is_explorer()
     }).map(|(&i, u)| {
         (i, manhattan_distance(explorer.get_coord(), u.get_coord()))
     }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()) {
-        w.0
+        Some(w.0)
     } else {
-        -1
+        None
     }
 }
 
 fn handle_explorer(units: &HashMap<i32, Unit>, explorer: Unit) {
-    let w_distance;
+    if let Some(i) = get_closest_wanderer(&units, &explorer) {
+        let wanderer = units.get(&i).unwrap();
+        let dist = manhattan_distance(wanderer.get_coord(), explorer.get_coord());
 
-    if let Some(w) = units.get(&get_closest_wanderer(&units, &explorer)) {
-        w_distance = manhattan_distance(w.get_coord(), explorer.get_coord());
-    } else {
-        w_distance = -1;
+        eprintln!("Distance: {}", dist);
     }
-
-   eprintln!("Distance: {}", w_distance);
 
     let closest_ex_coord = units.get(&get_closest_explorer(&units, &explorer)).
         unwrap().get_coord();
