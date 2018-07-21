@@ -4,6 +4,7 @@
 
 #### 21.07.2018
 
+* [Rust] Code of Kutulu - Get relative direction (CodinGame)
 * [Rust] Code of Kutulu - Get possible moves (CodinGame)
 
 #### 20.07.2018

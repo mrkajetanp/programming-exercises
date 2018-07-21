@@ -68,7 +68,7 @@ fn get_closest_wanderer(units: &HashMap<i32, Unit>,
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 enum Direction {
     LEFT,
     RIGHT,
@@ -101,6 +101,23 @@ fn get_possible_moves(map: &Vec<Vec<char>>, coord: (i32, i32))
     result
 }
 
+// Direction of b in regards to a
+fn get_relative_direction(a: (i32, i32), b: (i32, i32)) -> Direction {
+    if a.0 == b.0 {
+        if a.1 < b.1 {
+            Direction::DOWN
+        } else {
+            Direction::UP
+        }
+    } else {
+        if a.0 < b.0 {
+            Direction::RIGHT
+        } else {
+            Direction::LEFT
+        }
+    }
+}
+
 fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
                    explorer: Unit) {
     // TODO: handle unwrap here
@@ -118,11 +135,19 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
             return;
         }
 
-        println!("Moves: {:?}", get_possible_moves(map, explorer_c));
+        let moves = get_possible_moves(map, explorer_c);
 
         if wanderer_c.0 == explorer_c.0 {
-            if explorer_c.0 > wanderer_c.0 {
-                move_coord.0 += 1;
+            if explorer_c.1 > wanderer_c.1 {
+                if moves.contains(&Direction::RIGHT) {
+
+                } else if moves.contains(&Direction::LEFT) {
+
+                } else if moves.contains(&Direction::UP) {
+
+                } else {
+                    move_coord.0 += 1;
+                }
             } else {
                 move_coord.0 -= 1;
             }
@@ -228,9 +253,9 @@ fn main() {
 
         eprintln!("Player: {:?}", player);
 
-        for (i, u) in &units {
-            eprintln!("{} -> {:?}", i, u);
-        }
+        // for (i, u) in &units {
+        //     eprintln!("{} -> {:?}", i, u);
+        // }
 
         handle_explorer(&map, &units, player);
     }
