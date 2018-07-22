@@ -138,24 +138,48 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
         let moves = get_possible_moves(map, explorer_c);
 
         if wanderer_c.0 == explorer_c.0 {
-            if explorer_c.1 > wanderer_c.1 {
-                if moves.contains(&Direction::RIGHT) {
-
+            if explorer_c.1 < wanderer_c.1 {
+                if moves.contains(&Direction::UP) {
+                    move_coord.1 -= 1;
+                } else if moves.contains(&Direction::RIGHT) {
+                    move_coord.0 += 1;
                 } else if moves.contains(&Direction::LEFT) {
-
+                    move_coord.0 -= 1;
+                } else {
+                    move_coord.1 += 1;
+                }
+            } else {
+                if moves.contains(&Direction::DOWN) {
+                    move_coord.1 += 1;
+                } else if moves.contains(&Direction::RIGHT) {
+                    move_coord.0 += 1;
+                } else if moves.contains(&Direction::LEFT) {
+                    move_coord.0 -= 1;
+                } else {
+                    move_coord.1 -= 1;
+                }
+            }
+        } else {
+            if explorer_c.0 < wanderer_c.0 {
+                if moves.contains(&Direction::LEFT) {
+                    move_coord.0 -= 1;
                 } else if moves.contains(&Direction::UP) {
-
+                    move_coord.1 -= 1;
+                } else if moves.contains(&Direction::DOWN) {
+                    move_coord.1 += 1;
                 } else {
                     move_coord.0 += 1;
                 }
             } else {
-                move_coord.0 -= 1;
-            }
-        } else {
-            if explorer_c.1 > wanderer_c.1 {
-                move_coord.1 += 1;
-            } else {
-                move_coord.1 -= 1;
+                if moves.contains(&Direction::RIGHT) {
+                    move_coord.0 += 1;
+                } else if moves.contains(&Direction::UP) {
+                    move_coord.1 -= 1;
+                } else if moves.contains(&Direction::DOWN) {
+                    move_coord.1 += 1;
+                } else {
+                    move_coord.0 -= 1;
+                }
             }
         }
     }
