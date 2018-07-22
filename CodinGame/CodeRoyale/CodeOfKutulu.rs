@@ -5,6 +5,8 @@ macro_rules! parse_input {
     ($x:expr, $t:ident) => ($x.trim().parse::<$t>().unwrap())
 }
 
+const MOVE_DIST: i32 = 3;
+
 #[derive(Debug, Clone, PartialEq)]
 enum UnitType {
     EXPLORER,
@@ -121,18 +123,19 @@ fn get_relative_direction(a: (i32, i32), b: (i32, i32)) -> Direction {
 fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
                    explorer: Unit) {
     // TODO: handle unwrap here
-    let mut move_coord = units.get(&get_closest_explorer(&units, &explorer)).
-        unwrap().get_coord();
-
+    let mut move_coord = explorer.get_coord();
     if let Some(i) = get_closest_wanderer(&units, &explorer) {
         let wanderer_c = units.get(&i).unwrap().get_coord();
         let explorer_c = explorer.get_coord();
 
         let dist = manhattan_distance(wanderer_c, explorer_c);
 
-        if dist > 3 {
-            println!("MOVE {} {}", move_coord.0, move_coord.1);
-            return;
+        if dist > 4 {
+            if let Some(e) = units.get(&get_closest_explorer(&units, &explorer)) {
+                let coord = e.get_coord();
+                println!("MOVE {} {}", coord.0, coord.1);
+                return;
+            }
         }
 
         let moves = get_possible_moves(map, explorer_c);
@@ -140,51 +143,51 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
         if wanderer_c.0 == explorer_c.0 {
             if explorer_c.1 < wanderer_c.1 {
                 if moves.contains(&Direction::UP) {
-                    move_coord.1 -= 1;
+                    move_coord.1 -= MOVE_DIST;
                 } else if moves.contains(&Direction::RIGHT) {
-                    move_coord.0 += 1;
+                    move_coord.0 += MOVE_DIST;
                 } else if moves.contains(&Direction::LEFT) {
-                    move_coord.0 -= 1;
+                    move_coord.0 -= MOVE_DIST;
                 } else {
-                    move_coord.1 += 1;
+                    move_coord.1 += MOVE_DIST;
                 }
             } else {
                 if moves.contains(&Direction::DOWN) {
-                    move_coord.1 += 1;
+                    move_coord.1 += MOVE_DIST;
                 } else if moves.contains(&Direction::RIGHT) {
-                    move_coord.0 += 1;
+                    move_coord.0 += MOVE_DIST;
                 } else if moves.contains(&Direction::LEFT) {
-                    move_coord.0 -= 1;
+                    move_coord.0 -= MOVE_DIST;
                 } else {
-                    move_coord.1 -= 1;
+                    move_coord.1 -= MOVE_DIST;
                 }
             }
         } else {
             if explorer_c.0 < wanderer_c.0 {
                 if moves.contains(&Direction::LEFT) {
-                    move_coord.0 -= 1;
+                    move_coord.0 -= MOVE_DIST;
                 } else if moves.contains(&Direction::UP) {
-                    move_coord.1 -= 1;
+                    move_coord.1 -= MOVE_DIST;
                 } else if moves.contains(&Direction::DOWN) {
-                    move_coord.1 += 1;
+                    move_coord.1 += MOVE_DIST;
                 } else {
-                    move_coord.0 += 1;
+                    move_coord.0 += MOVE_DIST;
                 }
             } else {
                 if moves.contains(&Direction::RIGHT) {
-                    move_coord.0 += 1;
+                    move_coord.0 += MOVE_DIST;
                 } else if moves.contains(&Direction::UP) {
-                    move_coord.1 -= 1;
+                    move_coord.1 -= MOVE_DIST;
                 } else if moves.contains(&Direction::DOWN) {
-                    move_coord.1 += 1;
+                    move_coord.1 += MOVE_DIST;
                 } else {
-                    move_coord.0 -= 1;
+                    move_coord.0 -= MOVE_DIST;
                 }
             }
         }
     }
 
-    println!("MOVE {} {}", move_coord.0, move_coord.1);
+    println!("MOVE 0 0");
 }
 
 /**
