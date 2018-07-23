@@ -124,6 +124,7 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
                    explorer: Unit) {
     // TODO: handle unwrap here
     let mut move_coord = explorer.get_coord();
+
     if let Some(i) = get_closest_wanderer(&units, &explorer) {
         let wanderer_c = units.get(&i).unwrap().get_coord();
         let explorer_c = explorer.get_coord();
@@ -187,7 +188,7 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
         }
     }
 
-    println!("MOVE 0 0");
+    println!("MOVE {} {}", move_coord.0, move_coord.1);
 }
 
 /**
