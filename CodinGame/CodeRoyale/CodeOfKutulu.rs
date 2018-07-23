@@ -5,7 +5,7 @@ macro_rules! parse_input {
     ($x:expr, $t:ident) => ($x.trim().parse::<$t>().unwrap())
 }
 
-const MOVE_DIST: i32 = 3;
+const MOVE_DIST: i32 = 1;
 
 #[derive(Debug, Clone, PartialEq)]
 enum UnitType {
@@ -49,12 +49,17 @@ fn manhattan_distance(a: (i32, i32), b: (i32, i32)) -> i32 {
     (b.0 - a.0).abs() + (b.1 - a.1).abs()
 }
 
-fn get_closest_explorer(units: &HashMap<i32, Unit>, explorer: &Unit) -> i32 {
-    units.iter().filter(|&(_, u)| {
+fn get_closest_explorer(units: &HashMap<i32, Unit>,
+                        explorer: &Unit) -> Option<i32> {
+    if let Some(e) = units.iter().filter(|&(_, u)| {
         u.is_explorer()
     }).map(|(&i, u)| {
         (i, manhattan_distance(explorer.get_coord(), u.get_coord()))
-    }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()).unwrap().0
+    }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()) {
+        Some(e.0)
+    } else {
+        None
+    }
 }
 
 fn get_closest_wanderer(units: &HashMap<i32, Unit>,
@@ -132,7 +137,14 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
         let dist = manhattan_distance(wanderer_c, explorer_c);
 
         if dist > 4 {
-            if let Some(e) = units.get(&get_closest_explorer(&units, &explorer)) {
+            let e_id = get_closest_explorer(&units, &explorer);
+
+            if e_id.is_none() {
+                println!("WAIT");
+                return;
+            }
+
+            if let Some(e) = units.get(&e_id.unwrap()) {
                 let coord = e.get_coord();
                 println!("MOVE {} {}", coord.0, coord.1);
                 return;
