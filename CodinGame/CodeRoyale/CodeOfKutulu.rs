@@ -127,7 +127,6 @@ fn get_relative_direction(a: (i32, i32), b: (i32, i32)) -> Direction {
 
 fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
                    explorer: Unit) {
-    // TODO: handle unwrap here
     let mut move_coord = explorer.get_coord();
 
     if let Some(i) = get_closest_wanderer(&units, &explorer) {
@@ -136,7 +135,7 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
 
         let dist = manhattan_distance(wanderer_c, explorer_c);
 
-        if dist > 4 {
+        if dist > 6 {
             let e_id = get_closest_explorer(&units, &explorer);
 
             if e_id.is_none() {

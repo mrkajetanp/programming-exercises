@@ -2,6 +2,10 @@
 
 ---
 
+#### 24.07.2018
+
+* [Rust] Code of Kutulu - Increased runaway distance (CodinGame)
+
 #### 23.07.2018
 
 * [Rust] Code of Kutulu - Fixed unwrap on closest explorer (CodinGame)
