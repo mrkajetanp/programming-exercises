@@ -152,18 +152,8 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
 
         let moves = get_possible_moves(map, explorer_c);
 
-        if wanderer_c.0 == explorer_c.0 {
-            if explorer_c.1 < wanderer_c.1 {
-                if moves.contains(&Direction::UP) {
-                    move_coord.1 -= MOVE_DIST;
-                } else if moves.contains(&Direction::RIGHT) {
-                    move_coord.0 += MOVE_DIST;
-                } else if moves.contains(&Direction::LEFT) {
-                    move_coord.0 -= MOVE_DIST;
-                } else {
-                    move_coord.1 += MOVE_DIST;
-                }
-            } else {
+        match get_relative_direction(explorer_c, wanderer_c) {
+            Direction::UP => {
                 if moves.contains(&Direction::DOWN) {
                     move_coord.1 += MOVE_DIST;
                 } else if moves.contains(&Direction::RIGHT) {
@@ -173,9 +163,19 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
                 } else {
                     move_coord.1 -= MOVE_DIST;
                 }
-            }
-        } else {
-            if explorer_c.0 < wanderer_c.0 {
+            },
+            Direction::DOWN => {
+                if moves.contains(&Direction::UP) {
+                    move_coord.1 -= MOVE_DIST;
+                } else if moves.contains(&Direction::RIGHT) {
+                    move_coord.0 += MOVE_DIST;
+                } else if moves.contains(&Direction::LEFT) {
+                    move_coord.0 -= MOVE_DIST;
+                } else {
+                    move_coord.1 += MOVE_DIST;
+                }
+            },
+            Direction::RIGHT => {
                 if moves.contains(&Direction::LEFT) {
                     move_coord.0 -= MOVE_DIST;
                 } else if moves.contains(&Direction::UP) {
@@ -185,7 +185,8 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
                 } else {
                     move_coord.0 += MOVE_DIST;
                 }
-            } else {
+            },
+            Direction::LEFT => {
                 if moves.contains(&Direction::RIGHT) {
                     move_coord.0 += MOVE_DIST;
                 } else if moves.contains(&Direction::UP) {
