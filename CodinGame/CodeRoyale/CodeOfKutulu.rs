@@ -18,21 +18,21 @@ struct Unit {
     u_type: UnitType,
     coord: (i32, i32),
     health: i32,
-    state: i32,
-    target: i32
+    plans: i32,
+    torches: i32
 }
 
-// TODO: possibly split Unit into Explorer and Wanderer at some point
+// TODO: split Unit into Explorer and Wanderer at some point
 
 impl Unit {
     fn new(u_type: UnitType, coord: (i32, i32),
-           health: i32, state: i32, target: i32) -> Unit {
+           health: i32, plans: i32, torches: i32) -> Unit {
         Unit {
             u_type,
             coord,
             health,
-            state,
-            target
+            plans,
+            torches
         }
     }
 
@@ -40,8 +40,16 @@ impl Unit {
         self.coord
     }
 
+    fn get_health(&self) -> i32 {
+        self.health
+    }
+
     fn is_explorer(&self) -> bool {
         self.u_type == UnitType::EXPLORER
+    }
+
+    fn get_plans(&self) -> i32 {
+        self.plans
     }
 }
 
@@ -127,7 +135,6 @@ fn get_relative_direction(a: (i32, i32), b: (i32, i32)) -> Direction {
 
 fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
                    explorer: Unit) {
-    // TODO: handle unwrap here
     let mut move_coord = explorer.get_coord();
 
     if let Some(i) = get_closest_wanderer(&units, &explorer) {
@@ -136,7 +143,7 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
 
         let dist = manhattan_distance(wanderer_c, explorer_c);
 
-        if dist > 4 {
+        if dist > 6 {
             let e_id = get_closest_explorer(&units, &explorer);
 
             if e_id.is_none() {
@@ -146,25 +153,22 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
 
             if let Some(e) = units.get(&e_id.unwrap()) {
                 let coord = e.get_coord();
-                println!("MOVE {} {}", coord.0, coord.1);
+
+                if explorer.get_health() < 150 && explorer.get_plans() == 2 &&
+                    manhattan_distance(explorer_c, coord) <= 2 {
+                        println!("PLAN");
+                    } else {
+                        println!("MOVE {} {}", coord.0, coord.1);
+                    }
+
                 return;
             }
         }
 
         let moves = get_possible_moves(map, explorer_c);
 
-        if wanderer_c.0 == explorer_c.0 {
-            if explorer_c.1 < wanderer_c.1 {
-                if moves.contains(&Direction::UP) {
-                    move_coord.1 -= MOVE_DIST;
-                } else if moves.contains(&Direction::RIGHT) {
-                    move_coord.0 += MOVE_DIST;
-                } else if moves.contains(&Direction::LEFT) {
-                    move_coord.0 -= MOVE_DIST;
-                } else {
-                    move_coord.1 += MOVE_DIST;
-                }
-            } else {
+        match get_relative_direction(explorer_c, wanderer_c) {
+            Direction::UP => {
                 if moves.contains(&Direction::DOWN) {
                     move_coord.1 += MOVE_DIST;
                 } else if moves.contains(&Direction::RIGHT) {
@@ -174,9 +178,19 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
                 } else {
                     move_coord.1 -= MOVE_DIST;
                 }
-            }
-        } else {
-            if explorer_c.0 < wanderer_c.0 {
+            },
+            Direction::DOWN => {
+                if moves.contains(&Direction::UP) {
+                    move_coord.1 -= MOVE_DIST;
+                } else if moves.contains(&Direction::RIGHT) {
+                    move_coord.0 += MOVE_DIST;
+                } else if moves.contains(&Direction::LEFT) {
+                    move_coord.0 -= MOVE_DIST;
+                } else {
+                    move_coord.1 += MOVE_DIST;
+                }
+            },
+            Direction::RIGHT => {
                 if moves.contains(&Direction::LEFT) {
                     move_coord.0 -= MOVE_DIST;
                 } else if moves.contains(&Direction::UP) {
@@ -186,7 +200,8 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
                 } else {
                     move_coord.0 += MOVE_DIST;
                 }
-            } else {
+            },
+            Direction::LEFT => {
                 if moves.contains(&Direction::RIGHT) {
                     move_coord.0 += MOVE_DIST;
                 } else if moves.contains(&Direction::UP) {
