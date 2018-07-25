@@ -154,8 +154,9 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
             if let Some(e) = units.get(&e_id.unwrap()) {
                 let coord = e.get_coord();
 
-                if explorer.get_health() < 150 && explorer.get_plans() == 2 &&
-                    manhattan_distance(explorer_c, coord) <= 2 {
+                if manhattan_distance(explorer_c, coord) <= 2 &&
+                    ((explorer.get_health() < 150 && explorer.get_plans() == 2) ||
+                     (explorer.get_health() < 50 && explorer.get_plans() == 1)) {
                         println!("PLAN");
                     } else {
                         println!("MOVE {} {}", coord.0, coord.1);
