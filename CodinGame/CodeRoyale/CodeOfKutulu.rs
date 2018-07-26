@@ -8,28 +8,28 @@ macro_rules! parse_input {
 const MOVE_DIST: i32 = 1;
 
 #[derive(Debug, Clone, PartialEq)]
-enum UnitType {
-    EXPLORER,
-    WANDERER,
-    EFFECT_PLAN,
-    EFFECT_LIGHT
+enum EntityType {
+    Explorer,
+    Wanderer,
+    EffectPlan,
+    EffectLight
 }
 
 #[derive(Debug, Clone)]
-struct Unit {
-    u_type: UnitType,
+struct Entity {
+    u_type: EntityType,
     coord: (i32, i32),
     health: i32,
     plans: i32,
     torches: i32
 }
 
-// TODO: split Unit into Explorer and Wanderer at some point
+// TODO: split Entity into Explorer and Wanderer at some point
 
-impl Unit {
-    fn new(u_type: UnitType, coord: (i32, i32),
-           health: i32, plans: i32, torches: i32) -> Unit {
-        Unit {
+impl Entity {
+    fn new(u_type: EntityType, coord: (i32, i32),
+           health: i32, plans: i32, torches: i32) -> Entity {
+        Entity {
             u_type,
             coord,
             health,
@@ -47,7 +47,7 @@ impl Unit {
     }
 
     fn is_explorer(&self) -> bool {
-        self.u_type == UnitType::EXPLORER
+        self.u_type == EntityType::Explorer
     }
 
     fn get_plans(&self) -> i32 {
@@ -59,8 +59,8 @@ fn manhattan_distance(a: (i32, i32), b: (i32, i32)) -> i32 {
     (b.0 - a.0).abs() + (b.1 - a.1).abs()
 }
 
-fn get_closest_explorer(units: &HashMap<i32, Unit>,
-                        explorer: &Unit) -> Option<i32> {
+fn get_closest_explorer(units: &HashMap<i32, Entity>,
+                        explorer: &Entity) -> Option<i32> {
     if let Some(e) = units.iter().filter(|&(_, u)| {
         u.is_explorer()
     }).map(|(&i, u)| {
@@ -72,8 +72,8 @@ fn get_closest_explorer(units: &HashMap<i32, Unit>,
     }
 }
 
-fn get_closest_wanderer(units: &HashMap<i32, Unit>,
-                        explorer: &Unit) -> Option<i32> {
+fn get_closest_wanderer(units: &HashMap<i32, Entity>,
+                        explorer: &Entity) -> Option<i32> {
     if let Some(w) = units.iter().filter(|&(_, u)| {
         !u.is_explorer()
     }).map(|(&i, u)| {
@@ -135,8 +135,8 @@ fn get_relative_direction(a: (i32, i32), b: (i32, i32)) -> Direction {
     }
 }
 
-fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
-                   explorer: Unit) {
+fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Entity>,
+                   explorer: Entity) {
     let mut move_coord = explorer.get_coord();
 
     if let Some(i) = get_closest_wanderer(&units, &explorer) {
@@ -155,6 +155,10 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Unit>,
 
             if let Some(e) = units.get(&e_id.unwrap()) {
                 let coord = e.get_coord();
+
+                eprintln!("dist: {}", manhattan_distance(explorer_c, coord));
+                eprintln!("health: {}", explorer.get_health());
+                eprintln!("plan: {}", explorer.get_plans());
 
                 if manhattan_distance(explorer_c, coord) <= 2 &&
                     ((explorer.get_health() < 150 && explorer.get_plans() == 2) ||
@@ -274,8 +278,8 @@ fn main() {
         // the first given entity corresponds to your explorer
         let entity_count = parse_input!(input_line, i32);
 
-        // let mut units: Vec<Unit> = Vec::with_capacity(entity_count as usize);
-        let mut units: HashMap<i32, Unit> = HashMap::new();
+        // let mut units: Vec<Entity> = Vec::with_capacity(entity_count as usize);
+        let mut units: HashMap<i32, Entity> = HashMap::new();
 
         let mut player_id = -1;
 
@@ -292,10 +296,10 @@ fn main() {
             let param_2 = parse_input!(inputs[6], i32);
 
             let u_type = match entity_type.as_ref() {
-                "EXPLORER" => UnitType::EXPLORER,
-                "WANDERER" => UnitType::WANDERER,
-                "EFFECT_PLAN" => UnitType::EFFECT_PLAN,
-                "EFFECT_LIGHT" => UnitType::EFFECT_LIGHT,
+                "EXPLORER" => EntityType::Explorer,
+                "WANDERER" => EntityType::Wanderer,
+                "EFFECT_PLAN" => EntityType::EffectPlan,
+                "EFFECT_LIGHT" => EntityType::EffectLight,
                 _ => panic!("Incorrect unit type"),
             };
 
@@ -304,7 +308,7 @@ fn main() {
             }
 
             units.insert(id,
-                         Unit::new(u_type, (x, y), param_0, param_1, param_2));
+                         Entity::new(u_type, (x, y), param_0, param_1, param_2));
         }
 
 
