@@ -2,6 +2,10 @@
 
 ---
 
+#### 26.07.2018
+
+* [Rust] Code of Kutulu - New entity types (CodinGame)
+
 #### 25.07.2018
 
 * [Rust] Code of Kutulu - Full plan execution (CodinGame)

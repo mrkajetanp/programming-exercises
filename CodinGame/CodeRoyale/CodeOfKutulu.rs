@@ -10,7 +10,9 @@ const MOVE_DIST: i32 = 1;
 #[derive(Debug, Clone, PartialEq)]
 enum UnitType {
     EXPLORER,
-    WANDERER
+    WANDERER,
+    EFFECT_PLAN,
+    EFFECT_LIGHT
 }
 
 #[derive(Debug, Clone)]
@@ -292,6 +294,8 @@ fn main() {
             let u_type = match entity_type.as_ref() {
                 "EXPLORER" => UnitType::EXPLORER,
                 "WANDERER" => UnitType::WANDERER,
+                "EFFECT_PLAN" => UnitType::EFFECT_PLAN,
+                "EFFECT_LIGHT" => UnitType::EFFECT_LIGHT,
                 _ => panic!("Incorrect unit type"),
             };
 
