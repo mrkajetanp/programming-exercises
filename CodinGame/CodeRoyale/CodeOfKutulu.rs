@@ -53,6 +53,10 @@ impl Entity {
     fn get_plans(&self) -> i32 {
         self.plans
     }
+
+    fn get_torches(&self) -> i32 {
+        self.torches
+    }
 }
 
 fn manhattan_distance(a: (i32, i32), b: (i32, i32)) -> i32 {
@@ -160,15 +164,25 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Entity>,
                 eprintln!("health: {}", explorer.get_health());
                 eprintln!("plan: {}", explorer.get_plans());
 
-                if manhattan_distance(explorer_c, coord) <= 2 &&
-                    ((explorer.get_health() < 150 && explorer.get_plans() == 2) ||
-                     (explorer.get_health() < 50 && explorer.get_plans() == 1)) {
-                        println!("PLAN");
-                    } else {
-                        println!("MOVE {} {}", coord.0, coord.1);
-                    }
-
-                return;
+                if manhattan_distance(explorer_c, coord) <= 2 {
+                    if (explorer.get_health() < 150 &&
+                        explorer.get_plans() == 2) ||
+                        (explorer.get_health() < 50 &&
+                         explorer.get_plans() == 1) {
+                            println!("PLAN");
+                            return;
+                        }
+                    if (explorer.get_health() < 200 &&
+                        explorer.get_torches() == 3) ||
+                        (explorer.get_health() < 100 &&
+                         explorer.get_torches() == 2) {
+                            println!("LIGHT");
+                            return;
+                        }
+                } else {
+                    println!("MOVE {} {}", coord.0, coord.1);
+                    return;
+                }
             }
         }
 
