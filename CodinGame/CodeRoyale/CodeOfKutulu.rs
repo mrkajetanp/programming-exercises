@@ -175,7 +175,9 @@ fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Entity>,
                     if (explorer.get_health() < 200 &&
                         explorer.get_torches() == 3) ||
                         (explorer.get_health() < 100 &&
-                         explorer.get_torches() == 2) {
+                         explorer.get_torches() == 2) ||
+                        (explorer.get_health() < 40 &&
+                         explorer.get_torches() == 1) {
                             println!("LIGHT");
                             return;
                         }

@@ -4,6 +4,7 @@
 
 #### 27.07.2018
 
+* [Rust] Code of Kutulu - Full light usage (CodinGame)
 * [Rust] Code of Kutulu - Simple light usage (CodinGame)
 
 #### 26.07.2018
