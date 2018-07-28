@@ -59,6 +59,66 @@ impl Entity {
     }
 }
 
+#[derive(Debug, Clone)]
+struct Explorer {
+    coord: (i32, i32),
+    health: i32,
+    plans: i32,
+    torches: i32
+}
+
+
+impl Explorer {
+    fn new(coord: (i32, i32), health: i32, plans: i32, torches: i32) -> Explorer {
+        Explorer {
+            coord,
+            health,
+            plans,
+            torches
+        }
+    }
+
+    fn get_coord(&self) -> (i32, i32) {
+        self.coord
+    }
+
+    fn get_health(&self) -> i32 {
+        self.health
+    }
+
+    fn get_plans(&self) -> i32 {
+        self.plans
+    }
+
+    fn get_torches(&self) -> i32 {
+        self.torches
+    }
+}
+
+#[derive(Debug, Clone)]
+struct Wanderer {
+    coord: (i32, i32),
+    time: i32,
+    state: i32,
+    target: i32
+}
+
+impl Wanderer {
+    fn new(coord: (i32, i32), time: i32, state: i32, target: i32) -> Wanderer {
+        Wanderer {
+            coord,
+            time,
+            // TODO: state should be an enum
+            state,
+            target
+        }
+    }
+
+    fn get_coord(&self) -> (i32, i32) {
+        self.coord
+    }
+}
+
 fn manhattan_distance(a: (i32, i32), b: (i32, i32)) -> i32 {
     (b.0 - a.0).abs() + (b.1 - a.1).abs()
 }
@@ -311,6 +371,10 @@ fn main() {
             let param_1 = parse_input!(inputs[5], i32);
             let param_2 = parse_input!(inputs[6], i32);
 
+            if i == 0 {
+                player_id = id;
+            }
+
             let u_type = match entity_type.as_ref() {
                 "EXPLORER" => EntityType::Explorer,
                 "WANDERER" => EntityType::Wanderer,
@@ -318,10 +382,6 @@ fn main() {
                 "EFFECT_LIGHT" => EntityType::EffectLight,
                 _ => panic!("Incorrect unit type"),
             };
-
-            if i == 0 {
-                player_id = id;
-            }
 
             units.insert(id,
                          Entity::new(u_type, (x, y), param_0, param_1, param_2));
