@@ -4,6 +4,7 @@
 
 #### 28.07.2018
 
+* [Rust] Code of Kutulu - Separate entity containers (CodinGame)
 * [Rust] Code of Kutulu - Structs Explorer and Wanderer (CodinGame)
 
 #### 27.07.2018

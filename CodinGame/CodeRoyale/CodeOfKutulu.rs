@@ -119,6 +119,34 @@ impl Wanderer {
     }
 }
 
+#[derive(Debug, Clone)]
+enum EffectType {
+    PLAN,
+    LIGHT
+}
+
+#[derive(Debug, Clone)]
+struct Effect {
+    // TODO: should be an enum
+    effect_type: EffectType,
+    origin: (i32, i32),
+    time: i32,
+    caster: i32,
+}
+
+
+impl Effect {
+    fn new(e_type: EffectType, origin: (i32, i32),
+           time: i32, caster: i32) -> Effect {
+        Effect {
+            effect_type: e_type,
+            origin,
+            time,
+            caster
+        }
+    }
+}
+
 fn manhattan_distance(a: (i32, i32), b: (i32, i32)) -> i32 {
     (b.0 - a.0).abs() + (b.1 - a.1).abs()
 }
@@ -355,7 +383,9 @@ fn main() {
         let entity_count = parse_input!(input_line, i32);
 
         // let mut units: Vec<Entity> = Vec::with_capacity(entity_count as usize);
-        let mut units: HashMap<i32, Entity> = HashMap::new();
+        let mut explorers: HashMap<i32, Explorer> = HashMap::new();
+        let mut wanderers: HashMap<i32, Wanderer> = HashMap::new();
+        let mut effects: Vec<Effect> = vec![];
 
         let mut player_id = -1;
 
@@ -375,21 +405,37 @@ fn main() {
                 player_id = id;
             }
 
-            let u_type = match entity_type.as_ref() {
-                "EXPLORER" => EntityType::Explorer,
-                "WANDERER" => EntityType::Wanderer,
-                "EFFECT_PLAN" => EntityType::EffectPlan,
-                "EFFECT_LIGHT" => EntityType::EffectLight,
+            match entity_type.as_ref() {
+                "EXPLORER" => {
+                    explorers.insert(
+                        id, Explorer::new((x, y), param_0, param_1, param_2)
+                    );
+                },
+                "WANDERER" => {
+                    wanderers.insert(
+                        id, Wanderer::new((x, y), param_0, param_1, param_2)
+                    );
+
+                },
+                "EFFECT_PLAN" => {
+                    effects.push(
+                        Effect::new(EffectType::PLAN, (x, y), param_0, param_1)
+                    );
+
+                },
+                "EFFECT_LIGHT" => {
+                    effects.push(
+                        Effect::new(EffectType::LIGHT, (x, y), param_0, param_1)
+                    );
+
+                },
                 _ => panic!("Incorrect unit type"),
             };
-
-            units.insert(id,
-                         Entity::new(u_type, (x, y), param_0, param_1, param_2));
         }
 
 
-        let player = units.get(&player_id).unwrap().clone();
-        units.remove(&player_id);
+        let player = explorers.get(&player_id).unwrap().clone();
+        explorers.remove(&player_id);
 
         eprintln!("Player: {:?}", player);
 
