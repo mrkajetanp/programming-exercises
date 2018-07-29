@@ -7,57 +7,32 @@ macro_rules! parse_input {
 
 const MOVE_DIST: i32 = 1;
 
-#[derive(Debug, Clone, PartialEq)]
-enum EntityType {
-    Explorer,
-    Wanderer,
-    EffectPlan,
-    EffectLight
+#[derive(Debug)]
+struct Game {
+    map: Vec<Vec<char>>,
+    explorers: HashMap<i32, Explorer>,
+    wanderers: HashMap<i32, Wanderer>,
+    effects: Vec<Effect>,
 }
 
-#[derive(Debug, Clone)]
-struct Entity {
-    u_type: EntityType,
-    coord: (i32, i32),
-    health: i32,
-    plans: i32,
-    torches: i32
-}
-
-// TODO: split Entity into Explorer and Wanderer at some point
-
-impl Entity {
-    fn new(u_type: EntityType, coord: (i32, i32),
-           health: i32, plans: i32, torches: i32) -> Entity {
-        Entity {
-            u_type,
-            coord,
-            health,
-            plans,
-            torches
+impl Game {
+    fn new(map: Vec<Vec<char>>) -> Game {
+        Game {
+            map,
+            explorers: HashMap::new(),
+            wanderers: HashMap::new(),
+            effects: vec![],
         }
     }
 
-    fn get_coord(&self) -> (i32, i32) {
-        self.coord
-    }
-
-    fn get_health(&self) -> i32 {
-        self.health
-    }
-
-    fn is_explorer(&self) -> bool {
-        self.u_type == EntityType::Explorer
-    }
-
-    fn get_plans(&self) -> i32 {
-        self.plans
-    }
-
-    fn get_torches(&self) -> i32 {
-        self.torches
+    fn update_entities(&mut self, explorers: HashMap<i32, Explorer>,
+                       wanderers: HashMap<i32, Wanderer>, effects: Vec<Effect>) {
+        self.explorers = explorers;
+        self.wanderers = wanderers;
+        self.effects = effects;
     }
 }
+
 
 #[derive(Debug, Clone)]
 struct Explorer {

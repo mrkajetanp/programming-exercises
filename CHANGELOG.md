@@ -2,6 +2,10 @@
 
 ---
 
+#### 29.07.2018
+
+* [Rust] Code of Kutulu - Basic game struct (CodinGame)
+
 #### 28.07.2018
 
 * [Rust] Code of Kutulu - Separate entity containers (CodinGame)
