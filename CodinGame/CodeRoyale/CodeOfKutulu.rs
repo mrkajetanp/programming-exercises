@@ -126,12 +126,10 @@ fn manhattan_distance(a: (i32, i32), b: (i32, i32)) -> i32 {
     (b.0 - a.0).abs() + (b.1 - a.1).abs()
 }
 
-fn get_closest_explorer(units: &HashMap<i32, Entity>,
-                        explorer: &Entity) -> Option<i32> {
-    if let Some(e) = units.iter().filter(|&(_, u)| {
-        u.is_explorer()
-    }).map(|(&i, u)| {
-        (i, manhattan_distance(explorer.get_coord(), u.get_coord()))
+fn get_closest_explorer(explorers: &HashMap<i32, Explorer>,
+                        player: &Explorer) -> Option<i32> {
+    if let Some(e) = explorers.iter().map(|(&i, u)| {
+        (i, manhattan_distance(player.get_coord(), u.get_coord()))
     }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()) {
         Some(e.0)
     } else {
@@ -139,12 +137,10 @@ fn get_closest_explorer(units: &HashMap<i32, Entity>,
     }
 }
 
-fn get_closest_wanderer(units: &HashMap<i32, Entity>,
-                        explorer: &Entity) -> Option<i32> {
-    if let Some(w) = units.iter().filter(|&(_, u)| {
-        !u.is_explorer()
-    }).map(|(&i, u)| {
-        (i, manhattan_distance(explorer.get_coord(), u.get_coord()))
+fn get_closest_wanderer(wanderers: &HashMap<i32, Wanderer>,
+                        player: &Explorer) -> Option<i32> {
+    if let Some(w) = wanderers.iter().map(|(&i, u)| {
+        (i, manhattan_distance(player.get_coord(), u.get_coord()))
     }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()) {
         Some(w.0)
     } else {
