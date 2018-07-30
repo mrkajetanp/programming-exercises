@@ -31,6 +31,110 @@ impl Game {
         self.wanderers = wanderers;
         self.effects = effects;
     }
+
+    fn handle_explorer(&mut self, player_id: i32) {
+        let player = self.explorers.get(&player_id).unwrap().clone();
+        self.explorers.remove(&player_id);
+
+        let mut move_coord = player.get_coord();
+
+        if let Some(i) = get_closest_wanderer(&self.wanderers, &player) {
+            let wanderer_c = self.wanderers.get(&i).unwrap().get_coord();
+            let player_c = player.get_coord();
+
+            let dist = manhattan_distance(wanderer_c, player_c);
+
+            if dist > 6 {
+                let e_id = get_closest_explorer(&self.explorers, &player);
+
+                if e_id.is_none() {
+                    println!("WAIT");
+                    return;
+                }
+
+                if let Some(e) = self.explorers.get(&e_id.unwrap()) {
+                    let coord = e.get_coord();
+
+                    eprintln!("dist: {}", manhattan_distance(player_c, coord));
+                    eprintln!("health: {}", player.get_health());
+                    eprintln!("plan: {}", player.get_plans());
+
+                    if manhattan_distance(player_c, coord) <= 2 {
+                        if (player.get_health() < 150 &&
+                            player.get_plans() == 2) ||
+                            (player.get_health() < 50 &&
+                             player.get_plans() == 1) {
+                                println!("PLAN");
+                                return;
+                            }
+                        if (player.get_health() < 200 &&
+                            player.get_torches() == 3) ||
+                            (player.get_health() < 100 &&
+                             player.get_torches() == 2) ||
+                            (player.get_health() < 40 &&
+                             player.get_torches() == 1) {
+                                println!("LIGHT");
+                                return;
+                            }
+                    } else {
+                        println!("MOVE {} {}", coord.0, coord.1);
+                        return;
+                    }
+                }
+            }
+
+            let moves = get_possible_moves(&self.map, player_c);
+
+            match get_relative_direction(player_c, wanderer_c) {
+                Direction::UP => {
+                    if moves.contains(&Direction::DOWN) {
+                        move_coord.1 += MOVE_DIST;
+                    } else if moves.contains(&Direction::RIGHT) {
+                        move_coord.0 += MOVE_DIST;
+                    } else if moves.contains(&Direction::LEFT) {
+                        move_coord.0 -= MOVE_DIST;
+                    } else {
+                        move_coord.1 -= MOVE_DIST;
+                    }
+                },
+                Direction::DOWN => {
+                    if moves.contains(&Direction::UP) {
+                        move_coord.1 -= MOVE_DIST;
+                    } else if moves.contains(&Direction::RIGHT) {
+                        move_coord.0 += MOVE_DIST;
+                    } else if moves.contains(&Direction::LEFT) {
+                        move_coord.0 -= MOVE_DIST;
+                    } else {
+                        move_coord.1 += MOVE_DIST;
+                    }
+                },
+                Direction::RIGHT => {
+                    if moves.contains(&Direction::LEFT) {
+                        move_coord.0 -= MOVE_DIST;
+                    } else if moves.contains(&Direction::UP) {
+                        move_coord.1 -= MOVE_DIST;
+                    } else if moves.contains(&Direction::DOWN) {
+                        move_coord.1 += MOVE_DIST;
+                    } else {
+                        move_coord.0 += MOVE_DIST;
+                    }
+                },
+                Direction::LEFT => {
+                    if moves.contains(&Direction::RIGHT) {
+                        move_coord.0 += MOVE_DIST;
+                    } else if moves.contains(&Direction::UP) {
+                        move_coord.1 -= MOVE_DIST;
+                    } else if moves.contains(&Direction::DOWN) {
+                        move_coord.1 += MOVE_DIST;
+                    } else {
+                        move_coord.0 -= MOVE_DIST;
+                    }
+                }
+            }
+        }
+
+        println!("MOVE {} {}", move_coord.0, move_coord.1);
+    }
 }
 
 
@@ -198,108 +302,6 @@ fn get_relative_direction(a: (i32, i32), b: (i32, i32)) -> Direction {
     }
 }
 
-fn handle_explorer(map: &Vec<Vec<char>>, units: &HashMap<i32, Entity>,
-                   explorer: Entity) {
-    let mut move_coord = explorer.get_coord();
-
-    if let Some(i) = get_closest_wanderer(&units, &explorer) {
-        let wanderer_c = units.get(&i).unwrap().get_coord();
-        let explorer_c = explorer.get_coord();
-
-        let dist = manhattan_distance(wanderer_c, explorer_c);
-
-        if dist > 6 {
-            let e_id = get_closest_explorer(&units, &explorer);
-
-            if e_id.is_none() {
-                println!("WAIT");
-                return;
-            }
-
-            if let Some(e) = units.get(&e_id.unwrap()) {
-                let coord = e.get_coord();
-
-                eprintln!("dist: {}", manhattan_distance(explorer_c, coord));
-                eprintln!("health: {}", explorer.get_health());
-                eprintln!("plan: {}", explorer.get_plans());
-
-                if manhattan_distance(explorer_c, coord) <= 2 {
-                    if (explorer.get_health() < 150 &&
-                        explorer.get_plans() == 2) ||
-                        (explorer.get_health() < 50 &&
-                         explorer.get_plans() == 1) {
-                            println!("PLAN");
-                            return;
-                        }
-                    if (explorer.get_health() < 200 &&
-                        explorer.get_torches() == 3) ||
-                        (explorer.get_health() < 100 &&
-                         explorer.get_torches() == 2) ||
-                        (explorer.get_health() < 40 &&
-                         explorer.get_torches() == 1) {
-                            println!("LIGHT");
-                            return;
-                        }
-                } else {
-                    println!("MOVE {} {}", coord.0, coord.1);
-                    return;
-                }
-            }
-        }
-
-        let moves = get_possible_moves(map, explorer_c);
-
-        match get_relative_direction(explorer_c, wanderer_c) {
-            Direction::UP => {
-                if moves.contains(&Direction::DOWN) {
-                    move_coord.1 += MOVE_DIST;
-                } else if moves.contains(&Direction::RIGHT) {
-                    move_coord.0 += MOVE_DIST;
-                } else if moves.contains(&Direction::LEFT) {
-                    move_coord.0 -= MOVE_DIST;
-                } else {
-                    move_coord.1 -= MOVE_DIST;
-                }
-            },
-            Direction::DOWN => {
-                if moves.contains(&Direction::UP) {
-                    move_coord.1 -= MOVE_DIST;
-                } else if moves.contains(&Direction::RIGHT) {
-                    move_coord.0 += MOVE_DIST;
-                } else if moves.contains(&Direction::LEFT) {
-                    move_coord.0 -= MOVE_DIST;
-                } else {
-                    move_coord.1 += MOVE_DIST;
-                }
-            },
-            Direction::RIGHT => {
-                if moves.contains(&Direction::LEFT) {
-                    move_coord.0 -= MOVE_DIST;
-                } else if moves.contains(&Direction::UP) {
-                    move_coord.1 -= MOVE_DIST;
-                } else if moves.contains(&Direction::DOWN) {
-                    move_coord.1 += MOVE_DIST;
-                } else {
-                    move_coord.0 += MOVE_DIST;
-                }
-            },
-            Direction::LEFT => {
-                if moves.contains(&Direction::RIGHT) {
-                    move_coord.0 += MOVE_DIST;
-                } else if moves.contains(&Direction::UP) {
-                    move_coord.1 -= MOVE_DIST;
-                } else if moves.contains(&Direction::DOWN) {
-                    move_coord.1 += MOVE_DIST;
-                } else {
-                    move_coord.0 -= MOVE_DIST;
-                }
-            }
-        }
-    }
-
-    println!("MOVE {} {}", move_coord.0, move_coord.1);
-}
-
 /**
  * Survive the wrath of Kutulu
  * Coded fearlessly by JohnnyYuge & nmahoude
@@ -404,16 +406,6 @@ fn main() {
             };
         }
 
-
-        let player = explorers.get(&player_id).unwrap().clone();
-        explorers.remove(&player_id);
-
-        eprintln!("Player: {:?}", player);
-
-        // for (i, u) in &units {
-        //     eprintln!("{} -> {:?}", i, u);
-        // }
-
-        handle_explorer(&map, &units, player);
+        // game.handle_explorer(player_id);
     }
 }
