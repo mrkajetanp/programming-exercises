@@ -4,6 +4,7 @@
 
 #### 30.07.2018
 
+* [Rust] Code of Kutulu - Game struct in use (CodinGame)
 * [Rust] Code of Kutulu - Adapted handle explorer (CodinGame)
 
 #### 29.07.2018

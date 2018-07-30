@@ -329,6 +329,8 @@ fn main() {
         map.push(line.chars().collect::<Vec<char>>());
     }
 
+    let mut game: Game = Game::new(map);
+
     let mut input_line = String::new();
     io::stdin().read_line(&mut input_line).unwrap();
     let inputs = input_line.split(" ").collect::<Vec<_>>();
@@ -349,13 +351,12 @@ fn main() {
 
     // game loop
     loop {
-
         let mut input_line = String::new();
         io::stdin().read_line(&mut input_line).unwrap();
         // the first given entity corresponds to your explorer
         let entity_count = parse_input!(input_line, i32);
 
-        // let mut units: Vec<Entity> = Vec::with_capacity(entity_count as usize);
+
         let mut explorers: HashMap<i32, Explorer> = HashMap::new();
         let mut wanderers: HashMap<i32, Wanderer> = HashMap::new();
         let mut effects: Vec<Effect> = vec![];
@@ -406,6 +407,8 @@ fn main() {
             };
         }
 
-        // game.handle_explorer(player_id);
+        game.update_entities(explorers, wanderers, effects);
+
+        game.handle_explorer(player_id);
     }
 }
