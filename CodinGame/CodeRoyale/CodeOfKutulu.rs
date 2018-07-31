@@ -7,6 +7,7 @@ macro_rules! parse_input {
 
 const MOVE_DIST: i32 = 1;
 
+// TODO: maybe also player
 #[derive(Debug)]
 struct Game {
     map: Vec<Vec<char>>,
@@ -32,6 +33,16 @@ impl Game {
         self.effects = effects;
     }
 
+    fn get_closest_explorer(&self, player: &Explorer) -> Option<i32> {
+        if let Some(e) = self.explorers.iter().map(|(&i, u)| {
+            (i, manhattan_distance(player.get_coord(), u.get_coord()))
+        }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()) {
+            Some(e.0)
+        } else {
+            None
+        }
+    }
+
     fn handle_explorer(&mut self, player_id: i32) {
         let player = self.explorers.get(&player_id).unwrap().clone();
         self.explorers.remove(&player_id);
@@ -45,7 +56,7 @@ impl Game {
             let dist = manhattan_distance(wanderer_c, player_c);
 
             if dist > 6 {
-                let e_id = get_closest_explorer(&self.explorers, &player);
+                let e_id = self.get_closest_explorer(&player);
 
                 if e_id.is_none() {
                     println!("WAIT");
@@ -228,17 +239,6 @@ impl Effect {
 
 fn manhattan_distance(a: (i32, i32), b: (i32, i32)) -> i32 {
     (b.0 - a.0).abs() + (b.1 - a.1).abs()
-}
-
-fn get_closest_explorer(explorers: &HashMap<i32, Explorer>,
-                        player: &Explorer) -> Option<i32> {
-    if let Some(e) = explorers.iter().map(|(&i, u)| {
-        (i, manhattan_distance(player.get_coord(), u.get_coord()))
-    }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()) {
-        Some(e.0)
-    } else {
-        None
-    }
 }
 
 fn get_closest_wanderer(wanderers: &HashMap<i32, Wanderer>,

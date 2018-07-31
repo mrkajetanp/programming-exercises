@@ -2,6 +2,10 @@
 
 ---
 
+#### 31.07.2018
+
+* [Rust] Code of Kutulu - Get closest explorer in struct (CodinGame)
+
 #### 30.07.2018
 
 * [Rust] Code of Kutulu - Game struct in use (CodinGame)
