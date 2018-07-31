@@ -4,6 +4,7 @@
 
 #### 31.07.2018
 
+* [Rust] Code of Kutulu - Get closest wanderer in struct (CodinGame)
 * [Rust] Code of Kutulu - Get closest explorer in struct (CodinGame)
 
 #### 30.07.2018
