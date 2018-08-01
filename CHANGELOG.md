@@ -4,6 +4,7 @@
 
 #### 1.08.2018
 
+* [Rust] Code of Kutulu - Making sure player is set (CodinGame)
 * [Rust] Code of Kutulu - Player field in struct (CodinGame)
 
 #### 31.07.2018

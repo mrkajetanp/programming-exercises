@@ -56,7 +56,10 @@ impl Game {
     }
 
     fn handle_explorer(&mut self) {
-        // handle unwrap
+        if self.player.is_none() {
+            panic!("Game's player field has not been set!");
+        }
+
         let player = self.player.clone().unwrap();
         let mut move_coord = player.get_coord();
 
@@ -361,7 +364,6 @@ fn main() {
         // the first given entity corresponds to your explorer
         let entity_count = parse_input!(input_line, i32);
 
-
         let mut explorers: HashMap<i32, Explorer> = HashMap::new();
         let mut wanderers: HashMap<i32, Wanderer> = HashMap::new();
         let mut effects: Vec<Effect> = vec![];
@@ -383,7 +385,6 @@ fn main() {
             if i == 0 {
                 game.set_player(Explorer::new((x, y), param_0, param_1, param_2));
                 return;
-                // player_id = id;
             }
 
             match entity_type.as_ref() {
@@ -413,7 +414,6 @@ fn main() {
                 _ => panic!("Incorrect unit type"),
             };
         }
-
         game.update_entities(explorers, wanderers, effects);
 
         game.handle_explorer();
