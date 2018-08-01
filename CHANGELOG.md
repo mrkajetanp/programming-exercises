@@ -2,6 +2,10 @@
 
 ---
 
+#### 1.08.2018
+
+* [Rust] Code of Kutulu - Player field in struct (CodinGame)
+
 #### 31.07.2018
 
 * [Rust] Code of Kutulu - Get closest wanderer in struct (CodinGame)

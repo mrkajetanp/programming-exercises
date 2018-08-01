@@ -14,6 +14,7 @@ struct Game {
     explorers: HashMap<i32, Explorer>,
     wanderers: HashMap<i32, Wanderer>,
     effects: Vec<Effect>,
+    player: Option<Explorer>,
 }
 
 impl Game {
@@ -23,6 +24,7 @@ impl Game {
             explorers: HashMap::new(),
             wanderers: HashMap::new(),
             effects: vec![],
+            player: None,
         }
     }
 
@@ -53,10 +55,9 @@ impl Game {
         }
     }
 
-    fn handle_explorer(&mut self, player_id: i32) {
-        let player = self.explorers.get(&player_id).unwrap().clone();
-        self.explorers.remove(&player_id);
-
+    fn handle_explorer(&mut self) {
+        // handle unwrap
+        let player = self.player.clone().unwrap();
         let mut move_coord = player.get_coord();
 
         if let Some(i) = self.get_closest_wanderer(&player) {
@@ -155,6 +156,10 @@ impl Game {
         }
 
         println!("MOVE {} {}", move_coord.0, move_coord.1);
+    }
+
+    fn set_player(&mut self, player: Explorer) {
+        self.player = Some(player);
     }
 }
 
@@ -361,7 +366,7 @@ fn main() {
         let mut wanderers: HashMap<i32, Wanderer> = HashMap::new();
         let mut effects: Vec<Effect> = vec![];
 
-        let mut player_id = -1;
+        // let mut player_id = -1;
 
         for i in 0..entity_count as usize {
             let mut input_line = String::new();
@@ -376,7 +381,9 @@ fn main() {
             let param_2 = parse_input!(inputs[6], i32);
 
             if i == 0 {
-                player_id = id;
+                game.set_player(Explorer::new((x, y), param_0, param_1, param_2));
+                return;
+                // player_id = id;
             }
 
             match entity_type.as_ref() {
@@ -409,6 +416,6 @@ fn main() {
 
         game.update_entities(explorers, wanderers, effects);
 
-        game.handle_explorer(player_id);
+        game.handle_explorer();
     }
 }
