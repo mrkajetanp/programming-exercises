@@ -54,6 +54,32 @@ impl Game {
         }
     }
 
+    // TODO: maybe just use player?
+    fn get_possible_moves(&self, explorer: &Explorer) -> Vec<Direction> {
+        let mut result = vec![];
+
+        let coord = explorer.get_coord();
+        let coord = (coord.0 as usize, coord.1 as usize);
+
+        if self.map[coord.1][coord.0 - 1] == '.' {
+            result.push(Direction::LEFT);
+        }
+
+        if self.map[coord.1][coord.0 + 1] == '.' {
+            result.push(Direction::RIGHT);
+        }
+
+        if self.map[coord.1 + 1][coord.0] == '.' {
+            result.push(Direction::UP);
+        }
+
+        if self.map[coord.1 - 1][coord.0] == '.' {
+            result.push(Direction::DOWN);
+        }
+
+        result
+    }
+
     fn handle_explorer(&mut self) {
         if self.player.is_none() {
             panic!("Game's player field has not been set!");
@@ -107,7 +133,7 @@ impl Game {
                 }
             }
 
-            let moves = get_possible_moves(&self.map, &player);
+            let moves = self.get_possible_moves(&player);
 
             match get_relative_direction(player_c, wanderer_c) {
                 Direction::UP => {
@@ -264,33 +290,6 @@ enum Direction {
     RIGHT,
     UP,
     DOWN
-}
-
-// Should take an Explorer
-fn get_possible_moves(map: &Vec<Vec<char>>, explorer: &Explorer)
-                      -> Vec<Direction> {
-    let mut result = vec![];
-
-    let coord = explorer.get_coord();
-    let coord = (coord.0 as usize, coord.1 as usize);
-
-    if map[coord.1][coord.0 - 1] == '.' {
-        result.push(Direction::LEFT);
-    }
-
-    if map[coord.1][coord.0 + 1] == '.' {
-        result.push(Direction::RIGHT);
-    }
-
-    if map[coord.1 + 1][coord.0] == '.' {
-        result.push(Direction::UP);
-    }
-
-    if map[coord.1 - 1][coord.0] == '.' {
-        result.push(Direction::DOWN);
-    }
-
-    result
 }
 
 // Direction of b in regards to a

@@ -4,6 +4,7 @@
 
 #### 2.08.2018
 
+* [Rust] Code of Kutulu - Get possible moves in struct (CodinGame)
 * [Rust] Code of Kutulu - Get possible moves taking an Explorer (CodinGame)
 
 #### 1.08.2018
