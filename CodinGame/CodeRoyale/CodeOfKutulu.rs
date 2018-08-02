@@ -7,7 +7,6 @@ macro_rules! parse_input {
 
 const MOVE_DIST: i32 = 1;
 
-// TODO: maybe also player
 #[derive(Debug)]
 struct Game {
     map: Vec<Vec<char>>,
@@ -108,7 +107,7 @@ impl Game {
                 }
             }
 
-            let moves = get_possible_moves(&self.map, player_c);
+            let moves = get_possible_moves(&self.map, &player);
 
             match get_relative_direction(player_c, wanderer_c) {
                 Direction::UP => {
@@ -268,10 +267,11 @@ enum Direction {
 }
 
 // Should take an Explorer
-fn get_possible_moves(map: &Vec<Vec<char>>, coord: (i32, i32))
+fn get_possible_moves(map: &Vec<Vec<char>>, explorer: &Explorer)
                       -> Vec<Direction> {
     let mut result = vec![];
 
+    let coord = explorer.get_coord();
     let coord = (coord.0 as usize, coord.1 as usize);
 
     if map[coord.1][coord.0 - 1] == '.' {
