@@ -13,7 +13,7 @@ struct Game {
     explorers: HashMap<i32, Explorer>,
     wanderers: HashMap<i32, Wanderer>,
     effects: Vec<Effect>,
-    player: Option<Explorer>,
+    player: Explorer,
 }
 
 impl Game {
@@ -23,20 +23,21 @@ impl Game {
             explorers: HashMap::new(),
             wanderers: HashMap::new(),
             effects: vec![],
-            player: None,
+            player: Explorer::new((0, 0), 0, 0, 0),
         }
     }
 
-    fn update_entities(&mut self, explorers: HashMap<i32, Explorer>,
-                       wanderers: HashMap<i32, Wanderer>, effects: Vec<Effect>) {
+    fn update_entities(&mut self, explorers: HashMap<i32, Explorer>, wanderers: HashMap<i32, Wanderer>,
+                       effects: Vec<Effect>, player: Explorer) {
         self.explorers = explorers;
         self.wanderers = wanderers;
         self.effects = effects;
+        self.player = player;
     }
 
-    fn get_closest_explorer(&self, player: &Explorer) -> Option<i32> {
+    fn get_closest_explorer(&self) -> Option<i32> {
         if let Some(e) = self.explorers.iter().map(|(&i, u)| {
-            (i, manhattan_distance(player.get_coord(), u.get_coord()))
+            (i, manhattan_distance(self.player.get_coord(), u.get_coord()))
         }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()) {
             Some(e.0)
         } else {
@@ -44,9 +45,9 @@ impl Game {
         }
     }
 
-    fn get_closest_wanderer(&self, player: &Explorer) -> Option<i32> {
+    fn get_closest_wanderer(&self) -> Option<i32> {
         if let Some(w) = self.wanderers.iter().map(|(&i, u)| {
-            (i, manhattan_distance(player.get_coord(), u.get_coord()))
+            (i, manhattan_distance(self.player.get_coord(), u.get_coord()))
         }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()) {
             Some(w.0)
         } else {
@@ -57,7 +58,7 @@ impl Game {
     fn get_possible_moves(&self) -> Vec<Direction> {
         let mut result = vec![];
 
-        let coord = self.player.clone().unwrap().get_coord();
+        let coord = self.player.get_coord();
         let coord = (coord.0 as usize, coord.1 as usize);
 
         if self.map[coord.1][coord.0 - 1] == '.' {
@@ -80,21 +81,16 @@ impl Game {
     }
 
     fn handle_explorer(&mut self) {
-        if self.player.is_none() {
-            panic!("Game's player field has not been set!");
-        }
+        let mut move_coord = self.player.get_coord();
 
-        let player = self.player.clone().unwrap();
-        let mut move_coord = player.get_coord();
-
-        if let Some(i) = self.get_closest_wanderer(&player) {
+        if let Some(i) = self.get_closest_wanderer() {
             let wanderer_c = self.wanderers.get(&i).unwrap().get_coord();
-            let player_c = player.get_coord();
+            let player_c = self.player.get_coord();
 
             let dist = manhattan_distance(wanderer_c, player_c);
 
             if dist > 6 {
-                let e_id = self.get_closest_explorer(&player);
+                let e_id = self.get_closest_explorer();
 
                 if e_id.is_none() {
                     println!("WAIT");
@@ -105,23 +101,23 @@ impl Game {
                     let coord = e.get_coord();
 
                     eprintln!("dist: {}", manhattan_distance(player_c, coord));
-                    eprintln!("health: {}", player.get_health());
-                    eprintln!("plan: {}", player.get_plans());
+                    eprintln!("health: {}", self.player.get_health());
+                    eprintln!("plan: {}", self.player.get_plans());
 
                     if manhattan_distance(player_c, coord) <= 2 {
-                        if (player.get_health() < 150 &&
-                            player.get_plans() == 2) ||
-                            (player.get_health() < 50 &&
-                             player.get_plans() == 1) {
+                        if (self.player.get_health() < 150 &&
+                            self.player.get_plans() == 2) ||
+                            (self.player.get_health() < 50 &&
+                             self.player.get_plans() == 1) {
                                 println!("PLAN");
                                 return;
                             }
-                        if (player.get_health() < 200 &&
-                            player.get_torches() == 3) ||
-                            (player.get_health() < 100 &&
-                             player.get_torches() == 2) ||
-                            (player.get_health() < 40 &&
-                             player.get_torches() == 1) {
+                        if (self.player.get_health() < 200 &&
+                            self.player.get_torches() == 3) ||
+                            (self.player.get_health() < 100 &&
+                             self.player.get_torches() == 2) ||
+                            (self.player.get_health() < 40 &&
+                             self.player.get_torches() == 1) {
                                 println!("LIGHT");
                                 return;
                             }
@@ -183,10 +179,6 @@ impl Game {
         }
 
         println!("MOVE {} {}", move_coord.0, move_coord.1);
-    }
-
-    fn set_player(&mut self, player: Explorer) {
-        self.player = Some(player);
     }
 }
 
@@ -313,6 +305,7 @@ fn get_relative_direction(a: (i32, i32), b: (i32, i32)) -> Direction {
  * Coded fearlessly by JohnnyYuge & nmahoude
 (ok we might have been a bit scared by the old god...but don't say anything)
  **/
+#[allow(unused_assignments)]
 fn main() {
     let mut input_line = String::new();
     io::stdin().read_line(&mut input_line).unwrap();
@@ -366,7 +359,7 @@ fn main() {
         let mut wanderers: HashMap<i32, Wanderer> = HashMap::new();
         let mut effects: Vec<Effect> = vec![];
 
-        // let mut player_id = -1;
+        let mut player = Explorer::new((0, 0), 0, 0, 0);
 
         for i in 0..entity_count as usize {
             let mut input_line = String::new();
@@ -381,7 +374,7 @@ fn main() {
             let param_2 = parse_input!(inputs[6], i32);
 
             if i == 0 {
-                game.set_player(Explorer::new((x, y), param_0, param_1, param_2));
+                player = Explorer::new((x, y), param_0, param_1, param_2);
                 return;
             }
 
@@ -412,7 +405,7 @@ fn main() {
                 _ => panic!("Incorrect unit type"),
             };
         }
-        game.update_entities(explorers, wanderers, effects);
+        game.update_entities(explorers, wanderers, effects, player);
 
         game.handle_explorer();
     }

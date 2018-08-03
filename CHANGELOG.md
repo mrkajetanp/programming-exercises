@@ -4,6 +4,7 @@
 
 #### 3.08.2018
 
+* [Rust] Code of Kutulu - Non-option player field (CodinGame)
 * [Rust] Code of Kutulu - Get possible moves with player (CodinGame)
 
 #### 2.08.2018
