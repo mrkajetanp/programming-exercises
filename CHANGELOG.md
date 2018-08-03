@@ -2,6 +2,10 @@
 
 ---
 
+#### 3.08.2018
+
+* [Rust] Code of Kutulu - Get possible moves with player (CodinGame)
+
 #### 2.08.2018
 
 * [Rust] Code of Kutulu - Get possible moves in struct (CodinGame)

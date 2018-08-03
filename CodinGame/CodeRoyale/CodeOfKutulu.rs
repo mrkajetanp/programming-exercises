@@ -54,11 +54,10 @@ impl Game {
         }
     }
 
-    // TODO: maybe just use player?
-    fn get_possible_moves(&self, explorer: &Explorer) -> Vec<Direction> {
+    fn get_possible_moves(&self) -> Vec<Direction> {
         let mut result = vec![];
 
-        let coord = explorer.get_coord();
+        let coord = self.player.clone().unwrap().get_coord();
         let coord = (coord.0 as usize, coord.1 as usize);
 
         if self.map[coord.1][coord.0 - 1] == '.' {
@@ -133,7 +132,7 @@ impl Game {
                 }
             }
 
-            let moves = self.get_possible_moves(&player);
+            let moves = self.get_possible_moves();
 
             match get_relative_direction(player_c, wanderer_c) {
                 Direction::UP => {
