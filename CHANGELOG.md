@@ -4,6 +4,7 @@
 
 #### 4.08.2018
 
+* [Rust] Code of Kutulu - Entity distance in use (CodinGame)
 * [Rust] Code of Kutulu - Entity trait with distance (CodinGame)
 
 #### 3.08.2018

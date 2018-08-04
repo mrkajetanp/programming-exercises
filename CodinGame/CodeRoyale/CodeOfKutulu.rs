@@ -37,7 +37,7 @@ impl Game {
 
     fn get_closest_explorer(&self) -> Option<i32> {
         if let Some(e) = self.explorers.iter().map(|(&i, u)| {
-            (i, manhattan_distance(self.player.get_coord(), u.get_coord()))
+            (i, self.player.manhattan_distance(u.get_coord()))
         }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()) {
             Some(e.0)
         } else {
@@ -47,7 +47,7 @@ impl Game {
 
     fn get_closest_wanderer(&self) -> Option<i32> {
         if let Some(w) = self.wanderers.iter().map(|(&i, u)| {
-            (i, manhattan_distance(self.player.get_coord(), u.get_coord()))
+            (i, self.player.manhattan_distance(u.get_coord()))
         }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()) {
             Some(w.0)
         } else {
@@ -87,7 +87,7 @@ impl Game {
             let wanderer_c = self.wanderers.get(&i).unwrap().get_coord();
             let player_c = self.player.get_coord();
 
-            let dist = manhattan_distance(wanderer_c, player_c);
+            let dist = self.player.manhattan_distance(wanderer_c);
 
             if dist > 6 {
                 let e_id = self.get_closest_explorer();
@@ -100,11 +100,11 @@ impl Game {
                 if let Some(e) = self.explorers.get(&e_id.unwrap()) {
                     let coord = e.get_coord();
 
-                    eprintln!("dist: {}", manhattan_distance(player_c, coord));
+                    eprintln!("dist: {}", self.player.manhattan_distance(coord));
                     eprintln!("health: {}", self.player.get_health());
                     eprintln!("plan: {}", self.player.get_plans());
 
-                    if manhattan_distance(player_c, coord) <= 2 {
+                    if self.player.manhattan_distance(coord) <= 2 {
                         if (self.player.get_health() < 150 &&
                             self.player.get_plans() == 2) ||
                             (self.player.get_health() < 50 &&
