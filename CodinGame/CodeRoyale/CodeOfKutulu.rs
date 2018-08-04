@@ -182,6 +182,9 @@ impl Game {
     }
 }
 
+trait Entity {
+    fn manhattan_distance(&self, other: (i32, i32)) -> i32;
+}
 
 #[derive(Debug, Clone)]
 struct Explorer {
@@ -216,6 +219,12 @@ impl Explorer {
 
     fn get_torches(&self) -> i32 {
         self.torches
+    }
+}
+
+impl Entity for Explorer {
+    fn manhattan_distance(&self, other: (i32, i32)) -> i32 {
+        (other.0 - self.coord.0).abs() + (other.1 - self.coord.1).abs()
     }
 }
 
@@ -269,10 +278,6 @@ impl Effect {
             caster
         }
     }
-}
-
-fn manhattan_distance(a: (i32, i32), b: (i32, i32)) -> i32 {
-    (b.0 - a.0).abs() + (b.1 - a.1).abs()
 }
 
 #[derive(Debug, PartialEq)]

@@ -2,6 +2,10 @@
 
 ---
 
+#### 4.08.2018
+
+* [Rust] Code of Kutulu - Entity trait with distance (CodinGame)
+
 #### 3.08.2018
 
 * [Rust] Code of Kutulu - Non-option player field (CodinGame)
