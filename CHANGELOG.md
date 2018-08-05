@@ -4,6 +4,7 @@
 
 #### 5.08.2018
 
+* [Rust] Code of Kutulu - Minor code improvements (CodinGame)
 * [Rust] Code of Kutulu - Wanderer state enum (CodinGame)
 
 #### 4.08.2018

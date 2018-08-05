@@ -249,7 +249,6 @@ impl Wanderer {
         Wanderer {
             coord,
             time,
-            // TODO: state should be an enum
             state,
             target
         }
@@ -268,7 +267,6 @@ enum EffectType {
 
 #[derive(Debug, Clone)]
 struct Effect {
-    // TODO: should be an enum
     effect_type: EffectType,
     origin: (i32, i32),
     time: i32,
@@ -296,7 +294,7 @@ enum Direction {
     DOWN
 }
 
-// Direction of b in regards to a
+// Direction of b from the perspective of a
 fn get_relative_direction(a: (i32, i32), b: (i32, i32)) -> Direction {
     if a.0 == b.0 {
         if a.1 < b.1 {
@@ -346,27 +344,28 @@ fn main() {
     let mut input_line = String::new();
     io::stdin().read_line(&mut input_line).unwrap();
     let inputs = input_line.split(" ").collect::<Vec<_>>();
+
     #[allow(unused_variables)]
     // how much sanity you lose every turn when alone, always 3 until wood 1
     let sanity_loss_lonely = parse_input!(inputs[0], i32);
+
     #[allow(unused_variables)]
     // how much sanity you lose every turn when near another player
     // always 1 until wood 1
     let sanity_loss_group = parse_input!(inputs[1], i32);
+
     #[allow(unused_variables)]
     // how many turns the wanderer take to spawn, always 3 until wood 1
     let wanderer_spawn_time = parse_input!(inputs[2], i32);
+
     #[allow(unused_variables)]
     // how many turns the wanderer is on map after spawning
     // always 40 until wood 1
     let wanderer_life_time = parse_input!(inputs[3], i32);
 
-    // game loop
     loop {
         let mut input_line = String::new();
         io::stdin().read_line(&mut input_line).unwrap();
-        // the first given entity corresponds to your explorer
-        let entity_count = parse_input!(input_line, i32);
 
         let mut explorers: HashMap<i32, Explorer> = HashMap::new();
         let mut wanderers: HashMap<i32, Wanderer> = HashMap::new();
@@ -374,7 +373,7 @@ fn main() {
 
         let mut player = Explorer::new((0, 0), 0, 0, 0);
 
-        for i in 0..entity_count as usize {
+        for i in 0..parse_input!(input_line, i32) as usize {
             let mut input_line = String::new();
             io::stdin().read_line(&mut input_line).unwrap();
             let inputs = input_line.split(" ").collect::<Vec<_>>();
@@ -397,6 +396,7 @@ fn main() {
                         id, Explorer::new((x, y), param_0, param_1, param_2)
                     );
                 },
+
                 "WANDERER" => {
                     let state = match param_1 {
                         0 => WandererState::SPAWNING,
