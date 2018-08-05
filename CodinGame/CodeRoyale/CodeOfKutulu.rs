@@ -27,7 +27,8 @@ impl Game {
         }
     }
 
-    fn update_entities(&mut self, explorers: HashMap<i32, Explorer>, wanderers: HashMap<i32, Wanderer>,
+    fn update_entities(&mut self, explorers: HashMap<i32, Explorer>,
+                       wanderers: HashMap<i32, Wanderer>,
                        effects: Vec<Effect>, player: Explorer) {
         self.explorers = explorers;
         self.wanderers = wanderers;
@@ -229,15 +230,22 @@ impl Entity for Explorer {
 }
 
 #[derive(Debug, Clone)]
+enum WandererState {
+    SPAWNING,
+    WANDERING
+}
+
+#[derive(Debug, Clone)]
 struct Wanderer {
     coord: (i32, i32),
     time: i32,
-    state: i32,
+    state: WandererState,
     target: i32
 }
 
 impl Wanderer {
-    fn new(coord: (i32, i32), time: i32, state: i32, target: i32) -> Wanderer {
+    fn new(coord: (i32, i32), time: i32, state: WandererState,
+           target: i32) -> Wanderer {
         Wanderer {
             coord,
             time,
@@ -390,8 +398,14 @@ fn main() {
                     );
                 },
                 "WANDERER" => {
+                    let state = match param_1 {
+                        0 => WandererState::SPAWNING,
+                        1 => WandererState::WANDERING,
+                        _ => panic!("Incorrect state: {}", param_1),
+                    };
+
                     wanderers.insert(
-                        id, Wanderer::new((x, y), param_0, param_1, param_2)
+                        id, Wanderer::new((x, y), param_0, state, param_2)
                     );
 
                 },
