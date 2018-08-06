@@ -4,6 +4,7 @@
 
 #### 6.08.2018
 
+* [Rust] Code of Kutulu - Entity trait-related improvements (CodinGame)
 * [Rust] Code of Kutulu - Get relative direction in a trait (CodinGame)
 
 #### 5.08.2018

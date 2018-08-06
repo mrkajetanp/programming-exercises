@@ -86,8 +86,6 @@ impl Game {
 
         if let Some(i) = self.get_closest_wanderer() {
             let wanderer_c = self.wanderers.get(&i).unwrap().get_coord();
-            let player_c = self.player.get_coord();
-
             let dist = self.player.manhattan_distance(wanderer_c);
 
             if dist > 6 {
@@ -131,7 +129,7 @@ impl Game {
 
             let moves = self.get_possible_moves();
 
-            match get_relative_direction(player_c, wanderer_c) {
+            match self.player.get_relative_direction(wanderer_c) {
                 Direction::UP => {
                     if moves.contains(&Direction::DOWN) {
                         move_coord.1 += MOVE_DIST;
@@ -184,6 +182,8 @@ impl Game {
 }
 
 trait Entity {
+    // TODO: get_coord method, methods taking Trait objects
+
     fn manhattan_distance(&self, other: (i32, i32)) -> i32;
 
     // Direction of b from the perspective of a
