@@ -185,6 +185,9 @@ impl Game {
 
 trait Entity {
     fn manhattan_distance(&self, other: (i32, i32)) -> i32;
+
+    // Direction of b from the perspective of a
+    fn get_relative_direction(&self, other: (i32, i32)) -> Direction;
 }
 
 #[derive(Debug, Clone)]
@@ -226,6 +229,22 @@ impl Explorer {
 impl Entity for Explorer {
     fn manhattan_distance(&self, other: (i32, i32)) -> i32 {
         (other.0 - self.coord.0).abs() + (other.1 - self.coord.1).abs()
+    }
+
+    fn get_relative_direction(&self, other: (i32, i32)) -> Direction {
+        if self.coord.0 == other.0 {
+            if self.coord.1 < other.1 {
+                Direction::DOWN
+            } else {
+                Direction::UP
+            }
+        } else {
+            if self.coord.0 < other.0 {
+                Direction::RIGHT
+            } else {
+                Direction::LEFT
+            }
+        }
     }
 }
 
@@ -292,23 +311,6 @@ enum Direction {
     RIGHT,
     UP,
     DOWN
-}
-
-// Direction of b from the perspective of a
-fn get_relative_direction(a: (i32, i32), b: (i32, i32)) -> Direction {
-    if a.0 == b.0 {
-        if a.1 < b.1 {
-            Direction::DOWN
-        } else {
-            Direction::UP
-        }
-    } else {
-        if a.0 < b.0 {
-            Direction::RIGHT
-        } else {
-            Direction::LEFT
-        }
-    }
 }
 
 /**
