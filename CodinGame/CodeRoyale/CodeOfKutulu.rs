@@ -38,7 +38,7 @@ impl Game {
 
     fn get_closest_explorer(&self) -> Option<i32> {
         if let Some(e) = self.explorers.iter().map(|(&i, u)| {
-            (i, self.player.manhattan_distance(u.get_coord()))
+            (i, self.player.manhattan_distance(u))
         }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()) {
             Some(e.0)
         } else {
@@ -48,7 +48,7 @@ impl Game {
 
     fn get_closest_wanderer(&self) -> Option<i32> {
         if let Some(w) = self.wanderers.iter().map(|(&i, u)| {
-            (i, self.player.manhattan_distance(u.get_coord()))
+            (i, self.player.manhattan_distance(u))
         }).min_by(|a, b| a.1.partial_cmp(&b.1).unwrap()) {
             Some(w.0)
         } else {
@@ -85,8 +85,8 @@ impl Game {
         let mut move_coord = self.player.get_coord();
 
         if let Some(i) = self.get_closest_wanderer() {
-            let wanderer_c = self.wanderers.get(&i).unwrap().get_coord();
-            let dist = self.player.manhattan_distance(wanderer_c);
+            let wanderer = self.wanderers.get(&i).unwrap();
+            let dist = self.player.manhattan_distance(wanderer);
 
             if dist > 6 {
                 let e_id = self.get_closest_explorer();
@@ -97,13 +97,11 @@ impl Game {
                 }
 
                 if let Some(e) = self.explorers.get(&e_id.unwrap()) {
-                    let coord = e.get_coord();
-
-                    eprintln!("dist: {}", self.player.manhattan_distance(coord));
+                    eprintln!("dist: {}", self.player.manhattan_distance(e));
                     eprintln!("health: {}", self.player.get_health());
                     eprintln!("plan: {}", self.player.get_plans());
 
-                    if self.player.manhattan_distance(coord) <= 2 {
+                    if self.player.manhattan_distance(e) <= 2 {
                         if (self.player.get_health() < 150 &&
                             self.player.get_plans() == 2) ||
                             (self.player.get_health() < 50 &&
@@ -121,6 +119,7 @@ impl Game {
                                 return;
                             }
                     } else {
+                        let coord = e.get_coord();
                         println!("MOVE {} {}", coord.0, coord.1);
                         return;
                     }
@@ -129,7 +128,7 @@ impl Game {
 
             let moves = self.get_possible_moves();
 
-            match self.player.get_relative_direction(wanderer_c) {
+            match self.player.get_relative_direction(wanderer.get_coord()) {
                 Direction::UP => {
                     if moves.contains(&Direction::DOWN) {
                         move_coord.1 += MOVE_DIST;
@@ -183,9 +182,9 @@ impl Game {
 
 trait Entity {
     fn get_coord(&self) -> (i32, i32);
+    fn manhattan_distance(&self, other: &Entity) -> i32;
 
-    fn manhattan_distance(&self, other: (i32, i32)) -> i32;
-
+    // TODO: should take Entity object as well
     // Direction of b from the perspective of a
     fn get_relative_direction(&self, other: (i32, i32)) -> Direction;
 }
@@ -226,7 +225,9 @@ impl Entity for Explorer {
         self.coord
     }
 
-    fn manhattan_distance(&self, other: (i32, i32)) -> i32 {
+    fn manhattan_distance(&self, other: &Entity) -> i32 {
+        let other = other.get_coord();
+
         (other.0 - self.coord.0).abs() + (other.1 - self.coord.1).abs()
     }
 
@@ -276,6 +277,8 @@ impl Wanderer {
         self.coord
     }
 }
+
+// TODO: implement Entity trait
 
 #[derive(Debug, Clone)]
 enum EffectType {
