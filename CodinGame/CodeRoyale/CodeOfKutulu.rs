@@ -182,7 +182,7 @@ impl Game {
 }
 
 trait Entity {
-    // TODO: get_coord method, methods taking Trait objects
+    fn get_coord(&self) -> (i32, i32);
 
     fn manhattan_distance(&self, other: (i32, i32)) -> i32;
 
@@ -198,7 +198,6 @@ struct Explorer {
     torches: i32
 }
 
-
 impl Explorer {
     fn new(coord: (i32, i32), health: i32, plans: i32, torches: i32) -> Explorer {
         Explorer {
@@ -207,10 +206,6 @@ impl Explorer {
             plans,
             torches
         }
-    }
-
-    fn get_coord(&self) -> (i32, i32) {
-        self.coord
     }
 
     fn get_health(&self) -> i32 {
@@ -227,6 +222,10 @@ impl Explorer {
 }
 
 impl Entity for Explorer {
+    fn get_coord(&self) -> (i32, i32)  {
+        self.coord
+    }
+
     fn manhattan_distance(&self, other: (i32, i32)) -> i32 {
         (other.0 - self.coord.0).abs() + (other.1 - self.coord.1).abs()
     }

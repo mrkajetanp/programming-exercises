@@ -2,6 +2,10 @@
 
 ---
 
+#### 7.08.2018
+
+* [Rust] Code of Kutulu - Get coord in Entity trait (CodinGame)
+
 #### 6.08.2018
 
 * [Rust] Code of Kutulu - Entity trait-related improvements (CodinGame)
