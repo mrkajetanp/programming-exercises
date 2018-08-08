@@ -128,7 +128,7 @@ impl Game {
 
             let moves = self.get_possible_moves();
 
-            match self.player.get_relative_direction(wanderer.get_coord()) {
+            match self.player.get_relative_direction(wanderer) {
                 Direction::UP => {
                     if moves.contains(&Direction::DOWN) {
                         move_coord.1 += MOVE_DIST;
@@ -180,13 +180,20 @@ impl Game {
     }
 }
 
+#[derive(Debug, PartialEq)]
+enum Direction {
+    LEFT,
+    RIGHT,
+    UP,
+    DOWN
+}
+
 trait Entity {
     fn get_coord(&self) -> (i32, i32);
     fn manhattan_distance(&self, other: &Entity) -> i32;
 
-    // TODO: should take Entity object as well
-    // Direction of b from the perspective of a
-    fn get_relative_direction(&self, other: (i32, i32)) -> Direction;
+    // Direction of other from the perspective of self
+    fn get_relative_direction(&self, other: &Entity) -> Direction;
 }
 
 #[derive(Debug, Clone)]
@@ -231,7 +238,9 @@ impl Entity for Explorer {
         (other.0 - self.coord.0).abs() + (other.1 - self.coord.1).abs()
     }
 
-    fn get_relative_direction(&self, other: (i32, i32)) -> Direction {
+    fn get_relative_direction(&self, other: &Entity) -> Direction {
+        let other = other.get_coord();
+
         if self.coord.0 == other.0 {
             if self.coord.1 < other.1 {
                 Direction::DOWN
@@ -285,7 +294,9 @@ impl Entity for Wanderer {
         (other.0 - self.coord.0).abs() + (other.1 - self.coord.1).abs()
     }
 
-    fn get_relative_direction(&self, other: (i32, i32)) -> Direction {
+    fn get_relative_direction(&self, other: &Entity) -> Direction {
+        let other = other.get_coord();
+
         if self.coord.0 == other.0 {
             if self.coord.1 < other.1 {
                 Direction::DOWN
@@ -327,14 +338,6 @@ impl Effect {
             caster
         }
     }
-}
-
-#[derive(Debug, PartialEq)]
-enum Direction {
-    LEFT,
-    RIGHT,
-    UP,
-    DOWN
 }
 
 /**
