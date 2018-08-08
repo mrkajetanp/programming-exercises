@@ -272,13 +272,35 @@ impl Wanderer {
             target
         }
     }
-
-    fn get_coord(&self) -> (i32, i32) {
-        self.coord
-    }
 }
 
-// TODO: implement Entity trait
+impl Entity for Wanderer {
+    fn get_coord(&self) -> (i32, i32)  {
+        self.coord
+    }
+
+    fn manhattan_distance(&self, other: &Entity) -> i32 {
+        let other = other.get_coord();
+
+        (other.0 - self.coord.0).abs() + (other.1 - self.coord.1).abs()
+    }
+
+    fn get_relative_direction(&self, other: (i32, i32)) -> Direction {
+        if self.coord.0 == other.0 {
+            if self.coord.1 < other.1 {
+                Direction::DOWN
+            } else {
+                Direction::UP
+            }
+        } else {
+            if self.coord.0 < other.0 {
+                Direction::RIGHT
+            } else {
+                Direction::LEFT
+            }
+        }
+    }
+}
 
 #[derive(Debug, Clone)]
 enum EffectType {

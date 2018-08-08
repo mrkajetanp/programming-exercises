@@ -2,6 +2,10 @@
 
 ---
 
+#### 8.08.2018
+
+* [Rust] Code of Kutulu - Wanderer Entity impl (CodinGame)
+
 #### 7.08.2018
 
 * [Rust] Code of Kutulu - Manhattan distance trait object (CodinGame)
