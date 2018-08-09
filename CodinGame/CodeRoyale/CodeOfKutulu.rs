@@ -56,10 +56,10 @@ impl Game {
         }
     }
 
-    fn get_possible_moves(&self) -> Vec<Direction> {
+    fn get_possible_moves(&self, entity: &Entity) -> Vec<Direction> {
         let mut result = vec![];
 
-        let coord = self.player.get_coord();
+        let coord = entity.get_coord();
         let coord = (coord.0 as usize, coord.1 as usize);
 
         if self.map[coord.1][coord.0 - 1] == '.' {
@@ -126,7 +126,7 @@ impl Game {
                 }
             }
 
-            let moves = self.get_possible_moves();
+            let moves = self.get_possible_moves(&self.player);
 
             match self.player.get_relative_direction(wanderer) {
                 Direction::UP => {
@@ -341,7 +341,7 @@ impl Effect {
 }
 
 /**
- * Survive the wrath of Kutulu
+ * Survive the wrath of Kutu
  * Coded fearlessly by JohnnyYuge & nmahoude
 (ok we might have been a bit scared by the old god...but don't say anything)
  **/

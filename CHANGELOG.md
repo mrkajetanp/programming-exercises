@@ -2,6 +2,10 @@
 
 ---
 
+#### 9.08.2018
+
+* [Rust] Code of Kutulu - Get possible moves Entity argument (CodinGame)
+
 #### 8.08.2018
 
 * [Rust] Code of Kutulu - Direction using a trait object (CodinGame)
