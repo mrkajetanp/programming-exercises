@@ -416,7 +416,7 @@ fn main() {
 
             if i == 0 {
                 player = Explorer::new((x, y), param_0, param_1, param_2);
-                return;
+                continue;
             }
 
             match entity_type.as_ref() {
