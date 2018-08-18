@@ -2,6 +2,10 @@
 
 ---
 
+#### 18.08.2018
+
+* [Android] Framing exercise
+
 #### 9.08.2018
 
 * [Rust] Code of Kutulu - Fixed a minor bug (CodinGame)
