@@ -4,6 +4,7 @@
 
 #### 18.08.2018
 
+* [Android] More exercises 
 * [Android] Framing exercise
 
 #### 9.08.2018
