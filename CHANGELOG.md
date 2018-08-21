@@ -2,6 +2,10 @@
 
 ---
 
+#### 21.08.2018
+
+* [Android] GitHub Query: Add a menu
+
 #### 18.08.2018
 
 * [Android] More exercises 

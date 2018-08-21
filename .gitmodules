@@ -1,0 +1,3 @@
+[submodule "Android/ud851-Sunshine"]
+	path = Android/ud851-Sunshine
+	url = git@github.com:udacity/ud851-Sunshine.git
