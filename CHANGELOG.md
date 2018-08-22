@@ -2,6 +2,10 @@
 
 ---
 
+#### 22.08.2018
+
+* [General] Removed Android exercises submodule
+
 #### 21.08.2018
 
 * [Android] GitHub Query: Building our URL 
