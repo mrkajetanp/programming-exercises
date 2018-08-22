@@ -4,6 +4,7 @@
 
 #### 22.08.2018
 
+* [General] Removed Sunshine submodule 
 * [General] Removed Android exercises submodule
 
 #### 21.08.2018
