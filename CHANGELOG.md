@@ -4,6 +4,7 @@
 
 #### 23.08.2018
 
+* [Android] GitHub Query: Create an AsyncTask
 * [Android] GitHub Query: Connect to the internet
 
 #### 22.08.2018
