@@ -2,6 +2,10 @@
 
 ---
 
+#### 23.08.2018
+
+* [Android] GitHub Query: Connect to the internet
+
 #### 22.08.2018
 
 * [General] Removed Sunshine submodule 
