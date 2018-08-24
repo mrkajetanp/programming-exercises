@@ -2,6 +2,10 @@
 
 ---
 
+#### 24.08.2018
+
+* [Android] GitHub Query: Missing permissions
+
 #### 23.08.2018
 
 * [Android] GitHub Query: Create an AsyncTask
