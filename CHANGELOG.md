@@ -4,6 +4,7 @@
 
 #### 24.08.2018
 
+* [Android] GitHub Query: Adding polish 
 * [Android] GitHub Query: Missing permissions
 
 #### 23.08.2018
