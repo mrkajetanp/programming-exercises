@@ -4,6 +4,7 @@
 
 #### 25.08.2018
 
+* [Android] Fixed general folder structure 
 * [Android] Sunshine: Networking
 
 #### 24.08.2018
