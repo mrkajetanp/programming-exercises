@@ -4,6 +4,7 @@
 
 #### 26.08.2018
 
+* [Android] Sunshine: Polish
 * [Android] Sunshine: Menus
 
 #### 25.08.2018
