@@ -2,6 +2,10 @@
 
 ---
 
+#### 26.08.2018
+
+* [Android] Sunshine: Menus
+
 #### 25.08.2018
 
 * [Android] Fixed general folder structure 
