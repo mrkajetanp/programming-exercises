@@ -2,6 +2,10 @@
 
 ---
 
+#### 27.08.2018
+
+* [Android] RecyclerView: Create RecyclerView
+
 #### 26.08.2018
 
 * [Android] Sunshine: Polish
