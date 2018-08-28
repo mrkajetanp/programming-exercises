@@ -4,6 +4,7 @@
 
 #### 28.08.2018
 
+* [Android] RecyclerView: Click Handling 
 * [Android] RecyclerView: Wiring up RecyclerView 
 * [Android] RecyclerView: Create an Adapter
 
