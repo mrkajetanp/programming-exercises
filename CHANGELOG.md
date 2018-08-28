@@ -2,6 +2,10 @@
 
 ---
 
+#### 28.08.2018
+
+* [Android] RecyclerView: Create an Adapter
+
 #### 27.08.2018
 
 * [Android] RecyclerView: ViewHolder 
