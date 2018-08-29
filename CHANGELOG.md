@@ -4,6 +4,7 @@
 
 #### 29.08.2018
 
+* [Android] Sunshine: RecyclerView (Code)
 * [Android] Sunshine: RecyclerView (Layout)
 
 #### 28.08.2018
