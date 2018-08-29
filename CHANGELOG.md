@@ -2,6 +2,10 @@
 
 ---
 
+#### 29.08.2018
+
+* [Android] Sunshine: RecyclerView (Layout)
+
 #### 28.08.2018
 
 * [Android] RecyclerView: Click Handling 
