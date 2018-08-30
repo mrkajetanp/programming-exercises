@@ -2,6 +2,10 @@
 
 ---
 
+#### 30.08.2018
+
+* [Android] Sunshine: Click Handling (Adapter)
+
 #### 29.08.2018
 
 * [Android] Sunshine: RecyclerView (Code)
