@@ -4,6 +4,7 @@
 
 #### 30.08.2018
 
+* [Android] Sunshine: Click Handling (MainActivity)
 * [Android] Sunshine: Click Handling (Adapter)
 
 #### 29.08.2018
