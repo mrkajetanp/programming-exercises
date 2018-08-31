@@ -2,6 +2,10 @@
 
 ---
 
+#### 31.08.2018
+
+* [Android] Intents: Create an Activity
+
 #### 30.08.2018
 
 * [Android] Sunshine: Click Handling (MainActivity)
