@@ -2,6 +2,10 @@
 
 ---
 
+#### 1.09.2018
+
+* [Android] Intents: Pass data
+
 #### 31.08.2018
 
 * [Android] Intents: Start an Activity
