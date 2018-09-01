@@ -4,6 +4,7 @@
 
 #### 1.09.2018
 
+* [Android] Implicit Intents: Open a web page 
 * [Android] Intents: Pass data
 
 #### 31.08.2018
