@@ -4,6 +4,7 @@
 
 #### 2.09.2018
 
+* [Android] Implicit Intents: Share Text 
 * [Android] Implicit Intents: Show a Map
 
 #### 1.09.2018
