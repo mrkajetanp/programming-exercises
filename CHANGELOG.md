@@ -4,6 +4,7 @@
 
 #### 3.09.2018
 
+* [Android] Sunshine: Add Sharing 
 * [Android] Sunshine: Send Data 
 * [Android] Sunshine: Add a new Activity
 
