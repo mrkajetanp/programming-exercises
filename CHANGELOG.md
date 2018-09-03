@@ -2,6 +2,10 @@
 
 ---
 
+#### 3.09.2018
+
+* [Android] Sunshine: Add a new Activity
+
 #### 2.09.2018
 
 * [Android] Implicit Intents: Share Text 
