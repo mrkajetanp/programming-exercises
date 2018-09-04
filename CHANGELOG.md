@@ -2,6 +2,10 @@
 
 ---
 
+#### 4.09.2018
+
+* [Android] Lifecycle: Lifecycle Events
+
 #### 3.09.2018
 
 * [Android] Sunshine: Add Sharing 
