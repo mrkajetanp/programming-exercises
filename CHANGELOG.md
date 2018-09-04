@@ -4,6 +4,7 @@
 
 #### 4.09.2018
 
+* [Android] Lifecycle: Persisting Data 
 * [Android] Lifecycle: Lifecycle Events
 
 #### 3.09.2018
