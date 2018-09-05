@@ -2,6 +2,10 @@
 
 ---
 
+#### 5.09.2018
+
+* [Android] Lifecycle: Fix display
+
 #### 4.09.2018
 
 * [Android] Lifecycle: Persisting Data 
