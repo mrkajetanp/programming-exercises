@@ -2,6 +2,10 @@
 
 ---
 
+#### 6.09.2018
+
+* [Android] Lifecycle: AsyncTaskLoader
+
 #### 5.09.2018
 
 * [Android] Lifecycle: Persisting Data II
