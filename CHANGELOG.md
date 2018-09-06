@@ -4,6 +4,7 @@
 
 #### 6.09.2018
 
+* [Android] Sunshine: AsyncTaskLoader
 * [Android] Lifecycle: Caching with Loaders
 * [Android] Lifecycle: AsyncTaskLoader
 
