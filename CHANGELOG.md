@@ -4,6 +4,7 @@
 
 #### 6.09.2018
 
+* [Android] Lifecycle: Caching with Loaders
 * [Android] Lifecycle: AsyncTaskLoader
 
 #### 5.09.2018
