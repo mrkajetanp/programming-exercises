@@ -2,6 +2,10 @@
 
 ---
 
+#### 7.09.2018
+
+* [Android] Visualize: Setup Settings
+
 #### 6.09.2018
 
 * [Android] Sunshine: AsyncTaskLoader
