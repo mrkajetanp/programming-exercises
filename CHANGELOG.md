@@ -4,6 +4,7 @@
 
 #### 7.09.2018
 
+* [Android] Visualize: Make a Preference Fragment 
 * [Android] Visualize: Setup Settings
 
 #### 6.09.2018
