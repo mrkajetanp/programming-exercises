@@ -2,6 +2,10 @@
 
 ---
 
+#### 8.09.2018
+
+* [Android] Visualize: Reading from SharedPreferences
+
 #### 7.09.2018
 
 * [Android] Visualize: Make a Preference Fragment 
