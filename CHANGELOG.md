@@ -4,6 +4,7 @@
 
 #### 9.09.2018
 
+* [Android] Visualize: Add Two More Checkboxes 
 * [Android] Visualize: Preference Change Listener
 
 #### 8.09.2018
