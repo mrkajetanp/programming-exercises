@@ -2,6 +2,10 @@
 
 ---
 
+#### 9.09.2018
+
+* [Android] Visualize: Preference Change Listener
+
 #### 8.09.2018
 
 * [Android] Visualize: Use Resources 
