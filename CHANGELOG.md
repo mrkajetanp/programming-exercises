@@ -2,6 +2,10 @@
 
 ---
 
+#### 10.09.2018
+
+* [Android] Visualize: List Preference
+
 #### 9.09.2018
 
 * [Android] Visualize: Add Two More Checkboxes 
