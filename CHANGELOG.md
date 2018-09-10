@@ -4,6 +4,7 @@
 
 #### 10.09.2018
 
+* [Android] Visualize: Preference Summary
 * [Android] Visualize: List Preference
 
 #### 9.09.2018
