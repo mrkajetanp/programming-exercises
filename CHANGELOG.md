@@ -2,6 +2,10 @@
 
 ---
 
+#### 11.09.2018
+
+* [Android] Visualize: Edit Text Preference
+
 #### 10.09.2018
 
 * [Android] Visualize: Preference Summary
