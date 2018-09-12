@@ -4,6 +4,7 @@
 
 #### 12.09.2018
 
+* [Android] Sunshine: PreferenceFragment
 * [Android] Sunshine: SettingsActivity
 
 #### 11.09.2018
