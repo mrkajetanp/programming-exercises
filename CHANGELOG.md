@@ -2,6 +2,10 @@
 
 ---
 
+#### 12.09.2018
+
+* [Android] Sunshine: SettingsActivity
+
 #### 11.09.2018
 
 * [Android] Visualize: Edit Text Preference Constraints
