@@ -2,6 +2,10 @@
 
 ---
 
+#### 13.09.2018
+
+* [Android] Sunshine: Polishing Preferences
+
 #### 12.09.2018
 
 * [Android] Sunshine: PreferenceFragment
