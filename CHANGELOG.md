@@ -2,6 +2,10 @@
 
 ---
 
+#### 14.09.2018
+
+* [Android] Quiz: Setup Example
+
 #### 13.09.2018
 
 * [Android] Sunshine: Polishing Preferences
