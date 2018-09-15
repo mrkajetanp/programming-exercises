@@ -4,6 +4,7 @@
 
 #### 15.09.2018
 
+* [Android] Quiz: Use the Cursor
 * [Android] Quiz: Make an AsyncTask
 
 #### 14.09.2018
