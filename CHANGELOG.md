@@ -2,6 +2,10 @@
 
 ---
 
+#### 15.09.2018
+
+* [Android] Quiz: Make an AsyncTask
+
 #### 14.09.2018
 
 * [Android] Quiz: Add the Permission 
