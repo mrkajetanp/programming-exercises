@@ -2,6 +2,10 @@
 
 ---
 
+#### 16.09.2018
+
+* [Android] ToDo List: Creating an Entity
+
 #### 15.09.2018
 
 * [Android] Quiz: Use the Cursor
