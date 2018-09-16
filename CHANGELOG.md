@@ -4,6 +4,7 @@
 
 #### 16.09.2018
 
+* [Android] ToDo List: Query all Tasks 
 * [Android] ToDo List: Save Task 
 * [Android] ToDo List: Creating an Entity
 
