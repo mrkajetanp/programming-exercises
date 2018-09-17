@@ -4,6 +4,7 @@
 
 #### 17.09.2018
 
+* [Android] ToDo List: Update Task
 * [Android] ToDo List: Delete Task
 * [Android] ToDo List: Executors
 
