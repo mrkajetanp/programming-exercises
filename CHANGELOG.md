@@ -2,6 +2,10 @@
 
 ---
 
+#### 17.09.2018
+
+* [Android] ToDo List: Executors
+
 #### 16.09.2018
 
 * [Android] ToDo List: Query all Tasks 
