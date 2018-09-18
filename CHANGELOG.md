@@ -4,6 +4,7 @@
 
 #### 18.09.2018
 
+* [Android] ToDo List: Adding LiveData to AddTaskActivity
 * [Android] ToDo List: Adding LiveData
 
 #### 17.09.2018

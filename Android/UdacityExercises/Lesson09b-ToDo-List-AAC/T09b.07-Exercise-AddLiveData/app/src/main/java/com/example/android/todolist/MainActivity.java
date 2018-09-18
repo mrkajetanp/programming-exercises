@@ -110,14 +110,9 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
         });
 
         mDb = AppDatabase.getInstance(getApplicationContext());
-        retrieveTasks();
-    }
 
-    private void retrieveTasks() {
         Log.d(TAG, "Actively retrieving the tasks from the DataBase");
-        LiveData<List<TaskEntry>> tasks = mDb.taskDao().loadAllTasks();
-
-        tasks.observe(this, new Observer<List<TaskEntry>>() {
+        mDb.taskDao().loadAllTasks().observe(this, new Observer<List<TaskEntry>>() {
             @Override
             public void onChanged(@Nullable List<TaskEntry> taskEntries) {
                 Log.d(TAG, "Receiving database update from LiveData");
