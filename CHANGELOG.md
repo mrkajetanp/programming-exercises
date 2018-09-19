@@ -2,6 +2,10 @@
 
 ---
 
+#### 19.09.2018
+
+* [Android] ToDo List: Adding the ViewModel
+
 #### 18.09.2018
 
 * [Android] ToDo List: Adding LiveData to AddTaskActivity
