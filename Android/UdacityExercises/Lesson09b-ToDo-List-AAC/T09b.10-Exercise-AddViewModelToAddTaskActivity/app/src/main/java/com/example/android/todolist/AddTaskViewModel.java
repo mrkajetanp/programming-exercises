@@ -1,12 +1,20 @@
 package com.example.android.todolist;
 
-// TODO (5) Make this class extend ViewModel
-public class AddTaskViewModel {
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.ViewModel;
 
-    // TODO (6) Add a task member variable for the TaskEntry object wrapped in a LiveData
+import com.example.android.todolist.database.AppDatabase;
+import com.example.android.todolist.database.TaskEntry;
 
-    // TODO (8) Create a constructor where you call loadTaskById of the taskDao to initialize the tasks variable
-    // Note: The constructor should receive the database and the taskId
+public class AddTaskViewModel extends ViewModel {
 
-    // TODO (7) Create a getter for the task variable
+    private LiveData<TaskEntry> task;
+
+    public AddTaskViewModel(AppDatabase database, int taskId) {
+        task = database.taskDao().loadTaskById(taskId);
+    }
+
+    public LiveData<TaskEntry> getTask() {
+        return task;
+    }
 }
