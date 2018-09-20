@@ -2,6 +2,10 @@
 
 ---
 
+#### 20.09.2018
+
+* [Android] Hydration Reminder: Add an IntentService
+
 #### 19.09.2018
 
 * [Android] ToDo List: Adding the ViewModel to AddTaskActivity
