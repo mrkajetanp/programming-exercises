@@ -2,6 +2,10 @@
 
 ---
 
+#### 21.09.2018
+
+* [Android] Hydration Reminder: Notifications
+
 #### 20.09.2018
 
 * [Android] Hydration Reminder: Add an IntentService
