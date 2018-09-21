@@ -4,6 +4,7 @@
 
 #### 21.09.2018
 
+* [Android] Hydration Reminder: Adding Actions to Notifications
 * [Android] Hydration Reminder: Notifications
 
 #### 20.09.2018
