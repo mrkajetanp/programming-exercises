@@ -2,6 +2,10 @@
 
 ---
 
+#### 22.09.2018
+
+* [Android] Hydration Reminder: Adding a JobService
+
 #### 21.09.2018
 
 * [Android] Hydration Reminder: Adding Actions to Notifications
