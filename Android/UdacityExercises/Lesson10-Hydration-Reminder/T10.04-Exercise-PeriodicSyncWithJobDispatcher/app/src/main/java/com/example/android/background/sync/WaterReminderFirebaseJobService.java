@@ -48,7 +48,7 @@ public class WaterReminderFirebaseJobService extends JobService {
     @Override
     public boolean onStopJob(JobParameters jobParameters) {
         if (mBackgroundTask != null)
-            mBackgroundTask.cancel(true)
+            mBackgroundTask.cancel(true);
 
         return true;
     }
