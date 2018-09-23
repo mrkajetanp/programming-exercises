@@ -18,6 +18,7 @@ package com.example.android.background.sync;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.firebase.jobdispatcher.Constraint;
 import com.firebase.jobdispatcher.Driver;
@@ -31,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ReminderUtilities {
 
-    private static final int REMINDER_INTERVAL_MINUTES = 15;
+    private static final int REMINDER_INTERVAL_MINUTES = 1;
     private static final int REMINDER_INTERVAL_SECONDS = (int) (TimeUnit.MINUTES.toSeconds(REMINDER_INTERVAL_MINUTES));
     private static final int SYNC_FLEXTIME_SECONDS = REMINDER_INTERVAL_SECONDS;
 
@@ -43,22 +44,24 @@ public class ReminderUtilities {
         if (sInitialized)
             return;
 
+        Log.d("NJOB", "Scheduling the charging reminder");
+
         Driver driver = new GooglePlayDriver(context);
         FirebaseJobDispatcher dispatcher = new FirebaseJobDispatcher(driver);
 
         Job constraintReminderJob = dispatcher.newJobBuilder()
                 .setService(WaterReminderFirebaseJobService.class)
                 .setTag(REMINDER_JOB_TAG)
-                .setConstraints(Constraint.DEVICE_CHARGING)
+                // .setConstraints(Constraint.DEVICE_CHARGING)
                 .setLifetime(Lifetime.FOREVER)
                 .setRecurring(true)
                 .setTrigger(Trigger.executionWindow(
-                        REMINDER_INTERVAL_SECONDS,
-                        REMINDER_INTERVAL_SECONDS + SYNC_FLEXTIME_SECONDS))
+                        19, // REMINDER_INTERVAL_SECONDS,
+                        20)) //REMINDER_INTERVAL_SECONDS + SYNC_FLEXTIME_SECONDS))
                 .setReplaceCurrent(true)
                 .build();
 
-        dispatcher.schedule(constraintReminderJob);
+        dispatcher.mustSchedule(constraintReminderJob);
         sInitialized = true;
     }
 }

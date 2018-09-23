@@ -16,6 +16,7 @@
 package com.example.android.background.sync;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.example.android.background.utilities.NotificationUtils;
 import com.example.android.background.utilities.PreferenceUtilities;
@@ -27,6 +28,8 @@ public class ReminderTasks {
     public static final String ACTION_CHARGING_REMINDER = "charging-reminder";
 
     public static void executeTask(Context context, String action) {
+        Log.d("NJOB", "Choosing the action");
+
         if (ACTION_INCREMENT_WATER_COUNT.equals(action)) {
             incrementWaterCount(context);
         } else if (ACTION_DISMISS_NOTIFICATION.equals(action)) {
@@ -37,6 +40,7 @@ public class ReminderTasks {
     }
 
     private static void issueChargingReminder(Context context) {
+        Log.d("NJOB", "Issuing the charging reminder");
         PreferenceUtilities.incrementChargingReminderCount(context);
         NotificationUtils.remindUserBecauseCharging(context);
     }

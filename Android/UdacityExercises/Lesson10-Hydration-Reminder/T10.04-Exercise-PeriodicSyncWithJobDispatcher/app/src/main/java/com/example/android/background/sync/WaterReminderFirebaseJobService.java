@@ -17,6 +17,7 @@ package com.example.android.background.sync;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.firebase.jobdispatcher.JobParameters;
 import com.firebase.jobdispatcher.JobService;
@@ -27,9 +28,12 @@ public class WaterReminderFirebaseJobService extends JobService {
 
     @Override
     public boolean onStartJob(final JobParameters jobParameters) {
+        Log.d("NJOB", "Starting the notification Job");
+
         mBackgroundTask = new AsyncTask() {
             @Override
             protected Object doInBackground(Object[] objects) {
+                Log.d("NJOB", "Sending out the notification");
                 Context context = WaterReminderFirebaseJobService.this;
                 ReminderTasks.executeTask(context, ReminderTasks.ACTION_CHARGING_REMINDER);
                 return null;
@@ -37,6 +41,7 @@ public class WaterReminderFirebaseJobService extends JobService {
 
             @Override
             protected void onPostExecute(Object o) {
+                Log.d("NJOB", "Notification sent");
                 jobFinished(jobParameters, false);
             }
         };
@@ -50,6 +55,7 @@ public class WaterReminderFirebaseJobService extends JobService {
         if (mBackgroundTask != null)
             mBackgroundTask.cancel(true);
 
+        Log.d("NJOB", "Stopping the notification Job");
         return true;
     }
 }
