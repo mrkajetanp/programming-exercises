@@ -4,6 +4,7 @@
 
 #### 23.09.2018
 
+* [Android] Hydration Reminder: Getting Battery State 
 * [Android] Hydration Reminder: Show when Charging
 * [Android] Hydration Reminder: Firebase experiments
 
