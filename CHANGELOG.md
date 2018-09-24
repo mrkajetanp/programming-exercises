@@ -4,6 +4,7 @@
 
 #### 24.09.2018
 
+* [Android] Sunshine: SmarterSyncing 
 * [Android] Sunshine: Synchronizing The Weather
 
 #### 23.09.2018

@@ -152,10 +152,7 @@ public class MainActivity extends AppCompatActivity implements
          * the last created loader is re-used.
          */
         getSupportLoaderManager().initLoader(ID_FORECAST_LOADER, null, this);
-
-        //  TODO (7) Call SunshineSyncUtils's initialize method instead of startImmediateSync
-        SunshineSyncUtils.startImmediateSync(this);
-
+        SunshineSyncUtils.initialise(this);
     }
 
     /**
