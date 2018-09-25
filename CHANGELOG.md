@@ -4,6 +4,7 @@
 
 #### 25.09.2018
 
+* [Android] Sunshine: Notifications
 * [Android] Sunshine: FirebaseJobDispatcher
 
 #### 24.09.2018
