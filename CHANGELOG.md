@@ -2,6 +2,10 @@
 
 ---
 
+#### 25.09.2018
+
+* [Android] Sunshine: FirebaseJobDispatcher
+
 #### 24.09.2018
 
 * [Android] Sunshine: SmarterSyncing 
