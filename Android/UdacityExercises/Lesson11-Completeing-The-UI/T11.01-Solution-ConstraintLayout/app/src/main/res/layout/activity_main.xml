@@ -61,14 +61,14 @@
         <!-- COMPLETED (7) Create an ImageView for the divider -->
         <ImageView
             android:id="@+id/divider"
-            android:background="@color/colorPrimaryLight"
-            android:layout_height="1dp"
             android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:background="@color/colorPrimaryLight"
+            app:layout_constraintBottom_toTopOf="@+id/rightRectangle"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toRightOf="@+id/leftRectangle"
             app:layout_constraintRight_toLeftOf="@+id/rightRectangle"
-            app:layout_constraintTop_toBottomOf="@+id/rightRectangle"
-            app:layout_constraintBottom_toTopOf="@+id/rightRectangle"
-            app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintTop_toBottomOf="@+id/rightRectangle" />
 
         <!-- COMPLETED (8) Create an ImageView for the rightRectangle -->
         <ImageView
