@@ -35,8 +35,8 @@ public class FakeDataUtils {
 
         BoardingPassInfo bpi = new BoardingPassInfo();
 
-        bpi.passengerName = "MR. RANDOM PERSON";
-        bpi.flightCode = "UD 777";
+        bpi.passengerName = "MR. HANNIBAL LECTER";
+        bpi.flightCode = "UD 1948";
         bpi.originCode = "JFK";
         bpi.destCode = "DCA";
 

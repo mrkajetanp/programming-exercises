@@ -4,6 +4,7 @@
 
 #### 26.09.2018
 
+* [Android] BoardingPass: Data Binding 
 * [Android] BoardingPass: Constraint Layout
 
 #### 25.09.2018
