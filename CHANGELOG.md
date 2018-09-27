@@ -2,6 +2,10 @@
 
 ---
 
+#### 27.09.2018
+
+* [Android] BoardingPass: Landscape Layout
+
 #### 26.09.2018
 
 * [Android] BoardingPass: Data Binding 
