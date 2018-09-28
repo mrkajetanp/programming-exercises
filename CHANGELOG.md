@@ -4,6 +4,7 @@
 
 #### 28.09.2018
 
+* [Android] Sunshine: Today's List Item 
 * [Android] Sunshine: New Layout
 
 #### 27.09.2018
