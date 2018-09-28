@@ -2,6 +2,10 @@
 
 ---
 
+#### 28.09.2018
+
+* [Android] Sunshine: New Layout
+
 #### 27.09.2018
 
 * [Android] BoardingPass: Landscape Layout
