@@ -4,6 +4,7 @@
 
 #### 29.09.2018
 
+* [Android] Sunshine: Data Binding (Code)
 * [Android] Sunshine: Data Binding (Layout)
 
 #### 28.09.2018
