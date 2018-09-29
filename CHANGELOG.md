@@ -2,6 +2,10 @@
 
 ---
 
+#### 29.09.2018
+
+* [Android] Sunshine: Data Binding (Layout)
+
 #### 28.09.2018
 
 * [Android] Sunshine: Today's List Item 
