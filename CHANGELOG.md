@@ -4,6 +4,7 @@
 
 #### 30.09.2018
 
+* [Android] Visual Polish: Create a new Style 
 * [Android] Visual Polish: Colors and Fonts
 
 #### 29.09.2018
