@@ -4,6 +4,7 @@
 
 #### 1.10.2018
 
+* [Android] Visual Polish: Touch Selectors 
 * [Android] Visual Polish: Tablet Layout
 
 #### 30.09.2018
