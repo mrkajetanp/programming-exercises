@@ -2,6 +2,10 @@
 
 ---
 
+#### 1.10.2018
+
+* [Android] Visual Polish: Tablet Layout
+
 #### 30.09.2018
 
 * [Android] Visual Polish: Create a new Style 
