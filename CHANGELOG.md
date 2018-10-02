@@ -4,6 +4,7 @@
 
 #### 2.10.2018
 
+* [Android] Sunshine: Styles
 * [Android] Sunshine: Colours, Fonts, Dimensions
 
 #### 1.10.2018
