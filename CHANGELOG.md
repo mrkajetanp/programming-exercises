@@ -2,6 +2,10 @@
 
 ---
 
+#### 2.10.2018
+
+* [Android] Sunshine: Colours, Fonts, Dimensions
+
 #### 1.10.2018
 
 * [Android] Visual Polish: Touch Selectors 
