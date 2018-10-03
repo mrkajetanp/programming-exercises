@@ -4,6 +4,7 @@
 
 #### 3.10.2018
 
+* [Android] Sunshine: Resource Qualifiers 
 * [Android] Sunshine: Add a Touch Selector
 
 #### 2.10.2018
