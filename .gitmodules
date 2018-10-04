@@ -1,0 +1,6 @@
+[submodule "Android/UdacityExercises/Android_Me"]
+	path = Android/UdacityExercises/Android_Me
+	url = https://github.com/udacity/Android_Me.git
+[submodule "Android/Android_Me"]
+	path = Android/Android_Me
+	url = https://github.com/udacity/Android_Me.git
