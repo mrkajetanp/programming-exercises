@@ -2,6 +2,10 @@
 
 ---
 
+#### 4.10.2018
+
+* [Android] AndroidMe: Create BodyPartFragment
+
 #### 3.10.2018
 
 * [Android] Sunshine: Resource Qualifiers 
