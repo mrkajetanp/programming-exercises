@@ -2,6 +2,10 @@
 
 ---
 
+#### 5.10.2018
+
+* [Android] AndroidMe: Display Three Fragments
+
 #### 4.10.2018
 
 * [Android] AndroidMe: Create BodyPartFragment
