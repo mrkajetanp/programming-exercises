@@ -2,6 +2,10 @@
 
 ---
 
+#### 6.10.2018
+
+* [Android] AndroidMe: Click Response and Saving State
+
 #### 5.10.2018
 
 * [Android] AndroidMe: Display Three Fragments
