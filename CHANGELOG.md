@@ -2,6 +2,10 @@
 
 ---
 
+#### 7.10.2018
+
+* [Android] AndroidMe: Interface Communication
+
 #### 6.10.2018
 
 * [Android] AndroidMe: Master List Fragment 
