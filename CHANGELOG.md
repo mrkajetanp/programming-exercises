@@ -4,6 +4,7 @@
 
 #### 7.10.2018
 
+* [Android] AndroidMe: Communicate between Activities 
 * [Android] AndroidMe: Interface Communication
 
 #### 6.10.2018
