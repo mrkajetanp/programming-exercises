@@ -2,6 +2,10 @@
 
 ---
 
+#### 8.10.2018
+
+* [Android] Emojify: Starter Code
+
 #### 7.10.2018
 
 * [Android] AndroidMe: Communicate between Activities 

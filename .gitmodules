@@ -4,3 +4,6 @@
 [submodule "Android/Android_Me"]
 	path = Android/Android_Me
 	url = https://github.com/udacity/Android_Me.git
+[submodule "Android/AdvancedAndroid_Emojify"]
+	path = Android/AdvancedAndroid_Emojify
+	url = https://github.com/udacity/AdvancedAndroid_Emojify.git
