@@ -4,6 +4,7 @@
 
 #### 9.10.2018
 
+* [Android] Emojify: Detect Faces Intro 
 * [Android] Emojify: Add Dependency
 
 #### 8.10.2018
