@@ -4,6 +4,7 @@
 
 #### 10.10.2018
 
+* [Android] Emojify: Map to Emojis 
 * [Android] Emojify: Get Probabilities
 
 #### 9.10.2018
