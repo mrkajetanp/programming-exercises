@@ -2,6 +2,10 @@
 
 ---
 
+#### 10.10.2018
+
+* [Android] Emojify: Get Probabilities
+
 #### 9.10.2018
 
 * [Android] Emojify: Detect Faces Intro 
