@@ -4,6 +4,7 @@
 
 #### 11.10.2018
 
+* [Android] Emojify: Butter Knife Library 
 * [Android] Emojify: Overlay Emoji
 
 #### 10.10.2018
