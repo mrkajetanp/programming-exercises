@@ -7,3 +7,6 @@
 [submodule "Android/AdvancedAndroid_Emojify"]
 	path = Android/AdvancedAndroid_Emojify
 	url = https://github.com/udacity/AdvancedAndroid_Emojify.git
+[submodule "Android/AdvancedAndroid_Squawker"]
+	path = Android/AdvancedAndroid_Squawker
+	url = https://github.com/udacity/AdvancedAndroid_Squawker.git

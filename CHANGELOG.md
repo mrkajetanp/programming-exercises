@@ -2,6 +2,10 @@
 
 ---
 
+#### 12.10.2018
+
+* [Android] Squawker: Starting Code
+
 #### 11.10.2018
 
 * [Android] Emojify: Butter Knife Library 
