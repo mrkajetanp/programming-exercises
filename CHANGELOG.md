@@ -4,6 +4,7 @@
 
 #### 12.10.2018
 
+* [Android] Squawker: Connect Firebase and the App 
 * [Android] Squawker: Starting Code
 
 #### 11.10.2018
