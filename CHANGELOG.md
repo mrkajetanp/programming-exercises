@@ -4,6 +4,7 @@
 
 #### 13.10.2018
 
+* [Android] Squawker: Introduction to Message Data 
 * [Android] Squawker: Send your first FCM message
 
 #### 12.10.2018
