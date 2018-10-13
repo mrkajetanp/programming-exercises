@@ -2,6 +2,10 @@
 
 ---
 
+#### 13.10.2018
+
+* [Android] Squawker: Send your first FCM message
+
 #### 12.10.2018
 
 * [Android] Squawker: Connect Firebase and the App 
