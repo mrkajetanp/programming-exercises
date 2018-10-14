@@ -4,6 +4,7 @@
 
 #### 14.10.2018
 
+* [Android] Squawker: Create Firebase Messaging Service 
 * [Android] Squawker: Sending to a Specific Phone
 
 #### 13.10.2018
