@@ -2,6 +2,10 @@
 
 ---
 
+#### 14.10.2018
+
+* [Android] Squawker: Sending to a Specific Phone
+
 #### 13.10.2018
 
 * [Android] Squawker: Introduction to Message Data 
