@@ -4,6 +4,7 @@
 
 #### 15.10.2018
 
+* [Android] ShushMe: Starter Code 
 * [Android] Squawker: Implement Topic Following
 
 #### 14.10.2018
