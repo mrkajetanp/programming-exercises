@@ -2,6 +2,10 @@
 
 ---
 
+#### 15.10.2018
+
+* [Android] Squawker: Implement Topic Following
+
 #### 14.10.2018
 
 * [Android] Squawker: Create Firebase Messaging Service 
