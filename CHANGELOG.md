@@ -2,6 +2,10 @@
 
 ---
 
+#### 16.10.2018
+
+* [Android] ShushMe: GoogleAPIClient
+
 #### 15.10.2018
 
 * [Android] ShushMe: Starter Code 
