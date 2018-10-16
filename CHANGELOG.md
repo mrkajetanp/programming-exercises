@@ -4,6 +4,7 @@
 
 #### 16.10.2018
 
+* [Android] ShushMe: Place Picker
 * [Android] ShushMe: GoogleAPIClient
 
 #### 15.10.2018
