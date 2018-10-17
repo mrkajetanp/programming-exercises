@@ -4,6 +4,7 @@
 
 #### 17.10.2018
 
+* [Android] ShushMe: GetPlaceById - Bug fix
 * [Android] ShushMe: GetPlaceById
 
 #### 16.10.2018
