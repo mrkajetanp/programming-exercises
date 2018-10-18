@@ -2,6 +2,10 @@
 
 ---
 
+#### 18.10.2018
+
+* [Android] ShushMe: Geofences
+
 #### 17.10.2018
 
 * [Android] ShushMe: GetPlaceById - Bug fix
