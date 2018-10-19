@@ -13,3 +13,6 @@
 [submodule "s"]
 	path = Android/AdvancedAndroid_Shushme
 	url = https://github.com/udacity/AdvancedAndroid_Shushme.git
+[submodule "Android/AdvancedAndroid_ClassicalMusicQuiz"]
+	path = Android/AdvancedAndroid_ClassicalMusicQuiz
+	url = https://github.com/udacity/AdvancedAndroid_ClassicalMusicQuiz.git
