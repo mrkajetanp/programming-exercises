@@ -2,6 +2,10 @@
 
 ---
 
+#### 19.10.2018
+
+* [Android] ShushMe: Permission Bug Fix
+
 #### 18.10.2018
 
 * [Android] ShushMe: Silent Mode
