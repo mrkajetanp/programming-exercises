@@ -4,6 +4,7 @@
 
 #### 20.10.2018
 
+* [Android] ClassicalMusicQuiz: SimpleExoPlayer (Code)
 * [Android] ClassicalMusicQuiz: SimpleExoPlayer (Layout)
 
 #### 19.10.2018
