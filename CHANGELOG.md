@@ -2,6 +2,10 @@
 
 ---
 
+#### 21.10.2018
+
+* [Android] ClassicalMusicQuiz: Customise SimpleExoPlayerView
+
 #### 20.10.2018
 
 * [Android] ClassicalMusicQuiz: SimpleExoPlayer (Code)
