@@ -2,6 +2,10 @@
 
 ---
 
+#### 22.10.2018
+
+* [Android] ClassicalMusicQuiz: Add Media Session
+
 #### 21.10.2018
 
 * [Android] ClassicalMusicQuiz: ExoPlayer Event Listening
