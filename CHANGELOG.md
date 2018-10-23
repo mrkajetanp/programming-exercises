@@ -2,6 +2,10 @@
 
 ---
 
+#### 23.10.2018
+
+* [Android] MyGarden: Starter Code
+
 #### 22.10.2018
 
 * [Android] ClassicalMusicQuiz: Add Media Button Receiver
