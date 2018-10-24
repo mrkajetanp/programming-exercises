@@ -2,6 +2,10 @@
 
 ---
 
+#### 24.10.2018
+
+* [Android] MyGarden: Create a Simple Widget
+
 #### 23.10.2018
 
 * [Android] MyGarden: Starter Code
