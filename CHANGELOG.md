@@ -4,6 +4,7 @@
 
 #### 24.12.2018
 
+* [Kotlin] Koans: Introduction 6/12 
 * [Kotlin] Added Koans repository
 
 #### 24.10.2018
