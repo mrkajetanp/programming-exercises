@@ -2,6 +2,10 @@
 
 ---
 
+#### 24.12.2018
+
+* [Kotlin] Added Koans repository
+
 #### 24.10.2018
 
 * [Android] MyGarden: Create a Simple Widget
