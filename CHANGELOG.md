@@ -4,6 +4,7 @@
 
 #### 25.12.2018
 
+* [Kotlin] Koans: Collections 18/24
 * [Kotlin] Koans: Introduction 12/12
 
 #### 24.12.2018
