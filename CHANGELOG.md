@@ -2,6 +2,10 @@
 
 ---
 
+#### 26.12.2018
+
+* [Kotlin] Koans: Collections 24/24
+
 #### 25.12.2018
 
 * [Kotlin] Koans: Collections 18/24
