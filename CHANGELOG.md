@@ -4,6 +4,7 @@
 
 #### 26.12.2018
 
+* [Kotlin] Koans: Properties 35/35
 * [Kotlin] Koans: Conventions 31/31
 * [Kotlin] Koans: Collections 24/24
 
