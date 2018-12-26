@@ -4,6 +4,7 @@
 
 #### 26.12.2018
 
+* [Kotlin] Koans: Conventions 31/31
 * [Kotlin] Koans: Collections 24/24
 
 #### 25.12.2018
