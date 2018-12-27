@@ -2,6 +2,10 @@
 
 ---
 
+#### 27.12.2018
+
+* [Kotlin] Koans: Builders 40/40
+
 #### 26.12.2018
 
 * [Kotlin] Koans: Properties 35/35
