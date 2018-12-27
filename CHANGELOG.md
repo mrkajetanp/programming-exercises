@@ -4,6 +4,7 @@
 
 #### 27.12.2018
 
+* [Kotlin] Koans: Removed the submodule 
 * [Kotlin] Koans: Generics 41/41
 * [Kotlin] Koans: Builders 40/40
 
