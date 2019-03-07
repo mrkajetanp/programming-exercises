@@ -4,6 +4,7 @@
 
 #### 07.03.2019
 
+* [Work] VPS QR Code and Email setup 
 * [Work] VPS MongoDB integration
 
 #### 06.03.2019
