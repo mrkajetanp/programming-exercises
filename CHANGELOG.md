@@ -2,6 +2,10 @@
 
 ---
 
+#### 07.03.2019
+
+* [Work] VPS MongoDB integration
+
 #### 06.03.2019
 
 * [Work] VPS Flask restful api 
