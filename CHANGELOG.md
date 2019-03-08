@@ -4,17 +4,21 @@
 
 #### 07.03.2019
 
-* [Work] VPS QR Code and Email setup 
+* [Work] VPS JSON to CSV, perishable entries and refactoring 
+
+#### 07.03.2019
+
+* [Work] VPS QR Code and Email setup
 * [Work] VPS MongoDB integration
 
 #### 06.03.2019
 
-* [Work] VPS Flask restful api 
-* [Work] VPS Postfix email service 
+* [Work] VPS Flask restful api
+* [Work] VPS Postfix email service
 
 #### 27.12.2018
 
-* [Kotlin] Koans: Removed the submodule 
+* [Kotlin] Koans: Removed the submodule
 * [Kotlin] Koans: Generics 41/41
 * [Kotlin] Koans: Builders 40/40
 
@@ -31,7 +35,7 @@
 
 #### 24.12.2018
 
-* [Kotlin] Koans: Introduction 6/12 
+* [Kotlin] Koans: Introduction 6/12
 * [Kotlin] Added Koans repository
 
 #### 24.10.2018
@@ -60,7 +64,7 @@
 
 #### 19.10.2018
 
-* [Android] ClassicalMusicQuiz: Starter Code 
+* [Android] ClassicalMusicQuiz: Starter Code
 * [Android] ShushMe: Permission Bug Fix
 
 #### 18.10.2018
@@ -80,37 +84,37 @@
 
 #### 15.10.2018
 
-* [Android] ShushMe: Starter Code 
+* [Android] ShushMe: Starter Code
 * [Android] Squawker: Implement Topic Following
 
 #### 14.10.2018
 
-* [Android] Squawker: Create Firebase Messaging Service 
+* [Android] Squawker: Create Firebase Messaging Service
 * [Android] Squawker: Sending to a Specific Phone
 
 #### 13.10.2018
 
-* [Android] Squawker: Introduction to Message Data 
+* [Android] Squawker: Introduction to Message Data
 * [Android] Squawker: Send your first FCM message
 
 #### 12.10.2018
 
-* [Android] Squawker: Connect Firebase and the App 
+* [Android] Squawker: Connect Firebase and the App
 * [Android] Squawker: Starting Code
 
 #### 11.10.2018
 
-* [Android] Emojify: Butter Knife Library 
+* [Android] Emojify: Butter Knife Library
 * [Android] Emojify: Overlay Emoji
 
 #### 10.10.2018
 
-* [Android] Emojify: Map to Emojis 
+* [Android] Emojify: Map to Emojis
 * [Android] Emojify: Get Probabilities
 
 #### 9.10.2018
 
-* [Android] Emojify: Detect Faces Intro 
+* [Android] Emojify: Detect Faces Intro
 * [Android] Emojify: Add Dependency
 
 #### 8.10.2018
@@ -119,12 +123,12 @@
 
 #### 7.10.2018
 
-* [Android] AndroidMe: Communicate between Activities 
+* [Android] AndroidMe: Communicate between Activities
 * [Android] AndroidMe: Interface Communication
 
 #### 6.10.2018
 
-* [Android] AndroidMe: Master List Fragment 
+* [Android] AndroidMe: Master List Fragment
 * [Android] AndroidMe: Click Response and Saving State
 
 #### 5.10.2018
@@ -137,7 +141,7 @@
 
 #### 3.10.2018
 
-* [Android] Sunshine: Resource Qualifiers 
+* [Android] Sunshine: Resource Qualifiers
 * [Android] Sunshine: Add a Touch Selector
 
 #### 2.10.2018
@@ -147,12 +151,12 @@
 
 #### 1.10.2018
 
-* [Android] Visual Polish: Touch Selectors 
+* [Android] Visual Polish: Touch Selectors
 * [Android] Visual Polish: Tablet Layout
 
 #### 30.09.2018
 
-* [Android] Visual Polish: Create a new Style 
+* [Android] Visual Polish: Create a new Style
 * [Android] Visual Polish: Colors and Fonts
 
 #### 29.09.2018
@@ -162,7 +166,7 @@
 
 #### 28.09.2018
 
-* [Android] Sunshine: Today's List Item 
+* [Android] Sunshine: Today's List Item
 * [Android] Sunshine: New Layout
 
 #### 27.09.2018
@@ -171,7 +175,7 @@
 
 #### 26.09.2018
 
-* [Android] BoardingPass: Data Binding 
+* [Android] BoardingPass: Data Binding
 * [Android] BoardingPass: Constraint Layout
 
 #### 25.09.2018
@@ -181,18 +185,18 @@
 
 #### 24.09.2018
 
-* [Android] Sunshine: SmarterSyncing 
+* [Android] Sunshine: SmarterSyncing
 * [Android] Sunshine: Synchronizing The Weather
 
 #### 23.09.2018
 
-* [Android] Hydration Reminder: Getting Battery State 
+* [Android] Hydration Reminder: Getting Battery State
 * [Android] Hydration Reminder: Show when Charging
 * [Android] Hydration Reminder: Firebase experiments
 
 #### 22.09.2018
 
-* [Android] Hydration Reminder: Schedule with FirebaseJobDispatcher 
+* [Android] Hydration Reminder: Schedule with FirebaseJobDispatcher
 * [Android] Hydration Reminder: Adding a JobService
 
 #### 21.09.2018
@@ -222,8 +226,8 @@
 
 #### 16.09.2018
 
-* [Android] ToDo List: Query all Tasks 
-* [Android] ToDo List: Save Task 
+* [Android] ToDo List: Query all Tasks
+* [Android] ToDo List: Save Task
 * [Android] ToDo List: Creating an Entity
 
 #### 15.09.2018
@@ -233,7 +237,7 @@
 
 #### 14.09.2018
 
-* [Android] Quiz: Add the Permission 
+* [Android] Quiz: Add the Permission
 * [Android] Quiz: Setup Example
 
 #### 13.09.2018
@@ -257,17 +261,17 @@
 
 #### 9.09.2018
 
-* [Android] Visualize: Add Two More Checkboxes 
+* [Android] Visualize: Add Two More Checkboxes
 * [Android] Visualize: Preference Change Listener
 
 #### 8.09.2018
 
-* [Android] Visualize: Use Resources 
+* [Android] Visualize: Use Resources
 * [Android] Visualize: Reading from SharedPreferences
 
 #### 7.09.2018
 
-* [Android] Visualize: Make a Preference Fragment 
+* [Android] Visualize: Make a Preference Fragment
 * [Android] Visualize: Setup Settings
 
 #### 6.09.2018
@@ -283,23 +287,23 @@
 
 #### 4.09.2018
 
-* [Android] Lifecycle: Persisting Data 
+* [Android] Lifecycle: Persisting Data
 * [Android] Lifecycle: Lifecycle Events
 
 #### 3.09.2018
 
-* [Android] Sunshine: Add Sharing 
-* [Android] Sunshine: Send Data 
+* [Android] Sunshine: Add Sharing
+* [Android] Sunshine: Send Data
 * [Android] Sunshine: Add a new Activity
 
 #### 2.09.2018
 
-* [Android] Implicit Intents: Share Text 
+* [Android] Implicit Intents: Share Text
 * [Android] Implicit Intents: Show a Map
 
 #### 1.09.2018
 
-* [Android] Implicit Intents: Open a web page 
+* [Android] Implicit Intents: Open a web page
 * [Android] Intents: Pass data
 
 #### 31.08.2018
@@ -319,13 +323,13 @@
 
 #### 28.08.2018
 
-* [Android] RecyclerView: Click Handling 
-* [Android] RecyclerView: Wiring up RecyclerView 
+* [Android] RecyclerView: Click Handling
+* [Android] RecyclerView: Wiring up RecyclerView
 * [Android] RecyclerView: Create an Adapter
 
 #### 27.08.2018
 
-* [Android] RecyclerView: ViewHolder 
+* [Android] RecyclerView: ViewHolder
 * [Android] RecyclerView: Create RecyclerView
 
 #### 26.08.2018
@@ -335,12 +339,12 @@
 
 #### 25.08.2018
 
-* [Android] Fixed general folder structure 
+* [Android] Fixed general folder structure
 * [Android] Sunshine: Networking
 
 #### 24.08.2018
 
-* [Android] GitHub Query: Adding polish 
+* [Android] GitHub Query: Adding polish
 * [Android] GitHub Query: Missing permissions
 
 #### 23.08.2018
@@ -350,17 +354,17 @@
 
 #### 22.08.2018
 
-* [General] Removed Sunshine submodule 
+* [General] Removed Sunshine submodule
 * [General] Removed Android exercises submodule
 
 #### 21.08.2018
 
-* [Android] GitHub Query: Building our URL 
+* [Android] GitHub Query: Building our URL
 * [Android] GitHub Query: Add a menu
 
 #### 18.08.2018
 
-* [Android] More exercises 
+* [Android] More exercises
 * [Android] Framing exercise
 
 #### 9.08.2018
