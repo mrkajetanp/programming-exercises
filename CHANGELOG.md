@@ -2,9 +2,13 @@
 
 ---
 
-#### 07.03.2019
+#### 09.03.2019
 
-* [Work] VPS JSON to CSV, perishable entries and refactoring 
+* [Work] VPS email file
+
+#### 08.03.2019
+
+* [Work] VPS JSON to CSV, perishable entries and refactoring
 
 #### 07.03.2019
 
