@@ -4,7 +4,8 @@
 
 #### 10.03.2019
 
-* [Work] VPS postfix TSL adjustments
+* [Work] VPS gmail integration and login
+* [Work] VPS Postfix TSL adjustments
 
 #### 09.03.2019
 
