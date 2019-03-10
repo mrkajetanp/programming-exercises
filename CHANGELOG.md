@@ -2,9 +2,13 @@
 
 ---
 
+#### 10.03.2019
+
+* [Work] VPS postfix TSL adjustments
+
 #### 09.03.2019
 
-* [Work] VPS final setup 
+* [Work] VPS final setup
 * [Work] VPS email file
 
 #### 08.03.2019
