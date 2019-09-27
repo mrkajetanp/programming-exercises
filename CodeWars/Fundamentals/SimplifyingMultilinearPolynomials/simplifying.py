@@ -1,8 +1,15 @@
 
 def simplify(poly):
 
+    parts = poly.split('+')
+
+    for s in parts:
+        print("".join(sorted(s)))
+
     print("Result: {}".format(poly))
     return poly
+
+# Tests
 
 assert(simplify("dc+dcba") == "cd+abcd")
 assert(simplify("2xy-yx") == "xy")
