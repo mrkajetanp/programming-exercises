@@ -1,12 +1,10 @@
 
 def simplify(poly):
+    import re
 
-    parts = poly.split('+')
+    matches = re.findall(r'([+\-]?)(\d*)([a-z]+)', poly)
+    print(matches)
 
-    for s in parts:
-        print("".join(sorted(s)))
-
-    print("Result: {}".format(poly))
     return poly
 
 # Tests
@@ -23,4 +21,13 @@ assert(simplify("xzy+zby") == "byz+xyz")
 
 assert(simplify("-y+x") == "x-y")
 assert(simplify("y-x") == "-x+y")
+
+    # get the int equivalent of coefficient (including sign) and the sorted variables (for later comparison)
+    # expanded = [[int(i[0] + (i[1] if i[1] != "" else "1")), ''.join(sorted(i[2]))] for i in matches]
+    # get the unique variables from above list. Sort them first by length, then alphabetically
+    # variables = sorted(list(set(i[1] for i in expanded)), key=lambda x: (len(x), x))
+    # get the sum of coefficients (located in expanded) for each variable
+    # coefficients = {v:sum(i[0] for i in expanded if i[1] == v) for v in variables}
+    # clean-up: join them with + signs, remove '1' coefficients, and change '+-' to '-'
+    # return '+'.join(str(coefficients[v]) + v for v in variables if coefficients[v] != 0).replace('1','').replace('+-','-')
 
