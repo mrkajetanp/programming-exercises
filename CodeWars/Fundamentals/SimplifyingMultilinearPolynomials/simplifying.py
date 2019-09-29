@@ -12,6 +12,9 @@ def simplify(poly):
     variables = sorted(list(set(i[1] for i in expanded)), key=lambda x: (len(x), x))
     print(variables)
 
+    coefficients = {v:sum(i[0] for i in expanded if i[1] == v) for v in variables}
+    print(coefficients)
+
     return poly
 
 # Tests
@@ -29,8 +32,6 @@ assert(simplify("xzy+zby") == "byz+xyz")
 assert(simplify("-y+x") == "x-y")
 assert(simplify("y-x") == "-x+y")
 
-    # get the sum of coefficients (located in expanded) for each variable
-    # coefficients = {v:sum(i[0] for i in expanded if i[1] == v) for v in variables}
     # clean-up: join them with + signs, remove '1' coefficients, and change '+-' to '-'
     # return '+'.join(str(coefficients[v]) + v for v in variables if coefficients[v] != 0).replace('1','').replace('+-','-')
 
