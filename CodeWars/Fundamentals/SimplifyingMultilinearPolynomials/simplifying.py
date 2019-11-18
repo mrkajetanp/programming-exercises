@@ -15,12 +15,13 @@ def simplify(poly):
     coefficients = {v:sum(i[0] for i in expanded if i[1] == v) for v in variables}
     print(coefficients)
 
+    # return '+'.join(str(coefficients[v]) + v for v in variables if coefficients[v] != 0).replace('1','').replace('+-','-')
     return poly
 
 # Tests
 
-assert(simplify("dc+dcba") == "cd+abcd")
 assert(simplify("2xy-yx") == "xy")
+assert(simplify("dc+dcba") == "cd+abcd")
 assert(simplify("-a+5ab+3a-c-2a") == "-c+5ab")
 
 assert(simplify("-abc+3a+2ac") == "3a+2ac-abc")
@@ -32,6 +33,4 @@ assert(simplify("xzy+zby") == "byz+xyz")
 assert(simplify("-y+x") == "x-y")
 assert(simplify("y-x") == "-x+y")
 
-    # clean-up: join them with + signs, remove '1' coefficients, and change '+-' to '-'
-    # return '+'.join(str(coefficients[v]) + v for v in variables if coefficients[v] != 0).replace('1','').replace('+-','-')
 
