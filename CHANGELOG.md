@@ -4,6 +4,7 @@
 
 #### 8.04.2020
 
+* [Ruby] Koans - Hashes
 * [Ruby] Koans - Array Assignments
 
 #### 7.04.2020
