@@ -2,6 +2,10 @@
 
 ---
 
+#### 7.04.2020
+
+* [Ruby] Koans - Arrays
+
 #### 10.03.2019
 
 * [Work] VPS gmail integration and login
