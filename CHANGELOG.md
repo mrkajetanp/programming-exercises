@@ -2,6 +2,10 @@
 
 ---
 
+#### 9.04.2020
+
+* [Ruby] Koans - Strings
+
 #### 8.04.2020
 
 * [Ruby] Koans - Hashes
