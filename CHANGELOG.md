@@ -4,6 +4,7 @@
 
 #### 9.04.2020
 
+* [Ruby] Koans - Methods
 * [Ruby] Koans - Symbols
 * [Ruby] Koans - Strings
 
