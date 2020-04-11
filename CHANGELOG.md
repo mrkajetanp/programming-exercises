@@ -2,8 +2,9 @@
 
 ---
 
-#### 10.04.2020
+#### 11.04.2020
 
+* [Ruby] Koans - Constants
 * [Ruby] Koans - Keyword Arguments
 
 #### 10.04.2020
