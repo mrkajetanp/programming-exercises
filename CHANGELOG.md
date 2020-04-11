@@ -4,6 +4,10 @@
 
 #### 10.04.2020
 
+* [Ruby] Koans - Keyword Arguments
+
+#### 10.04.2020
+
 * [Ruby] Koans - More on Methods
 
 #### 9.04.2020
