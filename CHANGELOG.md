@@ -4,6 +4,7 @@
 
 #### 11.04.2020
 
+* [Ruby] Koans - Control Statements
 * [Ruby] Koans - Constants
 * [Ruby] Koans - Keyword Arguments
 
