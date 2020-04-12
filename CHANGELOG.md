@@ -2,6 +2,10 @@
 
 ---
 
+#### 12.04.2020
+
+* [Ruby] Koans - About true and false
+
 #### 11.04.2020
 
 * [Ruby] Koans - Control Statements
