@@ -4,6 +4,7 @@
 
 #### 12.04.2020
 
+* [Ruby] Koans - Exceptions
 * [Ruby] Koans - Triangle Project
 * [Ruby] Koans - About true and false
 
