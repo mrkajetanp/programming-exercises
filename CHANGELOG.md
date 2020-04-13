@@ -2,6 +2,10 @@
 
 ---
 
+#### 13.04.2020
+
+* [Ruby] Koans - Blocks
+
 #### 12.04.2020
 
 * [Ruby] Koans - Blocks
