@@ -4,7 +4,7 @@
 
 #### 13.04.2020
 
-* [Ruby] Koans - Blocks
+* [Ruby] Koans - Sandwich Code
 
 #### 12.04.2020
 
