@@ -4,6 +4,10 @@
 
 #### 15.04.2020
 
+* [Ruby] Koans - Classes
+
+#### 15.04.2020
+
 * [Ruby] Koans - Scoring Project
 
 #### 14.04.2020
