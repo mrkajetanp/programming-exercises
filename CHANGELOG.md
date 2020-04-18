@@ -4,6 +4,7 @@
 
 #### 15.04.2020
 
+* [Ruby] Koans - Open classes
 * [Ruby] Koans - Classes
 
 #### 15.04.2020
