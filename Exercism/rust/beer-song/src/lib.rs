@@ -9,8 +9,8 @@ pub fn verse(x: i32) -> String {
         }
 
         _ => {
-            format!("{0} bottles of beer on the wall, {0} bottles of beer.\nTake one down and pass it around, {1} bottle{2} of beer on the wall.\n", x, x-1,
-                    if x-1 == 1 { "" } else { "s" })
+            format!("{0} bottles of beer on the wall, {0} bottles of beer.\nTake one down and pass it around, {1} bottle{2} of beer on the wall.\n",
+                    x, x-1, if x-1 == 1 { "" } else { "s" })
         }
     }
 }
@@ -18,8 +18,8 @@ pub fn verse(x: i32) -> String {
 pub fn sing(from: i32, to: i32) -> String {
     let mut result = String::from("");
 
-    for i in (to..from+1).rev() {
-        result = result + verse(i).as_str()+"\n";
+    for i in (to..from + 1).rev() {
+        result = result + verse(i).as_str() + "\n";
     }
 
     result.pop();

@@ -18,9 +18,9 @@ pub fn raindrops(n: u64) -> String {
         result.push_str(n.to_string().as_str());
     }
 
-    return result;
+    result
 }
 
 fn get_factors(n: u64) -> Vec<u64> {
-    (1..n+1).into_iter().filter(|&i| n % i == 0).collect::<Vec<u64>>()
+    (1..n + 1).filter(|&i| n % i == 0).collect::<Vec<u64>>()
 }
