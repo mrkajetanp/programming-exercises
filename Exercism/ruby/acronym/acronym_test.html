@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>acronym_test.html</title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css"  />
+<link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github.min.css"  /><meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'><style> body { box-sizing: border-box; max-width: 740px; width: 100%; margin: 40px auto; padding: 0 10px; } </style><script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js'></script><script>document.addEventListener('DOMContentLoaded', () => { document.body.classList.add('markdown-body'); document.querySelectorAll('pre[lang] > code').forEach((code) => { code.classList.add(code.parentElement.lang); }); document.querySelectorAll('pre > code').forEach((code) => { hljs.highlightBlock(code); }); });</script>
+</head>
+
+<body>
+
+<p>require &#39;minitest/autorun&#39;
+require_relative &#39;acronym&#39;</p>
+<h1 id="common-test-data-version-170-cacf1f1">Common test data version: 1.7.0 cacf1f1</h1>
+<p>class AcronymTest &lt; Minitest::Test
+  def test_basic
+    assert_equal &quot;PNG&quot;, Acronym.abbreviate(&#39;Portable Network Graphics&#39;)
+  end</p>
+<p>  def test_lowercase_words
+    assert_equal &quot;ROR&quot;, Acronym.abbreviate(&#39;Ruby on Rails&#39;)
+  end</p>
+<p>  def test_punctuation
+    assert_equal &quot;FIFO&quot;, Acronym.abbreviate(&#39;First In, First Out&#39;)
+  end</p>
+<p>  def test_all_caps_word
+    assert_equal &quot;GIMP&quot;, Acronym.abbreviate(&#39;GNU Image Manipulation Program&#39;)
+  end</p>
+<p>  def test_punctuation_without_whitespace
+    assert_equal &quot;CMOS&quot;, Acronym.abbreviate(&#39;Complementary metal-oxide semiconductor&#39;)
+  end</p>
+<p>  def test_very_long_abbreviation
+    assert_equal &quot;ROTFLSHTMDCOALM&quot;, Acronym.abbreviate(&#39;Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me&#39;)
+  end</p>
+<p>  def test_consecutive_delimiters
+    assert_equal &quot;SIMUFTA&quot;, Acronym.abbreviate(&#39;Something - I made up from thin air&#39;)
+  end
+end</p>
+
+
+</body>
+</html>
