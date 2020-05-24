@@ -21,7 +21,7 @@ pub fn is_valid(num: &str) -> bool {
                     x*2-9
                 } else {
                     x*2
-                };
+                }
             } else {
                 sum += x;
             }

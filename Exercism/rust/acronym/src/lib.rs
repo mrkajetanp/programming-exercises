@@ -1,3 +1,4 @@
+
 pub fn abbreviate(input: &str) -> String {
     let mut result = String::new();
 
