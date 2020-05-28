@@ -1,4 +1,7 @@
 __pycache__
+.dart_tool
+.packages
+analysis_options.yaml
 .DS_Store
 .ccls-cache
 *.class
