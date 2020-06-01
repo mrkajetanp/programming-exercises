@@ -30,3 +30,7 @@ char* abbreviate(char* input_text) {
     free(input);
     return result;
 }
+
+int main() {
+    abbreviate("Hello There My Friend");
+}
