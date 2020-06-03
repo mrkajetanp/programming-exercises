@@ -1,3 +1,4 @@
+
 class HelloWorld {
     static hello() {
         return 'Hello, World!';
