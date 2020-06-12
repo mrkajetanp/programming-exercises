@@ -7,8 +7,17 @@ main() {
     rna['T']='A'
     rna['A']='U'
 
-    for char in $(echo "${1,,}" | tr -d " " | grep -o .); do
-    for
+    result=""
+
+    for char in $(echo "${1}" | tr -d " " | grep -o .); do
+        if [[ "${rna[$char]}" == "" ]]; then
+            echo "Invalid nucleotide detected."
+            return 1
+        fi
+        result+=${rna[$char]}
+    done
+
+    echo "$result"
 }
 
 main "$@"
