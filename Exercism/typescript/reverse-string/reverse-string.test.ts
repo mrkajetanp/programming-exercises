@@ -6,22 +6,22 @@ describe("Reverse String", () => {
     expect(ReverseString.reverse("")).toEqual(expected)
   })
 
-  xit("a word", () => {
+  it("a word", () => {
     const expected = "tobor"
     expect(ReverseString.reverse("robot")).toEqual(expected)
   })
 
-  xit("a capitalized word", () => {
+  it("a capitalized word", () => {
     const expected = "nemaR"
     expect(ReverseString.reverse("Ramen")).toEqual(expected)
   })
 
-  xit("a sentence with punctuation", () => {
+  it("a sentence with punctuation", () => {
     const expected = `!yrgnuh m'I`
     expect(ReverseString.reverse(`I'm hungry!`)).toEqual(expected)
   })
 
-  xit("a palindrome", () => {
+  it("a palindrome", () => {
     const expected = "racecar"
     expect(ReverseString.reverse("racecar")).toEqual(expected)
   })
