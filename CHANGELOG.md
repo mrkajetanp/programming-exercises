@@ -11,7 +11,7 @@
 
 * [Ruby] Koans - Scoring Project
 
-#### 14.04.2020
+### 14.04.2020
 
 * [Ruby] Koans - Sandwich Code
 
