@@ -12,9 +12,7 @@ func IsIsogram(input string) bool {
 			continue
 		}
 
-		_, contains := letters[c]
-
-		if contains {
+		if _, contains := letters[c]; contains {
 			return false
 		}
 
