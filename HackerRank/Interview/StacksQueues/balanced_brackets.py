@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def isBalanced(s):
-    pairs = {')':'(', '}':'{', ']':'['}
+    pairs = {')': '(', '}': '{', ']': '['}
     stack = []
 
     for c in s:
