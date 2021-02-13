@@ -1,6 +1,7 @@
 #ifndef MEETUP_H
 #define MEETUP_H
 
-int meetupDayOfMonth(int year, int month, char* week, char* dayOfWeek);
+int meetup_day_of_month(unsigned int year, unsigned int month, const char *week,
+                        const char *day_of_week);
 
 #endif
