@@ -44,9 +44,11 @@ pub fn decode(input: &str) -> String {
             number.push(c);
         } else {
             if !number.is_empty() {
-                result.push_str(c.to_string().
-                                repeat(number.parse::<usize>().unwrap()).
-                                as_str());
+                result.push_str(
+                    c.to_string()
+                        .repeat(number.parse::<usize>().unwrap())
+                        .as_str(),
+                );
             } else {
                 result.push(c);
             }
@@ -56,4 +58,3 @@ pub fn decode(input: &str) -> String {
 
     result
 }
-
