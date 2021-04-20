@@ -62,7 +62,7 @@ triplets_t* triplets_with_sum(uint16_t sum)
 
         k = m + ((m % 2 == 0) ? 1 : 2);
 
-        while ((k < 2 * m) && k <= (sum / (2 * m))) {
+        while ((k <= 2 * m) && k <= (ceil(sum / (2 * m)))) {
             if (sum / (2 * m) % k == 0 && gcd(k, m) == 1) {
                 d = sum / 2 / (k * m);
                 n = k - m;
@@ -77,27 +77,33 @@ triplets_t* triplets_with_sum(uint16_t sum)
 
         if (found && a + b + c == sum) {
             bool contains = false;
+            triplet_t new_candidate = make_triplet(a, b, c);
+
             for (int i = 0; i < result->count; ++i) {
-                triplet_t* triplet = &result->triplets[i];
-                triplet_t new_candidate = make_triplet(a, b, c);
-                if (triplet_eq(triplet, &new_candidate)) {
+                if (triplet_eq(&result->triplets[i], &new_candidate)) {
                     contains = true;
                     break;
                 }
             }
+
             if (!contains) {
-                result->triplets[result->count++] = make_triplet(a, b, c);
-                printf("adding triplet (%d,%d,%d)\n", a, b, c);
-                // Approaching allocated memory, double available space
+                result->triplets[result->count++] = new_candidate;
+
+                printf("adding triplet (%d,%d,%d)\n",
+                       new_candidate.a, new_candidate.b, new_candidate.c);
+
+                /* Approaching allocated memory, double available space */
                 if (result->count > allocated * 2 / 3) {
                     allocated *= 2;
-                    result->triplets = realloc(result->triplets, sizeof(triplet_t) * allocated);
+                    result->triplets = realloc(result->triplets,
+                                               sizeof(triplet_t) * allocated);
                 }
             }
             found = false;
         }
     }
 
+    /* { 105, 360, 375 }, */
     return result;
 }
 
