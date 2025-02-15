@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "sentientmonkey"
+  ],
+  "contributors": [
+    "kotp",
+    "pclausen",
+    "sjwarner"
+  ],
+  "files": {
+    "solution": [
+      "hamming.f90"
+    ],
+    "test": [
+      "hamming_test.f90"
+    ],
+    "example": [
+      ".meta/example.f90"
+    ]
+  },
+  "blurb": "Calculate the Hamming distance between two DNA strands.",
+  "source": "The Calculating Point Mutations problem at Rosalind",
+  "source_url": "https://rosalind.info/problems/hamm/"
+}
