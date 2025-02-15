@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTesterMain.a CMakeFiles/TesterMain.dir/TesterMain.f90.o
+/usr/bin/ranlib libTesterMain.a

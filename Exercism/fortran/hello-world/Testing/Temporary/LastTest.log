@@ -1,0 +1,20 @@
+Start testing: Feb 14 23:28 GMT
+----------------------------------------------------------
+1/1 Testing: hello-world_test
+1/1 Test: hello-world_test
+Command: "/home/kajetan/dev/programming-exercises/Exercism/fortran/hello-world/hello-world"
+Directory: /home/kajetan/dev/programming-exercises/Exercism/fortran/hello-world
+"hello-world_test" start time: Feb 14 23:28 GMT
+Output:
+----------------------------------------------------------
+ Test summary: 0 of 1 tests failed
+STOP 0
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"hello-world_test" end time: Feb 14 23:28 GMT
+"hello-world_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 14 23:28 GMT

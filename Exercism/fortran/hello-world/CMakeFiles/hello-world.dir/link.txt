@@ -1,0 +1,1 @@
+/usr/bin/f95 -g "CMakeFiles/hello-world.dir/hello_world.f90.o" "CMakeFiles/hello-world.dir/hello_world_test.f90.o" -o hello-world  testlib/libTesterMain.a
