@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "pclausen"
+  ],
+  "files": {
+    "solution": [
+      "matrix.f90"
+    ],
+    "test": [
+      "matrix_test.f90"
+    ],
+    "example": [
+      ".meta/example.f90"
+    ]
+  },
+  "blurb": "Given a string representing a matrix of numbers, return the rows and columns of that matrix.",
+  "source": "Exercise by the JumpstartLab team for students at The Turing School of Software and Design.",
+  "source_url": "https://turing.edu"
+}
